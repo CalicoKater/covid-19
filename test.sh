@@ -24,7 +24,7 @@ for url in `cat airport_quarantine_link_list.txt`; do
   #cat tmp2.txt | tail -n +2
 
   #debug
-   if [ "$c" = "18" ]; then break ; fi
+  # if [ "$c" = "18" ]; then break ; fi
  done > acc.html
 #done > airport_quarantine_description.csv
 
