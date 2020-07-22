@@ -1,20 +1,35 @@
 #!/bin/bash
 c=0
+output=airport_quarantine_description.html
 
-echo '<table border="1" cellpadding="0" cellspacing="0" width="50%">' > acc.html
+echo '<table border="1"'> $output
+# 書式が異なるので焼き直し
+cat no_1_7.html >> $output
 
 for url in `cat airport_quarantine_link_list.txt`; do
 #url="https://www.mhlw.go.jp/stf/newpage_10812.html"
   c=$((++c))
   p_key=$c
 
-  
-  if [ $c -eq 4 ]; then
-    cat no4.html 
+  # 焼き直し分をスキップ
+  if [ $c -le 5 ]; then
     continue
   fi
+
   # 重複のため削除
-  if [ $c -eq 15 || $c -le 5 ]; then 
+  #if [ $c -eq 15 ] ; then 
+  #  continue
+  #fi
+
+  # 行数が異なるため焼き直し
+  if [ $c -eq 21 ]; then
+    cat no_21.html 
+    continue
+  fi
+
+  # 画像ファイルのため焼き直し
+  if [ $c -eq 74 ]; then
+    cat no_74.html 
     continue
   fi
   #patch ni suru?
@@ -35,8 +50,9 @@ for url in `cat airport_quarantine_link_list.txt`; do
 
   #debug
   # if [ "$c" = "18" ]; then break ; fi
- done >> acc.html
+ done >> $output
 
 #done > airport_quarantine_description.csv
 
-echo "</table>" >> acc.html
+echo "</table>" >> $output
+
