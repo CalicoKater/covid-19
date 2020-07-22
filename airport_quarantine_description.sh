@@ -2,7 +2,7 @@
 c=0
 output=airport_quarantine_description.html
 
-echo '<table border="1"'> $output
+echo '<table border="1">'> $output
 # 書式が異なるので焼き直し
 cat no_1_7.html >> $output
 
