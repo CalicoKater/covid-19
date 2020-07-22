@@ -32,6 +32,11 @@ for url in `cat airport_quarantine_link_list.txt`; do
     cat no_74.html 
     continue
   fi
+  # 死亡事例が含まれるためパッチ
+  if [ $c -eq 76 ]; then
+    cat no_76.html
+    continue
+  fi
   #patch ni suru?
   #if [ "$c" = "10" ]; then
   #  cat 20200325_desc.csv
@@ -51,7 +56,10 @@ for url in `cat airport_quarantine_link_list.txt`; do
   #cat tmp2.txt | tail -n +2
 
   #debug
-  # if [ "$c" = "15" ]; then break ; fi
+  #if [ $c -eq 76 ]; then 
+  #  echo $url
+  #  break
+  #fi
  done >> $output
 
 #done > airport_quarantine_description.csv
