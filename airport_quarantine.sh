@@ -18,5 +18,5 @@ for url in `cat airport_quarantine_link_list.txt`; do
 done > airport_quarantine.csv
 
 cat airport_quarantine.csv | tr -d '\"' | sed 'y/０１２３４５６７８９/0123456789/' \
-  | awk -F',' -f abc.awk > airport_quarantine2.csv
+  | awk -F',' -f airport_quarantine.awk > airport_quarantine2.csv
   
