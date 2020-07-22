@@ -41,6 +41,8 @@ for url in `cat airport_quarantine_link_list.txt`; do
   #  cat 20200411_desc.csv
   #  continue
   #fi
+  curl $url | xmllint --html --xpath '//table/thead' - \
+    |  sed 'y/０１２３４５６７８９（）/0123456789()/' | tr -d '\r'
   curl $url | xmllint --html --xpath '//table/tbody' - \
     |  sed 'y/０１２３４５６７８９（）/0123456789()/' | tr -d '\r'
   #curl $url | xmllint --html --xpath '//table' - | sed -e 's/<[^>]*>//g' | tr -d '\t' \
@@ -49,7 +51,7 @@ for url in `cat airport_quarantine_link_list.txt`; do
   #cat tmp2.txt | tail -n +2
 
   #debug
-  # if [ "$c" = "18" ]; then break ; fi
+  # if [ "$c" = "15" ]; then break ; fi
  done >> $output
 
 #done > airport_quarantine_description.csv
