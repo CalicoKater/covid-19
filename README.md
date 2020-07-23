@@ -13,4 +13,4 @@
  
 - airport_pcr_test_daily.csv
 　→ PCR実施人数のデータ（csv形式）
- ** 生成用スクリプト：airport_quarantine.sh, airport_pcr_test.awk
+ ** 生成用スクリプト：airport_pcr_test.sh, airport_pcr_test.awk
