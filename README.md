@@ -24,4 +24,4 @@
 - airport\_quarantine\_arrived\_summary.csv </br>
 　→　到着日ベースの陽性者数のデータ（csv形式）</br>
   * 生成用スクリプト：airport\_quarantine\_arrived.sh, airport\_quarantine\_arrived.awk
-  * 重複事例は遡及してあります。</br>
+  * 重複事例は遡及してあります。到着日不明のものがありますので総件数が異なります。</br>
