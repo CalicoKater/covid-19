@@ -11,7 +11,7 @@ url = ARGV[0]
 # url = "https://www.mhlw.go.jp/stf/newpage_10352.html"
 # url = "https://www.mhlw.go.jp/stf/newpage_10812.html"
 
-# 公表日付の取得
+# ソースから公表日付の取得
 doc = Nokogiri::HTML.parse(open(url,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
 # report_date="2020-03-25"
 # report_date=Date.parse("2021-03-23")
@@ -21,19 +21,19 @@ report_date = Date.parse(wareki)
 # 形式の異なるものを差し替え
 case url
 when "https://www.mhlw.go.jp/stf/newpage_09966.html"
-  doc = Nokogiri::HTML.parse(File.read("no_1.html"))
+  doc = Nokogiri::HTML.parse(File.read("./var/no_1.html"))
 when "https://www.mhlw.go.jp/stf/newpage_10190.html"
-  doc = Nokogiri::HTML.parse(File.read("no_2.html"))
+  doc = Nokogiri::HTML.parse(File.read("./var/no_2.html"))
 when "https://www.mhlw.go.jp/stf/newpage_10200.html"
-  doc = Nokogiri::HTML.parse(File.read("no_3.html"))
+  doc = Nokogiri::HTML.parse(File.read("./var/no_3.html"))
 when "https://www.mhlw.go.jp/stf/newpage_10205.html"
-  doc = Nokogiri::HTML.parse(File.read("no_4_5.html"))
+  doc = Nokogiri::HTML.parse(File.read("./var/no_4_5.html"))
 when "https://www.mhlw.go.jp/stf/newpage_10313.html"
-  doc = Nokogiri::HTML.parse(File.read("no_6_7.html"))
+  doc = Nokogiri::HTML.parse(File.read("./var/no_6_7.html"))
 when "https://www.mhlw.go.jp/stf/newpage_10812.html"
-  doc = Nokogiri::HTML.parse(File.read("no_89_117.html"))
+  doc = Nokogiri::HTML.parse(File.read("./var/no_89_117.html"))
 when "https://www.mhlw.go.jp/stf/newpage_12034.html"
-  doc = Nokogiri::HTML.parse(File.read("no_280_282.html"))
+  doc = Nokogiri::HTML.parse(File.read("./var/no_280_282.html"))
 end
 
 # テーブル情報をcsvに書き換える
@@ -49,6 +49,8 @@ csv = CSV.generate{ |csv|
 # csvに追加の情報を追加、その他
 f=CSV.parse(csv, headers: false, liberal_parsing: {double_quote_outside_quote: true})
 f.each_with_index  do |line, n|
+
+  # 重複事例の削除フラグを立てる
   del_flg = 0
   if ( line[0] == "61" ) then 
     del_flg = 1
@@ -93,14 +95,15 @@ f.each_with_index  do |line, n|
   else
     print '"', line[5], '"', "," #行動歴
   end
+  #症状の補正
   if (line[6].size < 10) then
     print '"', line[6].gsub(/\n/,"").strip, '"', "," #症状
   else
     print '"', line[6], '"', "," #症状
   end
-  
+  #到着日、削除フラグ、ソースの追加
   print arrival_date, ","  # 到着日
   print del_flg, ","  # 削除フラグ
-  print url # url
+  print url # ソース 
   puts
 end
