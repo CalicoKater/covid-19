@@ -14,10 +14,10 @@ doc = Nokogiri::HTML.parse(open(url,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NON
 #link = doc.css("a")
 #puts link
 
-doc.xpath("//div").each do |f|
-# if not f.text.match(/（空港検疫）/) .nil? then
-   puts f[:href]
-# end
+doc.each do |f|
+  if not f.to_s.match(/（空港検疫）/) .nil? then
+    puts f[:href]
+  end
 end 
  # puts f.index("（空港検疫）")
   #if (n == 100) then
@@ -39,3 +39,7 @@ end
 #doc.css('a').each do |anchor|
 #  p anchor[:href]
 #end
+#curl 'https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html' \
+#  -H 'Upgrade-Insecure-Requests: 1' \
+#  -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Mobile Safari/537.36' \
+#  --compressed
