@@ -20,22 +20,22 @@ response_get.lines.each do |f|
 end
 #urls.lines.each do |f|
 urls.reverse.each_with_index do |url, n|
-
-  # 公表日の取得
   uri = URI.parse(url[0])
   #doc = Nokogiri::HTML.parse(open(uri,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
   #wareki = doc.search(:time).text
   #report_date = Date.parse(wareki) 
-
-  a=0
-  s=0
-  # 症状別の症例件数の取得
   response_get = Net::HTTP::get(uri)
   response_get.force_encoding("UTF-8")
+  response_hash = Digest::MD5.hexdigest(response_get)
+
+  # 公表日の取得
   doc = Nokogiri::HTML.parse(response_get)
   wareki = doc.search(:time).text
   report_date = Date.parse(wareki) 
 
+  # 症状別の症例件数の取得
+  a=0
+  s=0
   response_get.lines.each do |f|
   #  doc.each do |f|
     if not f.match(/が報告されました/).nil? then
@@ -55,5 +55,5 @@ urls.reverse.each_with_index do |url, n|
       end
     end
   end
-  puts [ n+1, report_date.to_s, a, s, uri ].join(",")
+  puts [ n + 1, report_date.to_s, s, a, uri, response_hash ].join(",")
 end

@@ -1,0 +1,1 @@
+curl -s  https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/development/data/positive_by_diagnosed.json | jq -r '.data[]|[.diagnosed_date, .count]|@csv'
