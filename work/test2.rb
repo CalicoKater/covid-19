@@ -19,7 +19,7 @@ response_get.lines.each do |f|
   end
 end
 #urls.lines.each do |f|
-urls.reverse.each_with_index do |url, n|
+urls.reverse.each_with_index do |url|
   uri = URI.parse(url[0])
   #doc = Nokogiri::HTML.parse(open(uri,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
   #wareki = doc.search(:time).text
@@ -55,5 +55,5 @@ urls.reverse.each_with_index do |url, n|
       end
     end
   end
-  puts [ n + 1, report_date.to_s, s, a, uri, response_hash ].join(",")
+  puts [ report_date.to_s, s, a, uri, response_hash ].join(",")
 end
