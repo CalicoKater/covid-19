@@ -1,0 +1,24 @@
+Fitting of the distribution ' weibull ' by maximum likelihood 
+Parameters : 
+      estimate Std. Error
+shape 1.501224 0.01726725
+scale 5.287309 0.05287150
+Loglikelihood:  -11899.43   AIC:  23802.85   BIC:  23815.81 
+Correlation matrix:
+          shape     scale
+shape 1.0000000 0.2802095
+scale 0.2802095 1.0000000
+
+
+alpha=1.5
+beta=5.3
+w <- rweibull(10000,shape=1.8,scale=6.3)
+
+ ruby tky.rb abc.html | tail -n +2  | awk -F"," '{for (i = 1; i< $2; i++) { print $1}}' 
+ 
+ 
+ ruby tky.rb abc.html | tail -n +2  | awk -F"," '{for (i = 0; i< $2; i++) { print $1}}' | pbcopy
+ 
+w <- rweibull(10000,shape=1.8,scale=5.8) 
+mean(w)
+sd(w)
