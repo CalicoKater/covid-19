@@ -1,0 +1,17 @@
+ cat tokyo_positive_by_diagnosed.csv | awk -F, 'NR > 1 {for (i = 0; i < $2; i++) {print $1}}'  | pbcopy 
+ 
+ https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/44b0b30d3c85444c150fff51c43ad405cf6e7a3a/data/positive_by_diagnosed.json 
+ https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/200ecfdea73c626bfe9d747e75cfb76f84cf3aef/data/positive_by_diagnosed.json
+ 
+ 
+ 
+
+発症ー確定
+ワイブル shape = 1.8 scale=6.2
+
+確定ー報告
+ meanlog 0.1531981 0.010236915
+sdlog   0.3224222 0.007238279
+
+
+join -t, -a 1 -a 2 tk1.txt tk2.txt 

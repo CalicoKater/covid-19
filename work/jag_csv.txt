@@ -1,0 +1,4 @@
+#!/bin/bash
+curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
+# cat  COVID-19.csv | cut -d, -f 6-10 | grep -v "東京都" | awk -F, -f jag1.awk | pbcopy
+# cat  COVID-19.csv | cut -d, -f 6-10 | awk -F, -f jag1.awk
