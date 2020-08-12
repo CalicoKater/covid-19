@@ -1,0 +1,16 @@
+require 'pdf/reader'
+
+File.open("zokusei_ichiran.pdf", "rb") do |io|
+  # インスタンス化
+  reader = PDF::Reader.new(io)
+
+  # PDF情報出力
+  puts reader.pdf_version
+  puts reader.info
+  puts reader.page_count
+
+  # ページ単位で読み込み、テキスト出力
+  reader.pages.each do |page|
+    puts page.text
+  end
+end
