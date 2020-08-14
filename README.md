@@ -1,3 +1,25 @@
+# 新型コロナウイルス感染症の東京都の感染動向に関するファイル
+
+東京都が発表している新型コロナウイルス感染症の陽性者数、確定日別陽性者数、発症日別陽性者数、
+PCR検査及び抗原検査に関する検査数と陽性及び陰性者数のCSVファイルと生成するスクリプトファイル
+
+## データソース
+
+東京都 新型コロナウイルス感染症対策サイト https://stopcovid19.metro.tokyo.lg.jp/ のgithubにあるデータ
+https://github.com/tokyo-metropolitan-gov/covid19/tree/development/data/
+
+## ファイルの説明
+* 生成用スクリプト: tokyo_covid19.sh
+- [tokyo_daily_positive_detail.csv](/tokyo_daily_positive_detail.csv) </br>
+　→　報告日（公表日）ごとの陽性者数、接触歴等判明者数（濃厚接触者）、接触歴不明者数（経路不明者数）
+- [tokyo_positive_by_confirmed.csv](/tokyo_positive_by_confirmed.csv)
+　→　確定日ごとの陽性者数
+- [tokyo_positive_rate.csv](/tokyo_positive_rate.csv)
+　→　検査判明日ごとの陽性者数と陰性者数（PCR検査と抗原検査）
+- [tokyo_positive_by_onset.csv](/tokyo_positive_by_onset.csv)
+　→　発症日ごとの陽性者数
+
+
 # 新型コロナウイルス感染症の空港検疫に関するファイル
 
 厚生労働省が発表している新型コロナウイルス感染症の空港検疫に関する感染者数や
