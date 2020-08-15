@@ -24,6 +24,3 @@ https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_patients.csv
 
 
 
-curl 'https://stopcovid19.metro.tokyo.lg.jp/cards/number-of-confirmed-cases/?embed=true' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:78.0) Gecko/20100101 Firefox/78.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Accept-Language: ja,en-US;q=0.7,en;q=0.3' --compressed -H 'Upgrade-Insecure-Requests: 1' -H 'Connection: keep-alive' -H 'Cookie: _ga=GA1.3.2145832367.1596017904; _gid=GA1.3.2025075195.1596017904; _gat=1'
-
-curl 'https://stopcovid19.metro.tokyo.lg.jp/cards/number-of-confirmed-cases/?embed=true' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:78.0) Gecko/20100101 Firefox/78.0' -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8' -H 'Accept-Language: ja,en-US;q=0.7,en;q=0.3' --compressed -H 'Upgrade-Insecure-Requests: 1' -H 'Connection: keep-alive' -H 'Cookie: _ga=GA1.3.2145832367.1596017904; _gid=GA1.3.2025075195.1596017904'

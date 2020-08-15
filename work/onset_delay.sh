@@ -1,0 +1,26 @@
+#!/bin/bash
+#8/11
+url="https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/2aec45b215931802c1245dbde1f4448b3a347959/data/positive_by_developed.json"
+update_at=`curl -s $url | jq -r '.date'`; date=`date  -j -f "%Y/%m/%d %H:%M" "$update_at" +"%Y-%m-%d"`
+curl -s $url | jq -r '.data[]|[.developed_date, .count]|@csv' > onset_$date.txt
+
+#8/12
+url="https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/cf202b4f1a2ed2cf974ecf455f0a4fa47be60987/data/positive_by_developed.json"
+update_at=`curl -s $url | jq -r '.date'`; date=`date  -j -f "%Y/%m/%d %H:%M" "$update_at" +"%Y-%m-%d"`
+curl -s $url | jq -r '.data[]|[.developed_date, .count]|@csv' > onset_$date.txt
+
+#8/13
+url="https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/8c3e6db495a7b7ded26d4385023c751084502426/data/positive_by_developed.json"
+update_at=`curl -s $url | jq -r '.date'`; date=`date  -j -f "%Y/%m/%d %H:%M" "$update_at" +"%Y-%m-%d"`
+curl -s $url | jq -r '.data[]|[.developed_date, .count]|@csv' > onset_$date.txt
+
+#8/14
+url="https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/65263cd70904156aeb2da68574bca5951ca844b3/data/positive_by_developed.json"
+update_at=`curl -s $url | jq -r '.date'`; date=`date  -j -f "%Y/%m/%d %H:%M" "$update_at" +"%Y-%m-%d"`
+curl -s $url | jq -r '.data[]|[.developed_date, .count]|@csv' > onset_$date.txt
+
+
+(day=2020-08-12; join -t, -a 1 -a 2 onset_2020-08-11.txt onset_2020-08-12.txt  | awk -v p=$day -F, '$3-$2>0{print p,$1, $3-$2}'
+day=2020-08-13; join -t, -a 1 -a 2 onset_2020-08-12.txt onset_2020-08-13.txt  | awk -v p=$day -F, '$3-$2>0{print p,$1, $3-$2}'
+day=2020-08-14; join -t, -a 1 -a 2 onset_2020-08-13.txt onset_2020-08-14.txt  | awk -v p=$day -F, '$3-$2>0{print p,$1, $3-$2}'
+) > df.txt
