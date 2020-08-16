@@ -19,8 +19,19 @@ url="https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/65263cd709
 update_at=`curl -s $url | jq -r '.date'`; date=`date  -j -f "%Y/%m/%d %H:%M" "$update_at" +"%Y-%m-%d"`
 curl -s $url | jq -r '.data[]|[.developed_date, .count]|@csv' > onset_$date.txt
 
+#8/15
+url="https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/7e059393d14bcc63a807a58923e9ec68009d162a/data/positive_by_developed.json"
+update_at=`curl -s $url | jq -r '.date'`; date=`date  -j -f "%Y/%m/%d %H:%M" "$update_at" +"%Y-%m-%d"`
+curl -s $url | jq -r '.data[]|[.developed_date, .count]|@csv' > onset_$date.txt
 
-(day=2020-08-12; join -t, -a 1 -a 2 onset_2020-08-11.txt onset_2020-08-12.txt  | awk -v p=$day -F, '$3-$2>0{print p,$1, $3-$2}'
-day=2020-08-13; join -t, -a 1 -a 2 onset_2020-08-12.txt onset_2020-08-13.txt  | awk -v p=$day -F, '$3-$2>0{print p,$1, $3-$2}'
-day=2020-08-14; join -t, -a 1 -a 2 onset_2020-08-13.txt onset_2020-08-14.txt  | awk -v p=$day -F, '$3-$2>0{print p,$1, $3-$2}'
+#8/16
+url="https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/804a986fc6b2845e02f7bd7dc17813dabe140304/data/positive_by_developed.json"
+update_at=`curl -s $url | jq -r '.date'`; date=`date  -j -f "%Y/%m/%d %H:%M" "$update_at" +"%Y-%m-%d"`
+curl -s $url | jq -r '.data[]|[.developed_date, .count]|@csv' > onset_$date.txt
+
+( day=2020-08-12; join -t, -a 1 -a 2 onset_2020-08-12.txt onset_2020-08-11.txt  | awk -v p=$day -F, '$2-$3>0{print p,$1, $2-$3}'
+  day=2020-08-13; join -t, -a 1 -a 2 onset_2020-08-13.txt onset_2020-08-12.txt  | awk -v p=$day -F, '$2-$3>0{print p,$1, $2-$3}'
+  day=2020-08-14; join -t, -a 1 -a 2 onset_2020-08-14.txt onset_2020-08-13.txt  | awk -v p=$day -F, '$2-$3>0{print p,$1, $2-$3}'
+  day=2020-08-15; join -t, -a 1 -a 2 onset_2020-08-15.txt onset_2020-08-14.txt  | awk -v p=$day -F, '$2-$3>0{print p,$1, $2-$3}'
+  day=2020-08-16; join -t, -a 1 -a 2 onset_2020-08-16.txt onset_2020-08-15.txt  | awk -v p=$day -F, '$2-$3>0{print p,$1, $2-$3}'
 ) > df.txt
