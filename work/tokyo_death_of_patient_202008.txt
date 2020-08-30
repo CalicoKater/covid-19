@@ -1,0 +1,15 @@
+/tosei/hodohappyo/press/2020/08/03/18.html, 新型コロナウイルスに関連した患者の死亡（第635報）
+/tosei/hodohappyo/press/2020/08/10/02.html, 新型コロナウイルスに関連した患者の死亡（第660報）
+/tosei/hodohappyo/press/2020/08/11/09.html, 新型コロナウイルスに関連した患者の死亡（第664報）
+/tosei/hodohappyo/press/2020/08/13/17.html, 新型コロナウイルスに関連した患者の死亡（第673報）
+/tosei/hodohappyo/press/2020/08/16/03.html, 新型コロナウイルスに関連した患者の死亡（第682報）
+/tosei/hodohappyo/press/2020/08/17/13.html, 新型コロナウイルスに関連した患者の死亡（第685報）
+/tosei/hodohappyo/press/2020/08/18/07.html, 新型コロナウイルスに関連した患者の死亡（第688報）
+/tosei/hodohappyo/press/2020/08/19/14.html, 新型コロナウイルスに関連した患者の死亡（第693報）
+/tosei/hodohappyo/press/2020/08/20/18.html, 新型コロナウイルスに関連した患者の死亡（第697報）
+/tosei/hodohappyo/press/2020/08/21/13.html, 新型コロナウイルスに関連した患者の死亡（第701報）
+/tosei/hodohappyo/press/2020/08/24/09.html, 新型コロナウイルスに関連した患者の死亡（第708報）
+/tosei/hodohappyo/press/2020/08/25/14.html, 新型コロナウイルスに関連した患者の死亡（第711報）
+/tosei/hodohappyo/press/2020/08/26/11.html, 新型コロナウイルスに関連した患者の死亡（第719報）
+/tosei/hodohappyo/press/2020/08/28/15.html, 新型コロナウイルスに関連した患者の死亡（第731報）
+/tosei/hodohappyo/press/2020/08/30/04.html, 新型コロナウイルスに関連した患者の死亡（第736報）
