@@ -1,9 +1,8 @@
 #!/bin/bash
 
-#for i in {03..07} 
+#for i in {02..07} 
 #do 
 #  url="https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/$i/index.html"
-#  echo fname
 #  curl -s $url | xmllint --html --xpath '//a' - | tr ' ' '\n' \
 #  | grep "新型コロナウイルスに関連した患者の死亡" \
 #  | sed -e 's/<\/a><a//g' -e 's/href=//g' -e 's/\"//g' -e 's/>/, /g' | tail -r \
