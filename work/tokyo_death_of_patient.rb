@@ -24,13 +24,14 @@ response_get.lines.each do |f|
     press_date = Date.parse(f.gsub(/[^0-9]/,""))
   end
 end
+
 #puts press_date
 doc = Nokogiri::HTML.parse(open(url,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
 table = doc.search(:table).first
 csv = CSV.generate{ |csv|
   table.search(:tr).each_with_index do |tr, row|
     if ( row > 0 ) then
-      csv << tr.search("th, td").map{|tag|tag.text.gsub(/―|-|/,'')}
+      csv << tr.search("th, td").map{|tag|tag.text.gsub(/―|-|/,'').strip}
     end
   end
 }
@@ -40,12 +41,13 @@ if press_date == Date.parse("2020-05-21") then
   csv << CSV.generate{ |csv|
     table.search(:tr).each_with_index do |tr, row|
       if ( row > 0 ) then
-        csv << tr.search("th, td").map{|tag|tag.text.gsub(/―|-|/,'')}
+        csv << tr.search("th, td").map{|tag|tag.text.gsub(/―|-|/,'').strip}
       end
     end
   }  
 end
 
+#doc.close
 #puts csv
 f = CSV.parse(csv, headers: false, liberal_parsing: {double_quote_outside_quote: true})
 f.each_with_index  do |line, n|
@@ -54,5 +56,5 @@ f.each_with_index  do |line, n|
   #death_date = Date.parse("２０２０年" +line[5])
   #プレス日付, 枝番, 年代, 性別, 居住地, 発症日, 診断日, 死亡日, ソース
   #puts [ press_date, line[0], line[1], line[2], line[3],,confirm_date, death_date, url ].join(",")
-  puts [ press_date, line[0], line[1].strip, line[2], line[3],"", line[4], line[5], url ].join(",")
+  puts [ press_date, line[0], line[1], line[2], line[3], "", line[4], line[5], url ].join(",")
 end

@@ -13,6 +13,7 @@ done
 (
   for url in `cut -d, -f 1 tokyo_death_of_patient_20200{4..7}.txt`; do
     url="https://www.metro.tokyo.lg.jp$url"
+    sleep 1
     ruby tokyo_death_of_patient.rb $url
     #echo $url
   done
@@ -27,7 +28,7 @@ done
 
 (
   for url in `cut -d, -f 1 tokyo_death_of_patient_202008.txt`; do
-    #sleep 1
+    sleep 1
     url="https://www.metro.tokyo.lg.jp$url"
     ruby tokyo_death_of_patient.rb $url
   done
