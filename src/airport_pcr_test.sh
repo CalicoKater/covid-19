@@ -1,4 +1,5 @@
 #!/bin/bash
+#curl -s https://www.mhlw.go.jp/content/current_situation.csv | iconv -f SJIS | grep "空港検疫" \
 curl -s https://www.mhlw.go.jp/content/current_situation.csv | grep "空港検疫" \
   | gawk -v FPAT='([^,]+)|(\"[^\"]+\")' '{print $2 "n" $3}' | tr -d '\\,+"()' | tr 'n' ',' > ./var/current.tmp
 
