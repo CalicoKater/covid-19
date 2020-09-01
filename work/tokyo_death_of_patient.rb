@@ -31,7 +31,7 @@ table = doc.search(:table).first
 csv = CSV.generate{ |csv|
   table.search(:tr).each_with_index do |tr, row|
     if ( row > 0 ) then
-      csv << tr.search("th, td").map{|tag|tag.text.gsub(/―|-|/,'').strip}
+      csv << tr.search("th, td").map{|tag|tag.text.strip.gsub(/―|-|\u00A0/,'')}
     end
   end
 }
@@ -41,7 +41,7 @@ if press_date == Date.parse("2020-05-21") then
   csv << CSV.generate{ |csv|
     table.search(:tr).each_with_index do |tr, row|
       if ( row > 0 ) then
-        csv << tr.search("th, td").map{|tag|tag.text.gsub(/―|-|/,'').strip}
+        csv << tr.search("th, td").map{|tag|tag.text.strip.gsub(/―|-|\u00A0/,'')}
       end
     end
   }  
