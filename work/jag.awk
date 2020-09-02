@@ -1,3 +1,6 @@
-NR>1 {
-  print $1
+NR > 1 {
+  switch($10) {
+  case "東京都":
+    s[13] += $
+  } case 
 }
