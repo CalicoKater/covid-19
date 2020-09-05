@@ -2,6 +2,8 @@
 curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
 
 # cat COVID-19.csv | cut -d, -f 1,6-10,41 | grep -v "東京都" | awk -F, -f jag1.awk 
+# cat COVID-19.csv | cut -d, -f 1,6-10,41 | grep -v "東京都" -v "大阪府" | awk -F, -f jag1.awk 
+
 cat COVID-19.csv | cut -d, -f 1,6-10,41 | awk -F, -f jag1.awk | pbcopy 
 
 #cat tokyo_positive_by_diagnosed.csv| awk -F, 'NR > 1 {for (i = 0; i < $2; i++) {print $1}}'
