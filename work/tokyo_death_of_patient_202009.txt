@@ -3,3 +3,4 @@
 /tosei/hodohappyo/press/2020/09/04/11.html, 新型コロナウイルスに関連した患者の死亡（第764報）
 /tosei/hodohappyo/press/2020/09/07/13.html, 新型コロナウイルスに関連した患者の死亡（第770報）
 /tosei/hodohappyo/press/2020/09/08/12.html, 新型コロナウイルスに関連した患者の死亡（第773報）
+/tosei/hodohappyo/press/2020/09/09/12.html, 新型コロナウイルスに関連した患者の死亡（第775報）
