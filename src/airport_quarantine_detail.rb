@@ -34,6 +34,8 @@ when "https://www.mhlw.go.jp/stf/newpage_10812.html"
   doc = Nokogiri::HTML.parse(File.read("./var/no_89_117.html"))
 when "https://www.mhlw.go.jp/stf/newpage_12034.html"
   doc = Nokogiri::HTML.parse(File.read("./var/no_280_282.html"))
+when "https://www.mhlw.go.jp/stf/newpage_13505.html"
+  doc = Nokogiri::HTML.parse(File.read("./var/no_826_828.html"))
 end
 
 # テーブル情報をcsvに書き換える
