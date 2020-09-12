@@ -154,6 +154,16 @@ url="https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/851824ba1e
 update_at=`curl -s $url | jq -r '.date'`; date=`date  -j -f "%Y/%m/%d %H:%M" "$update_at" +"%Y-%m-%d"`
 curl -s $url | jq -r '.data[]|[.developed_date, .count]|@csv' > onset_$date.txt
 
+#9/11
+url="https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/444d946ffdb01b9fd7148bdbe5b50dbc46d855bb/data/positive_by_developed.json"
+update_at=`curl -s $url | jq -r '.date'`; date=`date  -j -f "%Y/%m/%d %H:%M" "$update_at" +"%Y-%m-%d"`
+curl -s $url | jq -r '.data[]|[.developed_date, .count]|@csv' > onset_$date.txt
+
+#9/12
+url="https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/7d1403ab4daa8e9a323f2897be85b9ffb44dd773/data/positive_by_developed.json"
+update_at=`curl -s $url | jq -r '.date'`; date=`date  -j -f "%Y/%m/%d %H:%M" "$update_at" +"%Y-%m-%d"`
+curl -s $url | jq -r '.data[]|[.developed_date, .count]|@csv' > onset_$date.txt
+
 ( day=2020-08-12; join -t, -a 1 -a 2 onset_2020-08-12.txt onset_2020-08-11.txt  | awk -v p=$day -F, '$2-$3!=0{print p,$1, $2-$3}'
   day=2020-08-13; join -t, -a 1 -a 2 onset_2020-08-13.txt onset_2020-08-12.txt  | awk -v p=$day -F, '$2-$3!=0{print p,$1, $2-$3}'
   day=2020-08-14; join -t, -a 1 -a 2 onset_2020-08-14.txt onset_2020-08-13.txt  | awk -v p=$day -F, '$2-$3!=0{print p,$1, $2-$3}'
@@ -184,4 +194,6 @@ curl -s $url | jq -r '.data[]|[.developed_date, .count]|@csv' > onset_$date.txt
   day=2020-09-08; join -t, -a 1 -a 2 onset_2020-09-08.txt onset_2020-09-07.txt  | awk -v p=$day -F, '$2-$3!=0{print p,$1, $2-$3}'
   day=2020-09-09; join -t, -a 1 -a 2 onset_2020-09-09.txt onset_2020-09-08.txt  | awk -v p=$day -F, '$2-$3!=0{print p,$1, $2-$3}'
   day=2020-09-10; join -t, -a 1 -a 2 onset_2020-09-10.txt onset_2020-09-09.txt  | awk -v p=$day -F, '$2-$3!=0{print p,$1, $2-$3}'
+  day=2020-09-11; join -t, -a 1 -a 2 onset_2020-09-11.txt onset_2020-09-10.txt  | awk -v p=$day -F, '$2-$3!=0{print p,$1, $2-$3}'
+  day=2020-09-12; join -t, -a 1 -a 2 onset_2020-09-12.txt onset_2020-09-11.txt  | awk -v p=$day -F, '$2-$3!=0{print p,$1, $2-$3}'
 ) > df.txt
