@@ -39,3 +39,13 @@ link=`ruby ccc2.rb http://www.pref.fukushima.lg.jp/w4/covid19/patients/ | grep "
 url="http://www.pref.fukushima.lg.jp/w4/covid19/patients/$link"
 curl -s $url | iconv -f SJIS > 07_fukushima2.csv
 
+#08 茨城県
+url="https://www.pref.ibaraki.jp/1saigai/2019-ncov/ichiran.html"
+ruby ccc2.rb $url > 08_ibaraki.csv
+
+#09 栃木県
+link=`curl -s http://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/coronakensahasseijyoukyou.html \
+ | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[1]/li[2]/a' - | cut -d\" -f 2`
+url="http://www.pref.tochigi.lg.jp$link"
+curl -s -o 09_tochigi.xlsx $url
+/usr/local/bin/xlsx2csv 09_tochigi.xlsx > 09_tochigi.csv
