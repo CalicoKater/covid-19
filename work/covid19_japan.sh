@@ -55,7 +55,6 @@ curl -s $url | iconv -f SJIS > 11_saitama.csv
 link=`curl -s https://www.pref.chiba.lg.jp/shippei/press/2019/ncov-index.html | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[1]/li[1]/a' - | cut -d\" -f 2`
 url="https://www.pref.chiba.lg.jp$link"
 curl -s -o 12_chiba.pdf $url
-open -W /Applications/iLovePDF/iLovePDF.app 
 xlsx2csv -s 1 12_chiba_PdfToExcel.xlsx > 12_chiba.csv
 xlsx2csv -s 2 12_chiba_PdfToExcel.xlsx > 12_chiba2.csv
 
