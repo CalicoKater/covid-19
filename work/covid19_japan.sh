@@ -55,8 +55,21 @@ curl -s $url | iconv -f SJIS > 11_saitama.csv
 link=`curl -s https://www.pref.chiba.lg.jp/shippei/press/2019/ncov-index.html | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[1]/li[1]/a' - | cut -d\" -f 2`
 url="https://www.pref.chiba.lg.jp$link"
 curl -s -o 12_chiba.pdf $url
+ruby pdf_to_csv.rb 12_chiba.pdf | sed -e 's/^\[//' -e 's/\]$//' > 12_chiba.csv
+
+
+#xlsx2csv -s 1 12_chiba_PdfToExcel.xlsx > 12_chiba.csv
 xlsx2csv -s 1 12_chiba_PdfToExcel.xlsx > 12_chiba.csv
-xlsx2csv -s 2 12_chiba_PdfToExcel.xlsx > 12_chiba2.csv
+xlsx2csv -s 2 12_chiba_PdfToExcel.xlsx >> 12_chiba.csv
+xlsx2csv -s 3 12_chiba_PdfToExcel.xlsx >> 12_chiba.csv
+xlsx2csv -s 4 12_chiba_PdfToExcel.xlsx >> 12_chiba.csv
+xlsx2csv -s 5 12_chiba_PdfToExcel.xlsx >> 12_chiba.csv
+xlsx2csv -s 6 12_chiba_PdfToExcel.xlsx >> 12_chiba.csv
+xlsx2csv -s 7 12_chiba_PdfToExcel.xlsx >> 12_chiba.csv
+
+#xlsx2csv -s 2 12_chiba_PdfToExcel.xlsx > 12_chiba2.csv
+xlsx2csv -s 8 12_chiba_PdfToExcel.xlsx > 12_chiba2.csv
+xlsx2csv -s 9 12_chiba_PdfToExcel.xlsx >> 12_chiba2.csv
 
 #13 東京都
 url="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_patients.csv"

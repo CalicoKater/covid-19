@@ -1,6 +1,8 @@
 require 'pdf-reader'
 
-File.open('zokusei_ichiran.pdf', 'rb') do |io|
+pdf_file=ARGV[0]
+
+File.open(pdf_file, 'rb') do |io|
   reader = PDF::Reader.new(io)
   pages = []
 

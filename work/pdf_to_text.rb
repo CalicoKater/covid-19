@@ -1,6 +1,6 @@
 require "poppler"
 
-document = Poppler::Document.new("20200807zokusei_ichiran.pdf")
+document = Poppler::Document.new("12_chiba.pdf")
 
 puts document[0].get_text
 puts document.count
@@ -27,4 +27,5 @@ document.each do |page|
   # Showing parsed data
   pages.each do |page|
     page.each { |rows| p rows }
+    #page.each { |rows| puts rows[0] }
   end
