@@ -40,3 +40,13 @@ link=`curl -s http://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/co
 url="http://www.pref.tochigi.lg.jp$link"
 curl -s -o 09_tochigi.xlsx $url
 /usr/local/bin/xlsx2csv 09_tochigi.xlsx > 09_tochigi.csv
+
+#10 群馬県
+url="http://stopcovid19.pref.gunma.jp/csv/01kanja.csv"
+curl -s -o 10_gunma.csv $url
+url="https://www.pref.gunma.jp/contents/100168631.pdf"
+curl -s -o 10_gunma.pdf $url
+
+#11 埼玉県
+url=`curl -s https://opendata.pref.saitama.lg.jp/data/dataset/covid19-jokyo | grep -e "jokyo.*\.csv" | tail -n 1 | cut -d\" -f 2`
+curl -s $url | iconv -f SJIS > 11_saitama.csv
