@@ -50,3 +50,23 @@ curl -s -o 10_gunma.pdf $url
 #11 埼玉県
 url=`curl -s https://opendata.pref.saitama.lg.jp/data/dataset/covid19-jokyo | grep -e "jokyo.*\.csv" | tail -n 1 | cut -d\" -f 2`
 curl -s $url | iconv -f SJIS > 11_saitama.csv
+
+#12 千葉県
+link=`curl -s https://www.pref.chiba.lg.jp/shippei/press/2019/ncov-index.html | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[1]/li[1]/a' - | cut -d\" -f 2`
+url="https://www.pref.chiba.lg.jp$link"
+curl -s -o 12_chiba.pdf $url
+open -W /Applications/iLovePDF/iLovePDF.app 
+xlsx2csv -s 1 12_chiba_PdfToExcel.xlsx > 12_chiba.csv
+xlsx2csv -s 2 12_chiba_PdfToExcel.xlsx > 12_chiba2.csv
+
+#13 東京都
+url="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_patients.csv"
+curl -s -o 13_tokyo.csv $url
+
+#14 神奈川県
+url="https://www.pref.kanagawa.jp/osirase/1369/data/csv/patient.csv"
+curl -s $url | iconv -f SJIS > 14_kanagawa.csv
+
+#40 福岡県
+url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
+curl -s -o 40_fukuoka.csv $url
