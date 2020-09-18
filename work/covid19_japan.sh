@@ -91,6 +91,11 @@ link=`curl -s http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html \
 curl -s -o 16_toyama2.xlsx $link
 xlsx2csv 16_toyama2.xlsx > 16_toyama2.csv
 
+#17 石川県
+url="https://www.pref.ishikawa.lg.jp/kansen/documents/170003_ishikawa_covid19_patients.csv"
+curl -s $url | iconv -f SJIS > 17_ishikawa.csv
+
+
 #18 福井県
 url="https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_patients.csv"
 curl -s -o 18_fukui.csv $url
