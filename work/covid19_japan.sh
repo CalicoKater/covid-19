@@ -79,6 +79,18 @@ curl -s -o 13_tokyo.csv $url
 url="https://www.pref.kanagawa.jp/osirase/1369/data/csv/patient.csv"
 curl -s $url | iconv -f SJIS > 14_kanagawa.csv
 
+#15 新潟県
+url="https://www.pref.niigata.lg.jp/site/shingata-corona/256362836.html"
+ruby ccc2.rb $url > 15_niigata.csv
+
+#16 富山県
+url="http://opendata.pref.toyama.jp/files/covid19/20200403/toyama_patients.csv"
+curl -s -o 16_toyama.csv $url
+link=`curl -s http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html \
+ | xmllint --html --xpath '//*[@id="file"]/ul/li[1]/a' - | iconv -f SJIS | cut -d\" -f 2`
+curl -s -o 16_toyama2.xlsx $link
+xlsx2csv 16_toyama2.xlsx > 16_toyama2.csv
+
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
 curl -s -o 40_fukuoka.csv $url
