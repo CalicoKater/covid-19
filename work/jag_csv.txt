@@ -2,10 +2,17 @@
 curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
 
 # cat COVID-19.csv | cut -d, -f 1,6-10,41 | grep -v "東京都" | awk -F, -f jag1.awk 
-# cat COVID-19.csv | cut -d, -f 1,6-10,41 | grep -v "東京都" -v "大阪府" | awk -F, -f jag1.awk 
+# cat COVID-19.csv | cut -d, -f 1,6-10,41 | grep -v "東京都" -v "大阪府" -v "千葉県" -v "兵庫県" -v "北海道" | awk -F, -f jag1.awk 
+ 
 
-cat COVID-19.csv | cut -d, -f 1,6-10,41 | awk -F, -f jag1.awk | pbcopy 
+# cat COVID-19.csv | cut -d, -f 1,6-10,41 | awk -F, -f jag1.awk | pbcopy 
 
 #cat tokyo_positive_by_diagnosed.csv| awk -F, 'NR > 1 {for (i = 0; i < $2; i++) {print $1}}'
 # cat tokyo_positive_by_confirmed.csv| awk -F, 'NR > 1 {for (i = 0; i < $2; i++) {print $1}}'
-# cat tokyo_positive_by_onset.csv| awk -F, 'NR > 1 {for (i = 0; i < $2; i++) {print $1}}'
+
+cat COVID-19.csv | cut -d, -f 1,6-10,41 | grep -v "東京都" | grep -v "大阪府" | grep -v "千葉県" | grep  -v "兵庫県" | grep -v "北海道" | awk -F, -f jag1.awk | pbcopy
+
+cat tokyo_positive_by_onset.csv| awk -F, 'NR > 1 {for (i = 0; i < $2; i++) {print $1}}'
+
+(head -n 1 COVID-19.csv | cut -d, -f 1,6-10,41 && cat COVID-19.csv | cut -d, -f 1,6-10,41 | grep -e "神奈川県")  | awk -F, -f jag1.awk
+
