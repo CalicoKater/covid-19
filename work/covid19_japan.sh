@@ -91,6 +91,10 @@ link=`curl -s http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html \
 curl -s -o 16_toyama2.xlsx $link
 xlsx2csv 16_toyama2.xlsx > 16_toyama2.csv
 
+#18 福井県
+url="https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_patients.csv"
+curl -s -o 18_fukui.csv $url
+
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
 curl -s -o 40_fukuoka.csv $url
