@@ -105,6 +105,11 @@ curl -s $url | iconv -f SJIS > 17_ishikawa.csv
 url="https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_patients.csv"
 curl -s -o 18_fukui.csv $url
 
+# 19 山梨県
+url="https://www.pref.yamanashi.jp/koucho/coronavirus/documents/yousei.xlsx"
+curl -s -o 19_yamanashi.xlsx $url
+xlsx2csv 19_yamanashi.xlsx > 19_yamanashi.csv
+
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
 curl -s -o 40_fukuoka.csv $url
