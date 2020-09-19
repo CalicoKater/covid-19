@@ -111,7 +111,7 @@ curl -s -o 19_yamanashi.xlsx $url
 xlsx2csv 19_yamanashi.xlsx > 19_yamanashi.csv
 
 #20 長野県
-url="https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/documents/200000_nagano_covid19_patients.csv "
+url="https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/documents/200000_nagano_covid19_patients.csv"
 curl -s $url | iconv -f SJIS  > 20_nagano.csv
 
 
