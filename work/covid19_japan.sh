@@ -57,24 +57,24 @@ url="https://www.pref.chiba.lg.jp$link"
 curl -s -o 12_chiba.pdf $url
 #ruby pdf_to_csv.rb 12_chiba.pdf | sed -e 's/^\[//' -e 's/\]$//' > 12_chiba.csv
 
-xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
-xlsx2csv -s 2 12_chiba.xlsx > 12_chiba2.csv
+# ２シートに分かれた場合
+#xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
+#xlsx2csv -s 2 12_chiba.xlsx > 12_chiba2.csv
 
 #xlsx2csv -s 1 12_chiba_PdfToExcel.xlsx > 12_chiba.csv
 #xlsx2csv -s 2 12_chiba_PdfToExcel.xlsx > 12_chiba2.csv
 
-#xlsx2csv -s 1 12_chiba_PdfToExcel.xlsx | sed 's/^,//' > 12_chiba.csv
-#xlsx2csv -s 2 12_chiba_PdfToExcel.xlsx >> 12_chiba.csv
-#xlsx2csv -s 3 12_chiba_PdfToExcel.xlsx >> 12_chiba.csv
-#xlsx2csv -s 4 12_chiba_PdfToExcel.xlsx >> 12_chiba.csv
-#xlsx2csv -s 5 12_chiba_PdfToExcel.xlsx >> 12_chiba.csv
-#xlsx2csv -s 6 12_chiba_PdfToExcel.xlsx >> 12_chiba.csv
-#xlsx2csv -s 7 12_chiba_PdfToExcel.xlsx >> 12_chiba.csv
+# ページごとに別れた場合
 
-
-
-#xlsx2csv -s 8 12_chiba_PdfToExcel.xlsx | sed 's/^,//' > 12_chiba2.csv
-#xlsx2csv -s 9 12_chiba_PdfToExcel.xlsx >> 12_chiba2.csv
+xlsx2csv -s 1 12_chiba.xlsx | sed 's/^,//' > 12_chiba.csv
+xlsx2csv -s 2 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 3 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 4 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 5 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 6 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 7 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 8 12_chiba.xlsx | sed 's/^,//' > 12_chiba2.csv
+xlsx2csv -s 9 12_chiba.xlsx >> 12_chiba2.csv
 
 #13 東京都
 url="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_patients.csv"
@@ -116,7 +116,14 @@ curl -s $url | iconv -f SJIS  > 20_nagano.csv
 
 #21 岐阜県
 url="https://data.gifu-opendata.pref.gifu.lg.jp/dataset/4661bf9d-6f75-43fb-9d59-f02eb84bb6e3/resource/9c35ee55-a140-4cd8-a266-a74edf60aa80/download/210005gifucovid19patients.csv"
-curl -s $url | iconv -f SJis > 21_gifu.csv
+curl -s $url | iconv -f SJIS > 21_gifu.csv
+
+#22
+url="https://opendata.pref.shizuoka.jp/dataset/8167/resource/46279/220001_shizuoka_covid19_patients.csv"
+curl -s $url | iconv -f SJIS > 22_shizuoka.csv
+
+url="https://opendata.pref.shizuoka.jp/dataset/8113/resource/47635/221309_hamamatsu_covid19_patients.csv"
+curl -s $url | iconv -f SJIS > 22_shizuoka2.csv
 
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
