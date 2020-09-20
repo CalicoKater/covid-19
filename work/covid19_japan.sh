@@ -57,15 +57,13 @@ url="https://www.pref.chiba.lg.jp$link"
 curl -s -o 12_chiba.pdf $url
 #ruby pdf_to_csv.rb 12_chiba.pdf | sed -e 's/^\[//' -e 's/\]$//' > 12_chiba.csv
 
+#xlsx2csv --all 12_chiba.xlsx | sed 's/^,//'
+
 # ２シートに分かれた場合
 #xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
 #xlsx2csv -s 2 12_chiba.xlsx > 12_chiba2.csv
 
-#xlsx2csv -s 1 12_chiba_PdfToExcel.xlsx > 12_chiba.csv
-#xlsx2csv -s 2 12_chiba_PdfToExcel.xlsx > 12_chiba2.csv
-
 # ページごとに別れた場合
-
 xlsx2csv -s 1 12_chiba.xlsx | sed 's/^,//' > 12_chiba.csv
 xlsx2csv -s 2 12_chiba.xlsx >> 12_chiba.csv
 xlsx2csv -s 3 12_chiba.xlsx >> 12_chiba.csv
@@ -118,7 +116,7 @@ curl -s $url | iconv -f SJIS  > 20_nagano.csv
 url="https://data.gifu-opendata.pref.gifu.lg.jp/dataset/4661bf9d-6f75-43fb-9d59-f02eb84bb6e3/resource/9c35ee55-a140-4cd8-a266-a74edf60aa80/download/210005gifucovid19patients.csv"
 curl -s $url | iconv -f SJIS > 21_gifu.csv
 
-#22
+#22 静岡県
 url="https://opendata.pref.shizuoka.jp/dataset/8167/resource/46279/220001_shizuoka_covid19_patients.csv"
 curl -s $url | iconv -f SJIS > 22_shizuoka.csv
 
