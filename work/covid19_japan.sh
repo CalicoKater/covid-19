@@ -149,6 +149,8 @@ ruby ccc2.rb $url > 24_mie2.csv
 #url="https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066_00014.htm"
 #ruby ccc2.rb $url >> 24_mie2.csv
 
+#25 滋賀県
+ ruby ccc.rb shiga_table.html | tail -r > 25_shiga.csv
 
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"

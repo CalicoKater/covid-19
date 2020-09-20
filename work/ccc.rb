@@ -1,7 +1,9 @@
 require 'nokogiri'
 require 'csv'
 
-html = File.open('newpage_10711.html')
+#html = File.open('newpage_10711.html')
+html = File.open(ARGV[0])
+
 doc = Nokogiri.parse(html)
 table = doc.search(:table)
 csv = CSV.generate{ |csv|
