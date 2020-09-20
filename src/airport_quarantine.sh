@@ -11,6 +11,8 @@ curl -s $url | grep "（空港検疫）" | sed 's/<\/div>//g' | xmllint --html -
 # echo https://www.mhlw.go.jp/stf/newpage_13270.html >> ./var/airport_quarantine_link_list.txt
 # delay 2020-09-12
 # echo https://www.mhlw.go.jp/stf/newpage_13535.html >> ./var/airport_quarantine_link_list.txt
+# delay 2020-09-20
+# echo https://www.mhlw.go.jp/stf/newpage_13674.html >> ./var/airport_quarantine_link_list.txt
 
 for url in `cat ./var/airport_quarantine_link_list.txt`; do  
 
