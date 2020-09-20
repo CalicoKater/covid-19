@@ -135,7 +135,7 @@ curl -s -o 23_aichi2.pdf $url
 #ruby pdf_to_csv.rb 23_aichi.pdf | sed -e 's/^\[//' -e 's/\]$//' > 23_aichi.csv
 #ruby pdf_to_csv.rb 23_aichi2.pdf | sed -e 's/^\[//' -e 's/\]$//' >> 23_aichi.csv
 xlsx2csv 23_aichi.xlsx > 23_aichi.csv
-xlsx2csv 23_aichi2.xlsx >> 23_aichi.csv
+xlsx2csv 23_aichi2.xlsx > 23_aichi2.csv
 
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
