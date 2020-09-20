@@ -120,8 +120,9 @@ curl -s $url | iconv -f SJIS > 21_gifu.csv
 url="https://opendata.pref.shizuoka.jp/dataset/8167/resource/46279/220001_shizuoka_covid19_patients.csv"
 curl -s $url | iconv -f SJIS > 22_shizuoka.csv
 
-url="https://opendata.pref.shizuoka.jp/dataset/8113/resource/47635/221309_hamamatsu_covid19_patients.csv"
-curl -s $url | iconv -f SJIS > 22_shizuoka2.csv
+# ★★★保留★★★
+#url="https://opendata.pref.shizuoka.jp/dataset/8113/resource/47635/221309_hamamatsu_covid19_patients.csv"
+#curl -s $url | iconv -f SJIS > 22_shizuoka2.csv
 
 #23 愛知県
 link=`curl -s "https://www.pref.aichi.jp/site/covid19-aichi/" | xmllint --html --xpath '//*[@id="main_body"]/div[1]/p[4]/span[4]/a' - | cut -d\" -f 2`
@@ -137,6 +138,19 @@ curl -s -o 23_aichi2.pdf $url
 xlsx2csv 23_aichi.xlsx > 23_aichi.csv
 xlsx2csv 23_aichi2.xlsx > 23_aichi2.csv
 
+#24 三重県
+url="https://www.pref.mie.lg.jp/common/content/000896797.csv"
+curl -s $url | iconv -f SJIS > 24_mie.csv
+url="https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066_00011.htm"
+ruby ccc2.rb $url > 24_mie2.csv
+
+#url="https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066_00012.htm"
+#ruby ccc2.rb $url >> 24_mie2.csv
+#url="https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066_00014.htm"
+#ruby ccc2.rb $url >> 24_mie2.csv
+
+
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
 curl -s -o 40_fukuoka.csv $url
+
