@@ -1,4 +1,5 @@
 #!/bin/bash
+curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
 
 #01 北海道
 url="https://www.harp.lg.jp/opendata/dataset/1369/resource/3132/010006_hokkaido_covid19_patients.csv"
@@ -151,6 +152,8 @@ ruby ccc2.rb $url > 24_mie2.csv
 
 #25 滋賀県
  ruby ccc.rb shiga_table.html | tail -r > 25_shiga.csv
+
+ (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | grep -e "滋賀県")  | awk -F, -f jag2.awk > 25_shiga2.csv 
 
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"

@@ -16,3 +16,6 @@ cat tokyo_positive_by_onset.csv| awk -F, 'NR > 1 {for (i = 0; i < $2; i++) {prin
 
 (head -n 1 COVID-19.csv | cut -d, -f 1,6-10,41 && cat COVID-19.csv | cut -d, -f 1,6-10,41 | grep -e "神奈川県")  | awk -F, -f jag1.awk
 
+(head -n 1 COVID-19.csv | cut -d, -f 1,6-10,41 && cat COVID-19.csv | cut -d, -f 1,6-10,41 | grep -e "神奈川県")  | awk -F, -f jag1.awk
+
+(head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | grep -e "滋賀県")  | awk -F, -f jag2.awk
