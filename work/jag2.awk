@@ -2,7 +2,7 @@
 NR == 1 {
 print $0
 }
-# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | grep -e "滋賀県")  | awk -F, -f jag2.awk
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="滋賀県"')  | awk -F, -f jag2.awk > 25_shiga2.csv  
 # 通し,厚労省NO,無症状病原体保有者,国内,チャーター便,年代,性別,確定日,発症日,受診都道府県,
 # 居住都道府県,居住,居住市区町村,キー,発表,都道府県内症例番号,市町村内症例番号,ステータス,備考,ソース,ソース2,ソース3
 NR > 1 {
