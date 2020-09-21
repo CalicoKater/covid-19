@@ -152,8 +152,16 @@ ruby ccc2.rb $url > 24_mie2.csv
 
 #25 滋賀県
  ruby ccc.rb shiga_table.html | tail -r > 25_shiga.csv
-
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="滋賀県"')  | awk -F, -f jag2.awk > 25_shiga2.csv  
+
+#26 京都府
+url="https://www.pref.kyoto.jp/kentai/corona/hassei1-50.html"
+ruby ccc2.rb $url > 26_kyoto.csv
+
+url="https://www.pref.kyoto.jp/kentai/corona/documents/jyoukyo001-580.pdf"
+curl -s -o 26_kyoto.pdf $url
+xlsx2csv 26_kyoto.xlsx -s 1 >> 26_kyoto.csv
+xlsx2csv 26_kyoto.xlsx -s 2 >> 26_kyoto.csv
 
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
