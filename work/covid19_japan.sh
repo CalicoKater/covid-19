@@ -181,6 +181,11 @@ url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39388_5.xlsx"
 curl -s -o 27_osaka4.xlsx $url
 xlsx2csv -s 2 27_osaka4.xlsx >> 27_osaka2.csv
 
+#28 兵庫県
+url="https://web.pref.hyogo.lg.jp/kk03/documents/corona-kanjajokyou.xlsx"
+curl -s -o 28_hyogo.xlsx $url
+xlsx2csv 28_hyogo.xlsx | sed 's/^,//' > 28_hyogo.csv
+
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
 curl -s -o 40_fukuoka.csv $url
