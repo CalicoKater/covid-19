@@ -74,6 +74,7 @@ xlsx2csv -s 6 12_chiba.xlsx >> 12_chiba.csv
 xlsx2csv -s 7 12_chiba.xlsx >> 12_chiba.csv
 xlsx2csv -s 8 12_chiba.xlsx | sed 's/^,//' > 12_chiba2.csv
 xlsx2csv -s 9 12_chiba.xlsx >> 12_chiba2.csv
+xlsx2csv -s 10 12_chiba.xlsx >> 12_chiba2.csv
 
 #13 東京都
 url="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_patients.csv"
