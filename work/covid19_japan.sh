@@ -182,6 +182,13 @@ url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39388_5.xlsx"
 curl -s -o 27_osaka4.xlsx $url
 xlsx2csv -s 2 27_osaka4.xlsx >> 27_osaka2.csv
 
+#07/01-
+rm 27_osaka3.csv
+for url in `cut -f 2 osaka_link.txt`; do
+  curl -s -o 27_osaka5.xlsx $url
+  xlsx2csv -s 2 27_osaka5.xlsx | sed -e '/^$/d' >> 27_osaka3.csv 
+done
+
 #28 兵庫県
 url="https://web.pref.hyogo.lg.jp/kk03/documents/corona-kanjajokyou.xlsx"
 curl -s -o 28_hyogo.xlsx $url
