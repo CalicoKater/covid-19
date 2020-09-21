@@ -186,6 +186,15 @@ url="https://web.pref.hyogo.lg.jp/kk03/documents/corona-kanjajokyou.xlsx"
 curl -s -o 28_hyogo.xlsx $url
 xlsx2csv 28_hyogo.xlsx | sed 's/^,//' > 28_hyogo.csv
 
+#29 奈良県
+url="http://www.pref.nara.jp/secure/227193/%E5%A5%88%E8%89%AF%E7%9C%8C_01%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9%E6%84%9F%E6%9F%93%E8%80%85_%E6%82%A3%E8%80%85%E3%83%AA%E3%82%B9%E3%83%88.xlsx"
+curl -s -o 29_nara.xlsx $url
+xlsx2csv 29_nara.xlsx > 29_nara.csv
+url="http://www.pref.nara.jp/secure/227221/%E5%A5%88%E8%89%AF%E7%9C%8C_02%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9%E6%84%9F%E6%9F%93%E8%80%85_%E6%82%A3%E8%80%85%E9%9B%86%E8%A8%88%E8%A1%A8.xlsx"
+curl -s -o 29_nara2.xlsx $url
+xlsx2csv 29_nara2.xlsx > 29_nara2.csv
+
+
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
 curl -s -o 40_fukuoka.csv $url
