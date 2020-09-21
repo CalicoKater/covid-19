@@ -163,6 +163,24 @@ curl -s -o 26_kyoto.pdf $url
 xlsx2csv 26_kyoto.xlsx -s 1 >> 26_kyoto.csv
 xlsx2csv 26_kyoto.xlsx -s 2 >> 26_kyoto.csv
 
+#27 大阪府
+url="http://www.pref.osaka.lg.jp/attach/23711/00346644/youseisyajyouhou.xlsx"
+curl -s -o 27_osaka.xlsx $url
+xlsx2csv 27_osaka.xlsx > 27_osaka.csv
+
+# 9/18
+url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39377_5.xlsx"
+curl -s -o 27_osaka2.xlsx $url
+xlsx2csv -s 2 27_osaka2.xlsx > 27_osaka2.csv
+# 9/19
+url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39386_5.xlsx"
+curl -s -o 27_osaka3.xlsx $url
+xlsx2csv -s 2 27_osaka3.xlsx >> 27_osaka2.csv
+# 9/20
+url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39388_5.xlsx"
+curl -s -o 27_osaka4.xlsx $url
+xlsx2csv -s 2 27_osaka4.xlsx >> 27_osaka2.csv
+
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
 curl -s -o 40_fukuoka.csv $url
