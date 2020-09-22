@@ -254,3 +254,19 @@ curl -s $url | iconv -f SJIS > 39_kochi.csv
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
 curl -s -o 40_fukuoka.csv $url
 
+#41 佐賀県
+url="https://www.pref.saga.lg.jp/kiji00373220/index.html"
+ruby ccc2.rb $url 3 > 41_saga.csv
+
+#42 長崎県
+url="https://data.bodik.jp/dataset/09951e04-dc5d-42e9-9a49-37443be6787e/resource/de7ce61e-1849-47a1-b758-bca3f809cdf8/download/20200916prefnagasakicovidpatients.csv"
+curl -s -o 42_nagasaki.csv $url
+
+#43 熊本県
+url="https://www.pref.kumamoto.jp/common/UploadFileOutput.ashx?c_id=3&id=22038&sub_id=187&flid=252390"
+curl -s -o 43_kumamoto.csv $url
+
+#44 大分県
+#45 宮崎県
+#46 鹿児島県
+#47 沖縄県
