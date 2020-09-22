@@ -196,9 +196,13 @@ xlsx2csv -s 2 27_osaka5.xlsx >> 27_osaka2.csv
 
 #28 兵庫県
 #url="https://web.pref.hyogo.lg.jp/kk03/documents/corona-kanjajokyou.xlsx"
-url="https://web.pref.hyogo.lg.jp/kk03/documents/corona_kanjyajyokyo.xlsx"
-curl -s -o 28_hyogo.xlsx $url
-xlsx2csv 28_hyogo.xlsx | sed 's/^,//' > 28_hyogo.csv
+#url="https://web.pref.hyogo.lg.jp/kk03/documents/corona_kanjyajyokyo.xlsx"
+#curl -s -o 28_hyogo.xlsx $url
+#xlsx2csv 28_hyogo.xlsx | sed 's/^,//' > 28_hyogo.csv
+
+url="https://web.pref.hyogo.lg.jp/kk03/documents/corona-kanjajokyou.xlsm"
+curl -s -o 28_hyogo.xlsm $url
+xlsx2csv 28_hyogo.xlsm | sed 's/^,//' > 28_hyogo.csv
 
 #29 奈良県
 url="http://www.pref.nara.jp/secure/227193/%E5%A5%88%E8%89%AF%E7%9C%8C_01%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9%E6%84%9F%E6%9F%93%E8%80%85_%E6%82%A3%E8%80%85%E3%83%AA%E3%82%B9%E3%83%88.xlsx"
