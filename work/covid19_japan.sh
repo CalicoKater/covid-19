@@ -64,6 +64,10 @@ curl -s -o 12_chiba.pdf $url
 xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
 xlsx2csv -s 2 12_chiba.xlsx > 12_chiba2.csv
 
+#url="https://www.pref.chiba.lg.jp/shippei/press/2019/documents/chiba_corona_data.xlsx"
+#curl -s -o 12_chiba3.xlsx $url
+#xlsx2csv chiba3.xlsx > 12_chiba3.csv
+
 # ページごとに別れた場合
 #xlsx2csv -s 1 12_chiba.xlsx | sed 's/^,//' > 12_chiba.csv
 #xlsx2csv -s 2 12_chiba.xlsx >> 12_chiba.csv
@@ -283,3 +287,5 @@ url="https://www.pref.kagoshima.jp/ae06/kenko-fukushi/kenko-iryo/kansen/kansensh
 ruby ccc2.rb $url 4 >46_kagoshima.csv
 
 #47 沖縄県
+url="https://www.pref.okinawa.lg.jp/site/hoken/chiikihoken/kekkaku/press/documents/youseisyaitiran.csv"
+curl -s $url | iconv -f SJIS > 47_okinawa.csv
