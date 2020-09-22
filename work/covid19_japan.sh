@@ -271,6 +271,12 @@ url="https://www.pref.kumamoto.jp/common/UploadFileOutput.ashx?c_id=3&id=22038&s
 curl -s -o 43_kumamoto.csv $url
 
 #44 大分県
+url="https://data.bodik.jp/dataset/f632f467-716c-46aa-8838-0d535f98b291/resource/3714d264-70f3-4518-a57a-8391e0851d7d/download/440001oitacovid19patients.csv"
+curl -s -o 44_oita.csv $url
+
 #45 宮崎県
+url="https://www.pref.miyazaki.lg.jp/kansensho-taisaku/covid-19/hassei_list.html"
+ruby ccc2.rb $url > 45_miyazaki.csv
+
 #46 鹿児島県
 #47 沖縄県
