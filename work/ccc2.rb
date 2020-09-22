@@ -21,7 +21,7 @@ end
 csv = CSV.generate{ |csv|
   table.search(:tr).each_with_index do |tr, row|
     #if ( row > 0 ) then
-      csv << tr.search("th, td").map{|tag|tag.text.gsub(/(\n|\r|\t|\u00A0)/, "")}
+      csv << tr.search("th, td").map{|tag|tag.text.gsub(/(\n|\r|\t|\u00A0)/, "").strip}
     #end
   end
 }

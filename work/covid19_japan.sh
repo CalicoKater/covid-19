@@ -223,6 +223,30 @@ ruby ccc2.rb $url 2 > 31_tottori.csv
 url="http://www.okayama-opendata.jp/ckan/dataset/e6b3c1d2-2f1f-4735-b36e-e45d36d94761/resource/c6503ebc-b2e9-414c-aae7-7374f4801e21/download/kansenshashousaijouhou0420.csv"
 curl -s $url | iconv -f SJIS > 33_okayama.csv
 
+#34 広島県
+url="https://www.pref.hiroshima.lg.jp/site/hcdc/covid19-kanjya.html"
+ruby ccc2.rb $url > 34_hiroshima.csv
+awk -F, ''
+#35 山口県
+url="https://yamaguchi-opendata.jp/ckan/dataset/f6e5cff9-ae43-4cd9-a398-085187277edf/resource/f56e6552-4c5d-4ec6-91c0-090f553e0aea/download/350001_yamaguchi_covid19_patients.csv"
+curl -s -o 35_yamaguchi.csv $url
+
+#36 徳島県
+url="https://www.pref.tokushima.lg.jp/ippannokata/kenko/kansensho/5034012"
+ruby ccc2.rb $url 2 > 36_tokushima.csv
+ruby ccc2.rb $url 3 >> 36_tokushima.csv
+
+#37 香川県
+url="https://www.pref.kagawa.lg.jp/content/etc/subsite/kansenshoujouhou/kansen/se9si9200517102553.shtml"
+ruby ccc2.rb $url 3 > 37_kagawa.csv
+
+#38 愛媛県
+url="https://www.pref.ehime.jp/opendata-catalog/dataset/2174/resource/7057/380008_ehime_covid19_patients.csv"
+curl -s -o 38_ehime.csv $url
+
+#39 高知県
+url="https://www.pref.kochi.lg.jp/soshiki/111301/files/2020041300141/390003_kochi_covid19_patients.csv"
+curl -s $url | iconv -f SJIS > 39_kochi.csv
 
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
