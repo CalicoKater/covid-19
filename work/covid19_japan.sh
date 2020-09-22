@@ -207,7 +207,17 @@ url="http://www.pref.nara.jp/secure/227221/%E5%A5%88%E8%89%AF%E7%9C%8C_02%E6%96%
 curl -s -o 29_nara2.xlsx $url
 xlsx2csv 29_nara2.xlsx > 29_nara2.csv
 
+#30 和歌山県
+url="https://raw.githubusercontent.com/wakayama-pref-org/covid19/master/csv/kansensuii.csv"
+curl -s -o 30_wakayama.csv $url
 
+#31 鳥取県
+url="https://www.pref.tottori.lg.jp/item/1207264.htm"
+ruby ccc2.rb $url 2 > 31_tottori.csv
+
+#32 島根県
+ (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="島根県"')  | awk -F, -f jag2.awk > 32_shimane.csv
+ 
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
 curl -s -o 40_fukuoka.csv $url

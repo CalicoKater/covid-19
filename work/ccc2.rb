@@ -13,7 +13,11 @@ doc = Nokogiri::HTML.parse(open(url,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NON
 
 #doc = Nokogiri::HTML.parse(open(url,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
 #doc = Nokogiri.parse(html)
-table = doc.search(:table)
+if ARGV.size() == 1 then
+  table = doc.search(:table)
+else
+  table = doc.search(:table)[ARGV[1].to_i]
+end
 csv = CSV.generate{ |csv|
   table.search(:tr).each_with_index do |tr, row|
     #if ( row > 0 ) then
