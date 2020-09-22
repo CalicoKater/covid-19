@@ -124,6 +124,7 @@ curl -s $url | iconv -f SJIS > 22_shizuoka.csv
 
 # ★★★保留★★★
 #url="https://opendata.pref.shizuoka.jp/dataset/8113/resource/47635/221309_hamamatsu_covid19_patients.csv"
+#     https://opendata.pref.shizuoka.jp/dataset/8113/resource/47647/221309_hamamatsu_covid19_patients.csv
 #curl -s $url | iconv -f SJIS > 22_shizuoka2.csv
 
 #23 愛知県
@@ -217,7 +218,12 @@ ruby ccc2.rb $url 2 > 31_tottori.csv
 
 #32 島根県
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="島根県"')  | awk -F, -f jag2.awk > 32_shimane.csv
- 
+
+#33 岡山県
+url="http://www.okayama-opendata.jp/ckan/dataset/e6b3c1d2-2f1f-4735-b36e-e45d36d94761/resource/c6503ebc-b2e9-414c-aae7-7374f4801e21/download/kansenshashousaijouhou0420.csv"
+curl -s $url | iconv -f SJIS > 33_okayama.csv
+
+
 #40 福岡県
 url="https://ckan.open-governmentdata.org/dataset/8a9688c2-7b9f-4347-ad6e-de3b339ef740/resource/c27769a2-8634-47aa-9714-7e21c4038dd4/download/400009_pref_fukuoka_covid19_patients.csv"
 curl -s -o 40_fukuoka.csv $url
