@@ -279,4 +279,7 @@ url="https://www.pref.miyazaki.lg.jp/kansensho-taisaku/covid-19/hassei_list.html
 ruby ccc2.rb $url > 45_miyazaki.csv
 
 #46 鹿児島県
+url="https://www.pref.kagoshima.jp/ae06/kenko-fukushi/kenko-iryo/kansen/kansensho/coronavirus.html"
+ruby ccc2.rb $url 4 >46_kagoshima.csv
+
 #47 沖縄県
