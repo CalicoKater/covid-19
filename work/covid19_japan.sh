@@ -239,6 +239,8 @@ ruby ccc2.rb $url 3 >> 36_tokushima.csv
 #37 香川県
 url="https://www.pref.kagawa.lg.jp/content/etc/subsite/kansenshoujouhou/kansen/se9si9200517102553.shtml"
 ruby ccc2.rb $url 3 > 37_kagawa.csv
+url="https://opendata.pref.kagawa.lg.jp/dataset/359/resource/4390/%E6%A4%9C%E6%9F%BB%E4%BB%B6%E6%95%B0.csv"
+curl -s $url | iconv -f SJIS > 37_kagawa2.csv
 
 #38 愛媛県
 url="https://www.pref.ehime.jp/opendata-catalog/dataset/2174/resource/7057/380008_ehime_covid19_patients.csv"
