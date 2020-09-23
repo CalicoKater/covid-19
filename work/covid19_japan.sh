@@ -190,6 +190,15 @@ xlsx2csv -s 2 27_osaka4.xlsx >> 27_osaka2.csv
 url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39389_5.xlsx"
 curl -s -o 27_osaka5.xlsx $url
 xlsx2csv -s 2 27_osaka5.xlsx >> 27_osaka2.csv
+# 9/22
+url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39390_5.xlsx"
+curl -s -o 27_osaka6.xlsx $url
+xlsx2csv -s 2 27_osaka6.xlsx >> 27_osaka2.csv
+# 9/23
+url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39395_5.xlsx"
+curl -s -o 27_osaka7.xlsx $url
+xlsx2csv -s 2 27_osaka7.xlsx >> 27_osaka2.csv
+
 
 #07/01-
 #rm 27_osaka3.csv
