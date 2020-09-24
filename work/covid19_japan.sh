@@ -45,7 +45,9 @@ curl -s -o 09_tochigi.xlsx $url
 #10 群馬県
 url="http://stopcovid19.pref.gunma.jp/csv/01kanja.csv"
 # #489 欠番
-curl -s $url | grep -v '^489,9月7日,月,伊勢崎市,60代,男性' > 10_gunma.csv
+#curl -s $url | grep -v '^489,9月7日,月,伊勢崎市,60代,男性' > 10_gunma.csv
+curl -s -o 10_gunma.csv $url
+
 url="https://www.pref.gunma.jp/contents/100168631.pdf"
 curl -s -o 10_gunma.pdf $url
 
