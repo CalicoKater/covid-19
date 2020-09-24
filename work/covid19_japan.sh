@@ -176,30 +176,29 @@ curl -s -o 27_osaka.xlsx $url
 xlsx2csv 27_osaka.xlsx > 27_osaka.csv
 
 # 9/18
-url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39377_5.xlsx"
-curl -s -o 27_osaka2.xlsx $url
-xlsx2csv -s 2 27_osaka2.xlsx > 27_osaka2.csv
+#url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39377_5.xlsx"
+#curl -s -o 27_osaka2.xlsx $url
+#xlsx2csv -s 2 27_osaka2.xlsx > 27_osaka2.csv
 # 9/19
-url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39386_5.xlsx"
-curl -s -o 27_osaka3.xlsx $url
-xlsx2csv -s 2 27_osaka3.xlsx >> 27_osaka2.csv
+#url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39386_5.xlsx"
+#curl -s -o 27_osaka3.xlsx $url
+#xlsx2csv -s 2 27_osaka3.xlsx >> 27_osaka2.csv
 # 9/20
-url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39388_5.xlsx"
-curl -s -o 27_osaka4.xlsx $url
-xlsx2csv -s 2 27_osaka4.xlsx >> 27_osaka2.csv
+#url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39388_5.xlsx"
+#curl -s -o 27_osaka4.xlsx $url
+#xlsx2csv -s 2 27_osaka4.xlsx >> 27_osaka2.csv
 # 9/21
-url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39389_5.xlsx"
-curl -s -o 27_osaka5.xlsx $url
-xlsx2csv -s 2 27_osaka5.xlsx >> 27_osaka2.csv
+#url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39389_5.xlsx"
+#curl -s -o 27_osaka5.xlsx $url
+#xlsx2csv -s 2 27_osaka5.xlsx >> 27_osaka2.csv
 # 9/22
-url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39390_5.xlsx"
-curl -s -o 27_osaka6.xlsx $url
-xlsx2csv -s 2 27_osaka6.xlsx >> 27_osaka2.csv
+#url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39390_5.xlsx"
+#curl -s -o 27_osaka6.xlsx $url
+#xlsx2csv -s 2 27_osaka6.xlsx >> 27_osaka2.csv
 # 9/23
-url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39395_5.xlsx"
-curl -s -o 27_osaka7.xlsx $url
-xlsx2csv -s 2 27_osaka7.xlsx >> 27_osaka2.csv
-
+#url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39395_5.xlsx"
+#curl -s -o 27_osaka7.xlsx $url
+#xlsx2csv -s 2 27_osaka7.xlsx >> 27_osaka2.csv
 
 #07/01-
 #rm 27_osaka3.csv
@@ -213,8 +212,6 @@ xlsx2csv -s 2 27_osaka7.xlsx >> 27_osaka2.csv
 #url="https://web.pref.hyogo.lg.jp/kk03/documents/corona_kanjyajyokyo.xlsx"
 #curl -s -o 28_hyogo.xlsx $url
 #xlsx2csv 28_hyogo.xlsx | sed 's/^,//' > 28_hyogo.csv
-
-
 link=`curl -s "https://web.pref.hyogo.lg.jp/kk03/corona_kanjyajyokyo.html" | xmllint --html --xpath '//*[@id="tmp_contents"]/div[2]/p[4]/a' - | cut -d\" -f 2`
 url="https://web.pref.hyogo.lg.jp$link"
 curl -s -o 28_hyogo.xlsx $url
