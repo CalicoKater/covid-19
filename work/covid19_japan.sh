@@ -54,11 +54,15 @@ curl -s -o 10_gunma.pdf $url
 #11 埼玉県
 url=`curl -s https://opendata.pref.saitama.lg.jp/data/dataset/covid19-jokyo | grep -e "jokyo.*\.csv" | tail -n 1 | cut -d\" -f 2`
 curl -s $url | iconv -f SJIS > 11_saitama.csv
+link=`curl -s "https://www.pref.saitama.lg.jp/a0701/covid19/jokyo.html" | xmllint --html --xpath '//*[@id="tmp_contents"]/p[3]/a' - | cut -d\" -f 2`
+curl -s -o 11_saitama.pdf "https://www.pref.saitama.lg.jp$link"
+pdftotext -layout 11_saitama.pdf - | awk '{print $1, $2, $3, $4, $5, $6}' > 11_saitama2.csv
 
 #12 千葉県
 link=`curl -s https://www.pref.chiba.lg.jp/shippei/press/2019/ncov-index.html | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[1]/li[1]/a' - | cut -d\" -f 2`
 url="https://www.pref.chiba.lg.jp$link"
 curl -s -o 12_chiba.pdf $url
+#pdftotext -layout 12_chiba.pdf - 
 #ruby pdf_to_csv.rb 12_chiba.pdf | sed -e 's/^\[//' -e 's/\]$//' > 12_chiba.csv
 
 #xlsx2csv --all 12_chiba.xlsx | sed 's/^,//'
