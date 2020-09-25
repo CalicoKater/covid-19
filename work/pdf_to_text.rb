@@ -1,6 +1,9 @@
 require "poppler"
 
-document = Poppler::Document.new("12_chiba.pdf")
+pdf_file=ARGV[0]
+
+
+document = Poppler::Document.new(pdf_file)
 
 puts document[0].get_text
 puts document.count
