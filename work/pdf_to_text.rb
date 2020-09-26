@@ -1,12 +1,6 @@
 require "poppler"
-
 pdf_file=ARGV[0]
-
-
 document = Poppler::Document.new(pdf_file)
-
-puts document[0].get_text
-puts document.count
 pages = []
 
 document.each do |page|

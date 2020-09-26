@@ -1,5 +1,5 @@
  curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="福島県"')  | awk -F, -f jag2.awk | tr ',' '\t' | pbcopy
+ (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="愛知県"')  | awk -F, -f jag2.awk | tr ',' '\t' | pbcopy
  
   curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="宮城県"')  | awk -F, -f jag2.awk | tr ',' '\t' | pbcopy

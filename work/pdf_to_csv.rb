@@ -1,5 +1,4 @@
 require 'pdf-reader'
-
 pdf_file=ARGV[0]
 
 File.open(pdf_file, 'rb') do |io|
