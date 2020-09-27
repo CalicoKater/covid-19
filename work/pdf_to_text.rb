@@ -12,7 +12,7 @@ document.each do |page|
     t.each do |s|
       # Formatting
       ary = s.split("\s\s")
-      ary.delete_if { |str| str.nil? || str.empty? }
+      #ary.delete_if { |str| str.nil? || str.empty? }
       ary.each(&:strip!)
       next if ary.empty?
 
