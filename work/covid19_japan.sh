@@ -286,8 +286,11 @@ url="https://data.bodik.jp/dataset/09951e04-dc5d-42e9-9a49-37443be6787e/resource
 curl -s -o 42_nagasaki.csv $url
 
 #43 熊本県
-url="https://www.pref.kumamoto.jp/common/UploadFileOutput.ashx?c_id=3&id=22038&sub_id=187&flid=252390"
-curl -s -o 43_kumamoto.csv $url
+link=`curl -s "https://www.pref.kumamoto.jp/kiji_22038.html" \
+ | sed -e 's/<ul>//g' -e 's/<\/ul>//g' \
+ | xmllint --html --xpath '//*[@id="danraku1"]/div[11]/div[1]/div/table/tbody/tr[3]/td[4]/li/a' - \
+ | cut -d\" -f 2 | sed -e 's/&amp;/\&/g'`
+curl -s -o 43_kumamoto.csv $link
 
 #44 大分県
 url="https://data.bodik.jp/dataset/f632f467-716c-46aa-8838-0d535f98b291/resource/3714d264-70f3-4518-a57a-8391e0851d7d/download/440001oitacovid19patients.csv"
