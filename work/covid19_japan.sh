@@ -68,23 +68,23 @@ curl -s -o 12_chiba.pdf $url
 #xlsx2csv --all 12_chiba.xlsx | sed 's/^,//'
 
 # ２シートに分かれた場合
-#xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
-#xlsx2csv -s 2 12_chiba.xlsx > 12_chiba2.csv
+xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
+xlsx2csv -s 2 12_chiba.xlsx > 12_chiba2.csv
 
 #url="https://www.pref.chiba.lg.jp/shippei/press/2019/documents/chiba_corona_data.xlsx"
 #curl -s -o 12_chiba3.xlsx $url
 #xlsx2csv chiba3.xlsx > 12_chiba3.csv
 
 # ページごとに別れた場合
-xlsx2csv -s 1 12_chiba.xlsx | sed 's/^,//' > 12_chiba.csv
-xlsx2csv -s 2 12_chiba.xlsx >> 12_chiba.csv
-xlsx2csv -s 3 12_chiba.xlsx >> 12_chiba.csv
-xlsx2csv -s 4 12_chiba.xlsx >> 12_chiba.csv
-xlsx2csv -s 5 12_chiba.xlsx >> 12_chiba.csv
-xlsx2csv -s 6 12_chiba.xlsx >> 12_chiba.csv
-xlsx2csv -s 7 12_chiba.xlsx >> 12_chiba.csv
-xlsx2csv -s 8 12_chiba.xlsx | sed 's/^,//' > 12_chiba2.csv
-xlsx2csv -s 9 12_chiba.xlsx >> 12_chiba2.csv
+#xlsx2csv -s 1 12_chiba.xlsx | sed 's/^,//' > 12_chiba.csv
+#xlsx2csv -s 2 12_chiba.xlsx >> 12_chiba.csv
+#xlsx2csv -s 3 12_chiba.xlsx >> 12_chiba.csv
+#xlsx2csv -s 4 12_chiba.xlsx >> 12_chiba.csv
+#xlsx2csv -s 5 12_chiba.xlsx >> 12_chiba.csv
+#xlsx2csv -s 6 12_chiba.xlsx >> 12_chiba.csv
+#xlsx2csv -s 7 12_chiba.xlsx >> 12_chiba.csv
+#xlsx2csv -s 8 12_chiba.xlsx | sed 's/^,//' > 12_chiba2.csv
+#xlsx2csv -s 9 12_chiba.xlsx >> 12_chiba2.csv
 #xlsx2csv -s 10 12_chiba.xlsx >> 12_chiba2.csv
 
 #13 東京都

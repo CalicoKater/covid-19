@@ -18,3 +18,6 @@ curl -s -o 23_aichi.pdf $url
 link=`curl -s "https://www.pref.aichi.jp/site/covid19-aichi/" | xmllint --html --xpath '//*[@id="main_body"]/div[1]/p[4]/a' - | cut -d\" -f 2`
 url="https://www.pref.aichi.jp/$link"
 curl -s -o 23_aichi2.pdf $url
+
+
+ruby -e 'require "osx/cocoa";include OSX;require_framework "Quartz";puts PDFDocument.alloc.initWithURL(NSURL.fileURLWithPath("12_chiba.pdf")).pageCount'
