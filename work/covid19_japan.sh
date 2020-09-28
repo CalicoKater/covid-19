@@ -17,7 +17,7 @@ link=`curl -s "https://www.pref.miyagi.jp/site/covid-19/02.html" \
  | xmllint --html --xpath '//*[@id="main_body"]/div[3]/p[6]/a' - | cut -d\" -f 2`
 url="https://www.pref.miyagi.jp$link"
 curl -s -o 04_miyagi.xlsx $url
-/usr/local/bin/xlsx2csv 04_miyagi.xlsx > 04_miyagi.csv
+/usr/local/bin/xlsx2csv 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
 #05 秋田県
 url="https://www.pref.akita.lg.jp/pages/archive/47957"
 ruby ccc2.rb $url > 05_akita.csv
