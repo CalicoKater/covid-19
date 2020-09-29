@@ -7,8 +7,11 @@ curl -s $url | iconv -f SJIS > 01_hokkaido.csv
 url="https://www.harp.lg.jp/opendata/dataset/1369/resource/2853/covid19_data.csv"
 curl -s $url | iconv -f SJIS > 01_hokkaido2.csv
 #02 青森県
-url="https://opendata.pref.aomori.lg.jp/dataset/1531/resource/11827/02_20200827_%E9%99%BD%E6%80%A7%E6%82%A3%E8%80%85%E9%96%A2%E4%BF%82.csv"
+link=`curl -s "https://opendata.pref.aomori.lg.jp/dataset/1531.html" \
+  | xmllint --html --xpath '//*/div/div/div/div[2]/div/div[2]/div[2]/a/@href' - | cut -d\" -f 2`
+url="https://opendata.pref.aomori.lg.jp$link"
 curl -s $url | iconv -f SJIS > 02_aomori.csv
+
 #03 岩手県
 url="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1029635/index.html"
 ruby ccc2.rb $url > 03_iwate.csv
@@ -68,24 +71,24 @@ curl -s -o 12_chiba.pdf $url
 #xlsx2csv --all 12_chiba.xlsx | sed 's/^,//'
 
 # ２シートに分かれた場合
-xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
-xlsx2csv -s 2 12_chiba.xlsx > 12_chiba2.csv
-#xlsx2csv -s 2 12_chiba.xlsx | awk -F, '$1==1{$6="1月30日"}{printf "%s,%s,%s,%s,%s,%s\n", $1,$2,$3,$4,$5,$6}' > 12_chiba2.csv
+#xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
+#xlsx2csv -s 2 12_chiba.xlsx | sed -e 's/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,9月28日/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,1月30日/g' > 12_chiba2.csv
 
 #url="https://www.pref.chiba.lg.jp/shippei/press/2019/documents/chiba_corona_data.xlsx"
 #curl -s -o 12_chiba3.xlsx $url
 #xlsx2csv chiba3.xlsx > 12_chiba3.csv
 
 # ページごとに別れた場合
-#xlsx2csv -s 1 12_chiba.xlsx | sed 's/^,//' > 12_chiba.csv
-#xlsx2csv -s 2 12_chiba.xlsx >> 12_chiba.csv
-#xlsx2csv -s 3 12_chiba.xlsx >> 12_chiba.csv
-#xlsx2csv -s 4 12_chiba.xlsx >> 12_chiba.csv
-#xlsx2csv -s 5 12_chiba.xlsx >> 12_chiba.csv
-#xlsx2csv -s 6 12_chiba.xlsx >> 12_chiba.csv
-#xlsx2csv -s 7 12_chiba.xlsx >> 12_chiba.csv
-#xlsx2csv -s 8 12_chiba.xlsx | sed 's/^,//' > 12_chiba2.csv
-#xlsx2csv -s 9 12_chiba.xlsx >> 12_chiba2.csv
+xlsx2csv -s 1 12_chiba.xlsx | sed 's/^,//' > 12_chiba.csv
+xlsx2csv -s 2 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 3 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 4 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 5 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 6 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 7 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 8 12_chiba.xlsx | sed 's/^,//' | sed -e 's/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,9月28日/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,1月30日/g' > 12_chiba2.csv
+xlsx2csv -s 9 12_chiba.xlsx >> 12_chiba2.csv
+
 #xlsx2csv -s 10 12_chiba.xlsx >> 12_chiba2.csv
 
 #13 東京都
