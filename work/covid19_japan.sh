@@ -70,6 +70,7 @@ curl -s -o 12_chiba.pdf $url
 # ２シートに分かれた場合
 xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
 xlsx2csv -s 2 12_chiba.xlsx > 12_chiba2.csv
+#xlsx2csv -s 2 12_chiba.xlsx | awk -F, '$1==1{$6="1月30日"}{printf "%s,%s,%s,%s,%s,%s\n", $1,$2,$3,$4,$5,$6}' > 12_chiba2.csv
 
 #url="https://www.pref.chiba.lg.jp/shippei/press/2019/documents/chiba_corona_data.xlsx"
 #curl -s -o 12_chiba3.xlsx $url
