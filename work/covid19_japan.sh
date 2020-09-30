@@ -180,12 +180,14 @@ ruby ccc2.rb $url > 24_mie2.csv
 #ruby ccc2.rb $url >> 24_mie2.csv
 
 #25 滋賀県
-# ruby ccc.rb shiga_table.html | tail -r > 25_shiga.csv
- url="https://shiga-pref-org.github.io/covid19-data/data.json"
- #https://raw.githubusercontent.com/Shiga-pref-org/covid19-data/gh-pages/data.json
+url="https://docs.google.com/spreadsheets/d/e/2PACX-1vQkSimAq6YKVyhqHy7wyEvL6-TeGmiNntRhP3iK5041mD900GYcjUKylMZIAJEIZzew9pCGfQ1AA-Ge/pub?gid=1551840287&single=true&output=csv"
+curl -sL -o 25_shiga.csv $url 
 
- curl -s $url | jq -r '.patients.data[]|[."リリース日", ."居住地", ."年代", ."性別", ."退院", .date]|@csv' > 25_shiga.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="滋賀県"')  | awk -F, -f jag2.awk > 25_shiga2.csv  
+# ruby ccc.rb shiga_table.html | tail -r > 25_shiga.csv
+ #url="https://shiga-pref-org.github.io/covid19-data/data.json"
+ #https://raw.githubusercontent.com/Shiga-pref-org/covid19-data/gh-pages/data.json
+ #curl -s $url | jq -r '.patients.data[]|[."リリース日", ."居住地", ."年代", ."性別", ."退院", .date]|@csv' > 25_shiga.csv
+(head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="滋賀県"')  | awk -F, -f jag2.awk > 25_shiga2.csv  
 
 #26 京都府
 url="https://www.pref.kyoto.jp/kentai/corona/hassei1-50.html"
