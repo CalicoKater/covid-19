@@ -81,23 +81,23 @@ curl -s -o 12_chiba.pdf $url
 #xlsx2csv --all 12_chiba.xlsx | sed 's/^,//'
 
 # ２シートに分かれた場合
-#xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
-#xlsx2csv -s 2 12_chiba.xlsx | sed -e 's/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,9月28日/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,1月30日/g' > 12_chiba2.csv
+xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
+xlsx2csv -s 2 12_chiba.xlsx | sed -e 's/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,9月28日/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,1月30日/g' > 12_chiba2.csv
 
 #url="https://www.pref.chiba.lg.jp/shippei/press/2019/documents/chiba_corona_data.xlsx"
 #curl -s -o 12_chiba3.xlsx $url
 #xlsx2csv chiba3.xlsx > 12_chiba3.csv
 
 # ページごとに別れた場合
-xlsx2csv -s 1 12_chiba.xlsx | sed 's/^,//' > 12_chiba.csv
-xlsx2csv -s 2 12_chiba.xlsx >> 12_chiba.csv
-xlsx2csv -s 3 12_chiba.xlsx >> 12_chiba.csv
-xlsx2csv -s 4 12_chiba.xlsx >> 12_chiba.csv
-xlsx2csv -s 5 12_chiba.xlsx >> 12_chiba.csv
-xlsx2csv -s 6 12_chiba.xlsx >> 12_chiba.csv
-xlsx2csv -s 7 12_chiba.xlsx >> 12_chiba.csv
-xlsx2csv -s 8 12_chiba.xlsx | sed 's/^,//' | sed -e 's/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,9月28日/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,1月30日/g' > 12_chiba2.csv
-xlsx2csv -s 9 12_chiba.xlsx >> 12_chiba2.csv
+#xlsx2csv -s 1 12_chiba.xlsx | sed 's/^,//' > 12_chiba.csv
+#xlsx2csv -s 2 12_chiba.xlsx >> 12_chiba.csv
+#xlsx2csv -s 3 12_chiba.xlsx >> 12_chiba.csv
+#xlsx2csv -s 4 12_chiba.xlsx >> 12_chiba.csv
+#xlsx2csv -s 5 12_chiba.xlsx >> 12_chiba.csv
+#xlsx2csv -s 6 12_chiba.xlsx >> 12_chiba.csv
+#xlsx2csv -s 7 12_chiba.xlsx >> 12_chiba.csv
+#xlsx2csv -s 8 12_chiba.xlsx | sed 's/^,//' | sed -e 's/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,9月28日/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,1月30日/g' > 12_chiba2.csv
+#xlsx2csv -s 9 12_chiba.xlsx >> 12_chiba2.csv
 
 #xlsx2csv -s 10 12_chiba.xlsx >> 12_chiba2.csv
 
@@ -178,7 +178,9 @@ ruby ccc2.rb $url > 24_mie2.csv
 #ruby ccc2.rb $url >> 24_mie2.csv
 
 #25 滋賀県
- ruby ccc.rb shiga_table.html | tail -r > 25_shiga.csv
+# ruby ccc.rb shiga_table.html | tail -r > 25_shiga.csv
+ url="https://shiga-pref-org.github.io/covid19-data/data.json"
+ curl -s $url | jq -r '.patients.data[]|[."リリース日", ."居住地", ."年代", ."性別", ."退院", .date]|@csv' > 25_shiga.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="滋賀県"')  | awk -F, -f jag2.awk > 25_shiga2.csv  
 
 #26 京都府
@@ -307,7 +309,7 @@ link=`curl -s "https://www.pref.kumamoto.jp/kiji_22038.html" \
  | sed -e 's/<ul>//g' -e 's/<\/ul>//g' \
  | xmllint --html --xpath '//*[@id="danraku1"]/div[11]/div[1]/div/table/tbody/tr[3]/td[4]/li/a' - \
  | cut -d\" -f 2 | sed -e 's/&amp;/\&/g'`
-curl -s -o 43_kumamoto.csv $link
+curl -s $link | iconv -f SJIS > 43_kumamoto.csv
 
 #44 大分県
 url="https://data.bodik.jp/dataset/f632f467-716c-46aa-8838-0d535f98b291/resource/3714d264-70f3-4518-a57a-8391e0851d7d/download/440001oitacovid19patients.csv"
