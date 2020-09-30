@@ -185,7 +185,10 @@ ruby ccc2.rb $url > 24_mie2.csv
 url="https://www.pref.kyoto.jp/kentai/corona/hassei1-50.html"
 ruby ccc2.rb $url > 26_kyoto.csv
 
-url="https://www.pref.kyoto.jp/kentai/corona/documents/jyoukyo001-580.pdf"
+#url="https://www.pref.kyoto.jp/kentai/corona/documents/jyoukyo001-580.pdf"
+url="https://www.pref.kyoto.jp/kentai/corona/hassei1-50.html"
+link=`curl -s $url | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[2]/li/a/@href' - | cut -d\" -f 2`
+url="https://www.pref.kyoto.jp$link"
 curl -s -o 26_kyoto.pdf $url
 xlsx2csv 26_kyoto.xlsx -s 1 >> 26_kyoto.csv
 xlsx2csv 26_kyoto.xlsx -s 2 >> 26_kyoto.csv
