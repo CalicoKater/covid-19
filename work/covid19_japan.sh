@@ -4,8 +4,16 @@ curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
 #01 北海道
 url="https://www.harp.lg.jp/opendata/dataset/1369/resource/3132/010006_hokkaido_covid19_patients.csv"
 curl -s $url | iconv -f SJIS > 01_hokkaido.csv
+
 url="https://www.harp.lg.jp/opendata/dataset/1369/resource/2853/covid19_data.csv"
 curl -s $url | iconv -f SJIS > 01_hokkaido2.csv
+
+url="http://www.pref.hokkaido.lg.jp/hf/kth/kak/hasseijoukyou.htm"
+link=`curl -s $url | xmllint --html --xpath '//*[@id="rs_contents"]/span/ul[2]/li/a/@href' - | cut -d\" -f 2`
+url="http://www.pref.hokkaido.lg.jp$link"
+curl -sL $url -o 01_hokkaido.pdf
+pdftotext  -layout  01_hokkaido.pdf - | awk '$1!=""{printf "%s,%s,%s,%s,%s,%s\n",$1,$2,$3,$4,$5,$6}' > 01_hokkaido3.csv
+
 #02 青森県
 link=`curl -s "https://opendata.pref.aomori.lg.jp/dataset/1531.html" \
   | xmllint --html --xpath '//*/div/div/div/div[2]/div/div[2]/div[2]/a/@href' - | cut -d\" -f 2`
