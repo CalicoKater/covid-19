@@ -11,7 +11,9 @@ link=`curl -s "https://opendata.pref.aomori.lg.jp/dataset/1531.html" \
   | xmllint --html --xpath '//*/div/div/div/div[2]/div/div[2]/div[2]/a/@href' - | cut -d\" -f 2`
 url="https://opendata.pref.aomori.lg.jp$link"
 curl -s $url | iconv -f SJIS > 02_aomori.csv
-
+url="https://stopcovid19.pref.aomori.lg.jp/cards/attributes-of-confirmed-cases/"
+curl -s $url | xmllint --html --xpath '///table/tbody/tr/td/a/@href' - \
+  | tr ' ' '\n' | sed 's/href=//g' | tr -d '"' | tail -r | nl | awk '$1!=""{printf "%s,%s\n",$1, $2}' > 02_aomori2.csv
 #03 岩手県
 url="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1029635/index.html"
 ruby ccc2.rb $url > 03_iwate.csv
