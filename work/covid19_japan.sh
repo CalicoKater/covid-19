@@ -15,8 +15,10 @@ curl -sL $url -o 01_hokkaido.pdf
 pdftotext  -layout  01_hokkaido.pdf - | awk '$1!=""{printf "%s,%s,%s,%s,%s,%s\n",$1,$2,$3,$4,$5,$6}' > 01_hokkaido3.csv
 
 #02 青森県
+#'//*[@id="cms-tab-7-0-view"]/div/div/div/div[3]/div/div[2]/div[2]/a'
+#'//*/div/div/div/div[2]/div/div[2]/div[2]/a/@href'
 link=`curl -s "https://opendata.pref.aomori.lg.jp/dataset/1531.html" \
-  | xmllint --html --xpath '//*/div/div/div/div[2]/div/div[2]/div[2]/a/@href' - | cut -d\" -f 2`
+  | xmllint --html --xpath '//*/div/div/div/div[3]/div/div[2]/div[2]/a/@href' - | cut -d\" -f 2`
 url="https://opendata.pref.aomori.lg.jp$link"
 curl -s $url | iconv -f SJIS > 02_aomori.csv
 url="https://stopcovid19.pref.aomori.lg.jp/cards/attributes-of-confirmed-cases/"
@@ -180,6 +182,8 @@ ruby ccc2.rb $url > 24_mie2.csv
 #25 滋賀県
 # ruby ccc.rb shiga_table.html | tail -r > 25_shiga.csv
  url="https://shiga-pref-org.github.io/covid19-data/data.json"
+ #https://raw.githubusercontent.com/Shiga-pref-org/covid19-data/gh-pages/data.json
+
  curl -s $url | jq -r '.patients.data[]|[."リリース日", ."居住地", ."年代", ."性別", ."退院", .date]|@csv' > 25_shiga.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="滋賀県"')  | awk -F, -f jag2.awk > 25_shiga2.csv  
 
