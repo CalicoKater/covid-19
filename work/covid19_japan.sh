@@ -73,6 +73,21 @@ link=`curl -s "https://www.pref.saitama.lg.jp/a0701/covid19/jokyo.html" | xmllin
 curl -s -o 11_saitama.pdf "https://www.pref.saitama.lg.jp$link"
 pdftotext -layout 11_saitama.pdf - | awk '{printf "%s,%s,%s,%s,%s,%s\n", $1, $2, $3, $4, $5, $6}' > 11_saitama2.csv
 
+#111007 さいたま市
+#url="https://www.city.saitama.jp/002/001/008/006/013/001/p075326.html"
+#xpath='//*[@id="b2111_detail"]/div[1]/div/div/div/div/div/div/div/div/div/div/div/div[2]/strong[2]/a'
+#link=`curl -s $url | xmllint --html --xpath $xpath - | cut -d\" -f 2`
+#curl -s -o 11_saitama_city.pdf "https://www.city.saitama.jp$link"
+
+url="https://www.city.saitama.jp/002/001/008/006/013/001/p075326_d/fil/yousei1-379.pdf"
+curl -s -o 11_saitama_city_1_379.pdf $url
+# pdf to excel (i love pdf: https://www.ilovepdf.com/ja/pdf_to_excel)
+xlsx2csv -s 1 11_saitama_city_1_379.xlsx > 11_saitama_city_1_379.csv
+xlsx2csv -s 2 11_saitama_city_1_379.xlsx >> 11_saitama_city_1_379.csv
+
+ruby ccc2.rb "https://www.city.saitama.jp/002/001/008/006/013/001/p075326.html" > 11_saitama_city_380_.csv
+
+
 #12 千葉県
 link=`curl -s https://www.pref.chiba.lg.jp/shippei/press/2019/ncov-index.html | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[1]/li[1]/a' - | cut -d\" -f 2`
 url="https://www.pref.chiba.lg.jp$link"

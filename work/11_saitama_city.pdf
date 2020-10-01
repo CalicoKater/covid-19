@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, maximum-scale=1.0" />
+<title>さいたま市／お探しのページが見つかりません</title>
+<meta name="Keywords" content="さいたま市役所,さいたま市,さいたま,saitama,さいたま市WEBサイト,さいたま市ホームページ," />
+<meta name="Description" content="リンク切れや公開終了等により、ページが見つからない場合に表示されるページです。" />
+<meta http-equiv="Content-Script-Type" content="text/javascript" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link rel="stylesheet" type="text/css" href="/share/style/base.css" media="all"  />
+<link rel="stylesheet" type="text/css" href="/share/style/navi.css" media="all"  />
+<link rel="stylesheet" type="text/css" href="/share/style/style.css" media="all"  />
+<link rel="stylesheet" type="text/css" href="/share/style/customsearch.css" media="all"  />
+<link rel="stylesheet" type="text/css" href="/share/style/indexmap.css" media="all"  />
+<link rel="stylesheet" type="text/css" href="/share/style/white.css" media="" id="jstyle" />
+<link rel="stylesheet" type="text/css" href="/share/style/print.css" media="print"  />
+<link rel="stylesheet" type="text/css" href="/share/style/smpstyle.css" media="screen and (max-width: 480px)" id="sp_style" />
+<link href="/share/imgs/favicon.ico" rel="shortcut icon" />
+<link href="/share/imgs/favicon.ico" rel="shortcut icon" />
+<script type="text/javascript" src="/share/scripts/common.js"></script>
+<script type="text/javascript" src="/share/scripts/jquery.js"></script>
+<script type="text/javascript" src="/share/scripts/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="/share/scripts/jquery.cookie.js"></script>
+<script type="text/javascript" src="/share/scripts/jquery.fontsizechange.js"></script>
+<script type="text/javascript" src="/share/scripts/jquery.megamenu.js"></script>
+<script type="text/javascript" src="/share/scripts/jqueryrwdimagemapsmin.js"></script>
+<script type="text/javascript" src="/share/scripts/general.js"></script>
+<script type="text/javascript" src="/share/scripts/kanabovoice.js"></script>
+<script type="text/javascript" src="/share/scripts/kanaboweb20.js"></script>
+<script language="JavaScript">
+KanaboVoice.host_url = "//voice.kanabo.com/s/cloud/city/saitama/default.ashx?";
+KanaboVoice.host_id = "city.saitama";
+</script>
+<script language="JavaScript">
+	KanaboWeb.host_url = "http://furigana.city.saitama.jp/saas/default.ashx?";
+	KanaboWeb.host_id = "city.saitama";
+</script>
+
+<script type="text/javascript" src="/share/scripts/smpjs.js"></script>
+</head>
+<body><!-- container -->
+<div id="container"><noscript>
+<p class="txt_noJs">当サイトではJavaScriptを使用しています。<br />
+ブラウザの設定でJavaScriptの使用を無効にしている場合、一部の機能が正確に動作しない恐れがあります。<br />
+当サイトをご覧の際はJavaScriptの使用を有効にしてください。</p>
+</noscript>
+ <!-- speak_navi -->
+<div id="page_top" class="contents_skip"><span>ページの先頭です。</span> <a href="#speak_menu">メインメニューへ移動</a> <a href="#speak_footer">フッターへ移動</a></div>
+<!-- /speak_navi --><!--header_area-->
+<div id="header_area">
+ <div id="header">
+  <p id="head_point"><a href="#speak_main">メインメニューをスキップして本文へ移動</a></p>
+  <p id="logo">
+   <a href="/index.html">
+    <img src="/share/imgs/common_logo.png" alt="さいたま市ＷＥＢサイトです" width="190" height="42" />
+   </a>
+  </p>
+  <span id="embedPlayer" class="embedvoice" style="display:none;overflow:hidden"> </span>
+  <div id="header_navi">
+   <ul class="cf">
+    <li><a href="javascript:KanaboVoice.embedVoice('content_area','embedPlayer')"><img src="/share/imgs/common_hearing_btn.png" width="90" height="20" alt="音声よみあげ" /></a></li>
+    <li id="fs_change"><img src="/share/imgs/common_head_txt1.png" width="60" height="20" alt="文字サイズ" /><a href="javascript:void(0);" class="fs_change"><img src="/share/imgs/common_btn_fs_df.png" alt="標準" width="32" height="20" class="change_btn" /></a><a href="javascript:void(0);" class="fs_change"><img src="/share/imgs/common_btn_fs_zm.png" alt="拡大" width="34" height="20" class="change_btn" /></a></li>
+    <li id="fs_color"><img src="/share/imgs/common_head_txt2.png" width="81" height="20" alt="文字色・背景色" /><a href="javascript:void(0);" id="switch-black"><img src="/share/imgs/common_font_col1.png" width="20" height="20" alt="黒" /></a><a href="javascript:void(0);" id="switch-white"><img src="/share/imgs/common_font_col2.png" width="20" height="20" alt="白" /></a><a href="#" id="switch-yellow"><img src="/share/imgs/common_font_col3.png" width="20" height="20" alt="黄色" /></a></li>
+    <li><a href="javascript:KanaboWeb.execCommand('toggle')"><img src="/share/imgs/common_hurigana_btn.png" width="63" height="20" alt="ふりがな" /></a></li>
+   </ul>
+    <ul id="header_other_lang" class="cf">
+        <li id="lang"><a href="https://www.city.saitama.jp/language/index.html" target="_blank">
+                <img id="lang" src="/share/imgs/common_lang.png" width="143" height="24" /></a></li>
+    </ul>
+   <div id="sp_head_area">
+    <!-- sp search --><!-- /sp search -->
+    <ul id="header_sitemap">
+     <li><a href="/sitemap.html"><img src="/share/imgs/common_sitemap_btn.png" width="88" height="20" alt="サイトマップ" /></a></li>
+    </ul>
+   </div>
+  </div>
+ </div>
+</div>
+<!--/header_area-->
+ <!--global_navi-->
+<div id="global_navi">
+ <p id="speak_menu" class="for_voice">メインメニューです。</p>
+ <ul class="mega_menu cf">
+  <li id="gn1">
+   <a href="/001/index.html">
+    <img src="/share/imgs/common_gn01.png" alt="暮らし・手続き" />
+   </a>
+   <div class="gn_mega">
+    <div class="gn_mega_in cf">
+     <ul class="cf">
+      <li><a href="/001/001/index.html">戸籍・住民票・印鑑登録</a></li>
+      <li><a href="/001/002/index.html">国民健康保険</a></li>
+      <li><a href="/001/017/index.html">後期高齢者医療制度</a></li>
+      <li><a href="/001/003/index.html">国民年金</a></li>
+     </ul>     
+     <ul class="cf">
+      <li><a href="/001/004/index.html">税金</a></li>
+      <li><a href="/001/005/index.html">就職・仕事</a></li>
+      <li><a href="/001/006/index.html">上下水道・ごみ</a></li>
+      <li><a href="/001/007/index.html">住まい・住居</a></li>
+     </ul>     
+     <ul class="cf">
+      <li><a href="/001/008/index.html">ペット・害虫駆除</a></li>
+      <li><a href="/001/009/index.html">環境保全</a></li>
+      <li><a href="/001/010/index.html">まちづくり・交通</a></li>
+      <li><a href="/001/011/index.html">安全・防災・消防</a></li>
+     </ul>     
+     <ul class="cf">
+      <li><a href="/001/012/index.html">消費・生活相談</a></li>
+      <li><a href="/001/013/index.html">コミュニティ・市民活動</a></li>
+      <li><a href="/001/016/index.html">国際化の推進</a></li>
+      <li><a href="/001/015/index.html">申請書・届出書ダウンロードサービス</a></li>
+     </ul>
+    </div>
+   </div>
+  </li>
+  <li id="gn2">
+   <a href="/002/index.html">
+    <img src="/share/imgs/common_gn02.png" alt="健康・福祉・医療" />
+   </a>
+   <div class="gn_mega">
+    <div class="gn_mega_in cf">
+     <ul class="cf">
+      <li><a href="/002/001/index.html">健康・医療</a></li>
+      <li><a href="/002/002/index.html">食品・衛生</a></li>
+      <li><a href="/002/003/index.html">福祉</a></li>
+     </ul>
+    </div>
+   </div>
+  </li>
+  <li id="gn3">
+   <a href="/003/index.html">
+    <img src="/share/imgs/common_gn03.png" alt="子育て・教育" />
+   </a>
+   <div class="gn_mega">
+    <div class="gn_mega_in cf">
+     <ul class="cf">
+      <li><a href="/003/001/index.html">育児・保育</a></li>
+      <li><a href="/003/002/index.html">教育</a></li>
+      <li><a href="/003/003/index.html">生涯学習</a></li>
+     </ul>
+    </div>
+   </div>
+  </li>
+  <li id="gn4">
+   <a href="/004/index.html">
+    <img src="/share/imgs/common_gn04.png" alt="観光・スポーツ・文化" />
+   </a>
+   <div class="gn_mega">
+    <div class="gn_mega_in cf">
+     <ul class="cf">
+      <li><a href="/004/001/index.html">観光</a></li>
+      <li><a href="/004/005/index.html">文化・芸術</a></li>
+      <li><a href="/004/006/index.html">スポーツ・公園・余暇</a></li>
+      <li><a href="/004/004/index.html">オリンピック・パラリンピック</a></li>
+     </ul>
+    </div>
+   </div>
+  </li>
+  <li id="gn5">
+   <a href="/005/index.html">
+    <img src="/share/imgs/common_gn05.png" alt="事業者向けの情報" />
+   </a>
+   <div class="gn_mega">
+    <div class="gn_mega_in cf">
+     <ul class="cf">
+      <li><a href="/005/001/index.html">届出・手続き</a></li>
+      <li><a href="/005/002/index.html">環境・産業・企業立地</a></li>
+      <li><a href="/005/003/index.html">まちづくり・交通・建設</a></li>
+      <li><a href="/005/004/index.html">税金</a></li>
+     </ul>     
+     <ul class="cf">
+      <li><a href="/005/005/index.html">保険・雇用・労働</a></li>
+      <li><a href="/005/006/index.html">消防</a></li>
+     </ul>
+    </div>
+   </div>
+  </li>
+  <li id="gn6">
+   <a href="/006/index.html" class="mm-item-link gn_current">
+    <img src="/share/imgs/common_gn06.png" alt="市政情報" />
+   </a>
+   <div class="gn_mega">
+    <div class="gn_mega_in cf">
+     <ul class="cf">
+      <li><a href="/006/012/index.html">さいたま市プロフィール</a></li>
+      <li><a href="/006/015/index.html">各課の紹介</a></li>
+      <li><a href="/006/013/index.html">人口・統計</a></li>
+      <li><a href="/006/007/index.html">政策・財政</a></li>
+     </ul>     
+     <ul class="cf">
+      <li><a href="/006/011/index.html">例規集・告示情報</a></li>
+      <li><a href="/006/014/index.html">さいたま市の広報</a></li>
+      <li><a href="/006/002/index.html">広聴・市民参加・アンケート</a></li>
+      <li><a href="/006/008/index.html">情報公開の総合的な推進</a></li>
+     </ul>     
+     <ul class="cf">
+      <li><a href="/006/006/index.html">適正な公務の執行</a></li>
+      <li><a href="/006/010/index.html">人権政策・男女共同参画</a></li>
+      <li><a href="/006/009/index.html">選挙</a></li>
+      <li><a href="/006/005/index.html">さいたま市の人事</a></li>
+     </ul>     
+     <ul class="cf">
+      <li><a href="/006/001/index.html">募集</a></li>
+      <li><a href="/006/003/index.html">市長の部屋</a></li>
+     </ul>
+    </div>
+   </div>
+  </li>
+ </ul>
+</div>
+<!--/global_navi-->
+ <hr />
+<!-- topic_path_area -->
+<div id="topic_path_area">
+<div id="topic_path_in" class="cf"><ul id="topic_path">
+ <li><a href="/index.html">トップページ </a>&nbsp;&gt;</li>
+ <li><a href="/006/index.html">市政情報</a>&nbsp;&gt;</li>
+ <li><a href="/006/014/index.html">さいたま市の広報</a>&nbsp;&gt;</li>
+ <li><a href="/006/014/007/index.html">WEBサイト</a>&nbsp;&gt;</li>
+ <li>お探しのページが見つかりません </li>
+</ul>
+<div id="search_box">
+<p class="for_voice">サイト内検索。検索したいキーワードを入力し、検索ボタンをクリックもしくはキーボードのエンターキーを押してください。</p>
+<!-- Google Search -->
+<form action="/searchresult.html" id="searchform">
+&nbsp;<input type="text" name="q" id="result_search_textbox" onFocus="inputSearchOnfocus(this);" onBlur="inputSearchOnblur(this);" class="hUtility_searchTxtbox" value="検索したい文言を入力してください" title="ここに検索したい文言を入力してください" size="16" />
+ <input type="image" src="/share/imgs/common_search_btn.png" alt="検索" id="submit" name="sa" class="hUtility_searchBtn" />
+ <input type="hidden" name="cx" value="017578850935869053356:pwqgbtbmmk8" />
+ <input type="hidden" name="ie" value="UTF-8" />
+ <input type="hidden" name="cof" value="FORID:9" />
+</form>
+<p class="help"><a href="/006/014/007/p051161.html"><span>情報の探し方</span></a></p>
+<!-- /Google Search -->
+</div>
+</div>
+</div>
+<!-- /topic_path_area --><hr />
+<!--content_area-->
+<div id="content_area" class="cf"><!--contents-->
+<div id="contents">
+<p id="speak_main" class="for_voice">ページの本文です。</p>
+<div class="cf mag_bt10">
+<p class="back_link"><a href="javascript:history.back();">一つ前に見ていたページに戻る</a></p>
+<p class="page_number">更新日付：2020年5月12日 / ページ番号：C032776</p>
+</div>
+<!--content START-->
+<div id="content_ttl_area">
+<h1>お探しのページが見つかりません</h1>
+<p class="btn_print"><a href="javascript:window.print();">このページを印刷する</a></p>
+</div>
+<div id="b2111_detail" class="content_in"><!--WYSIWYG-->
+<div class="wysiwyg_area"><p>大変ご不便をおかけしております。<br />
+お探しのページは、公開を終了した、アドレスが変更された、または現在利用できない状態であるため、表示することができません。</p>
+<h2>その他の検索方法</h2>
+<h3>案内メニューから探す</h3>
+<p><img alt="案内メニュー" width="670" height="90" src="http://www.city.saitama.jp/006/014/007/p032776_d/img/003.jpg" /></p>
+<p>各ページの上部に設置している案内メニュー（グローバルナビゲーション）からも、情報を検索することができます。</p>
+<h3>担当課へ連絡する</h3>
+<p>担当課がお分かりになる場合は、下記のページから担当課へご連絡ください。<br />
+<a href="/006/012/001/007/p032903.html">「市役所の窓口案内」ページはこちらから。</a></p>
+<h2>ページ更新の作業中である可能性があります</h2>
+<p>担当課が、お探しのページを更新作業中である場合、一時的にこのページが表示されることがあります。<br />
+お手数ですが、しばらく時間をおいてから、再度ページの読み込みを行ってください。</p>
+<h3>最新情報への更新方法</h3>
+<p><img alt="最新情報への更新ボタン" width="229" height="43" src="http://www.city.saitama.jp/006/014/007/p032776_d/img/004.png" /></p>
+<p>矢印をクリックすると、最新の情報に更新されます。</p>
+<h2>コールセンターをご利用ください</h2>
+<p>「さいたまコールセンター」は新型コロナウイルス感染症による影響により、電話が繋がりにくくなることがあります。<br />
+ご不便をお掛けしますが、ご了承いただきますよう、お願いいたします。<br />
+さいたま市では、市のサービス内容や手続き、施設案内やイベント情報など様々なお問合せに答える「さいたまコールセンター（愛称 さいコール）」を開設しております。<br />
+専門のオペレーターがお答えしますので、お気軽にお問い合わせください。</p>
+<h3>電話番号</h3>
+<p>048-835-3156（さいコール）</p>
+<h3>ファックス</h3>
+<p>048-827-8656</p>
+<h3>メール</h3>
+<p>「さいたまコールセンター」ホームページの専用フォームから<br />
+<a href="https://callcenter.city.saitama.jp/form/">専用フォームは、こちらから。</a>（新しいウィンドウで開きます）</p>
+<h3>受付時間</h3>
+<p>8時から21時（年中無休）<br />
+※ファックス・メールは24時間受付（対応は8時から21時まで）</p></div>
+<!--/WYSIWYG--> <h2 class="ttl_type5">関連リンク</h2>
+<div class="item_box">
+ <ul>
+  <li><a class="connect_link" href="/006/002/007/p043162.html">「よくある質問」</a></li>
+  <li><a class="connect_link" href="http://www.city.saitama.jp/006/015/index.html" target="_blank">さいたま市各業務課の紹介</a></li> </ul>
+</div>
+ <h2 class="ttl_contact">この記事についてのお問い合わせ</h2>
+<div class="contact_box cf">
+ <p class="txt">市長公室/広報課　<br />
+ 電話番号：048-829-1039 ファックス：048-829-1018</p>
+ <p class="btn"><a class="btn_green01" target="_blank" href="/inquiry/mailform0010020.html?PAGE_NO=32776">お問い合わせフォーム</a></p>
+</div>
+</div>
+<!--content END--></div>
+<!--/contents-->
+<p id="btn_pagetop"><a href="#page_top"><img class="swap" alt="ページの先頭に戻る" width="152" height="30" src="/share/imgs/common_pagetop.png" /></a></p>
+<!-- othre link -->
+<div class="col_box1">
+ <div class="contents_wid">
+  <!-- recent event -->
+  <div class="recent_event_box">
+   <div class="relative">
+    <h2 class="ttl_type5">イベント情報</h2>
+    <p class="btn_event"><a href="/004/001/002/005/event.html"><img alt="イベント情報一覧を見る" width="94" height="29" src="/share/imgs/b2_btn_event.png" /></a></p>
+   </div>
+<script type="text/javascript">
+$(function(){
+$("#pickupevent3").load("/pickupevent3.html");
+});
+</script>
+<div id="pickupevent3"></div>
+  </div>
+  <!-- /recent event -->
+ </div>
+</div>
+<!-- /othre link -->
+ <!-- /othre link --></div>
+<!--/contentArea--></div>
+<!--/container--><hr />
+<div id="change_device">
+<p>表示モード : <a id="switch-pc" href="javascript:void(0);">パソコン版</a><a id="switch-smapho" href="javascript:void(0);">スマートフォンサイト</a></p>
+</div>
+<div><!--footer_area-->
+<div id="footer_area">
+ <p id="speak_footer" class="for_voice">フッターです。</p>
+ <!--footer-->
+ <div id="footer">
+  <div class="cf">
+   <div id="footer_l">
+    <address>
+     <span id="footer_government"><img alt="さいたま市役所" width="183" height="23" src="/share/imgs/common_footer_txt1.png" /></span>
+     <span>住所：〒330-9588 さいたま市浦和区常盤六丁目4番4号<br />電話：<strong class="tel_num">048-829-1111</strong>（代表）<br />※さいたまコールセンターにつながります。<br />「さいたまコールセンター」は新型コロナウイルス感染症による影響により、電話が繋がりにくくなることがあります。<br />ご不便をお掛けしますが、ご了承いただきますよう、お願いいたします。<br />
+開庁時間：8時30分から17時15分<br />（土曜日、日曜日、祝日、休日、年末年始を除く）<br />※一部、開庁時間が異なる組織、施設があります。<br />法人番号 2000020111007</span>
+     <span id="footer_call"><img alt="さいたまコールセンター" width="315" height="23" src="/share/imgs/common_footer_txt2.png" /></span>
+     <span id="footer_call2">電話：<strong class="tel_num">048-835-3156</strong><br />受付時間：8時から21時（年中無休）</span>
+    </address>
+   </div>
+   <div id="footer_c" class="cf">
+    <p class="for_voice">フッターメニューです。</p>
+    <ul id="footer_c_l" class="cf">
+     <li id="footer_c_in1"><a target="_blank" href="https://maps.google.co.jp/maps?f=q&amp;source=s_q&amp;hl=ja&amp;geocode=&amp;q=%E3%81%95%E3%81%84%E3%81%9F%E3%81%BE%E5%B8%82%E6%B5%A6%E5%92%8C%E5%8C%BA%E5%B8%B8%E7%9B%A46%E4%B8%81%E7%9B%AE4%E7%95%AA4%E5%8F%B7&amp;sll=35.8616336,139.6455522&amp;sspn=0.002192,0.004828&amp;ie=UTF8&amp;ll=35.8616336,139.6455522&amp;spn=0.00872,0.019312&amp;z=16&amp;iwloc=addr"><img alt="地図" width="70" height="75" src="/share/imgs/common_footer_btn1.png" /></a></li>
+     <li id="footer_c_in2"><a href="/006/012/001/007/p032903.html"><img alt="窓口案内" width="70" height="75" src="/share/imgs/common_footer_btn2.png" /></a></li>
+     <li id="footer_c_in3"><a target="_blank" href="https://callcenter.city.saitama.jp/saicall.html"><img alt="各種お問い合わせ" width="152" height="50" src="/share/imgs/common_footer_btn3.png" /></a></li>
+    </ul>
+    <ul id="footer_c_r">
+     <li><a href="/sitemap.html">サイトマップ</a></li>
+     <li><a href="/006/014/007/p032557.html">当サイトについて</a></li>
+     <li><a href="/006/014/007/p032344.html">ご利用ガイド</a></li>
+     <li><a href="/006/002/007/p043162.html">よくある質問</a></li>
+     <li><a href="/006/014/007/p021857.html">アクセシビリティポリシー</a></li>
+    </ul>
+   </div>
+  </div>
+  <div id="footer_r">
+   <h2 class="mag_bt25"><img alt="区のWEBサイト" width="170" height="19" src="/share/imgs/common_footer_txt3.png" /></h2>
+   <p>
+    <img border="0" alt="区のMAP" width="279" height="162" usemap="#Map" src="/share/imgs/common_footer_map.png" />
+    <map id="Map" name="Map">
+     <area shape="rect" alt="西区" coords="9,34,64,77" href="/nishi/index.html" />
+     <area shape="poly" alt="北区" coords="70,43,70,21,125,21,126,33,136,35,136,45" href="/kita/index.html" />
+     <area shape="poly" alt="見沼区" coords="134,29,134,20,205,20,204,70,142,71,144,31" href="/minuma/index.html" />
+     <area shape="poly" alt="岩槻区" coords="212,9,210,71,245,72,249,95,270,94,270,9" href="/iwatsuki/index.html" />
+     <area shape="rect" alt="大宮区" coords="70,49,137,71" href="/omiya/index.html" />
+     <area shape="poly" alt="桜区" coords="35,83,33,127,95,127,94,102,63,100,64,83" href="/sakura/index.html" />
+     <area shape="poly" alt="中央区" coords="69,76,68,97,100,96,102,116,126,117,126,77" href="/chuo/index.html" />
+     <area shape="rect" alt="浦和区" coords="132,77,171,116" href="/urawa/index.html" />
+     <area shape="rect" alt="緑区" coords="176,76,242,116" href="/midori/index.html" />
+     <area shape="poly" alt="南区" coords="100,135,72,134,69,149,172,151,171,140,195,140,195,123,102,120" href="/minami/index.html" />
+    </map>
+   </p>
+  </div>
+  <ul id="footer_btnlist" class="cf">
+   <li><a target="_blank" href="https://www.facebook.com/city.saitama"><img alt="Facebook" width="100" height="44" src="/share/imgs/common_footer_btn4.png" /></a></li>
+   <li><a target="_blank" href="https://twitter.com/SaitamaCityPR/"><img alt="Twitter" width="100" height="44" src="/share/imgs/common_footer_btn5.png" /></a></li>
+   <li><a target="_blank" href="https://www.instagram.com/saitamacity_official/"><img alt="Instagram" width="100" height="44" src="/share/imgs/common_footer_btn11.png" /></a></li>
+   <li><a target="_blank" href="https://www.youtube.com/user/saitamacitypr?feature=watch"><img alt="YouTube" width="100" height="44" src="/share/imgs/common_footer_btn6.png" /></a></li>
+   <li><a target="_blank" href="https://saitamapr.exblog.jp/"><img alt="ブログ" width="100" height="44" src="/share/imgs/common_footer_btn7.png" /></a></li>
+   <li><a href="https://machimachi.com/area/saitama/saitamashi"><img alt="マチマチ" width="100" height="44" src="/share/imgs/common_footer_btn10.png" /></a></li>
+  </ul>
+ </div>
+ <!--/footer-->
+ <div id="footer_btm">
+  <p id="copyright"><span><img alt="Copyright (c)  2013 Saitama City, All rights reserved." width="427" height="13" src="/share/imgs/common_copyright.png" /></span></p>
+ </div>
+</div>
+<!--/footer_area-->
+<p id="btn_pagetop_end" class="contents_skip"><a href="#page_top">ページの先頭に戻る</a></p>
+<img src="/cgi-bin/view/pageview.cgi?PAGE_KIND_CD=3&amp;PAGE_NO=32776&amp;OUTPUT_FG=1" style="display:none;" alt="" width="1" height="1" />
+</div></body>
+</html><!--iSign_HMAC_AES_SHA1-BEGIN:EB85D045AAB28680897818560F1EFF3D1D11103D9E76716925112FF5AC36CBD1:iSign_HMAC_AES_SHA1-END-->
