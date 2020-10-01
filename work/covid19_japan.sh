@@ -71,7 +71,7 @@ url=`curl -s https://opendata.pref.saitama.lg.jp/data/dataset/covid19-jokyo | gr
 curl -s $url | iconv -f SJIS > 11_saitama.csv
 link=`curl -s "https://www.pref.saitama.lg.jp/a0701/covid19/jokyo.html" | xmllint --html --xpath '//*[@id="tmp_contents"]/p[3]/a' - | cut -d\" -f 2`
 curl -s -o 11_saitama.pdf "https://www.pref.saitama.lg.jp$link"
-pdftotext -layout 11_saitama.pdf - | awk '{printf "%s,%s,%s,%s,%s,%s\n", $1, $2, $3, $4, $5, $6}' > 11_saitama2.csv
+pdftotext -layout 11_saitama.pdf - | awk '$1>=5&&$1<=8{printf "%s,%s %s,%s,%s,%s\n",$1,$2,$3,$4,$5,$6}$1<5||$1>8{printf "%s,%s,%s,%s,%s,%s\n", $1, $2, $3, $4, $5, $6}' > 11_saitama2.csv
 
 #111007 さいたま市
 #url="https://www.city.saitama.jp/002/001/008/006/013/001/p075326.html"
