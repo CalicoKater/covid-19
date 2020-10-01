@@ -170,12 +170,14 @@ curl -s $url | iconv -f SJIS > 22_shizuoka.csv
 #curl -s $url | iconv -f SJIS > 22_shizuoka2.csv
 
 #23 愛知県
-link=`curl -s "https://www.pref.aichi.jp/site/covid19-aichi/" | xmllint --html --xpath '//*[@id="main_body"]/div[1]/p[4]/span[4]/a' - | cut -d\" -f 2`
-url="https://www.pref.aichi.jp/$link"
+#link=`curl -s "https://www.pref.aichi.jp/site/covid19-aichi/" | xmllint --html --xpath '//*[@id="main_body"]/div[1]/p[4]/span[4]/a' - | cut -d\" -f 2`
+#url="https://www.pref.aichi.jp/$link"
+url="https://www.pref.aichi.jp/uploaded/attachment/345284.pdf"
 curl -s -o 23_aichi.pdf $url
 
-link=`curl -s "https://www.pref.aichi.jp/site/covid19-aichi/" | xmllint --html --xpath '//*[@id="main_body"]/div[1]/p[4]/a' - | cut -d\" -f 2`
-url="https://www.pref.aichi.jp/$link"
+#link=`curl -s "https://www.pref.aichi.jp/site/covid19-aichi/" | xmllint --html --xpath '//*[@id="main_body"]/div[1]/p[4]/a' - | cut -d\" -f 2`
+#url="https://www.pref.aichi.jp/$link"
+url="https://www.pref.aichi.jp/uploaded/attachment/348351.pdf"
 curl -s -o 23_aichi2.pdf $url
 
 #ruby pdf_to_csv.rb 23_aichi.pdf | sed -e 's/^\[//' -e 's/\]$//' > 23_aichi.csv
@@ -327,10 +329,12 @@ curl -s -o 42_nagasaki.csv $url
 
 #43 熊本県
 link=`curl -s "https://www.pref.kumamoto.jp/kiji_22038.html" \
- | sed -e 's/<ul>//g' -e 's/<\/ul>//g' \
- | xmllint --html --xpath '//*[@id="danraku1"]/div[11]/div[1]/div/table/tbody/tr[3]/td[4]/li/a' - \
+ | xmllint --html --xpath '//table/tbody/tr[3]/td[4]//ul/li/a/@href' - \
  | cut -d\" -f 2 | sed -e 's/&amp;/\&/g'`
 curl -s $link | iconv -f SJIS > 43_kumamoto.csv
+if [ $? != 0 ] ; then
+  curl -s $link > 43_kumamoto.csv
+fi
 
 #44 大分県
 url="https://data.bodik.jp/dataset/f632f467-716c-46aa-8838-0d535f98b291/resource/3714d264-70f3-4518-a57a-8391e0851d7d/download/440001oitacovid19patients.csv"
