@@ -1,16 +1,15 @@
+#ruby https://www.mhlw.go.jp/stf/newpage_12674.html
+#ruby https://www.pref.kagawa.lg.jp/content/etc/subsite/kansenshoujouhou/kansen/se9si9200517102553.shtml 3
 require 'open-uri'
 require 'openssl'
 require 'nokogiri'
 require 'csv'
-
 #url = "https://www.mhlw.go.jp/stf/newpage_12674.html"
 #url = "https://www.pref.akita.lg.jp/pages/archive/47957"
-#url = ""
 url = ARGV[0]
-
-doc = Nokogiri::HTML.parse(open(url,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
+uri = URI.parse(url)
+doc = Nokogiri::HTML.parse(open(uri,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
 #html = File.open('newpage_12674.html')
-
 #doc = Nokogiri::HTML.parse(open(url,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
 #doc = Nokogiri.parse(html)
 if ARGV.size() == 1 then

@@ -28,20 +28,25 @@
 #  done
 #) > tokyo_death_of_patient_08.csv
 
-url="https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/09/index.html"
+#url="https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/09/index.html"
+url="https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2020/10/index.html"
   curl -s $url | xmllint --html --xpath '//a' - | tr ' ' '\n' \
   | grep "新型コロナウイルスに関連した患者の死亡" \
   | sed -e 's/<\/a><a//g' -e 's/href=//g' -e 's/\"//g' -e 's/>/, /g' | tail -r \
-  > tokyo_death_of_patient_202009.txt
+  > tokyo_death_of_patient_202010.txt
+#  > tokyo_death_of_patient_202009.txt
 
 (
-  for url in `cut -d, -f 1 tokyo_death_of_patient_202009.txt`; do
+#  for url in `cut -d, -f 1 tokyo_death_of_patient_202009.txt`; do
+  for url in `cut -d, -f 1 tokyo_death_of_patient_202010.txt`; do
     sleep 1
     url="https://www.metro.tokyo.lg.jp$url"
     ruby tokyo_death_of_patient.rb $url
   done
-) > tokyo_death_of_patient_09.csv
+) > tokyo_death_of_patient_10.csv
+#) > tokyo_death_of_patient_09.csv
 
 #echo "公表日,枝番,年代,性別,居住地,発症日,診断日,死亡日,ソース" > tokyo_death_of_patient.csv
 cat tokyo_death_of_patient_02_03.csv tokyo_death_of_patient_04_07.csv > tokyo_death_of_patient.csv
 cat tokyo_death_of_patient_08.csv tokyo_death_of_patient_09.csv >> tokyo_death_of_patient.csv
+cat tokyo_death_of_patient_10.csv >> tokyo_death_of_patient.csv
