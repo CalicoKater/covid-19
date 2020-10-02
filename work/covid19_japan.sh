@@ -185,7 +185,7 @@ curl -s -o 23_aichi2.pdf $url
 
 #ruby pdf_to_csv.rb 23_aichi.pdf | sed -e 's/^\[//' -e 's/\]$//' > 23_aichi.csv
 #ruby pdf_to_csv.rb 23_aichi2.pdf | sed -e 's/^\[//' -e 's/\]$//' >> 23_aichi.csv
-xlsx2csv 23_aichi.xlsx > 23_aichi.csv
+xlsx2csv 23_aichi.xlsx | cut -d, -f 1-6,8 > 23_aichi.csv
 xlsx2csv -s 2 23_aichi2.xlsx >> 23_aichi.csv
 #xlsx2csv -a 23_aichi2.xlsx > 23_aichi2.csv
 
