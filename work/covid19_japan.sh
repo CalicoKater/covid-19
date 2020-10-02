@@ -64,6 +64,8 @@ curl -s -o 09_tochigi.xlsx $url
 # ５８行目の#55 発生届取下げ 、#401 発生届取下げ
 xlsx2csv 09_tochigi.xlsx | grep -v "4/30発生届取下げのため削除" | grep -v "9/25発生届取下げのため削除" > 09_tochigi.csv
 
+(head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="栃木県"')  | awk -F, -f jag2.awk > 09_jag_tochigi.csv
+
 #10 群馬県
 url="http://stopcovid19.pref.gunma.jp/csv/01kanja.csv"
 # #489 欠番
@@ -72,6 +74,8 @@ curl -s -o 10_gunma.csv $url
 
 url="https://www.pref.gunma.jp/contents/100168631.pdf"
 curl -s -o 10_gunma.pdf $url
+
+ (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="群馬県"')  | awk -F, -f jag2.awk > 10_jag_gunma.csv
 
 #11 埼玉県
 url=`curl -s https://opendata.pref.saitama.lg.jp/data/dataset/covid19-jokyo | grep -e "jokyo.*\.csv" | tail -n 1 | cut -d\" -f 2`
