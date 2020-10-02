@@ -33,6 +33,9 @@ link=`curl -s "https://www.pref.miyagi.jp/site/covid-19/02.html" \
 url="https://www.pref.miyagi.jp$link"
 curl -s -o 04_miyagi.xlsx $url
 /usr/local/bin/xlsx2csv 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
+
+(head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="宮城県"')  | awk -F, -f jag2.awk > 04_jag_miyagi.csv
+
 #05 秋田県
 url="https://www.pref.akita.lg.jp/pages/archive/47957"
 ruby ccc2.rb $url > 05_akita.csv
@@ -47,6 +50,9 @@ ruby ccc2.rb $url > 07_fukushima.csv
 link=`ruby ccc2.rb http://www.pref.fukushima.lg.jp/w4/covid19/patients/ | grep "070009_fukushima_covid19_patients" | tail -n 1 | cut -d, -f 2`
 url="http://www.pref.fukushima.lg.jp/w4/covid19/patients/$link"
 curl -s $url | iconv -f SJIS > 07_fukushima2.csv
+
+(head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="福島県"')  | awk -F, -f jag2.awk > 07_jag_fukushima.csv
+
 #08 茨城県
 url="https://www.pref.ibaraki.jp/1saigai/2019-ncov/ichiran.html"
 ruby ccc2.rb $url > 08_ibaraki.csv
