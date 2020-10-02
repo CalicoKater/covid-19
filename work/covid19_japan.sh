@@ -185,8 +185,9 @@ curl -s -o 23_aichi2.pdf $url
 
 #ruby pdf_to_csv.rb 23_aichi.pdf | sed -e 's/^\[//' -e 's/\]$//' > 23_aichi.csv
 #ruby pdf_to_csv.rb 23_aichi2.pdf | sed -e 's/^\[//' -e 's/\]$//' >> 23_aichi.csv
-xlsx2csv 23_aichi.xlsx | cut -d, -f 1-6,8 > 23_aichi.csv
-xlsx2csv -s 2 23_aichi2.xlsx >> 23_aichi.csv
+#xlsx2csv 23_aichi.xlsx | cut -d, -f 1-6,8 > 23_aichi.csv
+xlsx2csv 23_aichi.xlsx | gawk -F, -v FPAT='([^,]+)|(\"[^\"]+\")' 'OFS=","{print $1,$2,$3,$4,$5,$6,$7}' > 23_aichi.csv
+xlsx2csv -s 2 23_aichi2.xlsx | gawk -F, -v FPAT='([^,]+)|(\"[^\"]+\")' 'OFS=","{print $1,$2,$3,$4,$5,$6,$7}' >> 23_aichi.csv
 #xlsx2csv -a 23_aichi2.xlsx > 23_aichi2.csv
 
 #24 三重県
