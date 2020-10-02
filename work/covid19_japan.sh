@@ -29,7 +29,7 @@ url="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1029635/index.html"
 ruby ccc2.rb $url > 03_iwate.csv
 #04 宮城県
 link=`curl -s "https://www.pref.miyagi.jp/site/covid-19/02.html" \
- | xmllint --html --xpath '//*[@id="main_body"]/div[3]/p[6]/a' - | cut -d\" -f 2`
+ | xmllint --html --xpath '//*[@id="main_body"]/div[3]/p[8]/a' - | cut -d\" -f 2`
 url="https://www.pref.miyagi.jp$link"
 curl -s -o 04_miyagi.xlsx $url
 /usr/local/bin/xlsx2csv 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv

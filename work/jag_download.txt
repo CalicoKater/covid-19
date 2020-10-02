@@ -9,6 +9,8 @@
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="群馬県"')  | awk -F, -f jag2.awk | tr ',' '\t' | pbcopy
  
  
+(head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="埼玉県"')  | awk -F, -f jag2.awk | tr ',' '\t' | pbcopy
+  
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="栃木県"')  | awk -F, -f jag2.awk | tr ',' '\t' | pbcopy
  
 千葉県
