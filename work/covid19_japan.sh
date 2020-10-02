@@ -158,8 +158,12 @@ url="https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/docu
 curl -s $url | iconv -f SJIS  > 20_nagano.csv
 
 #21 岐阜県
-url="https://data.gifu-opendata.pref.gifu.lg.jp/dataset/4661bf9d-6f75-43fb-9d59-f02eb84bb6e3/resource/9c35ee55-a140-4cd8-a266-a74edf60aa80/download/210005gifucovid19patients.csv"
-curl -s $url | iconv -f SJIS > 21_gifu.csv
+#url="https://data.gifu-opendata.pref.gifu.lg.jp/dataset/4661bf9d-6f75-43fb-9d59-f02eb84bb6e3/resource/9c35ee55-a140-4cd8-a266-a74edf60aa80/download/210005gifucovid19patients.csv"
+#curl -s $url | iconv -f SJIS > 21_gifu.csv
+
+url="https://gifu-opendata.pref.gifu.lg.jp/dataset/c11223-001"
+link=`curl -s $url | xmllint --html --xpath '//*[@id="dataset-resources"]/ul/li[1]/div/ul/li[2]/a/@href' - | cut -d\" -f 2`
+curl -s $link | iconv -f SJIS > 21_gifu.csv
 
 #22 静岡県
 url="https://opendata.pref.shizuoka.jp/dataset/8167/resource/46279/220001_shizuoka_covid19_patients.csv"
