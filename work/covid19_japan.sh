@@ -55,7 +55,8 @@ link=`curl -s http://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/co
  | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[1]/li[2]/a' - | cut -d\" -f 2`
 url="http://www.pref.tochigi.lg.jp$link"
 curl -s -o 09_tochigi.xlsx $url
-/usr/local/bin/xlsx2csv 09_tochigi.xlsx | grep -v "発生届取下げのため削除" > 09_tochigi.csv
+# ５８行目の#55 発生届取下げ 、#401 発生届取下げ
+xlsx2csv 09_tochigi.xlsx | grep -v "4/30発生届取下げのため削除" | grep -v "9/25発生届取下げのため削除" > 09_tochigi.csv
 
 #10 群馬県
 url="http://stopcovid19.pref.gunma.jp/csv/01kanja.csv"
