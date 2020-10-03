@@ -15,6 +15,12 @@
  
   (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="福島県"')  | awk -F, -f jag2.awk 
  
+
+
+
+ (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="和歌山県"')  | awk -F, -f jag2.awk | tr ',' '\t' | pbcopy
+ 
+ 
 千葉県
 link=`curl -s https://www.pref.chiba.lg.jp/shippei/press/2019/ncov-index.html | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[1]/li[1]/a' - | cut -d\" -f 2`
 url="https://www.pref.chiba.lg.jp$link"

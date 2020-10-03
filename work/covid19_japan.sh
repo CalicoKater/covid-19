@@ -56,6 +56,10 @@ curl -s $url | iconv -f SJIS > 07_fukushima2.csv
 #08 茨城県
 url="https://www.pref.ibaraki.jp/1saigai/2019-ncov/ichiran.html"
 ruby ccc2.rb $url > 08_ibaraki.csv
+
+url="https://www.city.mito.lg.jp/001245/hokenjo/kansensyou/p022377.html"
+ruby ccc2.rb $url > 08_mito_city.csv
+
 #09 栃木県
 link=`curl -s http://www.pref.tochigi.lg.jp/e04/welfare/hoken-eisei/kansen/hp/coronakensahasseijyoukyou.html \
  | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[1]/li[2]/a' - | cut -d\" -f 2`
