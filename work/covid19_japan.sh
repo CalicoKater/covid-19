@@ -207,7 +207,7 @@ curl -s -o 23_aichi2.pdf $url
 #xlsx2csv 23_aichi.xlsx | gawk -F, -v FPAT='([^,]+)|(\"[^\"]+\")' '{printf "%s,%s,%s,%s,%s,%s,%s\n",$1,$2,$3,$4,$5,$6,$7}' > 23_aichi.csv
 #xlsx2csv -s 2 23_aichi2.xlsx | gawk -F, -v FPAT='([^,]+)|(\"[^\"]+\")' '{printf "%s,%s,%s,%s,%s,%s,%s\n",$1,$2,$3,$4,$5,$6,$7}' >> 23_aichi.csv
 xlsx2csv 23_aichi.xlsx > 23_aichi.csv
-xlsx2csv -s 2 23_aichi2.xlsx >> 23_aichi.csv
+xlsx2csv -s 1 23_aichi2.xlsx >> 23_aichi.csv
 
 
 #24 三重県
