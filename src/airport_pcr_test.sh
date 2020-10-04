@@ -8,4 +8,4 @@ date=`cat airport_quarantine2.csv | tr -d '"' | awk -F',' -f ./src/airport_pcr_t
 
 s2=`cat ./var/current.tmp`
 
-grep -q "$date,$s2" airport_pcr_test_daily.csv || echo $date,$s2>> airport_pcr_test_daily.csv
+grep -q "$date,$s2" airport_pcr_test_daily.csv || echo $date,$s2 | sed -e 's/※7//g' >> airport_pcr_test_daily.csv
