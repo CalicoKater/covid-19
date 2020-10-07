@@ -148,7 +148,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 
 
-<p><a href="/a0301/covid19_sougousite.html"><img alt="新型コロナウイルス感染症総合サイト" width="740" height="180" src="/images/covid-19_test01.png" /></a></p>
+<div class="col2">
+            <div class="col2L">
+            <p align="center"><a href="/a0301/covid19_sougousite.html"><img alt="総合サイトトップ小バナー" width="350" height="170" src="/images/top_sogosite_2.png" /></a></p>
+            </div>
+            <div class="col2R">
+            <p align="center"><a href="/a0701/covid19/jokyo.html"><img alt="県内の発生状況小トップバナー" width="350" height="170" src="/images/top_shityousonbetu2.png" /></a></p>
+            </div>
+</div>
 <p>&nbsp;</p>
 <div class="outline">
             <h2><span class="txt_small">重要なお知らせ</span></h2>
@@ -176,11 +183,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="list_top_topics">
 <div class="shinchaku_list">
 <ul>
+<li><a href="/a0301/top-news/nw2020100701.html">【買って食べて埼玉農産物を応援！】10月10日（土曜日）テレ玉放送</a>10月7日<span>広聴広報課</span></li>
+<li><a href="/f1903/saiyou/r2saiyou/documents/shokyu1jigoukakuhappyou.html">令和２年度　埼玉県職員採用初級試験等の第1次試験合格発表について</a>10月7日<span>任用審査課</span></li>
+<li><a href="/a0701/top-news/nw20201007.html">新型コロナウイルスに関連した患者等の発生について（県内4819例目～4824例目、4833例目～4844例目 県発表3138例目～3155例目）</a>10月6日<span>感染症対策課</span></li>
 <li><a href="/a0701/top-news/nw2020100105.html">新型コロナウイルスに関連した患者等の発生について（県内4786例目～4788例目、4813例目～4818例目 県発表3129例目～3137例目）</a>10月5日<span>感染症対策課</span></li>
 <li><a href="/a0701/top-news/nw2020100104.html">新型コロナウイルスに関連した患者等の発生について（県内4748例目～4757例目、4778例目～4785例目 県発表3111例目～3128例目）</a>10月4日<span>感染症対策課</span></li>
-<li><a href="/a0701/top-news/nw2020100103.html">新型コロナウイルスに関連した患者等の発生について（県内4713例目～4716例目、4728例目～4747例目 県発表3087例目～3110例目）</a>10月3日<span>感染症対策課</span></li>
-<li><a href="/a0209/top-news/nw2020100256.html">【公売情報】西部地域 県・市町村不動産共同公売を実施します！</a>10月2日<span>税務課</span></li>
-<li><a href="/a0701/top-news/nw2020100102.html">新型コロナウイルスに関連した患者等の発生について（県内4678例目～4683例目、4698例目～4712例目 県発表3066例目～3086例目）</a>10月2日<span>感染症対策課</span></li>
 </ul>
 </div>
 </div>
@@ -196,28 +203,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
    
         <li>
-<a href="/a0001/news/page/2020/1006-05.html">新型コロナウイルスに関連した患者等の発生について（県内4819例目～4824例目、4833例目～4844例目 県発表3138例目～3155例目）</a>
-10月6日17時30分<span>感染症対策課</span>
+<a href="/a0001/news/page/2020/1007-05.html">新型コロナウイルスに関連した患者等の発生について（県内4845例目～4847例目、4853例目～4874例目、県発表3156例目～3180例目）</a>
+10月7日17時45分<span>感染症対策課</span>
         </li>
    
         <li>
-<a href="/a0001/news/page/2020/1006-01.html">決算特別委員会の開催について</a>
-10月6日17時00分<span>議会事務局議事課</span>
+<a href="/a0001/news/page/2020/1007-04.html">政務活動費（令和元年度交付分）の支出に係る閲覧資料の不備について</a>
+10月7日15時45分<span>総務課</span>
         </li>
    
         <li>
-<a href="/a0001/news/page/2020/1006-04.html">食中毒を発生させた施設の行政処分について</a>
-10月6日16時30分<span>食品安全課</span>
+<a href="/a0001/news/page/2020/1007-01.html">有限会社リプラ、株式会社ベイプランニング、しんみらい税理士法人からのフェイスシールドの寄贈について</a>
+10月7日11時00分<span>産業廃棄物指導課</span>
         </li>
    
         <li>
-<a href="/a0001/news/page/2020/1005-01.html">埼玉の魅力満載！ 「2021年版 埼玉県民手帳」は10月14日発売</a>
-10月6日11時00分<span>統計課</span>
+<a href="/a0001/news/page/2020/1007-02.html">子供たちの元気な明日へ、プレイボール！西武ライオンズの放課後野球教室</a>
+10月7日11時00分<span>少子政策課</span>
         </li>
    
         <li>
-<a href="/a0001/news/page/2020/1006-03.html">令和2年9月24日招集の定例県議会における追加議案の知事提案説明要旨</a>
-10月6日11時00分<span>財政課</span>
+<a href="/a0001/news/page/2020/1008-03.html">災害備蓄食料の埼玉フードパントリーネットワーク等への提供について－　埼玉県の災害備蓄食料をフードパントリー、フードバンク、県内の子ども食堂に提供します　</a>
+10月7日11時00分<span>農産物安全課</span>
         </li>
    
 </ul>

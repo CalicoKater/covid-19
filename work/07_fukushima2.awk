@@ -2,7 +2,7 @@ BEGIN{
   OFS=",";
 }
 NR==1{
-  print $0
+  print $0;
 }
 NR>1{
   split($5, report_date, "\/");
