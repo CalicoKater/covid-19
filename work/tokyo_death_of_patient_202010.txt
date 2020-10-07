@@ -1,2 +1,5 @@
 /tosei/hodohappyo/press/2020/10/01/37.html, 新型コロナウイルスに関連した患者の死亡（第857報）
 /tosei/hodohappyo/press/2020/10/03/02.html, 新型コロナウイルスに関連した患者の死亡（第862報）
+/tosei/hodohappyo/press/2020/10/05/09.html, 新型コロナウイルスに関連した患者の死亡（第870報）
+/tosei/hodohappyo/press/2020/10/06/17.html, 新型コロナウイルスに関連した患者の死亡（第874報）
+/tosei/hodohappyo/press/2020/10/07/11.html, 新型コロナウイルスに関連した患者の死亡（第877報）
