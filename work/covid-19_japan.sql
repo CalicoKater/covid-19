@@ -69,10 +69,6 @@ select "県内症例", "050008", "居住地", "年齢", "性別", "職業", "陽
 from akita_csv order by cast("県内症例" as integer);
 
 update patients
-  set onset_date='7月31日～8月6日'
-	where perf_code='050008' and perf_case_number in (19,20,21,22,23,24,25,26);
-
-update patients
   set remarks_3='発症日: 7月31日～8月6日'
 	where perf_code='050008' and perf_case_number in (19,20,21,22,23,24,25,26);
 
@@ -113,3 +109,35 @@ update patients
   from tohoku_onset_csv
   where patients.perf_code=tohoku_onset_csv.perf_code and patients.perf_case_number = tohoku_onset_csv.perf_case_number)
 where perf_code in ('020001','030007','040002','050008','060003','070009');
+
+update patients
+  set onset_date='7月31日～8月6日'
+	where perf_code='050008' and perf_case_number in (19,20,21,22,23,24,25,26);
+
+/* 茨城県 */
+drop table ibaraki_csv;
+.mode csv
+.import ./08_ibaraki2.csv ibaraki_csv
+
+delete from patients where perf_code='080004';
+insert into patients (perf_case_number, perf_code, report_date, age_class, gender, regidence, remarks_1)
+select "No", '080004', "公表日", "年齢", "性別","居住地", "区分"
+from ibaraki_csv;
+
+drop table ibaraki_onset_csv;
+.mode csv
+.import ./ibaraki_onset_and_confirm_date.csv ibaraki_onset_csv
+
+update ibaraki_onset_csv
+set (city_case_number,city_code) = (NULL,NULL)
+where city_case_number='' and city_code='';
+
+update patients
+  set (city_case_number,city_code,onset_date,confirm_date) = (select
+	 ibaraki_onset_csv.city_case_number, ibaraki_onset_csv.city_code,ibaraki_onset_csv.onset_date,ibaraki_onset_csv.confirm_date
+	 from ibaraki_onset_csv
+	 where patients.perf_code=ibaraki_onset_csv.perf_code and patients.perf_case_number = ibaraki_onset_csv.perf_case_number
+	      and patients.report_date = ibaraki_onset_csv.report_date)
+where perf_code = '080004';
+
+

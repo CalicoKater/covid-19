@@ -132,6 +132,12 @@ cat 07_fukushima2.csv| awk -F, -f 07_fukushima2.awk > 07_fukushima4.csv
 url="https://www.pref.ibaraki.jp/1saigai/2019-ncov/ichiran.html"
 ruby ccc2.rb $url > 08_ibaraki.csv
 
+#cat 08_ibaraki.csv | awk -F, -f 08_ibaraki.awk > 08_ibaraki2.csv
+(
+  echo -n "No,"; head -n 1 08_ibaraki.csv 
+  tail -r 08_ibaraki.csv | sed -e '$d' | nl -s, 
+) | awk -F, -f 08_ibaraki.awk > 08_ibaraki2.csv
+
 url="https://www.city.mito.lg.jp/001245/hokenjo/kansensyou/p022377.html"
 ruby ccc2.rb $url > 08_mito_city.csv
 
