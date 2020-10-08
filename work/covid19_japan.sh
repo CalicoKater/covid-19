@@ -56,12 +56,20 @@ cat 01_hokkaido.csv | awk -F, -f 01_hokkaido.awk > 01_hokkaido2.csv
 
 #url="https://www.harp.lg.jp/opendata/dataset/1369/resource/2853/covid19_data.csv"
 #curl -s $url | iconv -f SJIS > 01_hokkaido2.csv
- 
+
 url="http://www.pref.hokkaido.lg.jp/hf/kth/kak/hasseijoukyou.htm"
 link=`curl -s $url | xmllint --html --xpath '//*[@id="rs_contents"]/span/ul[2]/li/a/@href' - | cut -d\" -f 2`
 url="http://www.pref.hokkaido.lg.jp$link"
 curl -sL $url -o 01_hokkaido.pdf
 pdftotext  -layout  01_hokkaido.pdf - | awk '$1!=""{printf "%s,%s,%s,%s,%s,%s\n",$1,$2,$3,$4,$5,$6}' > 01_hokkaido3.csv
+
+#011002 札幌市
+output="01_sapporo_city_case_number.csv"
+echo "No,北海道発表No,判明日" > $output
+url="https://www.city.sapporo.jp/hokenjo/f1kansen/2019n-covhassei_1.html"
+ruby ccc2.rb $url | cut -d, -f 1-3 | awk -F, -f 01_sapporo.awk >> $output
+url="https://www.city.sapporo.jp/hokenjo/f1kansen/2019n-covhassei.html"
+ruby ccc2.rb $url 4 | cut -d, -f 1-3 | awk -F, -f 01_sapporo.awk >> $output
 
 #02 青森県
 #'//*[@id="cms-tab-7-0-view"]/div/div/div/div[3]/div/div[2]/div[2]/a'
@@ -87,6 +95,15 @@ link=`curl -s "https://www.pref.miyagi.jp/site/covid-19/02.html" \
 url="https://www.pref.miyagi.jp$link"
 curl -s -o 04_miyagi.xlsx $url
 /usr/local/bin/xlsx2csv 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
+cat 04_miyagi.csv | awk -F, -f 04_miyagi.awk > 04_miyagi2.csv
+
+#041009 仙台市
+output="04_sendai_city_case_number.csv"
+echo "city_case_number,perf_case_number" > $output
+url="https://www.city.sendai.jp/kikikanri/kinkyu/corona2020/hassei/kanja1-65.html"
+ruby ccc2.rb $url | awk -F, '$1+0>0{printf "%d,%d\n",$1, $7}' >> $output
+url="https://www.city.sendai.jp/kikikanri/kinkyu/200131corona2.html"
+ruby ccc2.rb $url 1 | awk -F, '$1+0>0{printf "%d,%d\n",$1, $7}' >> $output
 
 #05 秋田県
 url="https://www.pref.akita.lg.jp/pages/archive/47957"
