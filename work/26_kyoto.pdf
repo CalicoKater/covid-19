@@ -39,6 +39,20 @@
 
 <h1>新型コロナウイルス感染症に係る緊急情報トップページを表示しています</h1>
 
+<table cellspacing="1" cellpadding="3" width="100%" border="1">
+    <tbody>
+        <tr>
+            <td>
+            <p><font size="4"><span style="COLOR: red">【防災・防犯 安心・安全情報】</span><br />
+            <strong><strong><a href="http://www.pref.kyoto.jp/kikiweb/">きょうと危機管理WEB（危機管理・防災関連情報を掲載中）</a><br />
+            <a href="https://www3.nhk.or.jp/nhkworld/en/news/tags/99/">NHK WORLD-JAPAN News: #disasters（外部リンク）</a><br />
+            <a href="https://www.jma.go.jp/jp/highresorad/">雨雲の動き（気象庁ホームページ）（外部リンク）</a><br />
+            <a href="/kikikanri/news/hinancovid19.html">大雨や台風等の自然災害が発生した場合、避難する際に気をつけること</a></strong></strong></font></p>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>&nbsp;</p>
 <table class="editable_slider">
     <tbody>
         <tr>
@@ -67,7 +81,7 @@
         </tr>
         <tr>
             <td>
-            <p><a href="/kentai/corona/tassei_jyokyo.html"><img alt="京都府の状況" width="690" height="410" src="/images/1007.png" /></a></p>
+            <p><a href="/kentai/corona/tassei_jyokyo.html"><img alt="京都府の状況" width="690" height="410" src="/images/1008.png" /></a></p>
             <p><a href="/kentai/corona/tassei_jyokyo.html">京都府のモニタリング指標の状況</a></p>
             </td>
         </tr>
@@ -75,10 +89,10 @@
 </table>
 <div class="col2">
 <div class="col2L"><!--◆ここから左動画◆--><span class="frame_youtube">
-<iframe title="今後の対応策について" width="400" height="237" src="//www.youtube.com/embed/8ikUcjWSyjQ?feature=youtu.be&amp;rel=0&amp;autoplay=0&amp;loop=0" frameborder="0" allowfullscreen></iframe>
+<iframe title="府市協調による「コロナ離職者雇用等に関する補助金」の申請者募集について　等" width="400" height="237" src="//www.youtube.com/embed/y60Z3Z6yBf8?rel=0&amp;autoplay=0&amp;loop=0" frameborder="0" allowfullscreen></iframe>
 </span>
 <br />
-<!--◆ここまで左動画◆-->9月25日（金曜）の臨時知事会見動画<br />
+<!--◆ここまで左動画◆-->10月9日（金曜）の知事会見動画<br />
 <a href="/koho/corona/"><img alt="新型コロナウイルスに関する支援制度まとめ" width="400" height="52" src="/images/shienseido.png" /></a></div>
 <div class="col2R"><!--◆ここから右動画--><span class="frame_youtube">
 <iframe title="こことろ利用方法紹介ムービー【利用者編】" width="400" height="237" src="//www.youtube.com/embed/8nO1JaJ5uN8?rel=0&amp;autoplay=0&amp;loop=0" frameborder="0" allowfullscreen></iframe>
@@ -143,8 +157,8 @@
             </span></font><font size="5"></font></p>
             <p><font size="3">京都府・京都市では、当日の17時までの検査結果をその日に発表しています。</font></p>
             <div class="section">
-            <p><font size="5">本日の感染者数 9名（京都府域 7名、京都市 2名）【累計 1809名】</font>（令和2年10月8日）<br />
-            <font size="5">これまでの退院等 1713名</font><font size="5">、死亡 27名</font>（令和2年10月8日&nbsp;11時30分）</p>
+            <p><font size="5">本日の感染者数 15名（京都府域 6名、京都市 9名）【累計 1824名】</font>（令和2年10月9日）<br />
+            <font size="5">これまでの退院等 1719名</font><font size="5">、死亡 27名</font>（令和2年10月9日&nbsp;12時00分）</p>
             </div>
             <div class="col2">
                         <div class="col2L">
