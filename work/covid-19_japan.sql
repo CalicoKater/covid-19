@@ -140,4 +140,33 @@ update patients
 	      and patients.report_date = ibaraki_onset_csv.report_date)
 where perf_code = '080004';
 
+/* 栃木県 */
+drop table tochigi_csv;
+.mode csv
+.import ./09_tochigi2.csv tochigi_csv
 
+delete from patients where perf_code='090000';
+insert into patients (perf_case_number,perf_case_number_sub,perf_code,age_class,gender,regidence,confirm_date,discharge_date,remarks_1)
+select "症例番号", rowid=19, '090000',"年代", "性別", "居住地", "陽性確認日", "退院･退所日","備考（No.は症例番号）"
+from tochigi_csv;
+
+/* 092011 宇都宮市 */
+drop table utsunomiya_city_case_number_csv;
+.mode csv
+.import ./09_utsunomiya_city_case_number.csv utsunomiya_city_case_number_csv
+update patients
+  set (city_code, city_case_number) = (select "092011", utsunomiya_city_case_number_csv."市No" 
+  from utsunomiya_city_case_number_csv
+  where patients.perf_case_number = utsunomiya_city_case_number_csv."栃木発表番号")
+where patients.perf_code='090000';
+
+/* 群馬県*/
+
+DROP TABLE IF EXISTS gunma_csv;
+.mode csv
+.import ./10_gunma2.csv gunma_csv
+
+delete from patients where perf_code='100005';
+insert into patients (perf_case_number, perf_code, confirm_date,regidence, age_class, gender)
+select "No", '100005', "判明日", "居住地", "年代", "性別"
+from gunma_csv;

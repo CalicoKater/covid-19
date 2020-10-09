@@ -149,11 +149,22 @@ curl -s -o 09_tochigi.xlsx $url
 # ５８行目の#55 発生届取下げ 、#401 発生届取下げ
 xlsx2csv 09_tochigi.xlsx | grep -v "4/30発生届取下げのため削除" | grep -v "9/25発生届取下げのため削除" > 09_tochigi.csv
 
+cat 09_tochigi.csv | sed -e ':a' -e 'N' -e '$!ba' -e 's/症例\n/症例/g' | gawk -v FPAT='([^,]+)|(\"[^\"]+\")' -f 09_tochigi.awk > 09_tochigi2.csv
+#092011 宇都宮市
+url="https://www.city.utsunomiya.tochigi.jp/kurashi/kenko/kansensho/etc/1023506.html"
+link=`curl -s $url | xmllint --html --xpath '//*[@id="voice"]/ul[1]/li[1]/a/@href' - | cut -d\" -f 2`
+url="https://www.city.utsunomiya.tochigi.jp/kurashi/kenko/kansensho/etc/$link"
+curl -s -o 09_utsunomiya_city.xlsx $url
+xlsx2csv 09_utsunomiya_city.xlsx > 09_utsunomiya_city.csv
+cat 09_utsunomiya_city.csv | awk 'NR>1' | cut -d, -f 1-2 | grep -v "5月22日再燃" | tr -d '県内例目' | \
+  sed y/０１２３４５６７８９/0123456789/ | sed -e 's/市No./市No/g' > 09_utsunomiya_city_case_number.csv
+
 #10 群馬県
 url="http://stopcovid19.pref.gunma.jp/csv/01kanja.csv"
 # #489 欠番
 #curl -s $url | grep -v '^489,9月7日,月,伊勢崎市,60代,男性' > 10_gunma.csv
 curl -s -o 10_gunma.csv $url
+cat 10_gunma.csv | awk -F, -f 10_gunma.awk > 10_gunma2.csv
 
 url="https://www.pref.gunma.jp/contents/100168631.pdf"
 curl -s -o 10_gunma.pdf $url
@@ -161,7 +172,7 @@ curl -s -o 10_gunma.pdf $url
 #11 埼玉県
 url=`curl -s https://opendata.pref.saitama.lg.jp/data/dataset/covid19-jokyo | grep -e "jokyo.*\.csv" | tail -n 1 | cut -d\" -f 2`
 curl -s $url | iconv -f SJIS > 11_saitama.csv
-link=`curl -s "https://www.pref.saitama.lg.jp/a0701/covid19/jokyo.html" | xmllint --html --xpath '//*[@id="tmp_contents"]/p[3]/a' - | cut -d\" -f 2`
+link=`curl -s "https://www.pref.saitama.lg.jp/a0701/covid19/jokyo.html" | xmllint --html --xpath '//*[@id="tmp_contents"]//p/a[contains( ./text(),"陽性確認者一覧（PDF")]/@href' - | cut -d\" -f 2`
 curl -s -o 11_saitama.pdf "https://www.pref.saitama.lg.jp$link"
 #******************↓*** 条件を変えて取下げ重複を削除してはいけない ************************************
 pdftotext -layout 11_saitama.pdf - | awk '$1>=5&&$1<=8{printf "%s,%s %s,%s,%s,%s\n",$1,$2,$3,$4,$5,$6}$1<5||$1>8{printf "%s,%s,%s,%s,%s,%s\n", $1, $2, $3, $4, $5, $6}' > 11_saitama2.csv

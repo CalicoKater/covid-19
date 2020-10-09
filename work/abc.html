@@ -1,0 +1,3 @@
+select "092011", utsunomiya_city_case_number_csv."市No" 
+  from utsunomiya_city_case_number_csv ,patients
+  where patients.perf_case_number = utsunomiya_city_case_number_csv."栃木発表番号"
