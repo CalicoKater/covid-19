@@ -172,6 +172,8 @@ curl -s -o 10_gunma.pdf $url
 #11 埼玉県
 url=`curl -s https://opendata.pref.saitama.lg.jp/data/dataset/covid19-jokyo | grep -e "jokyo.*\.csv" | tail -n 1 | cut -d\" -f 2`
 curl -s $url | iconv -f SJIS > 11_saitama.csv
+cat 11_saitama.csv | awk -F, -f 11_saitama.awk > 11_saitama3.csv
+
 link=`curl -s "https://www.pref.saitama.lg.jp/a0701/covid19/jokyo.html" | xmllint --html --xpath '//*[@id="tmp_contents"]//p/a[contains( ./text(),"陽性確認者一覧（PDF")]/@href' - | cut -d\" -f 2`
 curl -s -o 11_saitama.pdf "https://www.pref.saitama.lg.jp$link"
 #******************↓*** 条件を変えて取下げ重複を削除してはいけない ************************************

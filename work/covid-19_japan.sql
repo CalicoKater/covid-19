@@ -170,3 +170,24 @@ delete from patients where perf_code='100005';
 insert into patients (perf_case_number, perf_code, confirm_date,regidence, age_class, gender)
 select "No", '100005', "判明日", "居住地", "年代", "性別"
 from gunma_csv;
+
+/* 埼玉県 */
+drop table if exists saitama_csv;
+.mode csv
+.import ./11_saitama3.csv saitama_csv
+
+delete from patients where perf_code='110001';
+insert into patients (perf_case_number, perf_code, confirm_date, age_class, gender, regidence)
+select "No", '110001', "判明日", "年代", "性別", "居住地"
+from saitama_csv;
+
+drop table if exists saitama_onset_csv;
+.mode csv
+.import ./11_saitama_onset_date.csv saitama_onset_csv
+
+update patients
+  set (report_date,city_code,city_case_number,onset_date) = ( select 
+	saitama_onset_csv.report_date,saitama_onset_csv.city_code,saitama_onset_csv.city_case_number,saitama_onset_csv.onset_date
+	from saitama_onset_csv
+	where patients.perf_code=saitama_onset_csv.perf_code and patients.perf_case_number = saitama_onset_csv.perf_case_number)
+where perf_code = '110001';
