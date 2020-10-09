@@ -82,6 +82,17 @@ insert into patients (perf_case_number, perf_code, report_date, confirm_date, re
 select "No", "全国地方公共団体コード", "公表_年月日", "感染確認_年月日", "患者_居住地","患者_年代", "患者_性別"
 from yamagata_csv;
 
+/* 山形市 062014 */
+drop table if exists yamagata_city_csv;
+.mode csv
+.import ./06_yamagata_city_case_number.csv yamagata_city_csv
+
+update patients
+  set (city_code, city_case_number) = ( select '062014', yamagata_city_csv.city_case_number
+	from yamagata_city_csv
+	where patients.perf_case_number = yamagata_city_csv.perf_case_number )
+where patients.perf_code='060003';
+
 /* 福島県 */
 drop table fukushima3_csv;
 drop table fukushima4_csv;

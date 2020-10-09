@@ -117,6 +117,14 @@ url="https://www.pref.yamagata.jp$link"
 curl -s $url | iconv -f SJIS > 06_yamagata.csv
 cat 06_yamagata.csv | awk -F, -f 06_yamagata.awk > 06_yamagata2.csv
 
+url="https://www.pref.yamagata.jp/kenfuku/kenko/kansen/720130425shingata_corona.html"
+ruby ccc2.rb $url 5 > 06_yamagata3.csv
+output=06_yamagata_city_case_number.csv
+echo "perf_case_number,city_case_number" > $output
+cat 06_yamagata3.csv | grep -e '山形市.*公表' | cut -d, -f 2,6 | sed y/０１２３４５６７８９/0123456789/ | sed -e 's/[^0-9|,]//g' >> $output
+
+
+
 #07 福島県
 url="https://www.pref.fukushima.lg.jp/sec/21045c/fukushima-hasseijyoukyou.html"
 ruby ccc2.rb $url > 07_fukushima.csv
