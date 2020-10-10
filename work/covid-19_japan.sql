@@ -70,7 +70,7 @@ from akita_csv order by cast("県内症例" as integer);
 
 update patients
   set remarks_3='発症日: 7月31日～8月6日'
-	where perf_code='050008' and perf_case_number in (19,20,21,22,23,24,25,26);
+  where perf_code='050008' and perf_case_number in (19,20,21,22,23,24,25,26);
 
 /* 山形県 */
 drop table yamagata_csv;
@@ -89,8 +89,8 @@ drop table if exists yamagata_city_csv;
 
 update patients
   set (city_code, city_case_number) = ( select '062014', yamagata_city_csv.city_case_number
-	from yamagata_city_csv
-	where patients.perf_case_number = yamagata_city_csv.perf_case_number )
+  from yamagata_city_csv
+  where patients.perf_case_number = yamagata_city_csv.perf_case_number )
 where patients.perf_code='060003';
 
 /* 福島県 */
@@ -123,7 +123,7 @@ where perf_code in ('020001','030007','040002','050008','060003','070009');
 
 update patients
   set onset_date='7月31日～8月6日'
-	where perf_code='050008' and perf_case_number in (19,20,21,22,23,24,25,26);
+  where perf_code='050008' and perf_case_number in (19,20,21,22,23,24,25,26);
 
 /* 茨城県 */
 drop table ibaraki_csv;
@@ -139,16 +139,17 @@ drop table ibaraki_onset_csv;
 .mode csv
 .import ./ibaraki_onset_and_confirm_date.csv ibaraki_onset_csv
 
+/*↓これはなに？*/
 update ibaraki_onset_csv
 set (city_case_number,city_code) = (NULL,NULL)
 where city_case_number='' and city_code='';
 
 update patients
   set (city_case_number,city_code,onset_date,confirm_date) = (select
-	 ibaraki_onset_csv.city_case_number, ibaraki_onset_csv.city_code,ibaraki_onset_csv.onset_date,ibaraki_onset_csv.confirm_date
-	 from ibaraki_onset_csv
-	 where patients.perf_code=ibaraki_onset_csv.perf_code and patients.perf_case_number = ibaraki_onset_csv.perf_case_number
-	      and patients.report_date = ibaraki_onset_csv.report_date)
+    ibaraki_onset_csv.city_case_number, ibaraki_onset_csv.city_code,ibaraki_onset_csv.onset_date,ibaraki_onset_csv.confirm_date
+   from ibaraki_onset_csv
+   where patients.perf_code=ibaraki_onset_csv.perf_code and patients.perf_case_number = ibaraki_onset_csv.perf_case_number
+        and patients.report_date = ibaraki_onset_csv.report_date)
 where perf_code = '080004';
 
 /* 栃木県 */
@@ -160,6 +161,8 @@ delete from patients where perf_code='090000';
 insert into patients (perf_case_number,perf_case_number_sub,perf_code,age_class,gender,regidence,confirm_date,discharge_date,remarks_1)
 select "症例番号", rowid=19, '090000',"年代", "性別", "居住地", "陽性確認日", "退院･退所日","備考（No.は症例番号）"
 from tochigi_csv;
+update patients set re_positive_flg=1 where perf_code='090000' and perf_case_number=18 and perf_case_number_sub=1;
+
 
 /* 092011 宇都宮市 */
 drop table utsunomiya_city_case_number_csv;
@@ -182,6 +185,19 @@ insert into patients (perf_case_number, perf_code, confirm_date,regidence, age_c
 select "No", '100005', "判明日", "居住地", "年代", "性別"
 from gunma_csv;
 
+/* 栃木県 & 群馬県 発症日 */
+drop table if exists tochigi_gunma_onset_csv;
+.mode csv
+.import ./tochigi_gunma_onset_date.csv tochigi_gunma_onset_csv
+
+update patients
+  set onset_date = ( select tochigi_gunma_onset_csv.onset_date
+  from tochigi_gunma_onset_csv
+  where patients.perf_code = tochigi_gunma_onset_csv.perf_code
+    and patients.perf_case_number = tochigi_gunma_onset_csv.perf_case_number 
+    and patients.perf_case_number_sub = tochigi_gunma_onset_csv.perf_case_number_sub )
+where perf_code in ('090000','100005');
+
 /* 埼玉県 */
 drop table if exists saitama_csv;
 .mode csv
@@ -198,7 +214,7 @@ drop table if exists saitama_onset_csv;
 
 update patients
   set (report_date,city_code,city_case_number,onset_date) = ( select 
-	saitama_onset_csv.report_date,saitama_onset_csv.city_code,saitama_onset_csv.city_case_number,saitama_onset_csv.onset_date
-	from saitama_onset_csv
-	where patients.perf_code=saitama_onset_csv.perf_code and patients.perf_case_number = saitama_onset_csv.perf_case_number)
+  saitama_onset_csv.report_date,saitama_onset_csv.city_code,saitama_onset_csv.city_case_number,saitama_onset_csv.onset_date
+  from saitama_onset_csv
+  where patients.perf_code=saitama_onset_csv.perf_code and patients.perf_case_number = saitama_onset_csv.perf_case_number)
 where perf_code = '110001';

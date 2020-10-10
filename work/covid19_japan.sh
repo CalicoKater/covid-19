@@ -170,13 +170,28 @@ cat 09_utsunomiya_city.csv | awk 'NR>1' | cut -d, -f 1-2 | grep -v "5月22日再
 
 #10 群馬県
 url="http://stopcovid19.pref.gunma.jp/csv/01kanja.csv"
-# #489 欠番
-#curl -s $url | grep -v '^489,9月7日,月,伊勢崎市,60代,男性' > 10_gunma.csv
+# #489 欠番 
 curl -s -o 10_gunma.csv $url
 cat 10_gunma.csv | awk -F, -f 10_gunma.awk > 10_gunma2.csv
 
-url="https://www.pref.gunma.jp/contents/100168631.pdf"
-curl -s -o 10_gunma.pdf $url
+# https://www.pref.gunma.jp/contents/100171487.pdf
+url="https://www.pref.gunma.jp/07/z87g_00016.html"
+link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況（3月）')]/@href" - | cut -d\" -f 2`
+curl -s -o 10_gumna_202003.pdf "https://www.pref.gunma.jp$link"
+link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況（4月）')]/@href" - | cut -d\" -f 2`
+curl -s -o 10_gumna202004.pdf "https://www.pref.gunma.jp$link"
+link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況（5月）')]/@href" - | cut -d\" -f 2`
+curl -s -o 10_gumna_202005.pdf "https://www.pref.gunma.jp$link"
+link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況（6月）')]/@href" - | cut -d\" -f 2`
+curl -s -o 10_gumna_202006.pdf "https://www.pref.gunma.jp$link"
+link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況（7月）')]/@href" - | cut -d\" -f 2`
+curl -s -o 10_gumna_202007.pdf "https://www.pref.gunma.jp$link"
+link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況一覧')]/@href" - | cut -d\" -f 2`
+curl -s -o 10_gumna_202008_.pdf "https://www.pref.gunma.jp$link"
+
+
+#url="https://www.pref.gunma.jp/contents/100168631.pdf"
+#curl -s -o 10_gunma.pdf $url
 
 #11 埼玉県
 url=`curl -s https://opendata.pref.saitama.lg.jp/data/dataset/covid19-jokyo | grep -e "jokyo.*\.csv" | tail -n 1 | cut -d\" -f 2`
@@ -213,8 +228,11 @@ curl -s -o 12_chiba.pdf $url
 #xlsx2csv --all 12_chiba.xlsx | sed 's/^,//'
 
 # ２シートに分かれた場合
-xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
-xlsx2csv -s 2 12_chiba.xlsx | sed -e 's/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,9月28日/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,1月30日/g' > 12_chiba2.csv
+#xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
+#xlsx2csv -s 2 12_chiba.xlsx | sed -e 's/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,9月28日/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,1月30日/g' > 12_chiba2.csv
+
+ruby chiba2_csv.rb > 12_chiba4.csv
+ruby chiba_csv.rb > 12_chiba3.csv
 
 #url="https://www.pref.chiba.lg.jp/shippei/press/2019/documents/chiba_corona_data.xlsx"
 #curl -s -o 12_chiba3.xlsx $url
