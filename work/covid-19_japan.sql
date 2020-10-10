@@ -238,3 +238,14 @@ insert into patients (perf_code, perf_case_number, perf_case_number_sub,
                        age_class, gender, regidence, remarks_1, confirm_date)
 select '120006', "症例番号", 1, "年代", "性別", "居住地", "区分", "検査確定日"
 from chiba_asymptomatic_csv;
+
+/* 東京都 */
+drop table if exists tokyo_csv;
+.mode csv
+.import ./13_tokyo.csv tokyo_csv
+delete from patients where perf_code='130001';
+insert into patients (perf_case_number, perf_code, report_date, regidence, age_class, gender )
+select "No", "全国地方公共団体コード", "公表_年月日", "患者_居住地" , "患者_年代", "患者_性別"
+from tokyo_csv;
+
+/* 

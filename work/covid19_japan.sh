@@ -222,14 +222,17 @@ ruby ccc2.rb "https://www.city.saitama.jp/002/001/008/006/013/001/p075326.html" 
 link=`curl -s https://www.pref.chiba.lg.jp/shippei/press/2019/ncov-index.html | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[1]/li[1]/a' - | cut -d\" -f 2`
 url="https://www.pref.chiba.lg.jp$link"
 curl -s -o 12_chiba.pdf $url
+open https://www.ilovepdf.com/ja/pdf_to_excel
+sleep 5
+open .
 #pdftotext -layout 12_chiba.pdf - 
 #ruby pdf_to_csv.rb 12_chiba.pdf | sed -e 's/^\[//' -e 's/\]$//' > 12_chiba.csv
 
 #xlsx2csv --all 12_chiba.xlsx | sed 's/^,//'
 
 # ２シートに分かれた場合
-#xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
-#xlsx2csv -s 2 12_chiba.xlsx | sed -e 's/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,9月28日/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,1月30日/g' > 12_chiba2.csv
+xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
+xlsx2csv -s 2 12_chiba.xlsx | sed -e 's/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,9月28日/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,1月30日/g' > 12_chiba2.csv
 
 ruby chiba2_csv.rb > 12_chiba4.csv
 ruby chiba_csv.rb > 12_chiba3.csv
