@@ -139,7 +139,6 @@ drop table ibaraki_onset_csv;
 .mode csv
 .import ./ibaraki_onset_and_confirm_date.csv ibaraki_onset_csv
 
-/*↓これはなに？*/
 update ibaraki_onset_csv
 set (city_case_number,city_code) = (NULL,NULL)
 where city_case_number='' and city_code='';
@@ -212,9 +211,30 @@ drop table if exists saitama_onset_csv;
 .mode csv
 .import ./11_saitama_onset_date.csv saitama_onset_csv
 
+update saitama_onset_csv
+set (city_case_number,city_code) = (NULL,NULL)
+where city_case_number='' and city_code='';
+
 update patients
   set (report_date,city_code,city_case_number,onset_date) = ( select 
   saitama_onset_csv.report_date,saitama_onset_csv.city_code,saitama_onset_csv.city_case_number,saitama_onset_csv.onset_date
   from saitama_onset_csv
   where patients.perf_code=saitama_onset_csv.perf_code and patients.perf_case_number = saitama_onset_csv.perf_case_number)
 where perf_code = '110001';
+
+/* 千葉県 */
+drop table if exists chiba_symptoms_csv;
+drop table if exists chiba_asymptomatic_csv;
+.mode csv
+.import ./12_chiba3.csv chiba_symptoms_csv
+.import ./12_chiba4.csv chiba_asymptomatic_csv
+
+delete from patients where perf_code='120006';
+insert into patients (perf_code, perf_case_number, perf_case_number_sub,
+                      age_class, gender, regidence, remarks_1, onset_date, confirm_date)
+select '120006', "症例番号", 0, "年代", "性別", "居住地", "区分", "発症日", "検査確定日"
+from chiba_symptoms_csv;
+insert into patients (perf_code, perf_case_number, perf_case_number_sub,
+                       age_class, gender, regidence, remarks_1, confirm_date)
+select '120006', "症例番号", 1, "年代", "性別", "居住地", "区分", "検査確定日"
+from chiba_asymptomatic_csv;
