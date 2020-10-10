@@ -3217,6 +3217,21 @@ perf_case_number,report_date,city_code,city_case_number,onset_date
 4917,,,,
 4918,,,,
 4919,,,,
+4936,,,,
+4937,,,,
+4938,,,,
+4939,,,,
+4940,,,,
+4941,,,,
+4942,,,,
+4943,,,,
+4944,,,,
+4945,,,,
+4946,,,,
+4947,,,,
+4948,,,,
+4949,,,,
+4950,,,,
 perf_case_number,report_date,city_code,city_case_number,onset_date
 10,2020-03-06,111007,1,2020-03-02
 22,2020-03-12,111007,3,2020-03-03
@@ -4511,6 +4526,9 @@ perf_case_number,report_date,city_code,city_case_number,onset_date
 4920,,112038,,
 4921,,112038,,
 4922,,112038,,
+4951,,112038,,
+4952,,112038,,
+4953,,112038,,
 perf_case_number,report_date,city_code,city_case_number,onset_date
 26,2020-03-14,112224,2,2020-02-29
 27,2020-03-14,112224,3,2020-02-27
@@ -4917,3 +4935,4 @@ perf_case_number,report_date,city_code,city_case_number,onset_date
 4888,,112011,,
 4889,,112011,,
 4925,,112011,,
+4954,,112011,,

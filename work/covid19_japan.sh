@@ -131,6 +131,7 @@ ruby ccc2.rb $url > 07_fukushima.csv
 #cat 07_fukushima.csv | awk -F, -f 07_fukushima.awk  > 07_fukushima3.csv
 cat 07_fukushima.csv | gawk -v FPAT='([^,]+)|(\"[^\"]+\")' -f 07_fukushima.awk  > 07_fukushima3.csv
 
+# *** csv の公表_年月日は公表日ではない事が多々ある***
 link=`ruby ccc2.rb http://www.pref.fukushima.lg.jp/w4/covid19/patients/ | grep "070009_fukushima_covid19_patients" | tail -n 1 | cut -d, -f 2`
 url="http://www.pref.fukushima.lg.jp/w4/covid19/patients/$link"
 curl -s $url | iconv -f SJIS > 07_fukushima2.csv
