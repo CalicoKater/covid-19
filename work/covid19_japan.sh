@@ -234,12 +234,6 @@ open .
 xlsx2csv -s 1 12_chiba.xlsx > 12_chiba.csv
 xlsx2csv -s 2 12_chiba.xlsx | sed -e 's/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,9月28日/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,1月30日/g' > 12_chiba2.csv
 
-ruby chiba2_csv.rb > 12_chiba4.csv
-ruby chiba_csv.rb > 12_chiba3.csv
-
-#url="https://www.pref.chiba.lg.jp/shippei/press/2019/documents/chiba_corona_data.xlsx"
-#curl -s -o 12_chiba3.xlsx $url
-#xlsx2csv chiba3.xlsx > 12_chiba3.csv
 
 # ページごとに別れた場合
 #xlsx2csv -s 1 12_chiba.xlsx | sed 's/^,//' > 12_chiba.csv
@@ -251,8 +245,10 @@ ruby chiba_csv.rb > 12_chiba3.csv
 #xlsx2csv -s 7 12_chiba.xlsx >> 12_chiba.csv
 #xlsx2csv -s 8 12_chiba.xlsx | sed 's/^,//' | sed -e 's/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,9月28日/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,1月30日/g' > 12_chiba2.csv
 #xlsx2csv -s 9 12_chiba.xlsx >> 12_chiba2.csv
-
 #xlsx2csv -s 10 12_chiba.xlsx >> 12_chiba2.csv
+
+ruby chiba2_csv.rb > 12_chiba4.csv
+ruby chiba_csv.rb > 12_chiba3.csv
 
 #13 東京都
 url="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_patients.csv"
@@ -261,6 +257,9 @@ curl -s -o 13_tokyo.csv $url
 #14 神奈川県
 url="https://www.pref.kanagawa.jp/osirase/1369/data/csv/patient.csv"
 curl -s $url | iconv -f SJIS > 14_kanagawa.csv
+#141003 横浜市
+url="https://www.city.yokohama.lg.jp/city-info/koho-kocho/koho/topics/corona-data.files/141003_yokohama_covid19_patients.csv"
+curl -s $url -o 14_yokohama_city.csv
 
 #15 新潟県
 url="https://www.pref.niigata.lg.jp/site/shingata-corona/256362836.html"
