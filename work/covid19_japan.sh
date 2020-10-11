@@ -270,7 +270,7 @@ url="https://www.city.niigata.lg.jp/smph/iryo/kenko/yobou_kansen/kansen/covid-19
 link=`curl -s $url | xmllint --html --xpath '//*//p[@class="filelink"]//a[@class="pdf"]/@href' - | cut -d\" -f 2`
 url="https://www.city.niigata.lg.jp/$link"
 curl -s -o 15_niigata_city.pdf $url
-#pdftotext 15_niigata_city.pdf > 15_niigata_city.csv
+pdftotext -raw 15_niigata_city.pdf - | awk 'BEGIN{OFS=","}$1+0>0{print $1,$2,$3,$4,$5,$6,$7,$8,$9}' > 15_niigata_city.csv
 
 #16 富山県
 url="http://opendata.pref.toyama.jp/files/covid19/20200403/toyama_patients.csv"
