@@ -8,6 +8,7 @@ insert into patients (perf_case_number, perf_code,report_date, onset_date, regid
 select No, "全国地方公共団体コード","公表_年月日","発症_年月日","患者_居住地","患者_年代", "患者_性別","患者_職業", "患者_症状","患者_渡航歴の有無フラグ","患者_再陽性フラグ","備考"
 from hokkaido_csv;
 
+/* 札幌市症例番号*/
 drop table  sapporo_city_case_number_csv;
 .mode csv
 .import ./01_sapporo_city_case_number.csv sapporo_city_case_number_csv
@@ -17,6 +18,36 @@ update patients
   from sapporo_city_case_number_csv
   where patients.perf_case_number = sapporo_city_case_number_csv."北海道発表No")
 where patients.perf_code='010006';
+
+/* 函館市症例番号, 陽性判明日 */
+drop table if exists hakodate_city_csv;
+.mode csv
+.import ./01_hakodate_city.csv hakodate_city_csv
+
+update patients set city_code='012025' where perf_code='010006'and perf_case_number in (select perf_case_number from hakodate_city_csv);
+update patients set (city_case_number,confirm_date) = (select city_case_number,confirm_date from hakodate_city_csv
+  where patients.perf_case_number = hakodate_city_csv.perf_case_number )
+where city_code='012025';
+
+/* 012041　旭川市症例番号, 陽性判明日 */
+drop table if exists asahikawa_city_csv;
+.mode csv
+.import ./01_asahikawa_city.csv asahikawa_city_csv
+
+update patients set city_code='012041' where perf_code='010006'and perf_case_number in (select perf_case_number from asahikawa_city_csv);
+update patients set (city_case_number,confirm_date) = (select city_case_number,confirm_date from asahikawa_city_csv
+  where patients.perf_case_number = asahikawa_city_csv.perf_case_number )
+where city_code='012041';
+
+/* 小樽市 確定日 */
+drop table if exists otaru_city_csv;
+drop table if exists otaru_city2_csv;
+.mode csv
+.import ./01_otaru_city.csv otaru_city_csv
+.import ./01_otaru_city2.csv otaru_city2_csv
+
+delete from otaru_city_csv
+where "No" = 'No';
 
 /* 青森県 */
 drop table aomori_csv;
@@ -248,4 +279,96 @@ insert into patients (perf_case_number, perf_code, report_date, regidence, age_c
 select "No", "全国地方公共団体コード", "公表_年月日", "患者_居住地" , "患者_年代", "患者_性別"
 from tokyo_csv;
 
-/* 
+/* 神奈川県 */
+drop table if exists kanagawa_csv;
+.mode csv
+.import ./14_kanagawa.csv kanagawa_csv
+alter table kanagawa_csv add column city_code text;
+alter table kanagawa_csv add column city_case_number integer;
+/*drop trigger if exists city_case_number;
+create trigger city_case_number after update of city_code on kanagawa_csv
+  begin
+    update kanagawa_csv set city_case_number = (select count(city_code) from kanagawa_csv) 
+    where rowid=OLD.rowid;
+  end;
+*/
+update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '川崎市' )
+where "居住地" = '神奈川県川崎市';
+update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '横浜市' )
+where "居住地" = '神奈川県横浜市';
+update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '相模原市' )
+where "居住地" = '神奈川県相模原市';
+update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '横須賀市' )
+where "居住地" = '神奈川県横須賀市';
+update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '藤沢市' )
+where "居住地" = '神奈川県藤沢市';
+update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '鎌倉市' )
+where "居住地" = '神奈川県鎌倉保健福祉事務所管内';
+update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '厚木市' )
+where "居住地" = '神奈川県厚木保健福祉事務所管内';
+update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '小田原市' )
+where "居住地" = '神奈川県小田原保健福祉事務所管内';
+update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '平塚市' )
+where "居住地" = '神奈川県平塚保健福祉事務所管内';
+update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '茅ヶ崎市' )
+where "居住地" in ('神奈川県茅ケ崎市保健所管内','神奈川県茅ヶ崎市保健所管内');
+
+/* 横浜市 */
+drop table if exists yokohama_csv;
+drop table if exists yokohama2_csv;
+drop table if exists yokohama_case_number;
+.mode csv
+.import ./14_yokohama_city.csv yokohama_csv
+.import ./14_yokohama_city2.csv yokohama2_csv
+.import ./14_kanagawa_yokohama_city_case_number.csv yokohama_case_number
+
+delete from patients
+ where perf_code = (select code from perf_and_city_code where perf_name='神奈川県' and city_name='')
+   and city_code = (select code from perf_and_city_code where perf_name='神奈川県' and city_name='横浜市');
+
+insert into patients (city_case_number, perf_case_number, perf_code,report_date, age_class, gender, condition)
+select N.city_case_number, N.perf_case_number,
+       (select code from perf_and_city_code where perf_name='神奈川県' and city_name=''),
+       Y."公表日", Y."患者_年代", H."性別", Y."患者_状態"
+ from yokohama_case_number N
+    inner join yokohama_csv Y on  cast(N.city_case_number as integer) = cast(Y."No" as integer)
+	inner join yokohama2_csv H on cast(N.city_case_number as integer) = cast(H."横浜市症例番号" as integer);
+
+/* 川崎市 */
+drop table if exists kawasaki_csv;
+.mode csv
+.import ./14_kawasaki_city.csv kawasaki_csv
+
+/* 鎌倉保健福祉事務所管内 */
+drop table if exists kamakura_cav;
+.mode csv
+.import ./14_kamakura2.csv kamakura_csv
+
+/* 新潟県 */
+drop table if exists niigata_csv;
+.mode csv
+.import ./15_niigata2.csv niigata_csv
+update niigata_csv set 新潟市症例番号 = NULL
+where "新潟市症例番号" =='';
+
+delete from patients where perf_code = '150002';
+insert into patients (perf_case_number, perf_code, city_case_number, confirm_date, age_class, gender, regidence, occupation, remarks_1, remarks_2)
+select "症例番号", '150002', "新潟市症例番号", "判明日", "年代", "性別", "居住地", "職業", "備考", '濃厚接触者数: ' || "濃厚接触者数"
+ from niigata_csv order by cast("症例番号" as integer) ;
+
+update patients  set city_code = '151009' 
+where perf_code = '150002' and city_case_number is not null;
+
+/* 富山県 */
+drop table if exists toyama_csv;
+.mode csv
+.import ./16_toyama.csv toyama_csv
+update toyama_csv set "性別" = '女性' where "性別" = '女' ;
+update toyama_csv set "性別" = '男性' where "性別" = '男' ;
+
+delete from patients where perf_code = (select code from perf_and_city_code where perf_name = '富山県' and city_name = '');
+
+insert into patients (perf_case_number,perf_code,confirm_date,age_class,gender, regidence,occupation,onset_date,condition,symptoms,remarks_1)
+select "No", (select code from perf_and_city_code where perf_name = '富山県' and city_name = '') as perf_code,
+       "検査結果判明日","年代","性別", "居住地", "職業", "発症日", "状態","症状", "備考"
+  from toyama_csv order by cast("No" as integer);

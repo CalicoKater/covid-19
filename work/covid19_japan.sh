@@ -61,7 +61,7 @@ url="http://www.pref.hokkaido.lg.jp/hf/kth/kak/hasseijoukyou.htm"
 link=`curl -s $url | xmllint --html --xpath '//*[@id="rs_contents"]/span/ul[2]/li/a/@href' - | cut -d\" -f 2`
 url="http://www.pref.hokkaido.lg.jp$link"
 curl -sL $url -o 01_hokkaido.pdf
-pdftotext  -layout  01_hokkaido.pdf - | awk '$1!=""{printf "%s,%s,%s,%s,%s,%s\n",$1,$2,$3,$4,$5,$6}' > 01_hokkaido3.csv
+pdftotext  -layout  01_hokkaido.pdf - | awk '$1!=""{printf "%s,%s,%s,%s,%s,%s\n",$1,$2,$3,$4,$5,$6,$7}' > 01_hokkaido3.csv
 
 #011002 札幌市
 output="01_sapporo_city_case_number.csv"
@@ -70,6 +70,23 @@ url="https://www.city.sapporo.jp/hokenjo/f1kansen/2019n-covhassei_1.html"
 ruby ccc2.rb $url | cut -d, -f 1-3 | awk -F, -f 01_sapporo.awk >> $output
 url="https://www.city.sapporo.jp/hokenjo/f1kansen/2019n-covhassei.html"
 ruby ccc2.rb $url 4 | cut -d, -f 1-3 | awk -F, -f 01_sapporo.awk >> $output
+
+# 函館市 
+url="https://www.city.hakodate.hokkaido.jp/docs/2020050300019/"
+ruby ccc2.rb $url 0 | awk -F, -f 01_hakodate.awk  > 01_hakodate_city.csv
+
+# 旭川市
+url="https://www.city.asahikawa.hokkaido.jp/kurashi/135/136/150/d068529.html"
+ruby ccc2.rb $url 0 | awk -F, -f 01_hakodate.awk > 01_asahikawa_city.csv
+
+# 小樽市 
+url="https://www.city.otaru.lg.jp/2019-nCoV/COVID-19/"
+ruby ccc2.rb $url > 01_otaru_city.csv
+
+echo "city_case_number, perf_case_number,report_date,age_class,gender, regidence,remarks_2,remarks_3" > 01_otaru_city2.csv
+#pdftotext -raw 01_hokkaido.pdf - | awk 'BEGIN{OFS=","}{print $1,$2,$3,$4,$5,$6,$7}' | grep "小樽市公表中" | sort -t, -k 1n | nl -s, >>01_otaru_city2.csv
+pdftotext -layout 01_hokkaido.pdf - | awk 'BEGIN{OFS=","}{print $1,$2,$3,$4,$5,$6,$7}' | grep "小樽市公表中" | sort -t, -k 1n | nl -s, >>01_otaru_city2.csv
+
 
 #02 青森県
 #'//*[@id="cms-tab-7-0-view"]/div/div/div/div[3]/div/div[2]/div[2]/a'
@@ -260,17 +277,29 @@ curl -s $url | iconv -f SJIS > 14_kanagawa.csv
 #141003 横浜市
 url="https://www.city.yokohama.lg.jp/city-info/koho-kocho/koho/topics/corona-data.files/141003_yokohama_covid19_patients.csv"
 curl -s $url -o 14_yokohama_city.csv
+url="https://www.city.yokohama.lg.jp/kurashi/kenko-iryo/yobosesshu/kansensho/coronavirus/kanja.html"
+ruby ccc2.rb $url \
+  | awk -F, 'BEGIN{OFS=","}NR==1{gsub(/No./,"横浜市症例番号",$1);print $0}$1+0>0{gsub(/（外部サイト）/,"",$2);print $0}' \
+  > 14_yokohama_city2.csv
+
+# 鎌倉保健福祉事務所管内
+url="https://www.town.hayama.lg.jp/soshiki/choumin/shingatacorona/10248.html"
+ruby ccc2.rb $url > 14_kamakura.csv
+#ruby ccc2.rb $url 0 > 14_kamakura.csv
+#ruby ccc2.rb $url 1 > 14_kamakura2.csv
+cat 14_kamakura.csv | awk -F, -f 14_kamakura.awk > 14_kamakura2.csv
 
 #15 新潟県
 url="https://www.pref.niigata.lg.jp/site/shingata-corona/256362836.html"
 ruby ccc2.rb $url > 15_niigata.csv
+cat 15_niigata.csv | awk -F, -f 15_niigata.awk > 15_niigata2.csv
 
 #15 新潟市
 url="https://www.city.niigata.lg.jp/smph/iryo/kenko/yobou_kansen/kansen/covid-19/hasseizyoukyou.html"
 link=`curl -s $url | xmllint --html --xpath '//*//p[@class="filelink"]//a[@class="pdf"]/@href' - | cut -d\" -f 2`
 url="https://www.city.niigata.lg.jp/$link"
 curl -s -o 15_niigata_city.pdf $url
-pdftotext -raw 15_niigata_city.pdf - | awk 'BEGIN{OFS=","}$1+0>0{print $1,$2,$3,$4,$5,$6,$7,$8,$9}' > 15_niigata_city.csv
+pdftotext -raw 15_niigata_city.pdf - | awk 'BEGIN{OFS=","}$1+0>0||$1=="№"{print $1,$2,$3,$4,$5,$6,$7,$8,$9}' > 15_niigata_city.csv
 
 #16 富山県
 url="http://opendata.pref.toyama.jp/files/covid19/20200403/toyama_patients.csv"
