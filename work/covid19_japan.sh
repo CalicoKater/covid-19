@@ -438,14 +438,17 @@ xlsx2csv 27_osaka.xlsx > 27_osaka.csv
 #done
 
 #28 兵庫県
+#https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html
+#https://web.pref.hyogo.lg.jp/kk03/corona_kanjyajyokyo.html
 #url="https://web.pref.hyogo.lg.jp/kk03/documents/corona-kanjajokyou.xlsx"
 #url="https://web.pref.hyogo.lg.jp/kk03/documents/corona_kanjyajyokyo.xlsx"
-#curl -s -o 28_hyogo.xlsx $url
-#xlsx2csv 28_hyogo.xlsx | sed 's/^,//' > 28_hyogo.csv
-link=`curl -s "https://web.pref.hyogo.lg.jp/kk03/corona_kanjyajyokyo.html" | xmllint --html --xpath '//*[@id="tmp_contents"]/div[2]/p[4]/a' - | cut -d\" -f 2`
-url="https://web.pref.hyogo.lg.jp$link"
+url="https://web.pref.hyogo.lg.jp/kk03/documents/corona_kanjyajyokyo.xlsx"
 curl -s -o 28_hyogo.xlsx $url
 xlsx2csv 28_hyogo.xlsx | sed 's/^,//' > 28_hyogo.csv
+#link=`curl -s "https://web.pref.hyogo.lg.jp/kk03/corona_kanjyajyokyo.html" | xmllint --html --xpath '//*[@id="tmp_contents"]/div[2]/p[4]/a' - | cut -d\" -f 2`
+#url="https://web.pref.hyogo.lg.jp$link"
+#curl -s -o 28_hyogo.xlsx $url
+#xlsx2csv 28_hyogo.xlsx | sed 's/^,//' > 28_hyogo.csv
 
 #29 奈良県
 url="http://www.pref.nara.jp/secure/227193/%E5%A5%88%E8%89%AF%E7%9C%8C_01%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9%E6%84%9F%E6%9F%93%E8%80%85_%E6%82%A3%E8%80%85%E3%83%AA%E3%82%B9%E3%83%88.xlsx"

@@ -283,6 +283,7 @@ from tokyo_csv;
 drop table if exists kanagawa_csv;
 .mode csv
 .import ./14_kanagawa.csv kanagawa_csv
+alter table kanagawa_csv add column perf_code text;
 alter table kanagawa_csv add column city_code text;
 alter table kanagawa_csv add column city_case_number integer;
 /*drop trigger if exists city_case_number;
@@ -292,6 +293,7 @@ create trigger city_case_number after update of city_code on kanagawa_csv
     where rowid=OLD.rowid;
   end;
 */
+update kanagawa_csv set perf_code=( select code from perf_and_city_code where perf_name='神奈川県' and city_name = '' );
 update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '川崎市' )
 where "居住地" = '神奈川県川崎市';
 update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '横浜市' )
@@ -326,9 +328,10 @@ delete from patients
  where perf_code = (select code from perf_and_city_code where perf_name='神奈川県' and city_name='')
    and city_code = (select code from perf_and_city_code where perf_name='神奈川県' and city_name='横浜市');
 
-insert into patients (city_case_number, perf_case_number, perf_code,report_date, age_class, gender, condition)
-select N.city_case_number, N.perf_case_number,
+insert into patients (city_case_number, perf_case_number, perf_code, city_code, report_date, age_class, gender, condition)
+select N.*,
        (select code from perf_and_city_code where perf_name='神奈川県' and city_name=''),
+ 	     (select code from perf_and_city_code where perf_name='神奈川県' and city_name='横浜市'),
        Y."公表日", Y."患者_年代", H."性別", Y."患者_状態"
  from yokohama_case_number N
     inner join yokohama_csv Y on  cast(N.city_case_number as integer) = cast(Y."No" as integer)
@@ -336,13 +339,59 @@ select N.city_case_number, N.perf_case_number,
 
 /* 川崎市 */
 drop table if exists kawasaki_csv;
+drop table if exists kawasaki_case_number;
 .mode csv
 .import ./14_kawasaki_city.csv kawasaki_csv
+.import ./14_kanagawa_kawasaki_city_case_number.csv kawasaki_case_number
+delete from patients
+ where perf_code = (select code from perf_and_city_code where perf_name='神奈川県' and city_name='')
+   and city_code = (select code from perf_and_city_code where perf_name='神奈川県' and city_name='川崎市');
+
+insert into patients (city_case_number, perf_case_number, perf_code, city_code, report_date, age_class, gender, regidence, occupation, remarks_2)
+select N.*,
+       (select code from perf_and_city_code where perf_name='神奈川県' and city_name=''),
+ 	     (select code from perf_and_city_code where perf_name='神奈川県' and city_name='川崎市'),
+       K."発表日", K."年代",K."性別", K."居住地",K."職業",K."備考"
+ from kawasaki_case_number N
+    inner join kawasaki_csv K on  cast(N.city_case_number as integer) = cast(K."番号" as integer);
+
 
 /* 鎌倉保健福祉事務所管内 */
-drop table if exists kamakura_cav;
+/*drop table if exists kamakura_cav;
 .mode csv
 .import ./14_kamakura2.csv kamakura_csv
+
+delete from patients
+  where perf_code = (select code from perf_and_city_code where perf_name='神奈川県' and city_name='')
+   and city_code = (select code from perf_and_city_code where perf_name='神奈川県' and city_name='鎌倉市');
+
+insert into patients (city_case_number, perf_case_number, perf_code, city_code, report_date, age_class, gender, regidence,occupation,
+             symptoms,remarks_3,remarks_2)
+select city_case_number, perf_case_number,
+       (select code from perf_and_city_code where perf_name='神奈川県' and city_name=''),
+ 	     (select code from perf_and_city_code where perf_name='神奈川県' and city_name='鎌倉市'),
+       "発表日", age_class, gender, "居住地", "職業", "症状",remarks, "発生事由" from kamakura_csv;
+*/
+
+/* 相模原市 */
+drop table if exists sagamihara_case_number;
+.mode csv
+.import ./14_kanagawa_sagamihara_city_case_number.csv sagamihara_case_number
+
+drop table if exists sagamihara_tmp;
+create table sagamihara_tmp as 
+select * from kanagawa_csv
+where city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '相模原市')
+order by "発表日", rowid desc;
+update sagamihara_tmp set city_case_number = rowid;
+update sagamihara_tmp set city_case_number = rowid + 1
+where rowid >= 362;
+
+delete from patients
+  where city_code = (select code from perf_and_city_code where perf_name='神奈川県' and city_name='相模原市');
+insert into patients (perf_case_number, perf_code, city_code, city_case_number, report_date, regidence, age_class, gender)
+select N.perf_case_number, S.perf_code, S.city_code,S.city_case_number, S."発表日", S."居住地", S."年代", S."性別"
+  from sagamihara_tmp S inner join sagamihara_case_number N on S.city_case_number = cast(N.city_case_number as integer);
 
 /* 新潟県 */
 drop table if exists niigata_csv;

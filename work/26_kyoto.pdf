@@ -67,7 +67,7 @@
         </tr>
         <tr>
             <td>
-            <p><a href="/kentai/corona/tassei_jyokyo.html"><img alt="京都府の状況" width="690" height="410" src="/images/1011.png" /></a></p>
+            <p><a href="/kentai/corona/tassei_jyokyo.html"><img alt="京都府の状況" width="690" height="410" src="/images/1012.png" /></a></p>
             <p><a href="/kentai/corona/tassei_jyokyo.html">京都府のモニタリング指標の状況</a></p>
             </td>
         </tr>
@@ -75,7 +75,7 @@
 </table>
 <div class="col2">
 <div class="col2L"><!--◆ここから左動画◆--><span class="frame_youtube">
-<iframe title="府市協調による「コロナ離職者雇用等に関する補助金」の申請者募集について　等" width="400" height="237" src="//www.youtube.com/embed/y60Z3Z6yBf8?rel=0&amp;autoplay=0&amp;loop=0" frameborder="0" allowfullscreen></iframe>
+<iframe title="府市協調による「コロナ離職者雇用等に関する補助金」の申請者募集について　等" width="400" height="237" src="//www.youtube.com/embed/BFjjEjh0nKQ?feature=youtu.be&amp;rel=0&amp;autoplay=0&amp;loop=0" frameborder="0" allowfullscreen></iframe>
 </span>
 <br />
 <!--◆ここまで左動画◆-->10月9日に知事会見を行いました<br />
@@ -105,7 +105,7 @@
                 </ul>
                 </li>
                 <li><a href="https://corona.go.jp/prevention/">業種ごとの感染拡大予防ガイドライン（内閣官房HP）</a> </li>
-                <li><a href="/documents/20200720saikai_sisetsu.pdf">府所管施設の再開予定（令和2年7月20日更新）（PDFファイル）</a> </li>
+                <li><a href="/documents/20201013saikai_sisetsu.pdf">府所管施設の再開予定（令和2年10月13日更新）（PDFファイル）</a> </li>
                 <li><a href="/kikikanri/daikiboeventjizensoudan.html">大規模イベント開催時の京都府への事前相談について（令和2年9月16日更新）</a> </li>
                 <li><strong>京都府緊急事態措置コールセンター（平日9時から18時）<br />
                 </strong><strong><font size="5">電話番号 075-414-5907</font></strong> </li>
@@ -143,8 +143,8 @@
             </span></font><font size="5"></font></p>
             <p><font size="3">京都府・京都市では、当日の17時までの検査結果をその日に発表しています。</font></p>
             <div class="section">
-            <p><font size="5">本日の感染者数 12名（京都府域 3名、京都市 9名）【累計 1863名】</font>（令和2年10月12日）<br />
-            <font size="5">これまでの退院等 1738名</font><font size="5">、死亡 27名</font>（令和2年10月12日&nbsp;10時20分）</p>
+            <p><font size="5">本日の感染者数 29名（京都府域 8名、京都市 21名）【累計 1892名】</font>（令和2年10月13日）<br />
+            <font size="5">これまでの退院等 1743名</font><font size="5">、死亡 27名</font>（令和2年10月13日&nbsp;11時00分）</p>
             </div>
             <div class="col2">
                         <div class="col2L">
@@ -214,6 +214,8 @@
                         </div>
                         <div class="col2R">
                         <ul>
+                            <li>ベトナム語ページ<br />
+                            <a href="/kokusai/coronavirus_vi.html">Th&ocirc;ng tin về vi-r&uacute;t Corona (Covid-19)</a> </li>
                             <li>その他の多言語ページ（厚生労働省HP）<br />
                             <a href="https://www.covid19-info.jp/">COVID-19 Multilingual Guide（外部リンク）</a> </li>
                         </ul>
