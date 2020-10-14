@@ -128,19 +128,22 @@ ruby ccc2.rb $url > 05_akita.csv
 cat  05_akita.csv | awk -F, -f 05_akita.awk > 05_akita2.csv
 
 #06 山形県
-link=`curl -s https://www.pref.yamagata.jp/ou/kenkofukushi/090001/20130425/shingata_corona.html \
- | xmllint --html --xpath '//*[@id="parent-fieldname-text"]/table[5]/tbody/tr[1]/td[1]/p/a' - | cut -d\" -f 2`
+
+#link=`curl -s https://www.pref.yamagata.jp/ou/kenkofukushi/090001/20130425/shingata_corona.html \
+#link=`curl -s https://www.pref.yamagata.jp/090001/bosai/kochibou/kikikanri/covid19/shingata_corona.html \
+# | xmllint --html --xpath '//*[@id="parent-fieldname-text"]/table[5]/tbody/tr[1]/td[1]/p/a' - | cut -d\" -f 2`
+link=`curl -s https://www.pref.yamagata.jp/090001/bosai/kochibou/kikikanri/covid19/shingata_corona.html \
+ | xmllint --html --xpath '//*[contains(./text(),"陽性患者属性（CSV：")]/@href' - | cut -d\" -f 2`
 url="https://www.pref.yamagata.jp$link"
 curl -s $url | iconv -f SJIS > 06_yamagata.csv
 cat 06_yamagata.csv | awk -F, -f 06_yamagata.awk > 06_yamagata2.csv
 
-url="https://www.pref.yamagata.jp/kenfuku/kenko/kansen/720130425shingata_corona.html"
+#url="https://www.pref.yamagata.jp/kenfuku/kenko/kansen/720130425shingata_corona.html"
+url="https://www.pref.yamagata.jp/090001/bosai/kochibou/kikikanri/covid19/shingata_corona.html"
 ruby ccc2.rb $url 5 > 06_yamagata3.csv
 output=06_yamagata_city_case_number.csv
 echo "perf_case_number,city_case_number" > $output
 cat 06_yamagata3.csv | grep -e '山形市.*公表' | cut -d, -f 2,6 | sed y/０１２３４５６７８９/0123456789/ | sed -e 's/[^0-9|,]//g' >> $output
-
-
 
 #07 福島県
 url="https://www.pref.fukushima.lg.jp/sec/21045c/fukushima-hasseijyoukyou.html"
@@ -282,8 +285,27 @@ ruby ccc2.rb $url \
   | awk -F, 'BEGIN{OFS=","}NR==1{gsub(/No./,"横浜市症例番号",$1);print $0}$1+0>0{gsub(/（外部サイト）/,"",$2);print $0}' \
   > 14_yokohama_city2.csv
 
+#川崎市 → PDF to Excel 
+
+#横須賀市(current)
+url="https://www.city.yokosuka.kanagawa.jp/3130/hasseijoukyou.html"
+ruby ccc2.rb $url 1 > 14_yokosuka_city.csv
+#横須賀市(archive)
+#url="https://web.archive.org/web/20200515003320/https://www.city.yokosuka.kanagawa.jp/3130/hasseijoukyou.html"
+#ruby ccc2.rb $url 1 > 14_yokosuka_city2.csv
+#url="https://web.archive.org/web/20200710082401/https://www.city.yokosuka.kanagawa.jp/3130/hasseijoukyou.html"
+#ruby ccc2.rb $url 1 >> 14_yokosuka_city2.csv
+#url="https://web.archive.org/web/20200913003606/https://www.city.yokosuka.kanagawa.jp/3130/hasseijoukyou.html"
+#ruby ccc2.rb $url 1 >> 14_yokosuka_city2.csv
+#url="https://web.archive.org/web/20201005010249/https://www.city.yokosuka.kanagawa.jp/3130/hasseijoukyou.html"
+#ruby ccc2.rb $url 1 >> 14_yokosuka_city2.csv
+
+#cut -d, -f 1-5,7 14_yokosuka_city.csv 14_yokosuka_city2.csv | tr -d ' ' | sort -k 1n | uniq > 14_yokosuka_city3.csv
+
 # 鎌倉保健福祉事務所管内
 url="https://www.town.hayama.lg.jp/soshiki/choumin/shingatacorona/10248.html"
+# No.134 : 県内3090 → 3190の間違い
+# No.135 : 県内3091 → 3191の間違い
 ruby ccc2.rb $url > 14_kamakura.csv
 #ruby ccc2.rb $url 0 > 14_kamakura.csv
 #ruby ccc2.rb $url 1 > 14_kamakura2.csv
