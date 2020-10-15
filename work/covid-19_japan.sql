@@ -302,6 +302,8 @@ update kanagawa_csv set city_code=(select code from perf_and_city_code where per
 where "居住地" = '神奈川県相模原市';
 update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '横須賀市' )
 where "居住地" = '神奈川県横須賀市';
+update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '茅ヶ崎市' )
+where "居住地" in ('神奈川県茅ケ崎市保健所管内','神奈川県茅ヶ崎市保健所管内');
 update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '藤沢市' )
 where "居住地" = '神奈川県藤沢市';
 update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '鎌倉市' )
@@ -312,8 +314,6 @@ update kanagawa_csv set city_code=(select code from perf_and_city_code where per
 where "居住地" = '神奈川県小田原保健福祉事務所管内';
 update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '平塚市' )
 where "居住地" = '神奈川県平塚保健福祉事務所管内';
-update kanagawa_csv set city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '茅ヶ崎市' )
-where "居住地" in ('神奈川県茅ケ崎市保健所管内','神奈川県茅ヶ崎市保健所管内');
 
 /* 横浜市 */
 drop table if exists yokohama_csv;
@@ -355,7 +355,6 @@ select N.*,
  from kawasaki_case_number N
     inner join kawasaki_csv K on  cast(N.city_case_number as integer) = cast(K."番号" as integer);
 
-
 /* 鎌倉保健福祉事務所管内 */
 /*drop table if exists kamakura_cav;
 .mode csv
@@ -393,6 +392,48 @@ insert into patients (perf_case_number, perf_code, city_code, city_case_number, 
 select N.perf_case_number, S.perf_code, S.city_code,S.city_case_number, S."発表日", S."居住地", S."年代", S."性別"
   from sagamihara_tmp S inner join sagamihara_case_number N on S.city_case_number = cast(N.city_case_number as integer);
 
+/* 茅ヶ崎市*/
+drop table if exists chigasaki_case_number;
+.mode csv
+.import ./14_kanagawa_chigasaki_city_case_number.csv chigasaki_case_number
+drop table chigasaki_tmp;
+create table chigasaki_tmp as
+select * from kanagawa_csv
+where city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '茅ヶ崎市')
+order by "発表日", rowid desc;
+update chigasaki_tmp set city_case_number = rowid;
+update chigasaki_tmp set city_case_number = rowid + 1
+where rowid >= 23;
+
+delete from patients
+  where city_code = (select code from perf_and_city_code where perf_name='神奈川県' and city_name='茅ヶ崎市');
+insert into patients (perf_case_number, perf_code, city_code, city_case_number, report_date, regidence, age_class, gender)
+select N.perf_case_number, C.perf_code, C.city_code,C.city_case_number, C."発表日", C."居住地", C."年代", C."性別"
+  from chigasaki_tmp C inner join chigasaki_case_number N on C.city_case_number = cast(N.city_case_number as integer);
+
+
+/* 横須賀市*/
+/* drop table if exists yokosuka_csv; */
+drop table if exists yokosuka_case_number;
+.mode csv
+/* .import ./14_yokosuka_city3.csv yokosuka_csv */
+.import ./14_kanagawa_yokosuka_city_case_number.csv yokosuka_case_number
+
+drop table if exists yokosuka_tmp;
+create table yokosuka_tmp as
+select * from kanagawa_csv
+where city_code=(select code from perf_and_city_code where perf_name='神奈川県' and city_name = '横須賀市')
+order by "発表日", rowid desc;
+update yokosuka_tmp set city_case_number = rowid;
+
+delete from patients
+  where city_code = (select code from perf_and_city_code where perf_name='神奈川県' and city_name='横須賀市');
+insert into patients (perf_case_number, perf_code, city_code, city_case_number, report_date, regidence, age_class, gender)
+select N.perf_case_number, Y.perf_code, Y.city_code,Y.city_case_number, Y."発表日", Y."居住地", Y."年代", Y."性別"
+  from yokosuka_tmp Y inner join yokosuka_case_number N on Y.city_case_number = cast(N.city_case_number as integer);
+
+  
+
 /* 新潟県 */
 drop table if exists niigata_csv;
 .mode csv
@@ -421,3 +462,12 @@ insert into patients (perf_case_number,perf_code,confirm_date,age_class,gender, 
 select "No", (select code from perf_and_city_code where perf_name = '富山県' and city_name = '') as perf_code,
        "検査結果判明日","年代","性別", "居住地", "職業", "発症日", "状態","症状", "備考"
   from toyama_csv order by cast("No" as integer);
+
+/* 石川県 */
+
+drop table if exists ishikawa_csv;
+.mode csv
+.import ./17_ishikawa2.csv ishikawa_csv
+insert into patients (perf_case_number, perf_code, report_date, regidence, age_class, gender)
+select "No", "全国地方公共団体コード", "公表_年月日","患者_居住地","患者_年代","患者_性別"
+  from ishikawa_csv;

@@ -1,53 +1,53 @@
 #!/bin/bash
 curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
 
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="北海道"') | awk -F, -f jag2.awk > 01_jag_hokkaido.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="青森県"') | awk -F, -f jag2.awk > 02_jag_aomori.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="岩手県"') | awk -F, -f jag2.awk > 03_jag_iwate.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="宮城県"') | awk -F, -f jag2.awk > 04_jag_miyagi.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="秋田県"') | awk -F, -f jag2.awk > 05_jag_akita.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="山形県"') | awk -F, -f jag2.awk > 06_jag_yamagata.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="福島県"') | awk -F, -f jag2.awk > 07_jag_fukushima.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="茨城県"') | awk -F, -f jag2.awk > 08_jag_ibaraki.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="栃木県"') | awk -F, -f jag2.awk > 09_jag_tochigi.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="群馬県"') | awk -F, -f jag2.awk > 10_jag_gunma.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="埼玉県"') | awk -F, -f jag2.awk > 11_jag_saitama.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="千葉県"') | awk -F, -f jag2.awk > 12_jag_chiba.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="東京都"') | awk -F, -f jag2.awk > 13_jag_tokyo.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="神奈川県"') | awk -F, -f jag2.awk > 14_jag_kanagawa.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="新潟県"') | awk -F, -f jag2.awk > 15_jag_niigata.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="富山県"') | awk -F, -f jag2.awk > 16_jag_toyama.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="石川県"') | awk -F, -f jag2.awk > 17_jag_ichikawa.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="福井県"') | awk -F, -f jag2.awk > 18_jag_fukui.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="山梨県"') | awk -F, -f jag2.awk > 19_jag_yamanashi.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="長野県"') | awk -F, -f jag2.awk > 20_jag_nagano.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="岐阜県"') | awk -F, -f jag2.awk > 21_jag_gifu.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="静岡県"') | awk -F, -f jag2.awk > 22_jag_shizuoka.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="愛知県"') | awk -F, -f jag2.awk > 23_jag_aichi.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="三重県"') | awk -F, -f jag2.awk > 24_jag_mie.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="滋賀県"') | awk -F, -f jag2.awk > 25_jag_shiga.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="京都府"') | awk -F, -f jag2.awk > 26_jag_kyoto.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="大阪府"') | awk -F, -f jag2.awk > 27_jag_osaka.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="兵庫県"') | awk -F, -f jag2.awk > 28_jag_hyogo.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="奈良県"') | awk -F, -f jag2.awk > 29_jag_nara.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="和歌山県"') | awk -F, -f jag2.awk > 30_jag_wakayama.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="鳥取県"') | awk -F, -f jag2.awk > 31_jag_tottori.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="島根県"') | awk -F, -f jag2.awk > 32_jag_shimane.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="岡山県"') | awk -F, -f jag2.awk > 33_jag_okayama.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="広島県"') | awk -F, -f jag2.awk > 34_jag_hiroshima.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="山口県"') | awk -F, -f jag2.awk > 35_jag_yamaguchi.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="徳島県"') | awk -F, -f jag2.awk > 36_jag_tokushima.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="香川県"') | awk -F, -f jag2.awk > 37_jag_kagawa.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="愛媛県"') | awk -F, -f jag2.awk > 38_jag_ehime.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="高知県"') | awk -F, -f jag2.awk > 39_jag_kochi.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="福岡県"') | awk -F, -f jag2.awk > 40_jag_fukuoka.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="佐賀県"') | awk -F, -f jag2.awk > 41_jag_saga.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="長崎県"') | awk -F, -f jag2.awk > 42_jag_nagasaki.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="熊本県"') | awk -F, -f jag2.awk > 43_jag_kumamoto.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="大分県"') | awk -F, -f jag2.awk > 44_jag_oita.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="宮崎県"') | awk -F, -f jag2.awk > 45_jag_miyazaki.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="鹿児島県"') | awk -F, -f jag2.awk > 46_jag_kagoshima.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="沖縄県"') | awk -F, -f jag2.awk > 47_jag_okinawa.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="北海道"') | awk -F, -f jag2.awk > 01_jag_hokkaido.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="青森県"') | awk -F, -f jag2.awk > 02_jag_aomori.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="岩手県"') | awk -F, -f jag2.awk > 03_jag_iwate.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="宮城県"') | awk -F, -f jag2.awk > 04_jag_miyagi.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="秋田県"') | awk -F, -f jag2.awk > 05_jag_akita.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="山形県"') | awk -F, -f jag2.awk > 06_jag_yamagata.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="福島県"') | awk -F, -f jag2.awk > 07_jag_fukushima.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="茨城県"') | awk -F, -f jag2.awk > 08_jag_ibaraki.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="栃木県"') | awk -F, -f jag2.awk > 09_jag_tochigi.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="群馬県"') | awk -F, -f jag2.awk > 10_jag_gunma.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="埼玉県"') | awk -F, -f jag2.awk > 11_jag_saitama.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="千葉県"') | awk -F, -f jag2.awk > 12_jag_chiba.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="東京都"') | awk -F, -f jag2.awk > 13_jag_tokyo.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="神奈川県"') | awk -F, -f jag2.awk > 14_jag_kanagawa.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="新潟県"') | awk -F, -f jag2.awk > 15_jag_niigata.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="富山県"') | awk -F, -f jag2.awk > 16_jag_toyama.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="石川県"') | awk -F, -f jag2.awk > 17_jag_ichikawa.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="福井県"') | awk -F, -f jag2.awk > 18_jag_fukui.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="山梨県"') | awk -F, -f jag2.awk > 19_jag_yamanashi.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="長野県"') | awk -F, -f jag2.awk > 20_jag_nagano.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="岐阜県"') | awk -F, -f jag2.awk > 21_jag_gifu.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="静岡県"') | awk -F, -f jag2.awk > 22_jag_shizuoka.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="愛知県"') | awk -F, -f jag2.awk > 23_jag_aichi.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="三重県"') | awk -F, -f jag2.awk > 24_jag_mie.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="滋賀県"') | awk -F, -f jag2.awk > 25_jag_shiga.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="京都府"') | awk -F, -f jag2.awk > 26_jag_kyoto.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="大阪府"') | awk -F, -f jag2.awk > 27_jag_osaka.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="兵庫県"') | awk -F, -f jag2.awk > 28_jag_hyogo.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="奈良県"') | awk -F, -f jag2.awk > 29_jag_nara.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="和歌山県"') | awk -F, -f jag2.awk > 30_jag_wakayama.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="鳥取県"') | awk -F, -f jag2.awk > 31_jag_tottori.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="島根県"') | awk -F, -f jag2.awk > 32_jag_shimane.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="岡山県"') | awk -F, -f jag2.awk > 33_jag_okayama.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="広島県"') | awk -F, -f jag2.awk > 34_jag_hiroshima.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="山口県"') | awk -F, -f jag2.awk > 35_jag_yamaguchi.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="徳島県"') | awk -F, -f jag2.awk > 36_jag_tokushima.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="香川県"') | awk -F, -f jag2.awk > 37_jag_kagawa.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="愛媛県"') | awk -F, -f jag2.awk > 38_jag_ehime.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="高知県"') | awk -F, -f jag2.awk > 39_jag_kochi.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="福岡県"') | awk -F, -f jag2.awk > 40_jag_fukuoka.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="佐賀県"') | awk -F, -f jag2.awk > 41_jag_saga.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="長崎県"') | awk -F, -f jag2.awk > 42_jag_nagasaki.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="熊本県"') | awk -F, -f jag2.awk > 43_jag_kumamoto.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="大分県"') | awk -F, -f jag2.awk > 44_jag_oita.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="宮崎県"') | awk -F, -f jag2.awk > 45_jag_miyazaki.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="鹿児島県"') | awk -F, -f jag2.awk > 46_jag_kagoshima.csv
+# (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="沖縄県"') | awk -F, -f jag2.awk > 47_jag_okinawa.csv
 
 #01 北海道
 url="https://www.harp.lg.jp/opendata/dataset/1369/resource/3132/010006_hokkaido_covid19_patients.csv"
@@ -125,6 +125,9 @@ ruby ccc2.rb $url 1 | awk -F, '$1+0>0{printf "%d,%d\n",$1, $7}' >> $output
 #05 秋田県
 url="https://www.pref.akita.lg.jp/pages/archive/47957"
 ruby ccc2.rb $url > 05_akita.csv
+# No.1-50
+url="https://www.pref.akita.lg.jp/pages/archive/53190"
+ruby ccc2.rb $url | grep -v "県内症例" >> 05_akita.csv
 cat  05_akita.csv | awk -F, -f 05_akita.awk > 05_akita2.csv
 
 #06 山形県
@@ -293,7 +296,7 @@ ruby ccc2.rb $url 1 > 14_yokosuka_city.csv
 #横須賀市(archive)
 #url="https://web.archive.org/web/20200515003320/https://www.city.yokosuka.kanagawa.jp/3130/hasseijoukyou.html"
 #ruby ccc2.rb $url 1 > 14_yokosuka_city2.csv
-#url="https://web.archive.org/web/20200710082401/https://www.city.yokosuka.kanagawa.jp/3130/hasseijoukyou.html"
+#url="https://web.archive.org/web/20200718004041/https://www.city.yokosuka.kanagawa.jp/3130/hasseijoukyou.html"
 #ruby ccc2.rb $url 1 >> 14_yokosuka_city2.csv
 #url="https://web.archive.org/web/20200913003606/https://www.city.yokosuka.kanagawa.jp/3130/hasseijoukyou.html"
 #ruby ccc2.rb $url 1 >> 14_yokosuka_city2.csv
@@ -301,7 +304,7 @@ ruby ccc2.rb $url 1 > 14_yokosuka_city.csv
 #ruby ccc2.rb $url 1 >> 14_yokosuka_city2.csv
 
 #cut -d, -f 1-5,7 14_yokosuka_city.csv 14_yokosuka_city2.csv | tr -d ' ' | sort -k 1n | uniq > 14_yokosuka_city3.csv
-
+# cut -d, -f 1-5,7 14_yokosuka_city.csv 14_yokosuka_city2.csv | tr -d ' ' | sort -k 1n | uniq | awk -F, -f 14_yokosuka_city.awk > 14_yokosuka_city3.csv
 # 鎌倉保健福祉事務所管内
 url="https://www.town.hayama.lg.jp/soshiki/choumin/shingatacorona/10248.html"
 # No.134 : 県内3090 → 3190の間違い
@@ -334,7 +337,7 @@ xlsx2csv 16_toyama2.xlsx > 16_toyama2.csv
 #17 石川県
 url="https://www.pref.ishikawa.lg.jp/kansen/documents/170003_ishikawa_covid19_patients.csv"
 curl -s $url | iconv -f SJIS > 17_ishikawa.csv
-
+ruby 17_ishikawa.rb 17_ishikawa.csv > 17_ishikawa2.csv
 
 #18 福井県
 url="https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_patients.csv"
