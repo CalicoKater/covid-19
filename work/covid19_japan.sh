@@ -1,6 +1,6 @@
 #!/bin/bash
 curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
-
+<< jag_skip
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="北海道"') | awk -F, -f jag2.awk > 01_jag_hokkaido.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="青森県"') | awk -F, -f jag2.awk > 02_jag_aomori.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="岩手県"') | awk -F, -f jag2.awk > 03_jag_iwate.csv
@@ -17,7 +17,7 @@ curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="神奈川県"') | awk -F, -f jag2.awk > 14_jag_kanagawa.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="新潟県"') | awk -F, -f jag2.awk > 15_jag_niigata.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="富山県"') | awk -F, -f jag2.awk > 16_jag_toyama.csv
- (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="石川県"') | awk -F, -f jag2.awk > 17_jag_ichikawa.csv
+ (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="石川県"') | awk -F, -f jag2.awk > 17_jag_ishikawa.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="福井県"') | awk -F, -f jag2.awk > 18_jag_fukui.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="山梨県"') | awk -F, -f jag2.awk > 19_jag_yamanashi.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="長野県"') | awk -F, -f jag2.awk > 20_jag_nagano.csv
@@ -48,6 +48,7 @@ curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="宮崎県"') | awk -F, -f jag2.awk > 45_jag_miyazaki.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="鹿児島県"') | awk -F, -f jag2.awk > 46_jag_kagoshima.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="沖縄県"') | awk -F, -f jag2.awk > 47_jag_okinawa.csv
+jag_skip
 
 #01 北海道
 url="https://www.harp.lg.jp/opendata/dataset/1369/resource/3132/010006_hokkaido_covid19_patients.csv"
@@ -245,9 +246,9 @@ ruby ccc2.rb "https://www.city.saitama.jp/002/001/008/006/013/001/p075326.html" 
 link=`curl -s https://www.pref.chiba.lg.jp/shippei/press/2019/ncov-index.html | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[1]/li[1]/a' - | cut -d\" -f 2`
 url="https://www.pref.chiba.lg.jp$link"
 curl -s -o 12_chiba.pdf $url
-open https://www.ilovepdf.com/ja/pdf_to_excel
-sleep 5
-open .
+#open https://www.ilovepdf.com/ja/pdf_to_excel
+#sleep 5
+#open .
 #pdftotext -layout 12_chiba.pdf - 
 #ruby pdf_to_csv.rb 12_chiba.pdf | sed -e 's/^\[//' -e 's/\]$//' > 12_chiba.csv
 
@@ -342,15 +343,24 @@ ruby 17_ishikawa.rb 17_ishikawa.csv > 17_ishikawa2.csv
 #18 福井県
 url="https://www.pref.fukui.lg.jp/doc/toukei-jouhou/covid-19_d/fil/covid19_patients.csv"
 curl -s -o 18_fukui.csv $url
+ruby 18_fukui.rb 18_fukui.csv > 18_fukui2.csv
 
 # 19 山梨県
 url="https://www.pref.yamanashi.jp/koucho/coronavirus/documents/yousei.xlsx"
 curl -s -o 19_yamanashi.xlsx $url
 xlsx2csv 19_yamanashi.xlsx > 19_yamanashi.csv
+ruby 19_yamanashi.rb 19_yamanashi.csv > 19_yamanashi2.csv
 
 #20 長野県
 url="https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/documents/200000_nagano_covid19_patients.csv"
 curl -s $url | iconv -f SJIS  > 20_nagano.csv
+
+url="https://www.pref.nagano.lg.jp/kansensho-taisaku/happyou/allpressrelease.html"
+ruby ccc2.rb $url > 20_nagano2.csv
+
+url="https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/corona-doko.html#hasseijyokyo"
+link=`curl -s $url | xmllint --html --xpath '//*[contains( ./text(),"新型コロナウイルス感染症の発生状況（PDF：")]/@href' - | cut -d\" -f 2`
+curl -s -o 20_nagano.pdf "https://www.pref.nagano.lg.jp$link"
 
 #21 岐阜県
 #url="https://data.gifu-opendata.pref.gifu.lg.jp/dataset/4661bf9d-6f75-43fb-9d59-f02eb84bb6e3/resource/9c35ee55-a140-4cd8-a266-a74edf60aa80/download/210005gifucovid19patients.csv"

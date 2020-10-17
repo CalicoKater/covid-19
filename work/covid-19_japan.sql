@@ -432,19 +432,36 @@ insert into patients (perf_case_number, perf_code, city_code, city_case_number, 
 select N.perf_case_number, Y.perf_code, Y.city_code,Y.city_case_number, Y."発表日", Y."居住地", Y."年代", Y."性別"
   from yokosuka_tmp Y inner join yokosuka_case_number N on Y.city_case_number = cast(N.city_case_number as integer);
 
-  
+/* 藤沢市 */
+drop table if exists fujisawa_csv;
+drop table if exists fujisawa_case_number;
+.mode csv
+.import ./14_fujisawa_city.csv fujisawa_csv
+.import ./14_kanagawa_fujisawa_city_case_number fujisawa_case_number
+
+insert into patients (perf_code, city_code,	city_case_number, report_date,
+ age_class, gender, occupation, regidence, perf_case_number, onset_date, confirm_date)
+select (select code from perf_and_city_code where perf_name='神奈川県' and city_name=''),
+       (select code from perf_and_city_code where perf_name='神奈川県' and city_name='藤沢市'),
+    "番号","発表日","年代","性別","職業","居住地","神奈川県症例番号","発症日","確定日"
+  from fujisawa_csv where "神奈川県症例番号" <> '';
+
+
 
 /* 新潟県 */
 drop table if exists niigata_csv;
+drop table if exists niigata_onset_csv;
 .mode csv
 .import ./15_niigata2.csv niigata_csv
+.import ./15_niigata_onset_date.csv niigata_onset_csv
 update niigata_csv set 新潟市症例番号 = NULL
 where "新潟市症例番号" =='';
 
 delete from patients where perf_code = '150002';
-insert into patients (perf_case_number, perf_code, city_case_number, confirm_date, age_class, gender, regidence, occupation, remarks_1, remarks_2)
-select "症例番号", '150002', "新潟市症例番号", "判明日", "年代", "性別", "居住地", "職業", "備考", '濃厚接触者数: ' || "濃厚接触者数"
- from niigata_csv order by cast("症例番号" as integer) ;
+insert into patients (perf_case_number, perf_code, city_case_number, confirm_date, age_class, gender, regidence, occupation, remarks_1, remarks_2, onset_date)
+select N."症例番号", '150002', N."新潟市症例番号", N."判明日", N."年代", N."性別", N."居住地", N."職業", N."備考", '濃厚接触者数: ' || N."濃厚接触者数", C."発症日"
+ from niigata_csv N inner join niigata_onset_csv C on N."症例番号" = C."県内症例番号"
+ order by cast(N."症例番号" as integer) ;
 
 update patients  set city_code = '151009' 
 where perf_code = '150002' and city_case_number is not null;
@@ -464,10 +481,38 @@ select "No", (select code from perf_and_city_code where perf_name = '富山県' 
   from toyama_csv order by cast("No" as integer);
 
 /* 石川県 */
-
 drop table if exists ishikawa_csv;
+drop table if exists ishikawa_onset_csv;
 .mode csv
 .import ./17_ishikawa2.csv ishikawa_csv
-insert into patients (perf_case_number, perf_code, report_date, regidence, age_class, gender)
-select "No", "全国地方公共団体コード", "公表_年月日","患者_居住地","患者_年代","患者_性別"
-  from ishikawa_csv;
+.import ./17_ishikawa_onset_date.csv ishikawa_onset_csv
+
+delete from patients
+ where perf_code = (select code from perf_and_city_code where perf_name = '石川県' and city_name = '');
+insert into patients (perf_case_number, perf_code, report_date, regidence, age_class, gender, onset_date, confirm_date)
+select M."No", M."全国地方公共団体コード", M."公表_年月日", M."患者_居住地", M."患者_年代", M."患者_性別",
+       C."発症日", C."確定日" from ishikawa_csv M
+  inner join ishikawa_onset_csv C on M."No" = C."No";
+
+/* 福井県 */ 
+drop table if exists fukui_csv;
+.mode csv
+.import ./18_fukui2.csv fukui_csv
+
+delete from patients
+  where perf_code = (select code from perf_and_city_code where perf_name = '福井県' and city_name = '');
+insert into patients ( perf_case_number, perf_code, report_date, onset_date, regidence, age_class, gender, occupation,
+                      condition, symptoms, travel_hist_flg, discharge_date, remarks_1 )
+ select "No", "全国地方公共団体コード", "公表_年月日", "発症_年月日", "患者_居住地", "患者_年代", "患者_性別","患者_職業",
+  "患者_状態", "患者_症状", "患者_渡航歴の有無フラグ","患者_退院済フラグ","備考" from fukui_csv ;
+
+/* 山梨県 */
+drop table if exists yamahashi_csv;
+.mode csv
+.import ./19_yamanashi2.csv yamanashi_csv
+
+delete from patients
+  where perf_code = ( select code from perf_and_city_code where perf_name = '山梨県' and city_name = '');
+insert into patients ( perf_case_number, perf_code, report_date, onset_date, age_class, gender, regidence)
+select "№", "全国地方公共団体コード", "公表日", "発症日", "年代", "性別", "居住地（生活圏）"
+  from yamanashi_csv;
