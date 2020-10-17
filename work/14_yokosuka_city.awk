@@ -6,7 +6,7 @@ NR ==1 {
   print $0;
 }
 NR > 1 {
-  split($2, confirm_date, /月|日/)
+  split($2, confirm_date, /月|日/);
   gsub(/女$/,"女性",$4);
   gsub(/男$/,"男性",$4);
 
