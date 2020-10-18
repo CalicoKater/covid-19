@@ -38,6 +38,7 @@ for url in `cat ./var/airport_quarantine_link_list.txt`; do
     continue
   fi
 
+<< commentout
   # 二重のtable タグのため差し替え
   if [ $c -eq 153 ]; then
      #grep -v "table" ./var/no_826_828.html
@@ -45,6 +46,7 @@ for url in `cat ./var/airport_quarantine_link_list.txt`; do
     |  sed 'y/０１２３４５６７８９（）/0123456789()/' | tr -d '\r'
     continue
   fi
+commentout
 
   curl $url | xmllint --html --xpath '//table/thead' - \
     |  sed 'y/０１２３４５６７８９（）/0123456789()/' | tr -d '\r'
