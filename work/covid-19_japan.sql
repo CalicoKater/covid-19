@@ -157,10 +157,22 @@ update patients
   where perf_code='050008' and perf_case_number in (19,20,21,22,23,24,25,26);
 
 /* 茨城県 */
-drop table ibaraki_csv;
+drop table if exists ibaraki_csv;
+drop table if exists ibaraki_onset_csv;
 .mode csv
 .import ./08_ibaraki2.csv ibaraki_csv
+.import ./08_ibaraki_onset_date.csv ibaraki_onset_csv
 
+delete from patients where perf_code = ( select code from perf_and_city_code where perf_name = '茨城県' and city_name = '');
+
+insert into patients (perf_code, perf_case_number, report_date, age_class, gender, regidence, contact_hist, contact_hist_flg, city_case_number, city_code, onset_date, confirm_date)
+select ( select code from perf_and_city_code where perf_name = '茨城県' and city_name = '') as 'perf_code',
+       K."No",K."公表日",K."年齢",K."性別",K."居住地", K."区分", K."区分"='濃厚接触者',
+       O.city_case_number, O.city_code, O.onset_date, O.confirm_date
+from ibaraki_csv K
+left outer join ibaraki_onset_csv O on K."No" = O.perf_case_number and K."公表日" = O.report_date;
+
+/*
 delete from patients where perf_code='080004';
 insert into patients (perf_case_number, perf_code, report_date, age_class, gender, regidence, remarks_1)
 select "No", '080004', "公表日", "年齢", "性別","居住地", "区分"
@@ -181,20 +193,37 @@ update patients
    where patients.perf_code=ibaraki_onset_csv.perf_code and patients.perf_case_number = ibaraki_onset_csv.perf_case_number
         and patients.report_date = ibaraki_onset_csv.report_date)
 where perf_code = '080004';
+*/
 
 /* 栃木県 */
 drop table tochigi_csv;
+drop table utsunomiya_city_case_number_csv;
+drop table if exists tochigi_gunma_onset_csv;
 .mode csv
 .import ./09_tochigi2.csv tochigi_csv
+.import ./09_utsunomiya_city_case_number.csv utsunomiya_city_case_number_csv
+.import ./tochigi_gunma_onset_date.csv tochigi_gunma_onset_csv
 
+delete from patients where perf_code = (select code from perf_and_city_code where perf_name = '栃木県' and city_name = '');
+insert into patients (perf_case_number, perf_case_number_sub, perf_code, city_code, city_case_number, age_class, gender, regidence, confirm_date, discharge_date, remarks_1, onset_date)
+select T."症例番号", (T.rowid = 19) as repositive, (select code from perf_and_city_code where perf_name = '栃木県' and city_name = ''),U.city_code, U."市No",
+       T."年代", T."性別", T."居住地", T."陽性確認日", T."退院･退所日", T."備考（No.は症例番号）",O.onset_date from tochigi_csv T
+ left outer join (select * from tochigi_gunma_onset_csv
+                         where perf_code=(select code from perf_and_city_code where perf_name = '栃木県' and city_name = '') ) O
+       on T."症例番号" = O.perf_case_number and repositive = O.perf_case_number_sub
+left outer join (select '092011' as city_code, * from utsunomiya_city_case_number_csv ) U on T."症例番号" = U."栃木発表番号";
+update patients set re_positive_flg=1 where perf_code='090000' and perf_case_number=18 and perf_case_number_sub=1;
+
+/*
 delete from patients where perf_code='090000';
 insert into patients (perf_case_number,perf_case_number_sub,perf_code,age_class,gender,regidence,confirm_date,discharge_date,remarks_1)
 select "症例番号", rowid=19, '090000',"年代", "性別", "居住地", "陽性確認日", "退院･退所日","備考（No.は症例番号）"
 from tochigi_csv;
 update patients set re_positive_flg=1 where perf_code='090000' and perf_case_number=18 and perf_case_number_sub=1;
-
+*/
 
 /* 092011 宇都宮市 */
+/*
 drop table utsunomiya_city_case_number_csv;
 .mode csv
 .import ./09_utsunomiya_city_case_number.csv utsunomiya_city_case_number_csv
@@ -203,19 +232,33 @@ update patients
   from utsunomiya_city_case_number_csv
   where patients.perf_case_number = utsunomiya_city_case_number_csv."栃木発表番号")
 where patients.perf_code='090000';
+*/
 
 /* 群馬県*/
 
 DROP TABLE IF EXISTS gunma_csv;
+drop table if exists tochigi_gunma_onset_csv;
 .mode csv
 .import ./10_gunma2.csv gunma_csv
+.import ./tochigi_gunma_onset_date.csv tochigi_gunma_onset_csv
 
+delete from patients where perf_code = (select code from perf_and_city_code where perf_name = '群馬県' and city_name = '');
+insert into patients (perf_case_number, perf_code, confirm_date,regidence, age_class, gender, onset_date)
+select G."No",  (select code from perf_and_city_code where perf_name = '群馬県' and city_name = ''),
+           G."判明日", G."居住地", G."年代", G."性別", O.onset_date from gunma_csv G
+  left outer join (select * from tochigi_gunma_onset_csv
+ where perf_code = (select code from perf_and_city_code where perf_name = '群馬県' and city_name = '') ) O
+  on G."No" = O.perf_case_number;
+
+
+/*
 delete from patients where perf_code='100005';
 insert into patients (perf_case_number, perf_code, confirm_date,regidence, age_class, gender)
 select "No", '100005', "判明日", "居住地", "年代", "性別"
 from gunma_csv;
-
+*/
 /* 栃木県 & 群馬県 発症日 */
+/*
 drop table if exists tochigi_gunma_onset_csv;
 .mode csv
 .import ./tochigi_gunma_onset_date.csv tochigi_gunma_onset_csv
@@ -227,7 +270,7 @@ update patients
     and patients.perf_case_number = tochigi_gunma_onset_csv.perf_case_number 
     and patients.perf_case_number_sub = tochigi_gunma_onset_csv.perf_case_number_sub )
 where perf_code in ('090000','100005');
-
+*/
 /* 埼玉県 */
 drop table if exists saitama_csv;
 .mode csv
