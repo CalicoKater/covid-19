@@ -161,6 +161,21 @@ url="http://www.pref.fukushima.lg.jp/w4/covid19/patients/$link"
 curl -s $url | iconv -f SJIS > 07_fukushima2.csv
 cat 07_fukushima2.csv| awk -F, -f 07_fukushima2.awk > 07_fukushima4.csv
 
+# 福島市 
+url="https://www.city.fukushima.fukushima.jp/hoken-kansen-taisaku/kenko/iryo/kansensho/bukansinngatacorona_patient.html"
+echo "市症例,県症例,確認日,年代,性別,濃厚接触者の人数,濃厚接触者の健康観察,感染経路（推定）,備考" > 07_fukushima_city.csv
+ruby ccc2.rb $url | awk -F, '$2+0>0' >> 07_fukushima_city.csv
+
+# 郡山市
+url="https://www.city.koriyama.lg.jp/covid19/23685.html"
+echo "市発生番号,県発生番号,判明日,年代,性別,備考" > 07_koriyama_city.csv
+ruby ccc2.rb $url | awk -F, '$2+0>0' >> 07_koriyama_city.csv
+
+# いわき市
+url="http://www.city.iwaki.lg.jp/www/contents/1596713999605/index.html"
+echo "市事例,県事例,年代,性別,陽性判明日,居住地,備考" > 07_iwaki_city.csv
+ruby ccc2.rb $url | awk -F, '$2+0>0' >> 07_iwaki_city.csv
+
 #08 茨城県
 url="https://www.pref.ibaraki.jp/1saigai/2019-ncov/ichiran.html"
 ruby ccc2.rb $url > 08_ibaraki.csv
@@ -354,6 +369,7 @@ ruby 19_yamanashi.rb 19_yamanashi.csv > 19_yamanashi2.csv
 #20 長野県
 url="https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/documents/200000_nagano_covid19_patients.csv"
 curl -s $url | iconv -f SJIS  > 20_nagano.csv
+awk -F, -f 20_nagano.awk 20_nagano.csv > 20_nagano3.csv
 
 url="https://www.pref.nagano.lg.jp/kansensho-taisaku/happyou/allpressrelease.html"
 ruby ccc2.rb $url > 20_nagano2.csv
@@ -390,9 +406,9 @@ link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --x
 url="https://www.pref.aichi.jp/$link"
 curl -s -o 23_aichi2.pdf $url
 
-open https://www.ilovepdf.com/ja/pdf_to_excel
-sleep 5
-open .
+#open https://www.ilovepdf.com/ja/pdf_to_excel
+#sleep 5
+#open .
 
 #ruby pdf_to_csv.rb 23_aichi.pdf | sed -e 's/^\[//' -e 's/\]$//' > 23_aichi.csv
 #ruby pdf_to_csv.rb 23_aichi2.pdf | sed -e 's/^\[//' -e 's/\]$//' >> 23_aichi.csv

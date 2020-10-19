@@ -559,3 +559,29 @@ delete from patients
 insert into patients ( perf_case_number, perf_code, report_date, onset_date, age_class, gender, regidence)
 select "№", "全国地方公共団体コード", "公表日", "発症日", "年代", "性別", "居住地（生活圏）"
   from yamanashi_csv;
+
+/* 長野県 */
+drop table if exists nagano_csv;
+drop table if exists nagano_onset_csv;
+.mode csv
+.import ./20_nagano3.csv nagano_csv
+.import ./20_nagano_onset_date.csv nagano_onset_csv
+delete from patients where perf_code = (select code from perf_and_city_code where perf_name = '長野県' and city_name = '');
+insert into patients (perf_case_number, perf_code, confirm_date, regidence, age_class, gender, occupation, 
+            condition, symptoms, travel_hist_flg, discharge_date, remarks_1, report_date, onset_date, city_case_number )
+select N."No", N."全国地方公共団体コード", N."事例確定_年月日", N."患者_居住地", N."患者_年代", N."患者_性別", N."患者_職業",
+          N."患者_状態", N."患者_症状", N."患者_渡航歴の有無フラグ", N."患者_退院等済フラグ", N."備考",
+       O."公表日", O."発症日", O."長野市症例番号"
+ from nagano_csv N
+  left outer join nagano_onset_csv O on N."No" = O."長野県症例番号";
+update patients set city_code = (select code from perf_and_city_code where perf_name = '長野県' and city_name = '長野市')
+ where perf_code = (select code from perf_and_city_code where perf_name = '長野県' and city_name = '')
+   and city_case_number != '';
+/* No.30 再陽性 */
+insert into patients
+select perf_case_number, 1,perf_code,city_case_number,city_code,'2020-04-28','2020-04-28',
+              regidence,age_class,gender,occupation,'2020-04-26',symptoms,asymptomatic_flg,1,condition,
+              travel_hist,travel_hist_flg,contact_hist,contact_hist_flg,discharge_date,remarks_1,remarks_2,remarks_3,source_1,source_2,source_3
+         from patients 
+        where perf_code = (select code from perf_and_city_code where perf_name = '長野県' and city_name = '')
+          and perf_case_number = 30 ;
