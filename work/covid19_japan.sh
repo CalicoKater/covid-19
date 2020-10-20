@@ -147,7 +147,7 @@ url="https://www.pref.yamagata.jp/090001/bosai/kochibou/kikikanri/covid19/shinga
 ruby ccc2.rb $url 5 > 06_yamagata3.csv
 output=06_yamagata_city_case_number.csv
 echo "perf_case_number,city_case_number" > $output
-cat 06_yamagata3.csv | grep -e '山形市.*公表' | cut -d, -f 2,6 | sed y/０１２３４５６７８９/0123456789/ | sed -e 's/[^0-9|,]//g' >> $output
+cat 06_yamagata3.csv | grep -e '山形市.*公表' | cut -d, -f 2,6 | sed -e 's/公表.*//g' | sed y/０１２３４５６７８９/0123456789/ | sed -e 's/[^0-9|,]//g' >> $output
 
 #07 福島県
 url="https://www.pref.fukushima.lg.jp/sec/21045c/fukushima-hasseijyoukyou.html"
@@ -174,7 +174,7 @@ ruby ccc2.rb $url | awk -F, '$2+0>0' >> 07_koriyama_city.csv
 # いわき市
 url="http://www.city.iwaki.lg.jp/www/contents/1596713999605/index.html"
 echo "市事例,県事例,年代,性別,陽性判明日,居住地,備考" > 07_iwaki_city.csv
-ruby ccc2.rb $url | awk -F, '$2+0>0' >> 07_iwaki_city.csv
+ruby ccc2.rb $url 0 | awk -F, '$2+0>0' >> 07_iwaki_city.csv
 
 #08 茨城県
 url="https://www.pref.ibaraki.jp/1saigai/2019-ncov/ichiran.html"
@@ -275,16 +275,18 @@ xlsx2csv -s 2 12_chiba.xlsx | sed -e 's/1,50代,女性,中国（武漢市）,ﾁ
 
 
 # ページごとに別れた場合
-#xlsx2csv -s 1 12_chiba.xlsx | sed 's/^,//' > 12_chiba.csv
-#xlsx2csv -s 2 12_chiba.xlsx >> 12_chiba.csv
-#xlsx2csv -s 3 12_chiba.xlsx >> 12_chiba.csv
-#xlsx2csv -s 4 12_chiba.xlsx >> 12_chiba.csv
-#xlsx2csv -s 5 12_chiba.xlsx >> 12_chiba.csv
-#xlsx2csv -s 6 12_chiba.xlsx >> 12_chiba.csv
-#xlsx2csv -s 7 12_chiba.xlsx >> 12_chiba.csv
-#xlsx2csv -s 8 12_chiba.xlsx | sed 's/^,//' | sed -e 's/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,9月28日/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,1月30日/g' > 12_chiba2.csv
-#xlsx2csv -s 9 12_chiba.xlsx >> 12_chiba2.csv
+<< chiba
+xlsx2csv -s 1 12_chiba.xlsx | sed 's/^,//' > 12_chiba.csv
+xlsx2csv -s 2 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 3 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 4 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 5 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 6 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 7 12_chiba.xlsx >> 12_chiba.csv
+xlsx2csv -s 8 12_chiba.xlsx | sed 's/^,//' | sed -e 's/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,9月28日/1,50代,女性,中国（武漢市）,ﾁｬｰﾀｰ便,1月30日/g' > 12_chiba2.csv
+xlsx2csv -s 9 12_chiba.xlsx >> 12_chiba2.csv
 #xlsx2csv -s 10 12_chiba.xlsx >> 12_chiba2.csv
+chiba
 
 ruby chiba2_csv.rb > 12_chiba4.csv
 ruby chiba_csv.rb > 12_chiba3.csv

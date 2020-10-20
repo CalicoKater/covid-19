@@ -50,98 +50,128 @@ delete from otaru_city_csv
 where "No" = 'No';
 
 /* 青森県 */
-drop table aomori_csv;
+drop table if exists aomori_csv;
+drop table if exists tohoku_onset_csv;
 .mode csv
 .import ./02_aomori2.csv aomori_csv
+.import ./tohoku_onset_date.csv tohoku_onset_csv
 
-delete from patients where perf_code='020001';
-insert into patients (perf_case_number, perf_code, report_date, regidence, age_class, gender, confirm_date, remarks_1)
-select "ＮＯ", "全国地方公共団体コード","公表_年月日","居住地","年代","性別","判明_年月日","保健所管内"
-from aomori_csv;
+delete from patients where perf_code = (select code from perf_and_city_code where perf_name = '青森県' and city_name = '');
+insert into patients (perf_case_number, perf_code, report_date, regidence, age_class, gender, confirm_date, remarks_1, onset_date)
+select A."ＮＯ", A."全国地方公共団体コード", A."公表_年月日", A."居住地", A."年代", A."性別", A."判明_年月日", A."保健所管内", T.onset_date
+from aomori_csv A
+left outer join tohoku_onset_csv T on A."ＮＯ" = T.perf_case_number and A."全国地方公共団体コード" = T.perf_code
+order by cast(A."ＮＯ" as integer);
 
 /*岩手県*/
-drop table iwate_csv;
+drop table if exists iwate_csv;
+drop table if exists tohoku_onset_csv;
 .mode csv
 .import ./03_iwate2.csv iwate_csv
+.import ./tohoku_onset_date.csv tohoku_onset_csv
 
-delete from patients where perf_code='030007';
-insert into patients (perf_case_number, perf_code, regidence, age_class, gender, confirm_date, remarks_1)
-select "区分", "030007", "居住地", "年代", "性別", "判明した日", "備考" 
-from iwate_csv order by cast("区分" as integer);
+delete from patients where perf_code =  (select code from perf_and_city_code where perf_name = '岩手県' and city_name = '');
+insert into patients (perf_case_number, perf_code, regidence, age_class, gender, confirm_date, remarks_1, onset_date)
+select W."区分", (select code from perf_and_city_code where perf_name = '岩手県' and city_name = ''), 
+          W."居住地", W."年代", W."性別", W."判明した日", W."備考", T.onset_date
+from iwate_csv W
+left outer join tohoku_onset_csv T
+ on W."区分" = T.perf_case_number and T.perf_code = (select code from perf_and_city_code where perf_name = '岩手県' and city_name = '')
+order by cast(W."区分" as integer);
 
 /* 宮城県 */
-drop table miyagi_csv;
+drop table if exists miyagi_csv;
+drop table if exists sendai_csv;
+drop table if exists tohoku_onset_csv;
 .mode csv
 .import ./04_miyagi2.csv miyagi_csv
-
-delete from patients where perf_code = '040002';
-insert into patients (perf_case_number, perf_code, regidence, age_class, gender, confirm_date)
-select "No", "040002", "居住地", "年代", "性別", "確定日"
-from miyagi_csv where cast("No" as integer) > 0;
-
-drop table sendai_csv;
-.mode csv
 .import ./04_sendai_city_case_number.csv sendai_csv
+.import ./tohoku_onset_date.csv tohoku_onset_csv
 
-update patients
-  set (city_code, city_case_number) = (select "041009", sendai_csv.city_case_number 
-  from sendai_csv
-  where patients.perf_case_number = sendai_csv.perf_case_number)
-where patients.perf_code='040002';
+delete from patients where perf_code = (select code from perf_and_city_code where perf_name = '宮城県' and city_name = '');
+insert into patients (perf_case_number, perf_code, regidence, age_class, gender, confirm_date, condition, remarks_2, city_case_number, onset_date)
+select M."No", (select code from perf_and_city_code where perf_name = '宮城県' and city_name = ''), 
+        M."居住地", M."年代", M."性別", M."確定日", M."現状", M."管轄", S.city_case_number, T.onset_date from miyagi_csv M
+left outer join sendai_csv S on M."No" = S.perf_case_number
+left outer join tohoku_onset_csv T on M."No" = T.perf_case_number and T.perf_code = (select code from perf_and_city_code where perf_name = '宮城県' and city_name = '');
+
+update patients set city_code = (select code from perf_and_city_code where perf_name = '宮城県' and city_name = '仙台市')
+ where perf_code = (select code from perf_and_city_code where perf_name = '宮城県' and city_name = '')
+   and city_case_number is not null;
 
 /* 秋田県 */
-drop table akita_csv;
+drop table if exists akita_csv;
+drop table if exists tohoku_onset_csv;
 .mode csv
 .import ./05_akita2.csv akita_csv
+.import ./tohoku_onset_date.csv tohoku_onset_csv
 
-delete from patients where perf_code='050008';
-insert into patients (perf_case_number, perf_code, regidence, age_class, gender, occupation, confirm_date, remarks_1, remarks_2)
-select "県内症例", "050008", "居住地", "年齢", "性別", "職業", "陽性確認日", "備考" ,"濃厚接触者等に関する調査"
-from akita_csv order by cast("県内症例" as integer);
+delete from patients where perf_code = (select code from perf_and_city_code where perf_name = '秋田県' and city_name = '');
+insert into patients (perf_case_number, perf_code, regidence, age_class, gender, occupation, confirm_date, remarks_1, remarks_2, onset_date)
+select A."県内症例", (select code from perf_and_city_code where perf_name = '秋田県' and city_name = ''),
+       A."居住地", A."年齢", A."性別", A."職業", A."陽性確認日", A."備考", A."濃厚接触者等に関する調査", T.onset_date
+from akita_csv A
+ left outer join tohoku_onset_csv T on A."県内症例" = T.perf_case_number
+   and T.perf_code =  (select code from perf_and_city_code where perf_name = '秋田県' and city_name = '')
+order by cast(A."県内症例" as integer);
 
 update patients
   set remarks_3='発症日: 7月31日～8月6日'
-  where perf_code='050008' and perf_case_number in (19,20,21,22,23,24,25,26);
+  where perf_code= (select code from perf_and_city_code where perf_name = '秋田県' and city_name = '') and perf_case_number in (19,20,21,22,23,24,25,26);
 
 /* 山形県 */
-drop table yamagata_csv;
+drop table if exists yamagata_csv;
+drop table if exists yamagata_city_csv;
+drop table if exists tohoku_onset_csv;
 .mode csv
 .import ./06_yamagata2.csv yamagata_csv
-
-delete from patients where perf_code='060003';
-insert into patients (perf_case_number, perf_code, report_date, confirm_date, regidence, age_class, gender)
-select "No", "全国地方公共団体コード", "公表_年月日", "感染確認_年月日", "患者_居住地","患者_年代", "患者_性別"
-from yamagata_csv;
-
-/* 山形市 062014 */
-drop table if exists yamagata_city_csv;
-.mode csv
 .import ./06_yamagata_city_case_number.csv yamagata_city_csv
+.import ./tohoku_onset_date.csv tohoku_onset_csv
 
-update patients
-  set (city_code, city_case_number) = ( select '062014', yamagata_city_csv.city_case_number
-  from yamagata_city_csv
-  where patients.perf_case_number = yamagata_city_csv.perf_case_number )
-where patients.perf_code='060003';
+delete from patients where perf_code = ( select code from perf_and_city_code where perf_name = '山形県' and city_name = '');
+insert into patients (perf_case_number, perf_code, report_date, confirm_date, regidence, age_class, gender, city_case_number, onset_date)
+select Y."No", Y."全国地方公共団体コード", Y."公表_年月日", Y."感染確認_年月日", Y."患者_居住地", Y."患者_年代", Y."患者_性別",
+          C.city_case_number, T.onset_date from yamagata_csv Y
+left outer join yamagata_city_csv C on Y."No" = C.perf_case_number
+left outer join tohoku_onset_csv T on Y."No" = T.perf_case_number and Y."全国地方公共団体コード" = T.perf_code;
+
+update patients set city_code = (select code from perf_and_city_code where perf_name = '山形県' and city_name = '山形市')
+ where perf_code = (select code from perf_and_city_code where perf_name = '山形県' and city_name = '')
+   and city_case_number is not null;
 
 /* 福島県 */
-drop table fukushima3_csv;
-drop table fukushima4_csv;
+drop table if exists fukushima3_csv;
+drop table if exists fukushima4_csv;
+drop table if exists fukushima_city_csv;
+drop table if exists koriyama_city_csv;
+drop table if exists iwaki_city_csv;
+
 .mode csv
 .import ./07_fukushima3.csv fukushima3_csv
 .import ./07_fukushima4.csv fukushima4_csv
+.import ./07_fukushima_city.csv fukushima_city_csv
+.import ./07_koriyama_city.csv koriyama_city_csv
+.import ./07_iwaki_city.csv iwaki_city_csv
 
-delete from patients where perf_code='070009';
-insert into patients (perf_case_number, perf_code, report_date, regidence, age_class, gender)
-select "No", "全国地方公共団体コード", "公表_年月日", "患者_居住地", "患者_年代", "患者_性別"
-from fukushima4_csv;
+delete from patients where perf_code = (select code from perf_and_city_code where perf_name = '福島県' and city_name  ='');
+insert into patients (perf_case_number, perf_code, report_date, regidence, age_class, gender, remarks_3, confirm_date, remarks_2, remarks_1, onset_date)
+select A."No", A."全国地方公共団体コード", A."公表_年月日", A."患者_居住地", A."患者_年代", A."患者_性別", A."備考", B."陽性判明日", B."保健所（市町村）", B."備　　考", T.onset_date from fukushima4_csv A
+left outer join fukushima3_csv B on A."No" = B."事例"
+left outer join tohoku_onset_csv T on A."No" = T.perf_case_number and A."全国地方公共団体コード" = T.perf_code;
 
-update patients 
-  set (confirm_date,remarks_1,remarks_2) = (select fukushima3_csv."陽性判明日", fukushima3_csv."備　　考", '保健所: ' || fukushima3_csv."保健所（市町村）" from fukushima3_csv
-  where patients.perf_case_number=fukushima3_csv."事例")
-where patients.perf_code='070009';
+update patients set city_code = (select code from perf_and_city_code where perf_name = '福島県' and city_name  ='福島市')
+where perf_code = (select code from perf_and_city_code where perf_name = '福島県' and city_name  ='')
+  and remarks_2 = '福島市';
+update patients set city_code = (select code from perf_and_city_code where perf_name = '福島県' and city_name  ='郡山市')
+where perf_code = (select code from perf_and_city_code where perf_name = '福島県' and city_name  ='')
+  and remarks_2 = '郡山市';
+update patients set city_code = (select code from perf_and_city_code where perf_name = '福島県' and city_name  ='いわき市')
+where perf_code = (select code from perf_and_city_code where perf_name = '福島県' and city_name  ='')
+  and remarks_2 = 'いわき市';
+
 
 /* 発症日 - 東北地方 */
+/*
 drop table tohoku_onset_csv;
 .mode csv
 .import ./tohoku_onset_date.csv tohoku_onset_csv
@@ -155,6 +185,7 @@ where perf_code in ('020001','030007','040002','050008','060003','070009');
 update patients
   set onset_date='7月31日～8月6日'
   where perf_code='050008' and perf_case_number in (19,20,21,22,23,24,25,26);
+*/
 
 /* 茨城県 */
 drop table if exists ibaraki_csv;
@@ -539,26 +570,44 @@ select M."No", M."全国地方公共団体コード", M."公表_年月日", M."�
 
 /* 福井県 */ 
 drop table if exists fukui_csv;
+drop table if exists fukui_confirm_csv;
 .mode csv
 .import ./18_fukui2.csv fukui_csv
+.import ./18_fukui_confirm_date.csv fukui_confirm_csv
 
 delete from patients
   where perf_code = (select code from perf_and_city_code where perf_name = '福井県' and city_name = '');
 insert into patients ( perf_case_number, perf_code, report_date, onset_date, regidence, age_class, gender, occupation,
-                      condition, symptoms, travel_hist_flg, discharge_date, remarks_1 )
- select "No", "全国地方公共団体コード", "公表_年月日", "発症_年月日", "患者_居住地", "患者_年代", "患者_性別","患者_職業",
-  "患者_状態", "患者_症状", "患者_渡航歴の有無フラグ","患者_退院済フラグ","備考" from fukui_csv ;
+                      condition, symptoms, travel_hist_flg, discharge_date, remarks_1, confirm_date )
+ select F."No", F."全国地方公共団体コード", F."公表_年月日", F."発症_年月日", F."患者_居住地",F. "患者_年代", F."患者_性別",F."患者_職業",
+           F."患者_状態", F."患者_症状", F."患者_渡航歴の有無フラグ",F."患者_退院済フラグ",F."備考", C."確定日"
+  from fukui_csv F
+  left outer join fukui_confirm_csv C on F."No" = C."No"  ;
 
 /* 山梨県 */
-drop table if exists yamahashi_csv;
+drop table if exists yamanashi_csv;
+drop table if exists yamanashi_confirm_csv;
 .mode csv
 .import ./19_yamanashi2.csv yamanashi_csv
+.import ./19_yamanashi_confirm_date.csv yamanashi_confirm_csv
 
+delete from patients
+  where perf_code = ( select code from perf_and_city_code where perf_name = '山梨県' and city_name = '');
+insert into patients ( perf_case_number, perf_code, report_date, onset_date, age_class, gender, regidence, confirm_date, re_positive_flg)
+  select Y."№", Y."全国地方公共団体コード", Y."公表日", Y."発症日", Y."年代", Y."性別", Y."居住地（生活圏）",
+         C."発生判明日", C."再陽性" = "○" from yamanashi_csv Y
+   left outer join yamanashi_confirm_csv C on Y."№" = C."№";
+insert into patients (perf_code, perf_case_number, report_date, confirm_date, regidence, re_positive_flg)
+values ('190004', '再陽性', '2020-05-12','2020-05-11','山梨県',1);
+update patients set asymptomatic_flg = 1
+ where onset_date='無症状' and perf_code = '190004'
+/*
 delete from patients
   where perf_code = ( select code from perf_and_city_code where perf_name = '山梨県' and city_name = '');
 insert into patients ( perf_case_number, perf_code, report_date, onset_date, age_class, gender, regidence)
 select "№", "全国地方公共団体コード", "公表日", "発症日", "年代", "性別", "居住地（生活圏）"
   from yamanashi_csv;
+*/
 
 /* 長野県 */
 drop table if exists nagano_csv;
