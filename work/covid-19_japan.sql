@@ -1,9 +1,10 @@
 /* 北海道 */
-drop table hokkaido_csv;
+drop table if exists hokkaido_csv;
 .mode csv
 .import ./01_hokkaido2.csv hokkaido_csv
 
-delete from patients where perf_code='010006';
+update hokkaido_csv set 発症_年月日 = NULL where "発症_年月日" = '';
+delete from patients where perf_code = (select code from perf_and_city_code where perf_name = '北海道' and city_name = '');
 insert into patients (perf_case_number, perf_code,report_date, onset_date, regidence, age_class,gender,occupation, symptoms, travel_hist_flg, re_positive_flg,remarks_1)
 select No, "全国地方公共団体コード","公表_年月日","発症_年月日","患者_居住地","患者_年代", "患者_性別","患者_職業", "患者_症状","患者_渡航歴の有無フラグ","患者_再陽性フラグ","備考"
 from hokkaido_csv;
@@ -304,28 +305,20 @@ where perf_code in ('090000','100005');
 */
 /* 埼玉県 */
 drop table if exists saitama_csv;
-.mode csv
-.import ./11_saitama3.csv saitama_csv
-
-delete from patients where perf_code='110001';
-insert into patients (perf_case_number, perf_code, confirm_date, age_class, gender, regidence)
-select "No", '110001', "判明日", "年代", "性別", "居住地"
-from saitama_csv;
-
 drop table if exists saitama_onset_csv;
 .mode csv
+.import ./11_saitama3.csv saitama_csv
 .import ./11_saitama_onset_date.csv saitama_onset_csv
 
-update saitama_onset_csv
-set (city_case_number,city_code) = (NULL,NULL)
-where city_case_number='' and city_code='';
+update saitama_onset_csv set (city_case_number,city_code) = (NULL,NULL)
+ where city_case_number='' and city_code='';
 
-update patients
-  set (report_date,city_code,city_case_number,onset_date) = ( select 
-  saitama_onset_csv.report_date,saitama_onset_csv.city_code,saitama_onset_csv.city_case_number,saitama_onset_csv.onset_date
-  from saitama_onset_csv
-  where patients.perf_code=saitama_onset_csv.perf_code and patients.perf_case_number = saitama_onset_csv.perf_case_number)
-where perf_code = '110001';
+delete from patients where perf_code = (select code from perf_and_city_code where perf_name = '埼玉県' and city_name = '');
+insert into patients (perf_case_number, perf_code, confirm_date, age_class, gender, regidence, report_date, city_code, city_case_number, onset_date)
+select S."No", (select code from perf_and_city_code where perf_name = '埼玉県' and city_name = ''),
+       S."判明日", S."年代", S."性別", S."居住地",
+       O.report_date, O.city_code, O.city_case_number, O.onset_date from saitama_csv S
+  left outer join saitama_onset_csv O on S."No" = O.perf_case_number;
 
 /* 千葉県 */
 drop table if exists chiba_symptoms_csv;
@@ -634,3 +627,33 @@ select perf_case_number, 1,perf_code,city_case_number,city_code,'2020-04-28','20
          from patients 
         where perf_code = (select code from perf_and_city_code where perf_name = '長野県' and city_name = '')
           and perf_case_number = 30 ;
+
+/* 岐阜県 */
+drop table if exists gifu_csv;
+drop table if exists gifu2_csv;
+drop table if exists gifu_onset_csv;
+.mode csv
+.import ./21_gifu.csv gifu_csv
+.import ./21_gifu2.csv gifu2_csv
+.import ./21_gifu_onset_date.csv gifu_onset_csv
+
+update gifu_onset_csv set "発症日" = NULL where "発症日" = '';
+update gifu_onset_csv set "岐阜市No" = NULL where "岐阜市No" = '';
+delete from patients where perf_code = (select code from perf_and_city_code where perf_name = '岐阜県' and city_name = '');
+insert into patients (perf_case_number, perf_code, regidence, age_class, gender, condition, symptoms, remarks_1,
+            confirm_date, remarks_2, city_case_number, report_date, onset_date, contact_hist_flg, travel_hist_flg, asymptomatic_flg)
+select G."No", G."全国地方公共団体コード", G."患者_居住地", G."患者_年代", G."患者_性別",
+           G."患者_状態", G."患者_症状", G."備考",C."陽性判定日", C."患者の状況",
+      O."岐阜市No", O."公表日", O."発症日", O."接触歴" = "○",O."渡航歴" = "○",O."無症状" = "○"
+  from gifu_csv G
+  left outer join gifu2_csv C on G."No" = C."県No"
+  left outer join gifu_onset_csv O on G."No" = O."No";
+update patients set city_code = (select code from perf_and_city_code where perf_name = '岐阜県' and city_name = '岐阜市')
+ where perf_code = (select code from perf_and_city_code where perf_name = '岐阜県' and city_name = '')
+   and city_case_number is not null;
+	 
+update patients set condition = "退院等" 
+where perf_code = (select code from perf_and_city_code where perf_name = '岐阜県' and city_name = '')
+   and perf_case_number in (select No From gifu_csv where "退院済フラグ"="1") and condition = '';
+
+

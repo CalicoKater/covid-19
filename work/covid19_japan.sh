@@ -388,6 +388,23 @@ url="https://gifu-opendata.pref.gifu.lg.jp/dataset/c11223-001"
 link=`curl -s $url | xmllint --html --xpath '//*[@id="dataset-resources"]/ul/li[1]/div/ul/li[2]/a/@href' - | cut -d\" -f 2`
 curl -s $link | iconv -f SJIS > 21_gifu.csv
 
+url="https://www.pref.gifu.lg.jp/uploaded/attachment/214068.pdf"
+curl -s -o 21_gifu.pdf $url
+
+#echo "県No,陽性判定日,年代,性別,都道府県,市町村,患者の状況
+pdftotext -layout 21_gifu.pdf - | awk -f 21_gifu.awk > 21_gifu2.csv
+
+# 岐阜市
+市内の感染者発生状況一覧( pdf
+link=`curl -s "https://www.city.gifu.lg.jp/item/44927.htm" \
+  -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36' \
+  | grep "市内の感染者発生状況一覧" | xmllint --html --xpath '//*/@href' - | cut -d\" -f 2`
+curl -s -o 21_gifu_city.pdf https://www.city.gifu.lg.jp/$link \
+  -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36'
+
+pdftotext -raw -layout 21_gifu_city.pdf - | awk 'BEGIN {OFS=","}{print $1,$2,$3,$4,$5,$6,$7}' > 21_gifu_city.csv
+
+
 #22 静岡県
 url="https://opendata.pref.shizuoka.jp/dataset/8167/resource/46279/220001_shizuoka_covid19_patients.csv"
 curl -s $url | iconv -f SJIS > 22_shizuoka.csv
