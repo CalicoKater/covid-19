@@ -121,7 +121,8 @@ echo "city_case_number,perf_case_number" > $output
 url="https://www.city.sendai.jp/kikikanri/kinkyu/corona2020/hassei/kanja1-65.html"
 ruby ccc2.rb $url | awk -F, '$1+0>0{printf "%d,%d\n",$1, $7}' >> $output
 url="https://www.city.sendai.jp/kikikanri/kinkyu/200131corona2.html"
-ruby ccc2.rb $url 1 | awk -F, '$1+0>0{printf "%d,%d\n",$1, $7}' >> $output
+#ruby ccc2.rb $url 1 | awk -F, '$1+0>0{printf "%d,%d\n",$1, $7}' >> $output
+ruby ccc2.rb $url 1 | awk -F, '$1+0>0{printf "%d,%d\n",$1, $6}' >> $output
 
 #05 秋田県
 url="https://www.pref.akita.lg.jp/pages/archive/47957"
