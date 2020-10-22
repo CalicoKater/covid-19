@@ -412,10 +412,14 @@ pdftotext -raw -layout 21_gifu_city.pdf - | awk 'BEGIN {OFS=","}{print $1,$2,$3,
 url="https://opendata.pref.shizuoka.jp/dataset/8167/resource/46279/220001_shizuoka_covid19_patients.csv"
 curl -s $url | iconv -f SJIS > 22_shizuoka.csv
 
-# ★★★保留★★★
-#url="https://opendata.pref.shizuoka.jp/dataset/8113/resource/47635/221309_hamamatsu_covid19_patients.csv"
-#     https://opendata.pref.shizuoka.jp/dataset/8113/resource/47647/221309_hamamatsu_covid19_patients.csv
-#curl -s $url | iconv -f SJIS > 22_shizuoka2.csv
+#浜松市
+url=`curl -s https://opendata.pref.shizuoka.jp/dataset/8113.html | grep "ダウンロード" | grep "patients.csv" | xmllint --html --xpath '//*//a/@data-url' - | cut -d\" -f 2`
+curl -s $url | iconv -f SJIS > 22_hamamatsu_city.csv
+
+# 静岡市
+url=`curl -s https://dataset.city.shizuoka.jp/dataset/1589801834 | grep "title=\"静岡市新型コロナウイルス陽性者属性_csv\"" | tail -n 1 | xmllint --html --xpath '//*/a/@href' - | cut -d\" -f 2`
+url=`curl -s "https://dataset.city.shizuoka.jp$url" | xmllint --html --xpath '//*[@id="content"]/div[3]/section/div[1]/p/a/@href' - | cut -d\" -f 2`
+curl -s -o 22_shizuoka_city.csv $url
 
 #23 愛知県
 # 前月分までのPDF
