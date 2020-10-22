@@ -1,6 +1,6 @@
 #!/bin/bash
 curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
-<< jag_skip
+#<< jag_skip
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="北海道"') | awk -F, -f jag2.awk > 01_jag_hokkaido.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="青森県"') | awk -F, -f jag2.awk > 02_jag_aomori.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="岩手県"') | awk -F, -f jag2.awk > 03_jag_iwate.csv
@@ -48,7 +48,7 @@ curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="宮崎県"') | awk -F, -f jag2.awk > 45_jag_miyazaki.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="鹿児島県"') | awk -F, -f jag2.awk > 46_jag_kagoshima.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="沖縄県"') | awk -F, -f jag2.awk > 47_jag_okinawa.csv
-jag_skip
+#jag_skip
 
 #01 北海道
 url="https://www.harp.lg.jp/opendata/dataset/1369/resource/3132/010006_hokkaido_covid19_patients.csv"
@@ -389,14 +389,16 @@ url="https://gifu-opendata.pref.gifu.lg.jp/dataset/c11223-001"
 link=`curl -s $url | xmllint --html --xpath '//*[@id="dataset-resources"]/ul/li[1]/div/ul/li[2]/a/@href' - | cut -d\" -f 2`
 curl -s $link | iconv -f SJIS > 21_gifu.csv
 
-url="https://www.pref.gifu.lg.jp/uploaded/attachment/214068.pdf"
-curl -s -o 21_gifu.pdf $url
+link=`curl -s "https://www.pref.gifu.lg.jp/site/covid19/26547.html" \
+  -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36' \
+  | grep "県内の患者一覧" | xmllint --html --xpath '//*/@href' - | cut -d\" -f 2`
+curl -s -o 21_gifu.pdf "https://www.pref.gifu.lg.jp$link" 
 
 #echo "県No,陽性判定日,年代,性別,都道府県,市町村,患者の状況
 pdftotext -layout 21_gifu.pdf - | awk -f 21_gifu.awk > 21_gifu2.csv
 
 # 岐阜市
-市内の感染者発生状況一覧( pdf
+
 link=`curl -s "https://www.city.gifu.lg.jp/item/44927.htm" \
   -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36' \
   | grep "市内の感染者発生状況一覧" | xmllint --html --xpath '//*/@href' - | cut -d\" -f 2`

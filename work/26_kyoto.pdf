@@ -55,6 +55,12 @@
         </tr>
         <tr>
             <td>
+            <p><a href="/koho/corona/"><img alt="新型コロナウイルスに関する京都府版支援制度まとめ" width="690" height="410" src="/images/shienseido_matome.png" /></a></p>
+            <p><a href="/koho/corona/">新型コロナウイルスに関する京都府版支援制度まとめ</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
             <p><a href="/kikikanri/coronakinkyurenraku.html"><img alt="京都府新型コロナウイルス緊急連絡サービス「こことろ」" width="690" height="410" src="/images/kokotoro.png" /></a></p>
             <p><a href="/kikikanri/coronakinkyurenraku.html">京都府新型コロナウイルス緊急連絡サービス「こことろ」</a></p>
             </td>
@@ -67,7 +73,7 @@
         </tr>
         <tr>
             <td>
-            <p><a href="/kentai/corona/tassei_jyokyo.html"><img alt="京都府の状況" width="690" height="410" src="/images/1019.png" /></a></p>
+            <p><a href="/kentai/corona/tassei_jyokyo.html"><img alt="京都府の状況" width="690" height="410" src="/images/1021.png" /></a></p>
             <p><a href="/kentai/corona/tassei_jyokyo.html">京都府のモニタリング指標の状況</a></p>
             </td>
         </tr>
@@ -143,8 +149,8 @@
             </span></font><font size="5"></font></p>
             <p><font size="3">京都府・京都市では、当日の17時までの検査結果をその日に発表しています。</font></p>
             <div class="section">
-            <p><font size="5">本日の感染者数 3名（京都府域 1名、京都市 2名）【累計 1934名】</font>（令和2年10月20日）<br />
-            <font size="5">これまでの退院等 1808名</font>（令和2年10月20日&nbsp;11時00分）<font size="5">、死亡 29名</font>（令和2年10月20日&nbsp;18時00分）</p>
+            <p><font size="5">本日の感染者数 13名（京都府域 4名、京都市 9名）【累計 1958名】</font>（令和2年10月22日）<br />
+            <font size="5">これまでの退院等 1832名</font>（令和2年10月22日&nbsp;12時00分）<font size="5">、死亡 30名</font>（令和2年10月22日&nbsp;17時50分）</p>
             </div>
             <div class="col2">
                         <div class="col2L">
@@ -173,6 +179,7 @@
                 <li><a href="/kentai/corona/chijimessage.html">京都府知事から府民の皆さまへ</a> </li>
                 <li><a href="/koho/kaiken/index.html">知事記者会見（一部手話動画あり）</a> </li>
                 <li><a href="/koho/corona/taidan.html">西脇隆俊&times;山中伸弥　対談企画　～コロナ後の京都の進む道～</a> </li>
+                <li><a href="/koho/corona/teidan.html">西脇隆俊&times;松井道宣&times;磯田道史　鼎談企画「新型コロナ～歴史に学び未来へ～」</a> </li>
             </ul>
             </td>
         </tr>
