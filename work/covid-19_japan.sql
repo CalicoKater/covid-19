@@ -651,9 +651,43 @@ select G."No", G."全国地方公共団体コード", G."患者_居住地", G."�
 update patients set city_code = (select code from perf_and_city_code where perf_name = '岐阜県' and city_name = '岐阜市')
  where perf_code = (select code from perf_and_city_code where perf_name = '岐阜県' and city_name = '')
    and city_case_number is not null;
-	 
+
 update patients set condition = "退院等" 
 where perf_code = (select code from perf_and_city_code where perf_name = '岐阜県' and city_name = '')
    and perf_case_number in (select No From gifu_csv where "退院済フラグ"="1") and condition = '';
 
+/* 静岡県 */
+
+/* 浜松市 */
+
+drop table if exists hamamatsu_city_csv;
+drop table if exists hamamatsu_city_case_number;
+.mode csv
+.import ./22_hamamatsu_city.csv hamamatsu_city_csv
+.import ./22_hamamatsu_city_case_number.csv hamamatsu_city_case_number
+
+delete from patients where city_code = (select code from perf_and_city_code where perf_name  ='静岡県' and city_name = '浜松市');
+insert into patients (perf_case_number, city_case_number, perf_code,city_code, report_date, onset_date, regidence, age_class, gender, occupation,
+                       condition, symptoms, travel_hist_flg, discharge_date, remarks_2 )
+select N."県No", H."No", (select code from perf_and_city_code where perf_name = '静岡県' and city_name = ''), 
+       H."全国地方公共団体コード", H."公表_年月日", H."発症_年月日",
+       case 
+         when H."患者_居住地" = '' then '浜松市'
+         when H."患者_居住地" = '非公表' or H."患者_居住地" = '市外' then H."患者_居住地"
+         else '浜松市' || H."患者_居住地"
+       end,
+       H."患者_年代", H."患者_性別", H."患者_職業", 
+       H."患者_状態",H."患者_症状", H."患者_渡航歴の有無フラグ",
+       case
+         when H."退院済フラグ" = '1' then '退院済'
+       end,
+       H."備考"
+  from hamamatsu_city_csv H
+ inner join hamamatsu_city_case_number N on H."No" = N."浜松市No";
+
+drop table if exists shizuoka_city_csv;
+drop table if exists shizuoka_city_1_50_csv;
+.mode csv
+.import ./22_shizuoka_city.csv shizuoka_city_csv
+.import ./22_shizuoka_city_1_50.csv shizuoka_city_1_50_csv
 
