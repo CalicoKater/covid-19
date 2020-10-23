@@ -1,6 +1,6 @@
 #!/bin/bash
 curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
-#<< jag_skip
+<< jag_skip
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="北海道"') | awk -F, -f jag2.awk > 01_jag_hokkaido.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="青森県"') | awk -F, -f jag2.awk > 02_jag_aomori.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="岩手県"') | awk -F, -f jag2.awk > 03_jag_iwate.csv
@@ -48,7 +48,7 @@ curl -s -O https://dl.dropboxusercontent.com/s/6mztoeb6xf78g5w/COVID-19.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="宮崎県"') | awk -F, -f jag2.awk > 45_jag_miyazaki.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="鹿児島県"') | awk -F, -f jag2.awk > 46_jag_kagoshima.csv
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="沖縄県"') | awk -F, -f jag2.awk > 47_jag_okinawa.csv
-#jag_skip
+jag_skip
 
 #01 北海道
 url="https://www.harp.lg.jp/opendata/dataset/1369/resource/3132/010006_hokkaido_covid19_patients.csv"
@@ -407,15 +407,12 @@ curl -s -o 21_gifu_city.pdf https://www.city.gifu.lg.jp/$link \
 
 pdftotext -raw -layout 21_gifu_city.pdf - | awk 'BEGIN {OFS=","}{print $1,$2,$3,$4,$5,$6,$7}' > 21_gifu_city.csv
 
-
 #22 静岡県
 url="https://opendata.pref.shizuoka.jp/dataset/8167/resource/46279/220001_shizuoka_covid19_patients.csv"
 curl -s $url | iconv -f SJIS > 22_shizuoka.csv
-
 #浜松市
 url=`curl -s https://opendata.pref.shizuoka.jp/dataset/8113.html | grep "ダウンロード" | grep "patients.csv" | xmllint --html --xpath '//*//a/@data-url' - | cut -d\" -f 2`
 curl -s $url | iconv -f SJIS > 22_hamamatsu_city.csv
-
 # 静岡市
 url=`curl -s https://dataset.city.shizuoka.jp/dataset/1589801834 | grep "title=\"静岡市新型コロナウイルス陽性者属性_csv\"" | tail -n 1 | xmllint --html --xpath '//*/a/@href' - | cut -d\" -f 2`
 url=`curl -s "https://dataset.city.shizuoka.jp$url" | xmllint --html --xpath '//*[@id="content"]/div[3]/section/div[1]/p/a/@href' - | cut -d\" -f 2`
