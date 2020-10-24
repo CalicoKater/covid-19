@@ -334,9 +334,14 @@ ruby ccc2.rb $url > 14_kamakura.csv
 cat 14_kamakura.csv | awk -F, -f 14_kamakura.awk > 14_kamakura2.csv
 
 #15 新潟県
+# No.1〜No.181まで？
 url="https://www.pref.niigata.lg.jp/site/shingata-corona/256362836.html"
 ruby ccc2.rb $url > 15_niigata.csv
 cat 15_niigata.csv | awk -F, -f 15_niigata.awk > 15_niigata2.csv
+# No.182〜？
+url="https://www.pref.niigata.lg.jp/site/shingata-corona/256362838.html"
+ruby ccc2.rb $url > 15_niigata3.csv
+cat 15_niigata3.csv | awk -F, -f 15_niigata.awk > 15_niigata4.csv
 
 #15 新潟市
 url="https://www.city.niigata.lg.jp/smph/iryo/kenko/yobou_kansen/kansen/covid-19/hasseizyoukyou.html"
