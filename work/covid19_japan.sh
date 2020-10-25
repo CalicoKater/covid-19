@@ -522,7 +522,9 @@ xlsx2csv 27_osaka.xlsx > 27_osaka.csv
 #https://web.pref.hyogo.lg.jp/kk03/corona_kanjyajyokyo.html
 #url="https://web.pref.hyogo.lg.jp/kk03/documents/corona-kanjajokyou.xlsx"
 #url="https://web.pref.hyogo.lg.jp/kk03/documents/corona_kanjyajyokyo.xlsx"
-url="https://web.pref.hyogo.lg.jp/kk03/documents/corona_kanjyajyokyo.xlsx"
+
+link=`curl -s https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html | grep -e "新型コロナウイルスに感染した患者の状況" | grep -e "xlsx" | cut -d\" -f 2`
+url="https://web.pref.hyogo.lg.jp$link"
 curl -s -o 28_hyogo.xlsx $url
 xlsx2csv 28_hyogo.xlsx | sed 's/^,//' > 28_hyogo.csv
 #link=`curl -s "https://web.pref.hyogo.lg.jp/kk03/corona_kanjyajyokyo.html" | xmllint --html --xpath '//*[@id="tmp_contents"]/div[2]/p[4]/a' - | cut -d\" -f 2`
