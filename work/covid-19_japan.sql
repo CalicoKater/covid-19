@@ -657,9 +657,28 @@ where perf_code = (select code from perf_and_city_code where perf_name = '岐阜
    and perf_case_number in (select No From gifu_csv where "退院済フラグ"="1") and condition = '';
 
 /* 静岡県 */
+drop table if exists shizuoka_csv;
+drop table if exists shizuoka_case_number_csv;
+.mode csv
+.import ./22_shizuoka2.csv shizuoka_csv
+.import ./22_shizuoka_case_number.csv shizuoka_case_number_csv
+
+delete from patients
+ where perf_code = (select code from perf_and_city_code where perf_name = '静岡県' and city_name = '');
+insert into patients (perf_case_number, perf_code, report_date, regidence, age_class, gender, occupation,
+                      severity, symptoms, travel_hist_flg, condition,remarks_1, onset_date, confirm_date)
+select N."症例番号", S."全国地方公共団体コード", S."公表_年月日", S."患者_居住地", S."患者_年代", S."患者_性別", S."患者_職業",
+         S."患者_状態", S."患者_症状", S."患者_渡航歴の有無フラグ", 
+     case 
+       when S."患者_退院済フラグ" = '1' then '退院済'
+       when S."患者_状態" = '死亡' then '死亡'
+     end,
+     S."備考", N."発症日",N."確定日" from shizuoka_csv S
+left outer join shizuoka_case_number_csv N
+ on S."No" = N."No";
 
 /* 浜松市 */
-
+/*
 drop table if exists hamamatsu_city_csv;
 drop table if exists hamamatsu_city_case_number;
 .mode csv
@@ -691,3 +710,4 @@ drop table if exists shizuoka_city_1_50_csv;
 .import ./22_shizuoka_city.csv shizuoka_city_csv
 .import ./22_shizuoka_city_1_50.csv shizuoka_city_1_50_csv
 
+*/
