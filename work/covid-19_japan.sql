@@ -739,3 +739,32 @@ select case
      and patients.city_case_number = hamamatsu_city_csv."No")
 where perf_code = (select code from perf_and_city_code where perf_name = '静岡県' and city_name = '')
 and perf_case_number in (select "県No" from hamamatsu_city_case_number_csv);
+
+/* 三重県 */
+drop table if exists mie_csv;
+drop table if exists yokkaichi_city_case_number_csv;
+drop table if exists mie_onset_date_csv;
+
+.mode csv
+.import ./24_mie2.csv mie_csv
+.import ./24_yokkaichi_city_case_number.csv yokkaichi_city_case_number_csv
+.import ./24_mie_onset_date.csv mie_onset_date_csv
+
+delete from patients
+ where perf_code = (select code from perf_and_city_code where perf_name  ='三重県' and city_name = '');
+
+insert into patients (perf_case_number, perf_code, report_date, age_class, gender, regidence,
+            city_case_number, onset_date, confirm_date, contact_hist_flg, travel_hist_flg, asymptomatic_flg, re_positive_flg)
+select M."No", M."全国地方公共団体コード", M."公表年月日", M."年代", M."性別", M."居住地",
+          Y."No", O."発症日", O."確定日",
+      O."接触歴" = "○",
+      O."渡航歴" = "○", 
+      O."無症状" = "○",
+      O."再陽性" = "○"
+    from mie_csv M
+ left outer join yokkaichi_city_case_number_csv Y on M."No" = Y."県No"
+ left outer join mie_onset_date_csv O on M."No" = O."No";
+ 
+ update patients set city_code = (select code from perf_and_city_code where perf_name  ='三重県' and city_name = '四日市市')
+  where perf_code = (select code from perf_and_city_code where perf_name  ='三重県' and city_name = '')
+    and perf_case_number in (select cast("県No" as integer) from yokkaichi_city_case_number_csv);
