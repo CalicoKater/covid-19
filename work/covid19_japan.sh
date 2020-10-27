@@ -101,6 +101,9 @@ cat 02_aomori.csv | awk -F, -f 02_aomori.awk > 02_aomori2.csv
 #url="https://stopcovid19.pref.aomori.lg.jp/cards/attributes-of-confirmed-cases/"
 #curl -s $url | xmllint --html --xpath '///table/tbody/tr/td/a/@href' - \
 #  | tr ' ' '\n' | sed 's/href=//g' | tr -d '"' | tail -r | nl | awk '$1!=""{printf "%s,%s\n",$1, $2}' > 02_aomori2.csv
+#八戸市保健所管内症例番号
+#echo city_case_number, perf_case_number > 02_hachinohe_case_number.csv
+#cat 02_aomori.csv | cut -d, -f 1,4 | grep "八戸市保健所管内" | sort -t, -k 1n | nl -s, | awk -F, '{printf "%d,%d\n",$1,$2}' >> 02_hachinohe_case_number.csv
 
 #03 岩手県
 url="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1029635/index.html"
@@ -451,8 +454,15 @@ xlsx2csv -s 1 23_aichi2.xlsx >> 23_aichi.csv
 #24 三重県
 url="https://www.pref.mie.lg.jp/common/content/000896797.csv"
 curl -s $url | iconv -f SJIS > 24_mie.csv
-url="https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066_00011.htm"
-ruby ccc2.rb $url > 24_mie2.csv
+awk -F, -f 24_mie.awk 24_mie.csv > 24_mie2.csv
+
+#url="https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066_00011.htm"
+#ruby ccc2.rb $url > 24_mie3.csv
+
+#四日市市
+url="https://www.city.yokkaichi.lg.jp/www/contents/1600832299733/index.html"
+ruby ccc2.rb $url > 24_yokkaichi_city.csv
+cut -d, -f 1,6 24_yokkaichi_city.csv | awk -F, 'NR==1{print "No,県No";}NR>1{gsub(/[^0-9]/,"",$1);printf "%d,%d\n",$1,$2}' > 24_yokkaichi_city_case_number.csv
 
 #url="https://www.pref.mie.lg.jp/YAKUMUS/HP/m0068000066_00012.htm"
 #ruby ccc2.rb $url >> 24_mie2.csv
