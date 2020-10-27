@@ -744,7 +744,6 @@ and perf_case_number in (select "県No" from hamamatsu_city_case_number_csv);
 drop table if exists mie_csv;
 drop table if exists yokkaichi_city_case_number_csv;
 drop table if exists mie_onset_date_csv;
-
 .mode csv
 .import ./24_mie2.csv mie_csv
 .import ./24_yokkaichi_city_case_number.csv yokkaichi_city_case_number_csv
