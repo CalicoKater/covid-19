@@ -53,9 +53,11 @@ where "No" = 'No';
 /* 青森県 */
 drop table if exists aomori_csv;
 drop table if exists tohoku_onset_csv;
+drop table if exists hachinohe_case_number_csv;
 .mode csv
 .import ./02_aomori2.csv aomori_csv
 .import ./tohoku_onset_date.csv tohoku_onset_csv
+.import ./02_hachinohe_case_number.csv hachinohe_case_number_csv
 
 delete from patients where perf_code = (select code from perf_and_city_code where perf_name = '青森県' and city_name = '');
 insert into patients (perf_case_number, perf_code, report_date, regidence, age_class, gender, confirm_date, remarks_1, onset_date)
@@ -63,6 +65,16 @@ select A."ＮＯ", A."全国地方公共団体コード", A."公表_年月日", 
 from aomori_csv A
 left outer join tohoku_onset_csv T on A."ＮＯ" = T.perf_case_number and A."全国地方公共団体コード" = T.perf_code
 order by cast(A."ＮＯ" as integer);
+
+update patients set city_code = (select code from perf_and_city_code where perf_name = '青森県' and city_name = '八戸市')
+ where perf_code = (select code from perf_and_city_code where perf_name = '青森県' and city_name = '')
+   and perf_case_number in (select cast("ＮＯ" as integer) from aomori_csv
+                             where "保健所管内" = "八戸市保健所管内")
+
+update patients set city_code = (select code from perf_and_city_code where perf_name = '青森県' and city_name = '青森市')
+ where perf_code = (select code from perf_and_city_code where perf_name = '青森県' and city_name = '')
+   and perf_case_number in (select cast("ＮＯ" as integer) from aomori_csv
+                             where "保健所管内" = "青森市保健所管内" or "保健所管内" = "青森市保健所" )
 
 /*岩手県*/
 drop table if exists iwate_csv;
@@ -119,6 +131,11 @@ order by cast(A."県内症例" as integer);
 update patients
   set remarks_3='発症日: 7月31日～8月6日'
   where perf_code= (select code from perf_and_city_code where perf_name = '秋田県' and city_name = '') and perf_case_number in (19,20,21,22,23,24,25,26);
+
+update patients set city_code = (select code from perf_and_city_code where perf_name  = '秋田県' and city_name = '秋田市')
+ where perf_code = (select code from perf_and_city_code where perf_name  = '秋田県' and city_name = '')
+   and perf_case_number in (select cast(県内症例 as integer) from akita_csv
+                             where "備考" like "秋田市%例目%");
 
 /* 山形県 */
 drop table if exists yamagata_csv;
@@ -676,6 +693,10 @@ select N."症例番号", S."全国地方公共団体コード", S."公表_年月
      S."備考", N."発症日",N."確定日" from shizuoka_csv S
 left outer join shizuoka_case_number_csv N
  on S."No" = N."No";
+
+update patients set re_positive_flg = 1
+  where perf_code = (select code from perf_and_city_code where perf_name = '静岡県' and city_name = '')
+    and perf_case_number = 76;
 
 /* 静岡市 */
 drop table if exists shizuoka_city_case_number_csv;
