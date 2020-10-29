@@ -234,7 +234,7 @@ curl -s -o 10_gunma_202008.pdf "https://www.pref.gunma.jp$link"
 link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況一覧')]/@href" - | cut -d\" -f 2`
 curl -s -o 10_gunma_202009.pdf "https://www.pref.gunma.jp$link"
 
-( echo "日付,年代,居住地,性別,職業,備考"
+( echo "No,診断日,年代,居住地,性別,職業,備考"
   pdftotext -layout -raw 10_gunma_202003.pdf - | grep '^[0-9]' | grep -v -e "県外にて判明した陽性例" -e "空港検疫" | awk -f 10_gunma2.awk | sort -k 1n
   pdftotext -layout -raw 10_gunma_202004.pdf - | grep '^[0-9]' | grep -v -e "県外にて判明した陽性例" -e "空港検疫" | awk -f 10_gunma2.awk | sort -k 1n
   pdftotext -layout -raw 10_gunma_202005.pdf - | grep '^[0-9]' | grep -v -e "県外にて判明した陽性例" -e "空港検疫" | awk -f 10_gunma2.awk | sort -k 1n
