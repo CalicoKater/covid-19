@@ -4,6 +4,8 @@ curl -s https://www.mhlw.go.jp/content/current_situation.csv | grep "空港検�
   | gawk -v FPAT='([^,]+)|(\"[^\"]+\")' '{print $2 "n" $3}' | tr -d '\\,+"() ' | tr 'n' ',' | sed -e 's/※7//g' > ./var/current.tmp
 
 s1=`cat ./var/current.tmp | cut -d, -f 3-4`
+
+# 発表がない（陽性者が０）場合日付が得られない問題があり
 date=`cat airport_quarantine2.csv | tr -d '"' | awk -F',' -f ./src/airport_pcr_test.awk | grep $s1 | cut -d, -f 1`
 
 s2=`cat ./var/current.tmp`

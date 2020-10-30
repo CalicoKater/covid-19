@@ -5,11 +5,13 @@ PCR検査及び抗原検査に関する検査数と陽性及び陰性者数のCS
 
 ## データソース
 
-東京都 新型コロナウイルス感染症対策サイト https://stopcovid19.metro.tokyo.lg.jp/ のgithubにあるデータ
-https://github.com/tokyo-metropolitan-gov/covid19/tree/development/data/
-
+東京都 新型コロナウイルス感染症対策サイト https://stopcovid19.metro.tokyo.lg.jp/ の</br>
+githubにあるデータ https://github.com/tokyo-metropolitan-gov/covid19/tree/development/data/</br>
+東京都福祉保健局</br>
+https://www.fukushihoken.metro.tokyo.lg.jp/index.html</br>
+https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/shibou.html
 ## ファイルの説明
-* 生成用スクリプト: tokyo_covid19.sh
+* 生成用スクリプト: tokyo_covid19.sh, tokyo_death_of_patient.sh, tokyo_death_of_patient.rb, tokyo_deaths_by_date_of_death.awk
 - [tokyo_daily_positive_detail.csv](/tokyo_daily_positive_detail.csv) </br>
 　→　報告日（公表日）ごとの陽性者数、接触歴等判明者数（濃厚接触者）、接触歴不明者数（経路不明者数）
 - [tokyo_positive_by_confirmed.csv](/tokyo_positive_by_confirmed.csv)
@@ -20,6 +22,10 @@ https://github.com/tokyo-metropolitan-gov/covid19/tree/development/data/
 　→　発症日ごとの陽性者数
 - [tokyo_positive_status.csv](/tokyo_positive_status.csv)
 　→　日毎ごとの入院患者数と重症者数
+- [tokyo_death_of_patient.csv](/tokyo_death_of_patient.csv)
+　→　死亡者の発表詳細（診断日等）
+- [tokyo_deaths_by_date_of_death.csv](/tokyo_deaths_by_date_of_death.csv)
+　→　死亡日別による死亡者数
 
 # 新型コロナウイルス感染症の空港検疫に関するファイル
 
