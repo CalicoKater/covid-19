@@ -18,7 +18,8 @@ https://github.com/tokyo-metropolitan-gov/covid19/tree/development/data/
 　→　検査判明日ごとの陽性者数と陰性者数（PCR検査と抗原検査）
 - [tokyo_positive_by_onset.csv](/tokyo_positive_by_onset.csv)
 　→　発症日ごとの陽性者数
-
+- [tokyo_positive_status.csv](/tokyo_positive_status.csv)
+　→　日毎ごとの入院患者数と重症者数
 
 # 新型コロナウイルス感染症の空港検疫に関するファイル
 
