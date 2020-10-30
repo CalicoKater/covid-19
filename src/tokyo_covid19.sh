@@ -24,3 +24,9 @@ url="https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/developmen
   echo "発症日,陽性者数"
   curl -s $url | jq -r '.data[]|[.developed_date, .count]|@csv'
 ) > tokyo_positive_by_onset.csv
+
+url="https://raw.githubusercontent.com/tokyo-metropolitan-gov/covid19/development/data/positive_status.json"
+(
+  echo "日付,入院患者数,重症者数"
+  curl -s $url | jq -r '.data[]|[.date, .hospitalized, .severe_case]|@csv'
+) > tokyo_positive_status.csv
