@@ -370,7 +370,9 @@ curl -s -o 16_toyama.csv $url
 link=`curl -s http://www.pref.toyama.jp/cms_sec/1205/kj00021798.html \
  | xmllint --html --xpath '//*[@id="file"]/ul/li[1]/a' - | iconv -f SJIS | cut -d\" -f 2`
 curl -s -o 16_toyama2.xlsx $link
-xlsx2csv 16_toyama2.xlsx > 16_toyama2.csv
+# 番号重複間違い？
+# xlsx2csv 16_toyama2.xlsx > 16_toyama2.csv
+xlsx2csv 16_toyama2.xlsx | sed 's/425,,44133,40代,男,富山市,会社員/426,,44133,40代,男,富山市,会社員/g' > 16_toyama2.csv
 
 #17 石川県
 url="https://www.pref.ishikawa.lg.jp/kansen/documents/170003_ishikawa_covid19_patients.csv"
