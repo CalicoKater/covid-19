@@ -168,7 +168,8 @@ cat 07_fukushima2.csv| awk -F, -f 07_fukushima2.awk > 07_fukushima4.csv
 
 # 福島市 
 url="https://www.city.fukushima.fukushima.jp/hoken-kansen-taisaku/kenko/iryo/kansensho/bukansinngatacorona_patient.html"
-echo "市症例,県症例,確認日,年代,性別,濃厚接触者の人数,濃厚接触者の健康観察,感染経路（推定）,備考" > 07_fukushima_city.csv
+#echo "市症例,県症例,確認日,年代,性別,濃厚接触者の人数,濃厚接触者の健康観察,感染経路（推定）,備考" > 07_fukushima_city.csv
+echo "市症例,県症例,確認日,年代,性別,感染経路（推定）,備考" > 07_fukushima_city.csv
 ruby ccc2.rb $url | awk -F, '$2+0>0' >> 07_fukushima_city.csv
 
 # 郡山市

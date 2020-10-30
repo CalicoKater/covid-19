@@ -43,7 +43,19 @@
     <tbody>
         <tr>
             <td>
-            <p><a href="/kentai/corona/chijimessage.html"><img alt="京都府知事から府民の皆様へのメッセージ" width="690" height="410" src="/images/chijidouga.jpg" /></a></p>
+            <p><a href="/koho/corona/"><img alt="新型コロナウイルスに関する京都府版支援制度まとめ" width="690" height="410" src="/images/shienseido_matome.png" /></a></p>
+            <p><a href="/koho/corona/">新型コロナウイルスに関する京都府版支援制度まとめ</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="/kentai/corona/tassei_jyokyo.html"><img alt="京都府の状況：警戒基準" width="690" height="410" src="/images/1029.png" /></a></p>
+            <p><a href="/kentai/corona/tassei_jyokyo.html">京都府のモニタリング指標の状況</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="/kentai/corona/chijimessage.html"><img alt="京都府知事から府民の皆さまへ" width="690" height="410" src="/images/chiji_message.png" /></a></p>
             <p><a href="/kentai/corona/chijimessage.html">京都府知事から府民の皆さまへ</a></p>
             </td>
         </tr>
@@ -51,12 +63,6 @@
             <td>
             <p><a href="/kikikanri/corona_life-style.html"><img alt="WITHコロナ時代の新しいライフスタイル" width="690" height="410" src="/images/200925life_style.png" /></a></p>
             <p><a href="/kikikanri/corona_life-style.html">WITHコロナ時代の新しいライフスタイル</a></p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <p><a href="/koho/corona/"><img alt="新型コロナウイルスに関する京都府版支援制度まとめ" width="690" height="410" src="/images/shienseido_matome.png" /></a></p>
-            <p><a href="/koho/corona/">新型コロナウイルスに関する京都府版支援制度まとめ</a></p>
             </td>
         </tr>
         <tr>
@@ -71,26 +77,22 @@
             <p><a href="/somucho/news/coronakifukin.html">新型コロナウイルス感染症対策応援寄附金の募集について</a></p>
             </td>
         </tr>
-        <tr>
-            <td>
-            <p><a href="/kentai/corona/tassei_jyokyo.html"><img alt="京都府の状況：警戒基準" width="690" height="410" src="/images/1028.png" /></a></p>
-            <p><a href="/kentai/corona/tassei_jyokyo.html">京都府のモニタリング指標の状況</a></p>
-            </td>
-        </tr>
     </tbody>
 </table>
 <div class="col2">
 <div class="col2L"><!--◆ここから左動画◆--><span class="frame_youtube">
-<iframe title="知事会見LIVE中継10月23日" width="400" height="237" src="//www.youtube.com/embed/mpDvkwvAPtY?feature=youtu.be&amp;rel=0&amp;autoplay=0&amp;loop=0" frameborder="0" allowfullscreen></iframe>
+<iframe title="201023知事記者会見" width="400" height="237" src="//www.youtube.com/embed/mpDvkwvAPtY?rel=0&amp;autoplay=0&amp;loop=0" frameborder="0" allowfullscreen></iframe>
 </span>
 <br />
 <!--◆ここまで左動画◆-->10月23日13時30分から知事会見をLIVE中継しました。<br />
 <br />
 <br />
-<a href="/koho/corona/"><img alt="新型コロナウイルスに関する支援制度まとめ" width="400" height="52" src="/images/shienseido.png" /></a></div>
-<div class="col2R"><!--◆ここから右動画--><a href="/net_tv/governor/0926chiji_teidan.html"><img alt="KBS京都テレビ「報道特別番組 新型コロナ～歴史に学び未来へ」" width="400" height="237" src="/images/0926tokuban.jpg" class="cms8341-youtube-area" /></a><br />
-<p>9月26日放送のKBS京都テレビ「報道特別番組新型コロナ～歴史に学び未来へ」番組本編とは違って、未公開トークを中心に編集しています<!--◆ここまで右動画◆--><br />
-<a href="/kikikanri/coronakinkyurenraku.html"><img alt="京都府新型コロナウイルス緊急連絡サービス" width="400" height="52" src="/images/kocotoro_1.png" /></a></p>
+<br />
+<a href="/koho/corona/"><img alt="新型コロナウイルスに関する支援制度まとめ" width="400" height="237" src="/images/400-237.png" /></a></div>
+<div class="col2R"><!--◆ここから右動画--><a href="/net_tv/governor/0926chiji_teidan.html"><img alt="KBS京都テレビ「報道特別番組 新型コロナ～歴史に学び未来へ」" width="400" height="237" src="/images/0926tokuban_1.jpg" class="cms8341-youtube-area" /></a><br />
+<p>9月26日放送のKBS京都テレビ「報道特別番組新型コロナ～歴史に学び未来へ」番組本編とは違って、未公開トークを中心に編集しています<br />
+<br />
+<a href="/fu-daigaku/news/2020animation.html"><img alt="新型コロナウイルス感染症対策アニメ" width="400" height="237" src="/images/anime.png" /></a></p>
 </div>
 </div>
 <p><a href="/kikikanri/coronakinkyurenraku.html"></a></p>
@@ -100,7 +102,8 @@
         <tr>
             <td>
             <p><font size="4"><span style="COLOR: red"><a id="tyumokujoho">&nbsp;</a>【注目情報】</span></font></p>
-            <p><strong>1.<a href="/kikikanri/news/coronavirus-kongonotaiou_1023.html">インフルエンザの流行に備えた今後の対応について（令和2年10月23日）</a></strong></p>
+            <p><strong>1.<a href="/documents/1030noukousessyokusya_qa.pdf">新型コロナウイルス感染に不安のある皆さまへ（濃厚接触者Q&amp;A）（令和2年10月30日）（PDF：182KB）</a></strong></p>
+            <p><strong>2.<a href="/kikikanri/news/coronavirus-kongonotaiou_1023.html">インフルエンザの流行に備えた今後の対応について（令和2年10月23日）</a></strong></p>
             <ul>
                 <li><a href="/kentai/news/corona_taiseihenkou.html">11月1日から、新型コロナウイルス感染症に関する相談・受診・検査体制が変わります</a> </li>
                 <li><a href="/kikikanri/corona_youshiki.html">「新しい生活様式」の実践例（6月19日改訂）（厚生労働省）</a> </li>
@@ -117,12 +120,7 @@
                 <li><strong>京都府緊急事態措置コールセンター（平日9時から18時）<br />
                 </strong><strong><font size="5">電話番号<span class="tel_link">075-414-5907</span></font></strong> </li>
             </ul>
-            <p><strong>2.</strong><a href="https://www.kyotokaigi.com/"><strong>「ガイドライン推進宣言事業所ステッカー」について（新型コロナウイルス感染拡大予防ガイドライン推進京都会議HP）（令和2年7月29日）（外部リンク）</strong></a></p>
-            <p><strong>3.</strong><strong><a href="/hofukuki/news/corona-irokin-shienkin.html">新型コロナウイルス緊急包括支援事業（慰労金・支援金）について（令和2年8月21日）</a></strong></p>
-            <ul>
-                <li><strong>京都府慰労金・支援金事務センターコールセンター（平日9時から17時）<br />
-                </strong><strong><font size="5">電話番号<span class="tel_link">075-708-7880</span></font></strong> </li>
-            </ul>
+            <p><strong>3.</strong><a href="https://www.kyotokaigi.com/"><strong>「ガイドライン推進宣言事業所ステッカー」について（新型コロナウイルス感染拡大予防ガイドライン推進京都会議HP）（令和2年7月29日）（外部リンク）</strong></a></p>
             <p><strong>4.<a href="/sanroso/news/shienseido.html">新型コロナウイルスに関する事業者向け支援制度（令和2年10月16日更新）</a></strong></p>
             <ul>
                 <li><strong>中小企業緊急経営支援コールセンター（平日9時から17時）<br />
@@ -151,7 +149,7 @@
             <p><font size="3">京都府・京都市では、当日の17時までの検査結果をその日に発表しています。</font></p>
             <div class="section">
             <p><font size="5">本日の感染者数 11名（京都府域 4名、京都市 7名）【累計 2014名】</font>（令和2年10月29日）<br />
-            <font size="5">これまでの退院等 1908名</font><font size="5">、死亡 30名</font>（令和2年10月29日&nbsp;11時00分）</p>
+            <font size="5">これまでの退院等 1911名</font><font size="5">、死亡 30名</font>（令和2年10月30日&nbsp;10時00分）</p>
             </div>
             <div class="col2">
                         <div class="col2L">

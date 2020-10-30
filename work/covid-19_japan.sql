@@ -69,12 +69,12 @@ order by cast(A."ＮＯ" as integer);
 update patients set city_code = (select code from perf_and_city_code where perf_name = '青森県' and city_name = '八戸市')
  where perf_code = (select code from perf_and_city_code where perf_name = '青森県' and city_name = '')
    and perf_case_number in (select cast("ＮＯ" as integer) from aomori_csv
-                             where "保健所管内" = "八戸市保健所管内")
+                             where "保健所管内" = "八戸市保健所管内");
 
 update patients set city_code = (select code from perf_and_city_code where perf_name = '青森県' and city_name = '青森市')
  where perf_code = (select code from perf_and_city_code where perf_name = '青森県' and city_name = '')
    and perf_case_number in (select cast("ＮＯ" as integer) from aomori_csv
-                             where "保健所管内" = "青森市保健所管内" or "保健所管内" = "青森市保健所" )
+                             where "保健所管内" = "青森市保健所管内" or "保健所管内" = "青森市保健所" );
 
 /*岩手県*/
 drop table if exists iwate_csv;
@@ -724,10 +724,10 @@ update patients set (city_code, city_case_number, onset_date, confirm_date) = (
     hamamatsu_city_case_number_csv."浜松市No", hamamatsu_city_case_number_csv."発症日", hamamatsu_city_case_number_csv."確定日"
    from hamamatsu_city_case_number_csv
    where patients.perf_case_number = cast(hamamatsu_city_case_number_csv."県No" as integer)
-	  and patients.perf_code = (select code from perf_and_city_code where perf_name = '静岡県' and city_name = ''))
+    and patients.perf_code = (select code from perf_and_city_code where perf_name = '静岡県' and city_name = ''))
  where perf_code = (select code from perf_and_city_code where perf_name = '静岡県' and city_name = '')
 and perf_case_number in (select "県No" from hamamatsu_city_case_number_csv);
-)
+
 update patients set regidence = (
 select case 
          when "患者_居住地" = '' then '浜松市'
