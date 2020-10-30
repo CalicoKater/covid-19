@@ -1,7 +1,9 @@
 /* 北海道 */
 drop table if exists hokkaido_csv;
+drop table if exists hokkaido2_csv;
 .mode csv
 .import ./01_hokkaido2.csv hokkaido_csv
+.import ./01_hokkaido3.csv hokkaido2_csv
 
 update hokkaido_csv set 発症_年月日 = NULL where "発症_年月日" = '';
 delete from patients where perf_code = (select code from perf_and_city_code where perf_name = '北海道' and city_name = '');
@@ -18,7 +20,7 @@ update patients
   set (city_code, city_case_number) = (select "011002", sapporo_city_case_number_csv."No"
   from sapporo_city_case_number_csv
   where patients.perf_case_number = sapporo_city_case_number_csv."北海道発表No")
-where patients.perf_code='010006';
+where patients.perf_code='010006' and perf_case_number in (select "北海道発表No" from sapporo_city_case_number_csv);
 
 /* 函館市症例番号, 陽性判明日 */
 drop table if exists hakodate_city_csv;
@@ -46,9 +48,16 @@ drop table if exists otaru_city2_csv;
 .mode csv
 .import ./01_otaru_city.csv otaru_city_csv
 .import ./01_otaru_city2.csv otaru_city2_csv
+update patients set city_code = (select code from perf_and_city_code where perf_name = '北海道' and city_name = '小樽市')
+ where perf_code = (select code from perf_and_city_code where perf_name = '北海道' and city_name = '')
+  and perf_case_number in (select perf_case_number from otaru_city2_csv);
 
-delete from otaru_city_csv
-where "No" = 'No';
+update patients set (city_case_number,confirm_date) = (select city_case_number, confirm_date from 
+ (select O.city_case_number, O.confirm_date, N.perf_case_number from otaru_city_csv O
+  inner join otaru_city2_csv N
+   on cast(O.city_case_number as integer) = cast(N.city_case_number as integer)) G
+ where patients.perf_case_number=G.perf_case_number)
+ where city_code=(select code from perf_and_city_code where perf_name = '北海道' and city_name = '小樽市');
 
 /* 青森県 */
 drop table if exists aomori_csv;

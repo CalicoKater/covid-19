@@ -62,7 +62,7 @@ url="http://www.pref.hokkaido.lg.jp/hf/kth/kak/hasseijoukyou.htm"
 link=`curl -s $url | xmllint --html --xpath '//*[@id="rs_contents"]/span/ul[2]/li/a/@href' - | cut -d\" -f 2`
 url="http://www.pref.hokkaido.lg.jp$link"
 curl -sL $url -o 01_hokkaido.pdf
-pdftotext  -layout  01_hokkaido.pdf - | awk '$1!=""{printf "%s,%s,%s,%s,%s,%s\n",$1,$2,$3,$4,$5,$6,$7}' > 01_hokkaido3.csv
+pdftotext  -layout  01_hokkaido.pdf - | awk '$1!=""&&$1+0>0{printf "%s,%s,%s,%s,%s,%s\n",$1,$2,$3,$4,$5,$6}' > 01_hokkaido3.csv
 
 #011002 札幌市
 output="01_sapporo_city_case_number.csv"
@@ -82,9 +82,9 @@ ruby ccc2.rb $url 0 | awk -F, -f 01_hakodate.awk > 01_asahikawa_city.csv
 
 # 小樽市 
 url="https://www.city.otaru.lg.jp/2019-nCoV/COVID-19/"
-ruby ccc2.rb $url > 01_otaru_city.csv
+ruby ccc2.rb $url | gawk -v FPAT='([^,]+)|(\"[^\"]+\")' -f 01_otaru.awk > 01_otaru_city.csv
 
-echo "city_case_number, perf_case_number,report_date,age_class,gender, regidence,remarks_2,remarks_3" > 01_otaru_city2.csv
+echo "city_case_number,perf_case_number,report_date,age_class,gender,regidence,remarks_2,remarks_3" > 01_otaru_city2.csv
 #pdftotext -raw 01_hokkaido.pdf - | awk 'BEGIN{OFS=","}{print $1,$2,$3,$4,$5,$6,$7}' | grep "小樽市公表中" | sort -t, -k 1n | nl -s, >>01_otaru_city2.csv
 pdftotext -layout 01_hokkaido.pdf - | awk 'BEGIN{OFS=","}{print $1,$2,$3,$4,$5,$6,$7}' | grep "小樽市公表中" | sort -t, -k 1n | nl -s, >>01_otaru_city2.csv
 
