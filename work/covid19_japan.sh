@@ -391,7 +391,8 @@ xlsx2csv 19_yamanashi.xlsx > 19_yamanashi.csv
 ruby 19_yamanashi.rb 19_yamanashi.csv > 19_yamanashi2.csv
 
 #20 長野県
-url="https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/documents/200000_nagano_covid19_patients.csv"
+#url="https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/documents/200000_nagano_covid19_patients.csv"
+url="https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/documents/200000_nagano_covid19_patients_2.csv"
 curl -s $url | iconv -f SJIS  > 20_nagano.csv
 awk -F, -f 20_nagano.awk 20_nagano.csv > 20_nagano3.csv
 
@@ -429,9 +430,9 @@ curl -s -o 21_gifu_city.pdf https://www.city.gifu.lg.jp/$link \
 pdftotext -raw -layout 21_gifu_city.pdf - | awk 'BEGIN {OFS=","}{print $1,$2,$3,$4,$5,$6,$7}' > 21_gifu_city.csv
 
 #22 静岡県
-url="https://opendata.pref.shizuoka.jp/dataset/8167/resource/46279/220001_shizuoka_covid19_patients.csv"
-curl -s $url | iconv -f SJIS > 22_shizuoka.csv
-cat 22_shizuoka.csv | awk -F, -f 22_shizuoka.awk > 22_shizuoka2.csv
+#url="https://opendata.pref.shizuoka.jp/dataset/8167/resource/46279/220001_shizuoka_covid19_patients.csv"
+#curl -s $url | iconv -f SJIS > 22_shizuoka.csv
+#cat 22_shizuoka.csv | awk -F, -f 22_shizuoka.awk > 22_shizuoka2.csv
 #浜松市
 url=`curl -s https://opendata.pref.shizuoka.jp/dataset/8113.html | grep "ダウンロード" | grep "patients.csv" | xmllint --html --xpath '//*//a/@data-url' - | cut -d\" -f 2`
 curl -s $url | iconv -f SJIS > 22_hamamatsu_city.csv
