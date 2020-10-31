@@ -55,8 +55,8 @@ url="https://www.harp.lg.jp/opendata/dataset/1369/resource/3132/010006_hokkaido_
 curl -s $url | iconv -f SJIS > 01_hokkaido.csv
 cat 01_hokkaido.csv | awk -F, -f 01_hokkaido.awk > 01_hokkaido2.csv
 
-#url="https://www.harp.lg.jp/opendata/dataset/1369/resource/2853/covid19_data.csv"
-#curl -s $url | iconv -f SJIS > 01_hokkaido2.csv
+url="https://www.harp.lg.jp/opendata/dataset/1369/resource/2853/covid19_data.csv"
+curl -s $url | iconv -f SJIS > 01_hokkaido4.csv
 
 url="http://www.pref.hokkaido.lg.jp/hf/kth/kak/hasseijoukyou.htm"
 link=`curl -s $url | xmllint --html --xpath '//*[@id="rs_contents"]/span/ul[2]/li/a/@href' - | cut -d\" -f 2`
