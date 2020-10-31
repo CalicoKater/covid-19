@@ -499,11 +499,16 @@ ruby ccc2.rb $url > 26_kyoto.csv
 
 #url="https://www.pref.kyoto.jp/kentai/corona/documents/jyoukyo001-580.pdf"
 url="https://www.pref.kyoto.jp/kentai/corona/hassei1-50.html"
-link=`curl -s $url | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[2]/li/a/@href' - | cut -d\" -f 2`
+#link=`curl -s $url | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[2]/li/a/@href' - | cut -d\" -f 2`
+link=`curl -s $url | xmllint --html --xpath '//*[contains(./text(),"府内感染状況　退院等（死亡退院・転院を含む）　1例目から950例目まで（PDF")]/@href' - | cut -d\" -f 2`
 url="https://www.pref.kyoto.jp$link"
 curl -s -o 26_kyoto.pdf $url
-xlsx2csv 26_kyoto.xlsx -s 1 >> 26_kyoto.csv
-xlsx2csv 26_kyoto.xlsx -s 2 >> 26_kyoto.csv
+pdftotext -raw 26_kyoto.pdf - | awk 'BEGIN{OFS=","}{print $1,$2,$3,$4,$5,$6}' >> 26_kyoto.csv
+#xlsx2csv 26_kyoto.xlsx -s 1 >> 26_kyoto.csv
+#xlsx2csv 26_kyoto.xlsx -s 2 >> 26_kyoto.csv
+
+url="https://raw.githubusercontent.com/stop-covid19-kyoto/covid19-kyoto/development/data/patients.json"
+curl -s $url | jq -r '.data[]|[."No", ."居住地", ."年代と性別", ."退院", .date]|@csv' > 26_kyoto2.csv
 
 #27 大阪府
 url="http://www.pref.osaka.lg.jp/attach/23711/00346644/youseisyajyouhou.xlsx"
