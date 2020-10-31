@@ -6,7 +6,7 @@ $0=="No,年代,性別,居住地,確定日,現状,,"{
   start_flg=1;
   next;
 }
-start_flg==1{
+start_flg==1&&$1+0>0{
   printf "%d,%s,%s,%s,",$1, $2, $3,$4;
   #printf $5
   $5-=2;

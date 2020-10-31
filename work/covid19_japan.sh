@@ -115,7 +115,8 @@ link=`curl -s "https://www.pref.miyagi.jp/site/covid-19/02.html" \
  | xmllint --html --xpath '//*[@id="main_body"]/div[3]/p[8]/a' - | cut -d\" -f 2`
 url="https://www.pref.miyagi.jp$link"
 curl -s -o 04_miyagi.xlsx $url
-/usr/local/bin/xlsx2csv 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
+#/usr/local/bin/xlsx2csv 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
+xlsx2csv -s 2 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
 cat 04_miyagi.csv | awk -F, -f 04_miyagi.awk > 04_miyagi2.csv
 
 #041009 仙台市
