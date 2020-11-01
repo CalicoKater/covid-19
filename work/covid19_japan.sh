@@ -62,7 +62,11 @@ url="http://www.pref.hokkaido.lg.jp/hf/kth/kak/hasseijoukyou.htm"
 link=`curl -s $url | xmllint --html --xpath '//*[@id="rs_contents"]/span/ul[2]/li/a/@href' - | cut -d\" -f 2`
 url="http://www.pref.hokkaido.lg.jp$link"
 curl -sL $url -o 01_hokkaido.pdf
-pdftotext  -layout  01_hokkaido.pdf - | awk '$1!=""&&$1+0>0{printf "%s,%s,%s,%s,%s,%s\n",$1,$2,$3,$4,$5,$6}' > 01_hokkaido3.csv
+pdftotext  -layout  01_hokkaido.pdf - \
+ | awk '$1!=""&&$1+0>0{printf "%s,%s,%s,%s,%s,\"%s\"\n",$1,$2,$3,$4,$5,$6}' \
+ | sed -e 's/451,,,,,\"\"//g' > 01_hokkaido3.csv
+  #| sed -e 's/381,4/18,60代,男,宗谷総合振興局管内,\"\"/381,4/18,60代,男,宗谷総合振興局管内,\"No.321～323,362～369,380,382,398～407,No.448～451\"/g'
+  #| sed -e 's/380,4/18,80代,男,石狩振興局管内,\"\"/'
 
 #011002 札幌市
 output="01_sapporo_city_case_number.csv"
@@ -116,7 +120,8 @@ link=`curl -s "https://www.pref.miyagi.jp/site/covid-19/02.html" \
 url="https://www.pref.miyagi.jp$link"
 curl -s -o 04_miyagi.xlsx $url
 #/usr/local/bin/xlsx2csv 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
-xlsx2csv -s 2 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
+#xlsx2csv -s 2 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
+xlsx2csv -s 1 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
 cat 04_miyagi.csv | awk -F, -f 04_miyagi.awk > 04_miyagi2.csv
 
 #041009 仙台市
@@ -515,45 +520,13 @@ url="http://www.pref.osaka.lg.jp/attach/23711/00346644/youseisyajyouhou.xlsx"
 curl -s -o 27_osaka.xlsx $url
 xlsx2csv 27_osaka.xlsx > 27_osaka.csv
 
-# 9/18
-#url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39377_5.xlsx"
-#curl -s -o 27_osaka2.xlsx $url
-#xlsx2csv -s 2 27_osaka2.xlsx > 27_osaka2.csv
-# 9/19
-#url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39386_5.xlsx"
-#curl -s -o 27_osaka3.xlsx $url
-#xlsx2csv -s 2 27_osaka3.xlsx >> 27_osaka2.csv
-# 9/20
-#url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39388_5.xlsx"
-#curl -s -o 27_osaka4.xlsx $url
-#xlsx2csv -s 2 27_osaka4.xlsx >> 27_osaka2.csv
-# 9/21
-#url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39389_5.xlsx"
-#curl -s -o 27_osaka5.xlsx $url
-#xlsx2csv -s 2 27_osaka5.xlsx >> 27_osaka2.csv
-# 9/22
-#url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39390_5.xlsx"
-#curl -s -o 27_osaka6.xlsx $url
-#xlsx2csv -s 2 27_osaka6.xlsx >> 27_osaka2.csv
-# 9/23
-#url="http://www.pref.osaka.lg.jp/hodo/attach/hodo-39395_5.xlsx"
-#curl -s -o 27_osaka7.xlsx $url
-#xlsx2csv -s 2 27_osaka7.xlsx >> 27_osaka2.csv
-
-#07/01-
-#rm 27_osaka3.csv
-#for url in `cut -f 2 osaka_link.txt`; do
-#  curl -s -o 27_osaka.xlsx $url
-#  xlsx2csv -s 2 27_osaka.xlsx | sed -e '/^$/d' >> 27_osaka3.csv 
-#done
-
 #28 兵庫県
 #https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html
 #https://web.pref.hyogo.lg.jp/kk03/corona_kanjyajyokyo.html
 #url="https://web.pref.hyogo.lg.jp/kk03/documents/corona-kanjajokyou.xlsx"
 #url="https://web.pref.hyogo.lg.jp/kk03/documents/corona_kanjyajyokyo.xlsx"
 
-link=`curl -s https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html | grep -e "新型コロナウイルスに感染した患者の状況" | grep -e "xlsx" | cut -d\" -f 2`
+link=`curl -s https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html | grep -e "新型コロナウイルスに感染した患者の状況" | grep -e "エクセル" | cut -d\" -f 2`
 url="https://web.pref.hyogo.lg.jp$link"
 curl -s -o 28_hyogo.xlsx $url
 xlsx2csv 28_hyogo.xlsx | sed 's/^,//' > 28_hyogo.csv
@@ -573,6 +546,11 @@ xlsx2csv 29_nara2.xlsx > 29_nara2.csv
 #30 和歌山県
 url="https://raw.githubusercontent.com/wakayama-pref-org/covid19/master/csv/kansensuii.csv"
 curl -s -o 30_wakayama.csv $url
+
+url="https://raw.githubusercontent.com/sys-cube/covid19/master/data/data.json"
+( echo "居住地,年代,性別,退院,公表日"
+  curl -s $url | jq -r '.patients.data[]|[."居住地", ."年代", ."性別", ."退院", .date]|@csv'
+) > 30_wakayama2.csv
 
 #31 鳥取県
 url="https://www.pref.tottori.lg.jp/item/1207264.htm"
