@@ -567,7 +567,25 @@ curl -s $url | iconv -f SJIS > 33_okayama.csv
 #34 広島県
 url="https://www.pref.hiroshima.lg.jp/site/hcdc/covid19-kanjya.html"
 ruby ccc2.rb $url > 34_hiroshima.csv
-awk -F, ''
+
+url="https://raw.githubusercontent.com/brickhouse-co-jp/covid19-hiropref/master/data/daily_positive_detail.json"
+(
+  echo "公表日,陽性者数,経路不明者数,経路判明者数"
+  curl -s $url | jq -r '.data[]|[.diagnosed_date, .count, .missing_count, .reported_count]|@csv'
+) > 34_hiroshima_daily_positive_detail.csv
+
+url="https://raw.githubusercontent.com/brickhouse-co-jp/covid19-hiropref/master/data/daily_positive_detail-onset.json"
+(
+  echo "発症日,陽性者数"
+  curl -s $url | jq -r '.data[]|[.diagnosed_date, .count]|@csv'
+) > 34_hiroshima_daily_positive_detail-onset.csv
+
+url="https://raw.githubusercontent.com/brickhouse-co-jp/covid19-hiropref/master/data/data.json"
+(
+  echo "公表日,居住地,年代"
+  curl -s $url | jq -r '.patients.data[]|[.date, ."居住地", ."年代"]|@csv'
+) > 34_hiroshima_patients.csv
+
 #35 山口県
 url="https://yamaguchi-opendata.jp/ckan/dataset/f6e5cff9-ae43-4cd9-a398-085187277edf/resource/f56e6552-4c5d-4ec6-91c0-090f553e0aea/download/350001_yamaguchi_covid19_patients.csv"
 curl -s -o 35_yamaguchi.csv $url
