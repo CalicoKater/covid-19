@@ -470,6 +470,7 @@ curl -s -o 23_aichi2.pdf $url
 xlsx2csv 23_aichi.xlsx > 23_aichi.csv
 xlsx2csv -s 1 23_aichi2.xlsx >> 23_aichi.csv
 
+gawk -v FPAT='([^,]+)|(\"[^\"]+\")' -f 23_aichi.awk 23_aichi.csv > 23_aichi2.csv
 
 #24 三重県
 url="https://www.pref.mie.lg.jp/common/content/000896797.csv"
