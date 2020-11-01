@@ -555,7 +555,7 @@ url="https://raw.githubusercontent.com/sys-cube/covid19/master/data/data.json"
 
 #31 鳥取県
 url="https://www.pref.tottori.lg.jp/item/1207264.htm"
-ruby ccc2.rb $url 2 > 31_tottori.csv
+ruby ccc2.rb $url 2 | gawk -v FPAT='([^,]+)|(\"[^\"]+\")' -f 31_tottori.awk > 31_tottori.csv
 
 #32 島根県
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="島根県"')  | awk -F, -f jag2.awk > 32_shimane.csv
