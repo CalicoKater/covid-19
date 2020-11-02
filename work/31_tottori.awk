@@ -1,5 +1,5 @@
 BEGIN {
-  OFS=","
+  OFS=",";
 }
 NR == 1{
   print $0;
