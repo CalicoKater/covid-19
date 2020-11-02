@@ -436,9 +436,9 @@ curl -s -o 21_gifu_city.pdf https://www.city.gifu.lg.jp/$link \
 pdftotext -raw -layout 21_gifu_city.pdf - | awk 'BEGIN {OFS=","}{print $1,$2,$3,$4,$5,$6,$7}' > 21_gifu_city.csv
 
 #22 静岡県
-#url="https://opendata.pref.shizuoka.jp/dataset/8167/resource/46279/220001_shizuoka_covid19_patients.csv"
-#curl -s $url | iconv -f SJIS > 22_shizuoka.csv
-#cat 22_shizuoka.csv | awk -F, -f 22_shizuoka.awk > 22_shizuoka2.csv
+url="https://opendata.pref.shizuoka.jp/dataset/8167/resource/46279/220001_shizuoka_covid19_patients.csv"
+curl -s $url | iconv -f SJIS > 22_shizuoka.csv
+cat 22_shizuoka.csv | awk -F, -f 22_shizuoka.awk > 22_shizuoka2.csv
 #浜松市
 url=`curl -s https://opendata.pref.shizuoka.jp/dataset/8113.html | grep "ダウンロード" | grep "patients.csv" | xmllint --html --xpath '//*//a/@data-url' - | cut -d\" -f 2`
 curl -s $url | iconv -f SJIS > 22_hamamatsu_city.csv
@@ -558,16 +558,30 @@ url="https://www.pref.tottori.lg.jp/item/1207264.htm"
 ruby ccc2.rb $url 2 | gawk -v FPAT='([^,]+)|(\"[^\"]+\")' -f 31_tottori.awk > 31_tottori.csv
 
 #32 島根県
+# jag japan
+# 4/26,8/9,9/23発表分の確定日、発症日の一部おかしい
  (head -n 1 COVID-19.csv | cut -d, -f 1-22 && cat COVID-19.csv | cut -d, -f 1-22 | awk -F, '$10=="島根県"')  | awk -F, -f jag2.awk > 32_shimane.csv
 
+# 島根県新型コロナウイルス感染症対策サイト[非公式]
+# ※属性不明多い、数が１件おかしい
+url="https://raw.githubusercontent.com/TaigaMikami/shimane-covid19/shimane/data/patients.json"
+( echo "公表日,居住地,年代,性別"
+  curl -s $url | jq -r '.patients.data[]|[.date, ."居住地", ."年代", ."性別"]|@csv' | sed 's/2020-04-9/2020-04-09/g'
+) > 32_shimane2.csv
+
 #33 岡山県
+# Noが入っていない
 url="http://www.okayama-opendata.jp/ckan/dataset/e6b3c1d2-2f1f-4735-b36e-e45d36d94761/resource/c6503ebc-b2e9-414c-aae7-7374f4801e21/download/kansenshashousaijouhou0420.csv"
 curl -s $url | iconv -f SJIS > 33_okayama.csv
+
+url="https://www.pref.okayama.jp/page/667843.html"
+ruby ccc2.rb $url | sed y/０１２３４５６７８９/0123456789/ > 33_okayama2.csv
 
 #34 広島県
 url="https://www.pref.hiroshima.lg.jp/site/hcdc/covid19-kanjya.html"
 ruby ccc2.rb $url > 34_hiroshima.csv
 
+# 広島県新型コロナウイルス感染症データサイト[公式]
 url="https://raw.githubusercontent.com/brickhouse-co-jp/covid19-hiropref/master/data/daily_positive_detail.json"
 (
   echo "公表日,陽性者数,経路不明者数,経路判明者数"
