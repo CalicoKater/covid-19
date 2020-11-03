@@ -449,28 +449,21 @@ curl -s -o 22_shizuoka_city.csv $url
 
 #23 愛知県
 # 前月分までのPDF
-link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --xpath '//*[contains( ./text(),"9月まで [PDFファイル／")]/@href' - | cut -d\" -f 2`
+link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --xpath '//*[contains( ./text(),"10月まで [PDFファイル／")]/@href' - | cut -d\" -f 2`
 url="https://www.pref.aichi.jp/$link"
 curl -s -o 23_aichi.pdf $url
 
 # 当月分のPDF
-link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --xpath '//*[contains( ./text(),"10月 [PDFファイル／")]/@href' - | cut -d\" -f 2`
+link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --xpath '//*[contains( ./text(),"11月 [PDFファイル／")]/@href' - | cut -d\" -f 2`
 url="https://www.pref.aichi.jp/$link"
 curl -s -o 23_aichi2.pdf $url
 
-#open https://www.ilovepdf.com/ja/pdf_to_excel
-#sleep 5
-#open .
-
-#ruby pdf_to_csv.rb 23_aichi.pdf | sed -e 's/^\[//' -e 's/\]$//' > 23_aichi.csv
-#ruby pdf_to_csv.rb 23_aichi2.pdf | sed -e 's/^\[//' -e 's/\]$//' >> 23_aichi.csv
-#xlsx2csv 23_aichi.xlsx | cut -d, -f 1-6,8 > 23_aichi.csv
-#xlsx2csv 23_aichi.xlsx | gawk -F, -v FPAT='([^,]+)|(\"[^\"]+\")' '{printf "%s,%s,%s,%s,%s,%s,%s\n",$1,$2,$3,$4,$5,$6,$7}' > 23_aichi.csv
-#xlsx2csv -s 2 23_aichi2.xlsx | gawk -F, -v FPAT='([^,]+)|(\"[^\"]+\")' '{printf "%s,%s,%s,%s,%s,%s,%s\n",$1,$2,$3,$4,$5,$6,$7}' >> 23_aichi.csv
 xlsx2csv 23_aichi.xlsx > 23_aichi.csv
-xlsx2csv -s 1 23_aichi2.xlsx >> 23_aichi.csv
-
-gawk -v FPAT='([^,]+)|(\"[^\"]+\")' -f 23_aichi.awk 23_aichi.csv > 23_aichi2.csv
+xlsx2csv 23_aichi2.xlsx > 23_aichi2.csv
+(
+  gawk -v FPAT='([^,]+)|(\"[^\"]+\")' -f 23_aichi.awk 23_aichi.csv
+  gawk -v FPAT='([^,]+)|(\"[^\"]+\")' -f 23_aichi.awk 23_aichi2.csv
+) > 23_aichi3.csv
 
 #24 三重県
 url="https://www.pref.mie.lg.jp/common/content/000896797.csv"
