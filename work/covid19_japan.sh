@@ -380,7 +380,8 @@ curl -s -o 16_toyama2.xlsx $link
 # xlsx2csv 16_toyama2.xlsx > 16_toyama2.csv
 xlsx2csv 16_toyama2.xlsx | sed 's/425,,44133,40代,男,富山市,会社員/426,,44133,40代,男,富山市,会社員/g' > 16_toyama2.csv
 
-#17 石川県
+#/**** 症例番号とNoがあっていない。csvかsqlのどちらか修正が必要 ****/
+#17 石川県 
 url="https://www.pref.ishikawa.lg.jp/kansen/documents/170003_ishikawa_covid19_patients.csv"
 curl -s $url | iconv -f SJIS > 17_ishikawa.csv
 ruby 17_ishikawa.rb 17_ishikawa.csv > 17_ishikawa2.csv

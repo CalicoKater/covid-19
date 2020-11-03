@@ -573,7 +573,8 @@ select "No", (select code from perf_and_city_code where perf_name = '富山県' 
        "検査結果判明日","年代","性別", "居住地", "職業", "発症日", "状態","症状", "備考"
   from toyama_csv order by cast("No" as integer);
 
-/* 石川県 */
+/**** 症例番号とNoがあっていない。csvかsqlのどちらか修正が必要 ****/
+/* 石川県 */ 
 drop table if exists ishikawa_csv;
 drop table if exists ishikawa_onset_csv;
 .mode csv
