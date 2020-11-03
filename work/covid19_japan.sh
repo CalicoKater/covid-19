@@ -599,7 +599,9 @@ url="https://raw.githubusercontent.com/brickhouse-co-jp/covid19-hiropref/master/
 
 #35 山口県
 url="https://yamaguchi-opendata.jp/ckan/dataset/f6e5cff9-ae43-4cd9-a398-085187277edf/resource/f56e6552-4c5d-4ec6-91c0-090f553e0aea/download/350001_yamaguchi_covid19_patients.csv"
-curl -s -o 35_yamaguchi.csv $url
+#curl -s -o 35_yamaguchi.csv $url
+# No.199 欠番
+curl -s $url | grep -v -e "^199" -e "欠番（感染不成立）" > 35_yamaguchi.csv
 
 #36 徳島県
 url="https://www.pref.tokushima.lg.jp/ippannokata/kenko/kansensho/5034012"
