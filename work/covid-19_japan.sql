@@ -749,6 +749,11 @@ select case
 where perf_code = (select code from perf_and_city_code where perf_name = '静岡県' and city_name = '')
 and perf_case_number in (select "県No" from hamamatsu_city_case_number_csv);
 
+/* 愛知県 */
+drop table if exists aichi_csv;
+.mode csv
+.import ./23_aichi3.csv aichi_csv
+
 /* 三重県 */
 drop table if exists mie_csv;
 drop table if exists yokkaichi_city_case_number_csv;
