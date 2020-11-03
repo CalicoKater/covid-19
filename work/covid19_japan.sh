@@ -603,6 +603,11 @@ url="https://yamaguchi-opendata.jp/ckan/dataset/f6e5cff9-ae43-4cd9-a398-08518727
 # No.199 欠番
 curl -s $url | grep -v -e "^199" -e "欠番（感染不成立）" > 35_yamaguchi.csv
 
+url="https://www.pref.yamaguchi.lg.jp/cmsdata/9/7/c/97c51edb8710215b65b38ffb190fb54d.pdf"
+curl -s -o 35_yamaguchi.pdf $url
+
+xlsx2csv 35_yamaguchi.xlsx > 35_yamaguchi2.csv
+
 #36 徳島県
 url="https://www.pref.tokushima.lg.jp/ippannokata/kenko/kansensho/5034012"
 ruby ccc2.rb $url 2 > 36_tokushima.csv
