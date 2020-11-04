@@ -606,7 +606,11 @@ curl -s $url | grep -v -e "^199" -e "欠番（感染不成立）" > 35_yamaguchi
 url="https://www.pref.yamaguchi.lg.jp/cmsdata/9/7/c/97c51edb8710215b65b38ffb190fb54d.pdf"
 curl -s -o 35_yamaguchi.pdf $url
 
-xlsx2csv 35_yamaguchi.xlsx > 35_yamaguchi2.csv
+#xlsx2csv 35_yamaguchi.xlsx > 35_yamaguchi2.csv
+xlsx2csv 35_yamaguchi.xlsx | grep -e '^[0-9]' | grep -v -e '^199,欠番' | sort -t, -k 1n > 35_yamaguchi1.csv
+( echo "例目,公表日,陽性確定日,年代,性別,居住地,職業,症状（入院時）,発症日,入院日,退院等,主な行動歴等,備考"
+  ruby 35_yamaguchi.rb 35_yamaguchi1.csv
+) > 35_yamaguchi2.csv
 
 #36 徳島県
 url="https://www.pref.tokushima.lg.jp/ippannokata/kenko/kansensho/5034012"
