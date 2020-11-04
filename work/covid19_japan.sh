@@ -613,9 +613,14 @@ xlsx2csv 35_yamaguchi.xlsx | grep -e '^[0-9]' | grep -v -e '^199,欠番' | sort 
 ) > 35_yamaguchi2.csv
 
 #36 徳島県
+# ※確認日に年が入っていない
 url="https://www.pref.tokushima.lg.jp/ippannokata/kenko/kansensho/5034012"
-ruby ccc2.rb $url 2 > 36_tokushima.csv
-ruby ccc2.rb $url 3 >> 36_tokushima.csv
+( ruby ccc2.rb $url 2
+  ruby ccc2.rb $url 3
+) > 36_tokushima.csv
+( echo "症例番号,確認日,年代,性別"
+  grep -e '^[0-9]' 36_tokushima.csv | awk -F, -f 36_tokushima.awk
+) > 36_tokushima2.csv
 
 #37 香川県
 url="https://www.pref.kagawa.lg.jp/content/etc/subsite/kansenshoujouhou/kansen/se9si9200517102553.shtml"
