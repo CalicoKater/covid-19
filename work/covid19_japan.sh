@@ -627,6 +627,13 @@ url="https://www.pref.kagawa.lg.jp/content/etc/subsite/kansenshoujouhou/kansen/s
 ruby ccc2.rb $url 3 | awk -F, -f 37_kagawa.awk > 37_kagawa.csv
 url="https://opendata.pref.kagawa.lg.jp/dataset/359/resource/4390/%E6%A4%9C%E6%9F%BB%E4%BB%B6%E6%95%B0.csv"
 curl -s $url | iconv -f SJIS > 37_kagawa2.csv
+# 高松市
+(  echo "city_case_number,perf_case_number"
+   url="http://www.city.takamatsu.kagawa.jp/kansensha/case1-25/index.html"
+   ruby ccc2.rb $url | awk 'NR>1{printf "%d,%d\n",$1,$(NF);}'
+   url="http://www.city.takamatsu.kagawa.jp/kansensha/index.html"
+   ruby ccc2.rb $url 2 | awk 'NR>1{printf "%d,%d\n",$1,$(NF);}'
+) > 37_takamatsu_city_case_number.csv
 
 #38 愛媛県
 url="https://www.pref.ehime.jp/opendata-catalog/dataset/2174/resource/7057/380008_ehime_covid19_patients.csv"
