@@ -14,6 +14,6 @@ NR>1{
   gsub(/女/,"女性",gender);
   sub(/男/,"男性",gender);
   regidence = $(NF);
-  printf "%d,2020-%02d,%02d,", case_number, confirm_date[1], confirm_date[2];
+  printf "%d,2020-%02d-%02d,", case_number, confirm_date[1], confirm_date[2];
   print age_group, gender, regidence;
 }
