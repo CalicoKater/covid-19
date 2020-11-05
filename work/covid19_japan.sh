@@ -567,12 +567,12 @@ url="https://raw.githubusercontent.com/TaigaMikami/shimane-covid19/shimane/data/
 ) > 32_shimane2.csv
 
 #33 岡山県
-# Noが入っていない
+# Noが入っていない。日付に年が入っていない
 url="http://www.okayama-opendata.jp/ckan/dataset/e6b3c1d2-2f1f-4735-b36e-e45d36d94761/resource/c6503ebc-b2e9-414c-aae7-7374f4801e21/download/kansenshashousaijouhou0420.csv"
-curl -s $url | iconv -f SJIS > 33_okayama.csv
+curl -s $url | iconv -f SJIS | awk -F, -f 33_okayama.awk > 33_okayama.csv
 
 url="https://www.pref.okayama.jp/page/667843.html"
-ruby ccc2.rb $url | sed y/０１２３４５６７８９/0123456789/ > 33_okayama2.csv
+ruby ccc2.rb $url | sed -e 'y/０１２３４５６７８９/0123456789/' | awk -F, -f 33_okayama2.awk > 33_okayama2.csv
 
 #34 広島県
 url="https://www.pref.hiroshima.lg.jp/site/hcdc/covid19-kanjya.html"
