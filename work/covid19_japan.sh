@@ -603,8 +603,10 @@ url="https://yamaguchi-opendata.jp/ckan/dataset/f6e5cff9-ae43-4cd9-a398-08518727
 # No.199 欠番
 curl -s $url | grep -v -e "^199" -e "欠番（感染不成立）" > 35_yamaguchi.csv
 
-url="https://www.pref.yamaguchi.lg.jp/cmsdata/9/7/c/97c51edb8710215b65b38ffb190fb54d.pdf"
-curl -s -o 35_yamaguchi.pdf $url
+#url="https://www.pref.yamaguchi.lg.jp/cmsdata/9/7/c/97c51edb8710215b65b38ffb190fb54d.pdf"
+url="https://www.pref.yamaguchi.lg.jp/cms/a10000/korona2020/202007270002.html"
+link=`curl -s $url | xmllint --html --xpath '//*[contains(./text(),"新型コロナウイルス感染症患者状況一覧表")]/@href' - | cut -d\" -f 2`
+curl -s -o 35_yamaguchi.pdf "https://www.pref.yamaguchi.lg.jp$link"
 
 #xlsx2csv 35_yamaguchi.xlsx > 35_yamaguchi2.csv
 xlsx2csv 35_yamaguchi.xlsx | grep -e '^[0-9]' | grep -v -e '^199,欠番' | sort -t, -k 1n > 35_yamaguchi1.csv
