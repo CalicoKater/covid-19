@@ -1,4 +1,15 @@
 .DS_Store
 /work/COVID-19.csv
 /work/covid-19.sqlite3
+/work/08_ibaraki_onset_date.csv
+/work/11_saitama_onset_date.csv
+/work/15_niigata_onset_date.csv
+/work/17_ishikawa_onset_date.csv
+/work/20_nagano_onset_date.csv
+/work/21_gifu_onset_date.csv
+/work/24_mie_onset_date.csv
+/work/ibaraki_onset_and_confirm_date.csv
+/wrok/saitama_onset_date.csv
+/wrok/tochigi_gunma_onset_date.csv
+/work/34_hiroshima_daily_positive_detail-onset.csv
 
