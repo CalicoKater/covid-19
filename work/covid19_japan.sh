@@ -238,8 +238,12 @@ link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内にお
 curl -s -o 10_gunma_202007.pdf "https://www.pref.gunma.jp$link"
 link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況（8月）')]/@href" - | cut -d\" -f 2`
 curl -s -o 10_gunma_202008.pdf "https://www.pref.gunma.jp$link"
-link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況一覧')]/@href" - | cut -d\" -f 2`
+
+link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況（9月）')]/@href" - | cut -d\" -f 2`
 curl -s -o 10_gunma_202009.pdf "https://www.pref.gunma.jp$link"
+
+link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況一覧')]/@href" - | cut -d\" -f 2`
+curl -s -o 10_gunma_20200c.pdf "https://www.pref.gunma.jp$link"
 
 ( echo "No,診断日,年代,居住地,性別,職業,備考"
   pdftotext -layout -raw 10_gunma_202003.pdf - | grep '^[0-9]' | grep -v -e "県外にて判明した陽性例" -e "空港検疫" | awk -f 10_gunma2.awk | sort -k 1n
@@ -248,7 +252,8 @@ curl -s -o 10_gunma_202009.pdf "https://www.pref.gunma.jp$link"
   pdftotext -layout -raw 10_gunma_202006.pdf - | grep '^[0-9]' | grep -v -e "県外にて判明した陽性例" -e "空港検疫" | awk -f 10_gunma2.awk | sort -k 1n
   pdftotext -layout -raw 10_gunma_202007.pdf - | grep '^[0-9]' | grep -v -e "県外にて判明した陽性例" -e "空港検疫" | awk -f 10_gunma2.awk | sort -k 1n
   pdftotext -layout -raw 10_gunma_202008.pdf - | grep '^[0-9]' | grep -v -e "県外にて判明した陽性例" -e "空港検疫" | awk -f 10_gunma2.awk | sort -k 1n
-  pdftotext -f 2 -raw -layout 10_gunma_202009.pdf - | grep -v -e "県外にて判明した陽性例" -e "空港検疫" | awk '{print $2,$3,$4,$5,$6,$7,$8}' | grep '^[0-9]' | awk -f 10_gunma2.awk | sort -k 1n
+  pdftotext -layout -raw 10_gunma_202009.pdf - | grep '^[0-9]' | grep -v -e "県外にて判明した陽性例" -e "空港検疫" | awk -f 10_gunma2.awk | sort -k 1n
+  pdftotext -f 2 -raw -layout 10_gunma_20200c.pdf - | grep -v -e "県外にて判明した陽性例" -e "空港検疫" | awk '{print $2,$3,$4,$5,$6,$7,$8}' | grep '^[0-9]' | awk -f 10_gunma2.awk | sort -k 1n
 ) > 10_gunma3.csv
 
 #11 埼玉県
