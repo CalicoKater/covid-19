@@ -652,6 +652,7 @@ curl -s -o 40_fukuoka.csv $url
 #41 佐賀県
 url="https://www.pref.saga.lg.jp/kiji00373220/index.html"
 ruby ccc2.rb $url 3 > 41_saga.csv
+awk -F, -f 41_saga.awk 41_saga.csv > 41_saga2.csv
 
 #42 長崎県
 url="https://data.bodik.jp/dataset/09951e04-dc5d-42e9-9a49-37443be6787e/resource/de7ce61e-1849-47a1-b758-bca3f809cdf8/download/20200916prefnagasakicovidpatients.csv"
