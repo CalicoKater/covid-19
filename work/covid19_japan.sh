@@ -663,6 +663,11 @@ awk -F, -f 41_saga.awk 41_saga.csv > 41_saga2.csv
 url="https://data.bodik.jp/dataset/09951e04-dc5d-42e9-9a49-37443be6787e/resource/de7ce61e-1849-47a1-b758-bca3f809cdf8/download/20200916prefnagasakicovidpatients.csv"
 curl -s -o 42_nagasaki.csv $url
 
+url="https://www.pref.nagasaki.jp/bunrui/hukushi-hoken/kansensho/corona_nagasaki/corona_nagasaki_shousai/"
+link=`curl -s $url | grep "県内発生事例一覧" | cut -d\" -f 2`
+url="https://www.pref.nagasaki.jp$link"
+curl -s -o 42_nagasaki.pdf $url
+
 #43 熊本県
 link=`curl -s "https://www.pref.kumamoto.jp/kiji_22038.html" \
  | xmllint --html --xpath '//table/tbody/tr[3]/td[4]//ul/li/a/@href' - \
