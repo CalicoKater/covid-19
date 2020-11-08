@@ -55,18 +55,20 @@ url="https://www.harp.lg.jp/opendata/dataset/1369/resource/3132/010006_hokkaido_
 curl -s $url | iconv -f SJIS > 01_hokkaido.csv
 cat 01_hokkaido.csv | awk -F, -f 01_hokkaido.awk > 01_hokkaido2.csv
 
-url="https://www.harp.lg.jp/opendata/dataset/1369/resource/2853/covid19_data.csv"
-curl -s $url | iconv -f SJIS > 01_hokkaido4.csv
+#url="https://www.harp.lg.jp/opendata/dataset/1369/resource/2853/covid19_data.csv"
+#curl -s $url | iconv -f SJIS > 01_hokkaido4.csv
 
 url="http://www.pref.hokkaido.lg.jp/hf/kth/kak/hasseijoukyou.htm"
 link=`curl -s $url | xmllint --html --xpath '//*[@id="rs_contents"]/span/ul[2]/li/a/@href' - | cut -d\" -f 2`
 url="http://www.pref.hokkaido.lg.jp$link"
 curl -sL $url -o 01_hokkaido.pdf
+<< pdftocsv
 pdftotext  -layout  01_hokkaido.pdf - \
  | awk '$1!=""&&$1+0>0{printf "%s,%s,%s,%s,%s,\"%s\"\n",$1,$2,$3,$4,$5,$6}' \
  | sed -e 's/451,,,,,\"\"//g' > 01_hokkaido3.csv
   #| sed -e 's/381,4/18,60代,男,宗谷総合振興局管内,\"\"/381,4/18,60代,男,宗谷総合振興局管内,\"No.321～323,362～369,380,382,398～407,No.448～451\"/g'
   #| sed -e 's/380,4/18,80代,男,石狩振興局管内,\"\"/'
+pdftocsv
 
 #011002 札幌市
 output="01_sapporo_city_case_number.csv"
