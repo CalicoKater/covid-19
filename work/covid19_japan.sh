@@ -127,14 +127,13 @@ xlsx2csv -s 1 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
 cat 04_miyagi.csv | awk -F, -f 04_miyagi.awk > 04_miyagi2.csv
 
 #041009 仙台市
-output="04_sendai_city_case_number.csv"
-echo "city_case_number,perf_case_number" > $output
-url="https://www.city.sendai.jp/kikikanri/kinkyu/corona2020/hassei/kanja1-65.html"
-#ruby ccc2.rb $url | awk -F, '$1+0>0{printf "%d,%d\n",$1, $7}' >> $output
-ruby ccc2.rb $url | awk -F, '$1+0>0{printf "%d,%d\n",$1, $6}' >> $output
-url="https://www.city.sendai.jp/kikikanri/kinkyu/200131corona2.html"
-#ruby ccc2.rb $url 1 | awk -F, '$1+0>0{printf "%d,%d\n",$1, $7}' >> $output
-ruby ccc2.rb $url 1 | awk -F, '$1+0>0{printf "%d,%d\n",$1, $6}' >> $output
+(
+  echo "city_case_number,perf_case_number"
+  url="https://www.city.sendai.jp/kikikanri/kinkyu/corona2020/hassei/kanja-rireki.html"
+  ruby ccc2.rb $url | awk -F, '$1+0>0{printf "%d,%d\n",$1, $6}'
+  url="https://www.city.sendai.jp/kikikanri/kinkyu/200131corona2.html"
+  ruby ccc2.rb $url 1 | awk -F, '$1+0>0{printf "%d,%d\n",$1, $6}'
+) > 04_sendai_city_case_number.csv
 
 #05 秋田県
 url="https://www.pref.akita.lg.jp/pages/archive/47957"
