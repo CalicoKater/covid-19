@@ -465,8 +465,8 @@ link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --x
 url="https://www.pref.aichi.jp/$link"
 curl -s -o 23_aichi2.pdf $url
 
-xlsx2csv 23_aichi1.xlsx > 23_aichi1.csv
-xlsx2csv 23_aichi2.xlsx > 23_aichi2.csv
+xlsx2csv 23_aichi1.xlsx | grep -v "欠番" > 23_aichi1.csv
+xlsx2csv 23_aichi2.xlsx | grep -v "欠番" > 23_aichi2.csv
 cat 23_aichi1.csv 23_aichi2.csv > 23_aichi.csv
 
 (
