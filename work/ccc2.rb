@@ -8,7 +8,8 @@ require 'csv'
 #url = "https://www.pref.akita.lg.jp/pages/archive/47957"
 url = ARGV[0]
 uri = URI.parse(url)
-doc = Nokogiri::HTML.parse(open(uri,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
+#doc = Nokogiri::HTML.parse(open(uri,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
+doc = Nokogiri::HTML.parse(URI.open(uri,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
 #html = File.open('newpage_12674.html')
 #doc = Nokogiri::HTML.parse(open(url,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
 #doc = Nokogiri.parse(html)
