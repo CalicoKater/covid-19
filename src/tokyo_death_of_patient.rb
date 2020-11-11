@@ -26,7 +26,7 @@ response_get.lines.each do |f|
 end
 
 #puts press_date
-doc = Nokogiri::HTML.parse(open(url,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
+doc = Nokogiri::HTML.parse(URI.open(url,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
 table = doc.search(:table).first
 csv = CSV.generate{ |csv|
   table.search(:tr).each_with_index do |tr, row|

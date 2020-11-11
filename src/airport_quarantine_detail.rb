@@ -12,7 +12,7 @@ url = ARGV[0]
 # url = "https://www.mhlw.go.jp/stf/newpage_10812.html"
 
 # ソースから公表日付の取得
-doc = Nokogiri::HTML.parse(open(url,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
+doc = Nokogiri::HTML.parse(URI.open(url,:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE).open)
 # report_date="2020-03-25"
 # report_date=Date.parse("2021-03-23")
 wareki = doc.search(:time).text
