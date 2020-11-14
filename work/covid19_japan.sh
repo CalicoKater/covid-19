@@ -696,7 +696,8 @@ awk -F, -f 45_miyazaki.awk 45_miyazaki.csv > 45_miyazaki2.csv
 
 #46 鹿児島県
 url="https://www.pref.kagoshima.jp/ae06/kenko-fukushi/kenko-iryo/kansen/kansensho/coronavirus.html"
-ruby ccc2.rb $url 4 >46_kagoshima.csv
+ruby ccc2.rb $url 4 > 46_kagoshima.csv
+awk -F, -f 46_kagoshima.awk 46_kagoshima.csv > 46_kagoshima2.csv
 
 #47 沖縄県
 url="https://www.pref.okinawa.lg.jp/site/hoken/chiikihoken/kekkaku/press/documents/youseisyaitiran.csv"
