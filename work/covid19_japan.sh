@@ -701,4 +701,7 @@ awk -F, -f 46_kagoshima.awk 46_kagoshima.csv > 46_kagoshima2.csv
 
 #47 沖縄県
 url="https://www.pref.okinawa.lg.jp/site/hoken/chiikihoken/kekkaku/press/documents/youseisyaitiran.csv"
-curl -s $url | iconv -f SJIS > 47_okinawa.csv
+#curl -s $url | iconv -f SJIS > 47_okinawa.csv
+# 検疫と欠番を除外する。＊印は検疫
+curl -s $url | iconv -f SJIS | grep -v -e '^＊' -e '欠番' > 47_okinawa.csv
+ruby 47_okinawa.rb 47_okinawa.csv > 47_okinawa2.csv
