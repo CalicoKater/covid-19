@@ -20,6 +20,12 @@ NR > 1 {
     gender = $4;
     if ( NF == 6 ) discharge = $6;
     if ( NF == 5 ) discharge = $5;
+    if ( NF == 4 && $1 == 171 ) {
+      regidence = "鹿児島市";
+      age_group = "80代";
+      gender = "女性";
+      discharge = "〇";
+    }
   }
   printf "%d,2020-%02d-%02d,", case_number, report_date[1], report_date[2];
   print regidence, age_group, gender, discharge;
