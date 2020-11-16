@@ -525,9 +525,9 @@ url="https://raw.githubusercontent.com/stop-covid19-kyoto/covid19-kyoto/developm
 curl -s $url | jq -r '.data[]|[."No", ."居住地", ."年代と性別", ."退院", .date]|@csv' > 26_kyoto2.csv
 
 #27 大阪府
-url="http://www.pref.osaka.lg.jp/attach/23711/00346644/youseisyajyouhou.xlsx"
-curl -s -o 27_osaka.xlsx $url
-xlsx2csv 27_osaka.xlsx > 27_osaka.csv
+#url="http://www.pref.osaka.lg.jp/attach/23711/00346644/youseisyajyouhou.xlsx"
+#curl -s -o 27_osaka.xlsx $url
+#xlsx2csv 27_osaka.xlsx > 27_osaka.csv
 
 #28 兵庫県
 #https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html
