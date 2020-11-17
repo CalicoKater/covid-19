@@ -470,8 +470,8 @@ link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --x
 url="https://www.pref.aichi.jp/$link"
 curl -s -o 23_aichi2.pdf $url
 
-xlsx2csv 23_aichi1.xlsx | grep -v "欠番" > 23_aichi1.csv
-xlsx2csv 23_aichi2.xlsx | grep -v "欠番" > 23_aichi2.csv
+xlsx2csv -a 23_aichi1.xlsx | grep -v "欠番" > 23_aichi1.csv
+xlsx2csv -a 23_aichi2.xlsx | grep -v "欠番" > 23_aichi2.csv
 cat 23_aichi1.csv 23_aichi2.csv > 23_aichi.csv
 
 (
@@ -527,7 +527,10 @@ curl -s $url | jq -r '.data[]|[."No", ."居住地", ."年代と性別", ."退院
 #27 大阪府
 #url="http://www.pref.osaka.lg.jp/attach/23711/00346644/youseisyajyouhou.xlsx"
 #curl -s -o 27_osaka.xlsx $url
-#xlsx2csv 27_osaka.xlsx > 27_osaka.csv
+#xlsx2csv 27_osaka.xlsx | grep -v "欠番" > 27_osaka.csv
+
+url="https://covid19-osaka.info/data/patients.csv"
+curl -s $url | iconv -f SJIS > 27_osaka2.csv
 
 #28 兵庫県
 #https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html
