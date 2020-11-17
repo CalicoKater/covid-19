@@ -288,6 +288,10 @@ ruby ccc2.rb "https://www.city.saitama.jp/002/001/008/006/013/001/p075326.html" 
 
 
 #12 千葉県
+url="https://www.pref.chiba.lg.jp/shippei/press/2019/documents/chiba_corona_data.xlsx"
+curl -s -o 12_chiba2.xlsx $url
+xlsx2csv -s 1 12_chiba2.xlsx > 12_chiba5.csv
+
 link=`curl -s https://www.pref.chiba.lg.jp/shippei/press/2019/ncov-index.html | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[1]/li[1]/a' - | cut -d\" -f 2`
 url="https://www.pref.chiba.lg.jp$link"
 curl -s -o 12_chiba.pdf $url
@@ -320,8 +324,8 @@ xlsx2csv -s 11 12_chiba.xlsx | sed 's/^,//g' > 12_chiba2.csv
 xlsx2csv -s 12 12_chiba.xlsx >> 12_chiba2.csv
 chiba
 
-ruby chiba2_csv.rb > 12_chiba4.csv
-ruby chiba_csv.rb > 12_chiba3.csv
+ruby chiba_csv.rb | grep -v -e '\"ﾁｬｰﾀｰ便\",2020-02' -e '空港検疫症例' -e '\"クルーズ乗客\",,2020-02' > 12_chiba3.csv  #患者
+ruby chiba2_csv.rb | grep -v -e 'ﾁｬｰﾀｰ便,,2020-01' -e '空港検疫症例'  > 12_chiba4.csv #無症状病原体保有者
 
 #13 東京都
 url="https://stopcovid19.metro.tokyo.lg.jp/data/130001_tokyo_covid19_patients.csv"
