@@ -529,8 +529,11 @@ curl -s $url | jq -r '.data[]|[."No", ."居住地", ."年代と性別", ."退院
 #curl -s -o 27_osaka.xlsx $url
 #xlsx2csv 27_osaka.xlsx | grep -v "欠番" > 27_osaka.csv
 
-url="https://covid19-osaka.info/data/patients.csv"
-curl -s $url | iconv -f SJIS > 27_osaka2.csv
+#url="https://covid19-osaka.info/data/patients.csv"
+#curl -s $url | iconv -f SJIS > 27_osaka2.csv
+
+url="https://covid19-osaka.info/data/summary.csv"
+curl -s $url | iconv -f SJIS > 27_osaka3.csv
 
 #28 兵庫県
 #https://web.pref.hyogo.lg.jp/kk03/corona_hasseijyokyo.html
