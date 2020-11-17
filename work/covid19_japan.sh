@@ -123,7 +123,8 @@ url="https://www.pref.miyagi.jp$link"
 curl -s -o 04_miyagi.xlsx $url
 #/usr/local/bin/xlsx2csv 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
 #xlsx2csv -s 2 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
-xlsx2csv -s 1 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
+#xlsx2csv -s 3 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
+xlsx2csv -s 3 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
 cat 04_miyagi.csv | awk -F, -f 04_miyagi.awk > 04_miyagi2.csv
 
 #041009 仙台市
@@ -156,10 +157,10 @@ cat 06_yamagata.csv | awk -F, -f 06_yamagata.awk > 06_yamagata2.csv
 
 #url="https://www.pref.yamagata.jp/kenfuku/kenko/kansen/720130425shingata_corona.html"
 url="https://www.pref.yamagata.jp/090001/bosai/kochibou/kikikanri/covid19/shingata_corona.html"
-ruby ccc2.rb $url 5 > 06_yamagata3.csv
-output=06_yamagata_city_case_number.csv
-echo "perf_case_number,city_case_number" > $output
-cat 06_yamagata3.csv | grep -e '山形市.*公表' | cut -d, -f 2,6 | sed -e 's/公表.*//g' | sed y/０１２３４５６７８９/0123456789/ | sed -e 's/[^0-9|,]//g' >> $output
+ruby ccc2.rb $url 4 > 06_yamagata3.csv
+#output=06_yamagata_city_case_number.csv
+#echo "perf_case_number,city_case_number" > $output
+#cat 06_yamagata3.csv | grep -e '山形市.*公表' | cut -d, -f 2,6 | sed -e 's/公表.*//g' | sed y/０１２３４５６７８９/0123456789/ | sed -e 's/[^0-9|,]//g' >> $output
 
 #07 福島県
 url="https://www.pref.fukushima.lg.jp/sec/21045c/fukushima-hasseijyoukyou.html"
