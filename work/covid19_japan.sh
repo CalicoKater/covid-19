@@ -291,8 +291,8 @@ ruby ccc2.rb "https://www.city.saitama.jp/002/001/008/006/013/001/p075326.html" 
 #12 千葉県
 url="https://www.pref.chiba.lg.jp/shippei/press/2019/documents/chiba_corona_data.xlsx"
 curl -s -o 12_chiba2.xlsx $url
-xlsx2csv -s 1 12_chiba2.xlsx | cut -d, -f 2,3 | grep -v '^,' > 12_chiba5.csv
-xlsx2csv -s 1 12_chiba2.xlsx | cut -d, -f 5,6 | grep -v '^,' > 12_chiba6.csv
+xlsx2csv -s 1 -f '%Y-%m-%d' 12_chiba2.xlsx | cut -d, -f 2,3 | grep -v '^,' > 12_chiba5.csv
+xlsx2csv -s 1 -f '%Y-%m-%d' 12_chiba2.xlsx | cut -d, -f 5,6 | grep -v '^,' > 12_chiba6.csv
 
 
 link=`curl -s https://www.pref.chiba.lg.jp/shippei/press/2019/ncov-index.html | xmllint --html --xpath '//*[@id="tmp_contents"]/ul[1]/li[1]/a' - | cut -d\" -f 2`
