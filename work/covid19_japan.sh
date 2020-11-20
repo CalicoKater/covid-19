@@ -124,7 +124,7 @@ curl -s -o 04_miyagi.xlsx $url
 #/usr/local/bin/xlsx2csv 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
 #xlsx2csv -s 2 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
 #xlsx2csv -s 3 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
-xlsx2csv -s 1 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
+xlsx2csv -s 2 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
 cat 04_miyagi.csv | awk -F, -f 04_miyagi.awk > 04_miyagi2.csv
 
 #041009 仙台市
