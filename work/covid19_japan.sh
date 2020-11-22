@@ -670,8 +670,11 @@ curl -s $url | iconv -f SJIS > 37_kagawa2.csv
 ) > 37_takamatsu_city_case_number.csv
 
 #38 愛媛県
-url="https://www.pref.ehime.jp/opendata-catalog/dataset/2174/resource/7057/380008_ehime_covid19_patients.csv"
-curl -s -o 38_ehime.csv $url
+#url="https://www.pref.ehime.jp/opendata-catalog/dataset/2174/resource/7057/380008_ehime_covid19_patients.csv"
+#https://www.pref.ehime.jp/opendata-catalog/dataset/2174/resource/7068/380008_ehime_covid19_patients.csv
+url="https://www.pref.ehime.jp/opendata-catalog/dataset/2174.html"
+link=`curl -s $url | grep "ehime_covid19_patients.csv" | grep "ダウンロード" | cut -d\" -f 4`
+curl -s -o 38_ehime.csv "https://www.pref.ehime.jp$link"
 
 #39 高知県
 url="https://www.pref.kochi.lg.jp/soshiki/111301/files/2020041300141/390003_kochi_covid19_patients.csv"
