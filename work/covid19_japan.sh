@@ -228,30 +228,32 @@ curl -s -o 10_gunma.csv $url
 cat 10_gunma.csv | awk -F, -f 10_gunma.awk > 10_gunma2.csv
 
 url="https://www.pref.gunma.jp/07/z87g_00016.html"
-#link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況（3月）')]/@href" - | cut -d\" -f 2`
-link=`curl -s $url | grep "県内における発生状況（3月）" | cut -d\" -f 2`
-curl -s -o 10_gunma_202003.pdf "https://www.pref.gunma.jp$link"
-#link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況（4月）')]/@href" - | cut -d\" -f 2`
-link=`curl -s $url | grep "県内における発生状況（4月）" | cut -d\" -f 2`
-curl -s -o 10_gunma_202004.pdf "https://www.pref.gunma.jp$link"
-#link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況（5月）')]/@href" - | cut -d\" -f 2`
-link=`curl -s $url | grep "県内における発生状況（5月）" | cut -d\" -f 2`
-curl -s -o 10_gunma_202005.pdf "https://www.pref.gunma.jp$link"
-#link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況（6月）')]/@href" - | cut -d\" -f 2`
-link=`curl -s $url | grep "県内における発生状況（6月）" | cut -d\" -f 2`
-curl -s -o 10_gunma_202006.pdf "https://www.pref.gunma.jp$link"
-#link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況（7月）')]/@href" - | cut -d\" -f 2`
-link=`curl -s $url | grep "県内における発生状況（7月）" | cut -d\" -f 2`
-curl -s -o 10_gunma_202007.pdf "https://www.pref.gunma.jp$link"
-#link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況（8月）')]/@href" - | cut -d\" -f 2`
+<<gunma_pdf_get_skip
+
+link=`curl -sL $url | grep "県内における発生状況（3月）" | cut -d\" -f 2`
+curl -sL -o 10_gunma_202003.pdf "https://www.pref.gunma.jp$link"
+
+link=`curl -sL $url | grep "県内における発生状況（4月）" | cut -d\" -f 2`
+curl -sL -o 10_gunma_202004.pdf "https://www.pref.gunma.jp$link"
+
+link=`curl -sL $url | grep "県内における発生状況（5月）" | cut -d\" -f 2`
+curl -sL -o 10_gunma_202005.pdf "https://www.pref.gunma.jp$link"
+
+link=`curl -sL $url | grep "県内における発生状況（6月）" | cut -d\" -f 2`
+curl -sL -o 10_gunma_202006.pdf "https://www.pref.gunma.jp$link"
+
+link=`curl -sL $url | grep "県内における発生状況（7月）" | cut -d\" -f 2`
+curl -sL -o 10_gunma_202007.pdf "https://www.pref.gunma.jp$link"
+
 link=`curl -s $url | grep "県内における発生状況（8月）" | cut -d\" -f 2`
-curl -s -o 10_gunma_202008.pdf "https://www.pref.gunma.jp$link"
-#link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況（9月）')]/@href" - | cut -d\" -f 2`
-link=`curl -s $url | grep "県内における発生状況（9月）" | cut -d\" -f 2`
-curl -s -o 10_gunma_202009.pdf "https://www.pref.gunma.jp$link"
-#link=`curl -s $url | xmllint --html --xpath "//*[contains(./text(),'県内における発生状況一覧')]/@href" - | cut -d\" -f 2`
-link=`curl -s $url | grep "県内における発生状況一覧" | cut -d\" -f 2`
-curl -s -o 10_gunma_20200c.pdf "https://www.pref.gunma.jp$link"
+curl -sL "https://www.pref.gunma.jp$link" -o 10_gunma_202008.pdf 
+
+link=`curl -sL $url | grep "県内における発生状況（9月）" | cut -d\" -f 2`
+curl -sL -o 10_gunma_202009.pdf "https://www.pref.gunma.jp$link"
+gunma_pdf_get_skip
+link=`curl -sL $url | grep "県内における発生状況一覧" | cut -d\" -f 2`
+curl -sL -o 10_gunma_20200c.pdf "https://www.pref.gunma.jp$link"
+
 ( echo "No,診断日,年代,居住地,性別,職業,備考"
   pdftotext -layout -raw 10_gunma_202003.pdf - | grep '^[0-9]' | grep -v -e "県外にて判明した陽性例" -e "空港検疫" | awk -f 10_gunma2.awk | sort -k 1n
   pdftotext -layout -raw 10_gunma_202004.pdf - | grep '^[0-9]' | grep -v -e "県外にて判明した陽性例" -e "空港検疫" | awk -f 10_gunma2.awk | sort -k 1n
