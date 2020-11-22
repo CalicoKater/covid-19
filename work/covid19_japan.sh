@@ -412,7 +412,7 @@ ruby 18_fukui.rb 18_fukui.csv > 18_fukui2.csv
 # 19 山梨県
 url="https://www.pref.yamanashi.jp/koucho/coronavirus/documents/yousei.xlsx"
 curl -s -o 19_yamanashi.xlsx $url
-xlsx2csv 19_yamanashi.xlsx > 19_yamanashi.csv
+xlsx2csv -f '%Y-%m-%d' 19_yamanashi.xlsx > 19_yamanashi.csv
 ruby 19_yamanashi.rb 19_yamanashi.csv > 19_yamanashi2.csv
 
 #20 長野県
@@ -628,6 +628,7 @@ url="https://yamaguchi-opendata.jp/ckan/dataset/f6e5cff9-ae43-4cd9-a398-08518727
 curl -s $url | grep -v -e "^199" -e "欠番（感染不成立）" > 35_yamaguchi.csv
 
 #url="https://www.pref.yamaguchi.lg.jp/cmsdata/9/7/c/97c51edb8710215b65b38ffb190fb54d.pdf"
+#<<yamaguchi_skip
 url="https://www.pref.yamaguchi.lg.jp/cms/a10000/korona2020/202007270002.html"
 link=`curl -s $url | xmllint --html --xpath '//*[contains(./text(),"新型コロナウイルス感染症患者状況一覧表")]/@href' - | cut -d\" -f 2`
 curl -s -o 35_yamaguchi.pdf "https://www.pref.yamaguchi.lg.jp$link"
@@ -641,6 +642,7 @@ pdftotext -layout 35_yamaguchi.pdf - \
 ( echo "例目,公表日,陽性確定日,年代,性別,居住地,職業,症状（入院時）,発症日,備考"
   ruby 35_yamaguchi.rb 35_yamaguchi1.csv
 ) > 35_yamaguchi2.csv
+#yamaguchi_skip
 
 #36 徳島県
 # ※確認日に年が入っていない
