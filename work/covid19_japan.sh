@@ -477,14 +477,18 @@ link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --x
 url="https://www.pref.aichi.jp/$link"
 curl -s -o 23_aichi2.pdf $url
 
-xlsx2csv -a 23_aichi1.xlsx | grep -v "欠番" > 23_aichi1.csv
-xlsx2csv -a 23_aichi2.xlsx | grep -v "欠番" > 23_aichi2.csv
-cat 23_aichi1.csv 23_aichi2.csv > 23_aichi.csv
+xlsx2csv -a 23_aichi1.xlsx > 23_aichi1.csv
+xlsx2csv -a 23_aichi2.xlsx > 23_aichi2.csv
 
-(
-  echo "No,発表日,年代,性別,国籍,住居地,接触状況,備考"
-  ruby 23_aichi.rb 23_aichi1.csv
-  ruby 23_aichi.rb 23_aichi2.csv
+( echo "No,発表日,年代・性別,国籍,住居地,接触状況,備考"
+  cat 23_aichi1.csv 23_aichi2.csv \
+    | grep -v -e "欠番" -e "^--------" -e "^※" \
+              -e "^No,発表日,年代・性別,国籍,住居地,接触状況,備考" \
+              -e "^新型コロナウイルス感染症"
+) > 23_aichi.csv
+
+( echo "No,発表日,年代,性別,国籍,住居地,接触状況,備考"
+  ruby 23_aichi.rb 23_aichi.csv
 ) > 23_aichi3.csv
 
 #24 三重県

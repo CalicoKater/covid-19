@@ -2,7 +2,7 @@ require 'csv'
 require 'wareki'
 csv = CSV.open(ARGV[0],'r')
 csv.each_with_index do |line,n|
-  if n > 1 then
+  if n > 0 then
     #puts line[1]
     report_date = Date.parse("2020年#{line[1]}")
     gender = line[2]
