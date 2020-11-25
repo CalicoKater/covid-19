@@ -125,6 +125,11 @@ curl -s -o 04_miyagi.xlsx $url
 #xlsx2csv -s 2 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
 #xlsx2csv -s 3 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
 xlsx2csv -s 1 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
+rows=`wc  04_miyagi.csv | awk '{print $1}'`
+if [ $rows = "0" ]; then 
+  xlsx2csv -s 2 04_miyagi.xlsx | cut -d, -f 1-8 > 04_miyagi.csv
+fi
+
 cat 04_miyagi.csv | awk -F, -f 04_miyagi.awk > 04_miyagi2.csv
 
 #041009 仙台市
