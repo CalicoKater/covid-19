@@ -80,7 +80,7 @@ else document.write('<link href="css/portal.css" type="text/css" rel="stylesheet
 <body >
   <form method="post" action="/" id="Form1" enctype="multipart/form-data" onsubmit="while(!i_site.loaded){ if(!confirm(&#39;送信準備が完了していません。再送信しますか？&#39;))return false;}return true;">
 <div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="sNXNUk6UHue8V0DCIHpVa//Kt7OWrzcXFDJBP1zEjNJvugHxSV9NqBLPXOwvI5o1GifI8/k8fnCJKZyf6JnMZxYXfwJa8LQiw3UiPB8Oql0A1e4ji3QEtdfXIM1PfXuHHspwR1jq4VxtOdN87pp4mN7GE2L0BxSRxiLUnuD+vq819PtAz/vtZYDkyOkRuuu/PNqb0g7ZKhdldC8C9NuJBrgDVKplW1vNS8uUfEi4lP33qA8Y8sdj0kshtTU8lAHBin9p5VSxuN6s5imYKiuXF80uddtBCLdxMvUUqxQjT282hzxmYV+EoCoKMm282ZbgsEz+3tTTuZkKVbC1Sls9+OgB50wbknVcXliiQwB8OhbE85vw8NKnw1JYPVi9iat4K8WV4icisq6YI1KyBvB3aOXGyktudghyIsTjeWmmGfCiEhBqD11RERaLEJfCG0mrGJETuiM/5VBBW1ZL+MjSjD52GRFAWX230NfEJvaKe8LHqF5/ejFrnwlA5AHsYTBF3FlWGiydQHkWVm52UpTF1bwDI53L8PfbiBzjbBiA2dT6/iyhn0NTQRodmZd+PeKEtk8zsHNnzXL6tGE1z0CCf2ufxqfK/XPjapus3LKFeo0zTh0iQeoFEHqM8B+YRtMZrKjMJdYP8opp6QMr3YPABLXpT5GZngy0hCCRL0r83Q72HdyrouyviGVLMHcvNam7NZGSEKfsFLa111cWK2/q9QnvU0TvkYFXc+HbLzyVu/TxdtPRFufleDxU3UCHP9Tyq9XEXLm7UVX+5K1XK0oEFe1elin5pky4ama4GrPwVhdI7EK0pKHVpT2Py1eHm8JzczH0sXtKceO5oBLeQdEfUHAwbuqFlcMwxlXiaAFbZHOlR+CLyxyv/8LdQr2vcPOKYNfuasI4IueEQkmRLIagukjxDoN+Nsf9SHX/glAxnVZ88Pj+ftoNTkhLTrEJPMXlySjwpvjceAY8pqWzPOnlLSkosdKcly1/LDJSH2NZI/XRCH+V7RMzT0GiwFt/SDSeQNV2xC3PZVFAAsFVfJ+jiwvCh9ApaBAmKm2Gpnbo/HHKfR95CbF2kIPCgyAq0b9uJmUjXr4sYiI8N5C4Rh3lx/Fcx/e4gMkO5IjGpK6x3s6v4BDyDt8nun/4s/4nqe09L2CKdZe5P/RYQN3GHwlbohDuRsGvZLQZkyIyIdg/gTZ5guEGo6wXbr/w1dLgE0/VtUC76sdE+GZJvnCRjAxYw0ZrnblyZmWBpQxWfYI+bKgj6LpHiX/kT00984oMep0c+xjrXclR6GOZajwVjGlA4NNCdvEwXWLhfH+09QluHS2pLt1M7Aq0mrpnV8kB+JBm6xTuon7kV1t4s26Gs6mi9Jzv3UOR1EaD0vSfFipw2rKCpVJwo6corPEMB1G9+eWf6vfjdZnKgjyBKBAZJHwbEQjIGj2QL7VwlrnT8GN9PoXHFucpaLnjr83Jab4li8VRRYzTpaHnNl4d4vQoF88Wwl1jaebc1ewWcn9dlh3e1bXKc8fcT3AgquqqKCgHeBOGVa4KPg1RYcW/Cs35baGmBwgFC4DiL5dDE1gCfARk41kyc//WFF2vphV/FAZ4v+W5pFnemWtsi8m8U65DbV8vM4Ut4PZZ6Z1uVsjWnpAehYooa/P+QkZ38ZDez0AWH2aoSJlpiQ==" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="HNhTNrx2CDl+xaXG5RMh1nKHJYCwkICBbVGs+MW8DkpRtRmuEDJrttjfNtY7mWrGUYl9Fxyqfsd759Ru1UjuBBJTLMgamKCzglTo92WwxBL5oMr18ZtaIwk6yLYOL2+Cw7qJhWgBWn2/fsFHySM59RaUXCvIrsJogG0M31YtSt8k/YMBz66nYX9566KUs7RNsRl3T0J8HwFlwfCQRNnVE3ma0k5UTgD67s2tBVDXkssgxXD9HfAMET13uRMIOC7qrCw8mqb8OqzTRApfxCHXn+Cg/Z3d+hVEgoU9Y0sjeLLP4vkOd3KqfaB5To1mXg35xcxxb5Vb2RCFgi8XPyzPs4UJ+yIt5VLfWkbPZCWIEJQAoyLjxxO7WroxEIoPP3qFxUbvmvUp8bx8DDMe9YJEA6WMLyiR3rJDdNIxooLp2QrN7TKHNQNH2Ii7bktfexPZ+Os4VoXDpzsKotYdhKUToBM8DYMVn6VbbFXQy+0ZPRgN7Kmx/LydMDjyY/QLjviBqWsuxlOM0Ozvq7uBRgNcorgY+Aepy9VjxtKoJbzxvyln/z9UlOqwLTOVeGbUbed4glyD5/FnTPr+6pg3nfVfGoWoKWW1NN6G8SUf74khPvwWTsLU6lh9yN4WFPRdgs0t0v7+uVHP+R6/EcKASbK227e8uj2ZuZFUF8zz0wydZtwq6Q2r3HDl3MODfvAlQ+AsH1urTLmPnd17/JUSgxX0sLNsI7AEyVhkaEy7amNh331n1UdRn/Xa6tYVNCSAf+bv7BOG2odU/hx1ma2p/WXhOVlBUl72eOH35gZxoIdkpuM1X2IGkjrYsZoV2WcwGzvMh9EPt0hGJOQo7+hC91wrIufWaU4fSycDVYA8jZnieW660yocnB0lK5FZDETfXybYbOZDMetuhHFwYBrUbDkVTVAPL94gDRbkvJ7KQ+1tNwkF4Dhs6mKzUpc6XQERmTC6C33kv7rqikrPtHwR4YSqRnr0T2n3cyCjjG0xi/eTCy91Gafty6e0x4fJZZBonbP74ZgD6rx5SWzknSpLGKwbkZzqrVe3WKAwKtSJTjyGShkXqf3QtiYe8gethE+n9NVjI0oC0rRWRgbuZsATnbc53EdSjzO5aEqtJpY+vlvnLQ1t+dnDR9TzGNC+cwqAVwUPn5dOQBUzjUK0mYctqBqLdIqoJ7KEB2YPJnJ1pYfIao1ILYShm9tK3vrQ9RZ4KruEK7MOuJCfzoUmMqzPP+iC57NvWOpIECcm75M+BOLjuG3My9y29QY9WemW22XaitS1ydXKmjLcQeSOauRL9Rl3OauH1nC6KMG2KQyqs0oMYiJG3WbNFjyZEMnZ1LCfZvzZnXsbNTAqhcWkzd2LQAED3Yvvos0Yqyp+nTM6B77i+yNNeZdzRDOCltzlwOLiOllw4adDMoGL7vAW5GZ/NVH1b28dgFnbJZjRCekTWsCxaSG4YmIkow8wCK6sKMuu5/HqlleLykWphGYg7z25tWVZFiHnhlE8DKSvTFcIIBrE8Pa3SoT7ke7M7P/ONJ92JUnmguHCl68sCX3C/QAVTPEeNXwHViv/Wqys4PxEV/aRSyKLa7WLyLCsEU+nhzogcC7wJ7c2hhziAodBJqJAv83VW6+xIOpaRVUcNDFAO1xPJbStlDd6jU8jW6Swa0uCoztu4H2kaw==" />
 </div>
 
     <noscript id="NoScriptMessage">
@@ -1112,12 +1112,12 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
     <ul>
       
           <li><span class="CreatedDate">
-            11月27日
+            11月28日
           </span>
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl00_TitleLink" href="item/44927.htm#Contentpane">コロナウイルス感染症の患者の発生状況</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl00_TitleLink" href="item/40632.htm#Contentpane">令和2年度家事メンセミナーを開催します！</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1132,7 +1132,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl01_TitleLink" href="item/15640.htm#Contentpane">自由参加型見積合せ(令和2年12月4日提出期限分)</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl01_TitleLink" href="item/44927.htm#Contentpane">コロナウイルス感染症の患者の発生状況</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1147,7 +1147,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl02_TitleLink" href="item/11780.htm#Contentpane">令和2年度「歯やお口に関する川柳」受賞者決定しました </a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl02_TitleLink" href="item/15640.htm#Contentpane">自由参加型見積合せ(令和2年12月4日提出期限分)</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1162,7 +1162,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl03_TitleLink" href="item/15080.htm#Contentpane">令和2年度に発注することが見込まれる公共工事及び公共工事に関する調査等一覧 </a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl03_TitleLink" href="item/11780.htm#Contentpane">令和2年度「歯やお口に関する川柳」受賞者決定しました </a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1177,7 +1177,22 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl04_TitleLink" href="item/44578.htm#Contentpane">Information about the New Coronavirus</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl04_TitleLink" href="item/15080.htm#Contentpane">令和2年度に発注することが見込まれる公共工事及び公共工事に関する調査等一覧 </a>
+              <img src='../../../images/new.gif' alt='新着' />
+              
+              <div class="Summary">
+                
+              </div>
+            </div>
+          </li>
+        
+          <li><span class="CreatedDate">
+            11月27日
+          </span>
+            <div class="R_Contents">
+              
+              
+              <a id="C19_10347_R1_10349_C_MenuList_ctl05_TitleLink" href="item/44578.htm#Contentpane">Information about the New Coronavirus</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1192,7 +1207,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl05_TitleLink" href="item/48343.htm#Contentpane">一般競争入札（令和2年11月26日公告）</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl06_TitleLink" href="item/48343.htm#Contentpane">一般競争入札（令和2年11月26日公告）</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1207,7 +1222,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl06_TitleLink" href="item/20446.htm#Contentpane">第27回岐阜市「オンリーワンわたしたちの芸術祭」の開催について</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl07_TitleLink" href="item/20446.htm#Contentpane">第27回岐阜市「オンリーワンわたしたちの芸術祭」の開催について</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1222,22 +1237,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl07_TitleLink" href="item/45179.htm#Contentpane">新型コロナウイルス感染症対策に係る市長メッセージ</a>
-              <img src='../../../images/new.gif' alt='新着' />
-              
-              <div class="Summary">
-                
-              </div>
-            </div>
-          </li>
-        
-          <li><span class="CreatedDate">
-            11月25日
-          </span>
-            <div class="R_Contents">
-              
-              
-              <a id="C19_10347_R1_10349_C_MenuList_ctl08_TitleLink" href="item/40632.htm#Contentpane">令和2年度家事メンセミナーを開催します！</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl08_TitleLink" href="item/45179.htm#Contentpane">新型コロナウイルス感染症対策に係る市長メッセージ</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1504,7 +1504,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
     <ul>
       
           <li><span class="CreatedDate">
-            11月25日
+            11月28日
           </span>
             <div class="R_Contents">
               
@@ -2421,7 +2421,7 @@ setAdBannersRandom();
 <div class="aspNetHidden">
 
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0E8925E6" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="HMoDSxDEkV2cu7/GyZJCVY3bDE29yQwm8wdG3GhdPj5TR6TRS8iQ+vtgHb7KcW06m+0r7bZ1MU/iuxL0+b5N2hFnEwu5u6vt7xXxYjt4mdSZmKSBzdVPKCvWyUhX9/LXUg+1Vfykr0TrL+O6/GbG4eW7cdbzTlBh+PX6DSdw1UFhyqDP" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="fG0/VKYRhrUVOke9VCuiIK3997r7urrpwANupxtQjpr75wKsQTCXlGEUmGi8Co7ebI8uaguF9y1Q2rU8GPt9cTmtSvc5r+wVwp1D11UFXj2rNq4mBufCfjBmPrO8HC83vdUk1WSU4NXpyivMnIZ1GIT1qx13nEINCrg//uQgJIaKct5i" />
 </div></form>
 </body>
 </html>
