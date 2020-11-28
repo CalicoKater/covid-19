@@ -295,6 +295,25 @@ xlsx2csv -s 2 11_saitama_city_1_379.xlsx >> 11_saitama_city_1_379.csv
 ruby ccc2.rb "https://www.city.saitama.jp/002/001/008/006/013/001/p075326.html" > 11_saitama_city_380_.csv
 
 
+link=`curl -s https://www.pref.saitama.lg.jp/a0701/covid19/jokyo.html | grep "陽性確認者の推移" | cut -d\" -f 2`
+#url="https://www.pref.saitama.lg.jp$link"
+url="'https://www.pref.saitama.lg.jp$link'"
+( 
+  echo "import sys"
+  echo "import tabula"
+  echo "tabula.convert_into($url, '11_saitama_summary.csv', pages='all', output_format='csv')"
+  # echo "dfs = tabula.read_pdf($url, lattice=True, pages = 'all')"
+  # echo "for df in dfs:"
+  # echo "    print(df)"
+) | python 
+
+( echo "date,count"
+    grep -e '^[1-9]' 11_saitama_summary.csv | cut -d, -f 1,2 \
+      | awk -F, '$2!=""{split($1,date,/月|日/);printf "2020-%02d-%02d,%d\n",date[1],date[2],$2;}' | sort
+ ) > 11_saitama4.csv
+
+
+
 #12 千葉県
 url="https://www.pref.chiba.lg.jp/shippei/press/2019/documents/chiba_corona_data.xlsx"
 curl -s -o 12_chiba2.xlsx $url
