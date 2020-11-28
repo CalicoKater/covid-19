@@ -80,7 +80,7 @@ else document.write('<link href="css/portal.css" type="text/css" rel="stylesheet
 <body >
   <form method="post" action="/" id="Form1" enctype="multipart/form-data" onsubmit="while(!i_site.loaded){ if(!confirm(&#39;送信準備が完了していません。再送信しますか？&#39;))return false;}return true;">
 <div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="HNhTNrx2CDl+xaXG5RMh1nKHJYCwkICBbVGs+MW8DkpRtRmuEDJrttjfNtY7mWrGUYl9Fxyqfsd759Ru1UjuBBJTLMgamKCzglTo92WwxBL5oMr18ZtaIwk6yLYOL2+Cw7qJhWgBWn2/fsFHySM59RaUXCvIrsJogG0M31YtSt8k/YMBz66nYX9566KUs7RNsRl3T0J8HwFlwfCQRNnVE3ma0k5UTgD67s2tBVDXkssgxXD9HfAMET13uRMIOC7qrCw8mqb8OqzTRApfxCHXn+Cg/Z3d+hVEgoU9Y0sjeLLP4vkOd3KqfaB5To1mXg35xcxxb5Vb2RCFgi8XPyzPs4UJ+yIt5VLfWkbPZCWIEJQAoyLjxxO7WroxEIoPP3qFxUbvmvUp8bx8DDMe9YJEA6WMLyiR3rJDdNIxooLp2QrN7TKHNQNH2Ii7bktfexPZ+Os4VoXDpzsKotYdhKUToBM8DYMVn6VbbFXQy+0ZPRgN7Kmx/LydMDjyY/QLjviBqWsuxlOM0Ozvq7uBRgNcorgY+Aepy9VjxtKoJbzxvyln/z9UlOqwLTOVeGbUbed4glyD5/FnTPr+6pg3nfVfGoWoKWW1NN6G8SUf74khPvwWTsLU6lh9yN4WFPRdgs0t0v7+uVHP+R6/EcKASbK227e8uj2ZuZFUF8zz0wydZtwq6Q2r3HDl3MODfvAlQ+AsH1urTLmPnd17/JUSgxX0sLNsI7AEyVhkaEy7amNh331n1UdRn/Xa6tYVNCSAf+bv7BOG2odU/hx1ma2p/WXhOVlBUl72eOH35gZxoIdkpuM1X2IGkjrYsZoV2WcwGzvMh9EPt0hGJOQo7+hC91wrIufWaU4fSycDVYA8jZnieW660yocnB0lK5FZDETfXybYbOZDMetuhHFwYBrUbDkVTVAPL94gDRbkvJ7KQ+1tNwkF4Dhs6mKzUpc6XQERmTC6C33kv7rqikrPtHwR4YSqRnr0T2n3cyCjjG0xi/eTCy91Gafty6e0x4fJZZBonbP74ZgD6rx5SWzknSpLGKwbkZzqrVe3WKAwKtSJTjyGShkXqf3QtiYe8gethE+n9NVjI0oC0rRWRgbuZsATnbc53EdSjzO5aEqtJpY+vlvnLQ1t+dnDR9TzGNC+cwqAVwUPn5dOQBUzjUK0mYctqBqLdIqoJ7KEB2YPJnJ1pYfIao1ILYShm9tK3vrQ9RZ4KruEK7MOuJCfzoUmMqzPP+iC57NvWOpIECcm75M+BOLjuG3My9y29QY9WemW22XaitS1ydXKmjLcQeSOauRL9Rl3OauH1nC6KMG2KQyqs0oMYiJG3WbNFjyZEMnZ1LCfZvzZnXsbNTAqhcWkzd2LQAED3Yvvos0Yqyp+nTM6B77i+yNNeZdzRDOCltzlwOLiOllw4adDMoGL7vAW5GZ/NVH1b28dgFnbJZjRCekTWsCxaSG4YmIkow8wCK6sKMuu5/HqlleLykWphGYg7z25tWVZFiHnhlE8DKSvTFcIIBrE8Pa3SoT7ke7M7P/ONJ92JUnmguHCl68sCX3C/QAVTPEeNXwHViv/Wqys4PxEV/aRSyKLa7WLyLCsEU+nhzogcC7wJ7c2hhziAodBJqJAv83VW6+xIOpaRVUcNDFAO1xPJbStlDd6jU8jW6Swa0uCoztu4H2kaw==" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="+nK76zphFCKpBnhPJnryNfRYwZDqahqXIjgE7XOdd0YQIuCyhZVRSmBreEythzz/mOYboVdI1u9Nj0DbpyzC/Hal5jn0DTWcryOxJUdsfAtjYiUTiid+re/4lw8Kq/budQWcGwCFENRLE+4GFilxVHeNT2Zp1UV5oE4Wbj8RwM2W0h424DYDCD03fU4Onx/FYdzzTiP9rXG6gdWf/L1dI11TxCWP5Y2Tyo0hZDNMoTjHyyfMdPqfnJMorgq5ZpxSFOnnQl0YvDWu+fuKKsyv2iz2GTXdeRyMCdgRnOzhsgWqt7hQLrVDN3AJfUYfnZJgi9SmRUznS4d0pIDGeAdz9TS14J6JbtsaGxRNIZ0+SDZO5dFuZLLwBjabtq+ImjXB22LSiHYY9yrVmbXT+dFLjvQp45FYp9TDq+FmYtXQJs+CJJtteTVCQpTJNjUwV5gVpgC1IpOIofkXIBIp2d2Nce1YC85e4toq70ra90dtfTGFRP+7jMOoaX1030i0P33mSM94kUvsNizPwSRmvr0QdJHJ6oCpJiokldfRsB5M7osDth4MVW2Q/WSIbAk/FGyiv+7grH+ozQEG7dl0zItAbOI5IPaXVpndelQ2/WSa3l9yqpae5xsnEKD+3op4/6GkVDem5BQmpdt+jx9AvOasz7fIdV+91Fga3EGMO/daMphVVjTSEhpRyXgUoufi+P80O/A2etJEl8PwnrXPwAIYoxAQWzlhL1DAOJ+4+CviyMEXiXfhIXRYtOE7vwjqyPz4xMu98a9Ha2cR+BDIQYj57iueoXCwu1aLg4N8AT9W0KxQvZJQ9FLNLfGVn/opTb8BA4Cg2RwtyxSyEPUrCd0D+loTv4dargAmihXVj770vMGn3Ee2/8NNqXIU9Xq+djcuVh7lfE1bVAHEIOEaIbc/tQfk6R8whkOsld6T5KEXWd4LpvAeXELWufhaSDK+L4XX7MwXR6Mfxig+/P+hHItA3m/AhJf7/YOkAyztb7qC63OFt3fSubCUICSo5AaJQoYYNmUz5Py6UetpCWBsxSp2QqWHikAYbTWUTgFEpwoIwEHbYF9ecTKpuc4VY8MXRmOsncaX1UAfnVnkEbIaXwtAHb49m6knwHDRt0Gmr99xTza0jT5Od7wi8QyjlpMulrfIx7ytQT/MS2QIsLjDU/MK3JnIj/1//YjSwdgcuscBaBa+QgYBlsTuBCZ8NNIjmcKMr1eDfhv1NzXEk4jETqLpTy6kdcNq4Z6JVgJUreNALoqzSPP3SlGcXVBPO7o8SEPwxR3O7hVJuiaGywrR3IPavPVJbUmxzmWu2gDeFAVKuQ1+L+dIQz36s6MxslBok0p1PbOp829upsrbftFXUN8gFl5KcuQQmwUoR7zivTzxgTZjZR36b8pG1OSK+RUNIVN6ZEEJlBMSZD2eK9UboQN2L0EeX80ucj2ZLQLFMkKiKmvUSigb/g4ZjiSuMgVTvY1wU5McFBtejUSRe8sBEtehURDGdGrqrejin/AEqNyJwvwTX0DOkNr47Gfdgspld6NGkNcSawSr5xDneagwN3mOFf4zjNn7wQyYAQuoOBkwnKTqnKoPU0JDgNkLyTlD3oKkk8DhEoWlnUO9MEst4YGRObQVIpEDFyikuMgyykTI/IjPXEJi4BVdXy/+8Rryyi1YhQ3BEw==" />
 </div>
 
     <noscript id="NoScriptMessage">
@@ -1117,7 +1117,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl00_TitleLink" href="item/40632.htm#Contentpane">令和2年度家事メンセミナーを開催します！</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl00_TitleLink" href="item/44927.htm#Contentpane">コロナウイルス感染症の患者の発生状況</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1127,12 +1127,12 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
           </li>
         
           <li><span class="CreatedDate">
-            11月27日
+            11月28日
           </span>
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl01_TitleLink" href="item/44927.htm#Contentpane">コロナウイルス感染症の患者の発生状況</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl01_TitleLink" href="item/40632.htm#Contentpane">令和2年度家事メンセミナーを開催します！</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -2421,7 +2421,7 @@ setAdBannersRandom();
 <div class="aspNetHidden">
 
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0E8925E6" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="fG0/VKYRhrUVOke9VCuiIK3997r7urrpwANupxtQjpr75wKsQTCXlGEUmGi8Co7ebI8uaguF9y1Q2rU8GPt9cTmtSvc5r+wVwp1D11UFXj2rNq4mBufCfjBmPrO8HC83vdUk1WSU4NXpyivMnIZ1GIT1qx13nEINCrg//uQgJIaKct5i" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="C9wMAA5XWzeFWbXEB+BPgvHYnJ8Zh/3BrTQLC71ja6jpQG2jFindEvsnKEze8VhuHtN8pZXybTraCQ2dSHb+h5QTRN7LVsYJvWAVhUJg07KtLmRgiiLorKOM8MOxh2t5D5L4C+W+fSHOr5EOPdYZrnn5qg2oHolu4REkkbHzEyLsY9Wl" />
 </div></form>
 </body>
 </html>
