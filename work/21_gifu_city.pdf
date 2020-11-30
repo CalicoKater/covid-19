@@ -42,8 +42,8 @@ bSmapho = true;}
   <script type="text/javascript">
 //<![CDATA[
 if (!bSmapho)
-document.write('<link href="css/portal.css" type="text/css" rel="stylesheet" media="all"  /><link href="css/portal_m.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/LinkList_180/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_Banner2/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_180/module1.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ItemList_banner/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ItemList_banner/2923_8.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser/Item_Div/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser/ModuleSet_Div/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser/ItemNon/1009_8.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_Banner/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/PickUp_TOP/module1.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_180_border/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ModuleSet_tabidx/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ModuleSet_tabidx/10347_8.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/PickUp_tabidx/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/EventList_top/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Program_snsb/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Program_pagetop_sf/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/PickUp_TOP/module3.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Program_pagetop/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_180/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Admin/A_PageCSS/3413_8.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Admin/A_PageCSS/1050_8.css" type="text/css" rel="stylesheet" media="all" />');
-else document.write('<link href="css/portal.css" type="text/css" rel="stylesheet" media="all"  /><link href="css/portal_m@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/LinkList_180/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_Banner2/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_180/module1@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ItemList_banner/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ItemList_banner/2923_8@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser/Item_Div/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser/ModuleSet_Div/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser/ItemNon/1009_8@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_Banner/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/PickUp_TOP/module1@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_180_border/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser/ItemNon/2942_8@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ModuleSet_tabidx/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ModuleSet_tabidx/10347_8@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/PickUp_tabidx/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/EventList_top/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Program_snsb/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Program_pagetop_sf/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/PickUp_TOP/module3@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Program_pagetop/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_180/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Admin/A_PageCSS/3413_8@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Admin/A_PageCSS/1050_8@d.css" type="text/css" rel="stylesheet" media="all" />');
+document.write('<link href="css/portal.css" type="text/css" rel="stylesheet" media="all"  /><link href="css/portal_m.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/LinkList_180/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_Banner2/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_180/module1.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ItemList_banner/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ItemList_banner/2923_8.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser/Item_Div/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser/ModuleSet_Div/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser/ItemNon/1009_8.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/PickUp_TOP/module1.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_180_border/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ModuleSet_tabidx/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ModuleSet_tabidx/10347_8.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/PickUp_tabidx/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/EventList_top/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Program_snsb/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Program_pagetop_sf/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/PickUp_TOP/module3.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Program_pagetop/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_180/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Admin/A_PageCSS/3413_8.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Admin/A_PageCSS/1050_8.css" type="text/css" rel="stylesheet" media="all" />');
+else document.write('<link href="css/portal.css" type="text/css" rel="stylesheet" media="all"  /><link href="css/portal_m@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/LinkList_180/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_Banner2/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_180/module1@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ItemList_banner/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ItemList_banner/2923_8@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser/Item_Div/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser/ModuleSet_Div/module.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser/ItemNon/1009_8@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/PickUp_TOP/module1@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_180_border/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser/ItemNon/2942_8@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ModuleSet_tabidx/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/ModuleSet_tabidx/10347_8@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/PickUp_tabidx/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/EventList_top/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Program_snsb/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Program_pagetop_sf/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/PickUp_TOP/module3@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Program_pagetop/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Browser_C/Item_180/module@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Admin/A_PageCSS/3413_8@d.css" type="text/css" rel="stylesheet" media="all" /><link href="css/Admin/A_PageCSS/1050_8@d.css" type="text/css" rel="stylesheet" media="all" />');
 
   if (typeof i_site === "undefined") { var i_site = {}; }
   i_site.loaded = false;
@@ -80,7 +80,7 @@ else document.write('<link href="css/portal.css" type="text/css" rel="stylesheet
 <body >
   <form method="post" action="/" id="Form1" enctype="multipart/form-data" onsubmit="while(!i_site.loaded){ if(!confirm(&#39;送信準備が完了していません。再送信しますか？&#39;))return false;}return true;">
 <div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="3PvFXMnBLrmkYd8+ZGk0DejMtyJbTFl8vLBFJKmqn3+wxsmfOrkRQygq38N0SpdmMhMcTP6cfnCJyHrx1m1ugdK4kOyrLJRVRwFp6eXAwpe3CxmWJ6yAFL1XAQG07DeW1InW/ylatMBqQ/yM62nOlbp4WwhmKtM++JsYRExNvY8XyHbgVihgBh8umTRmeQiXSGSoTDqMjAIlc+iAL9Z3UEumO5QKpjk5PYCFg3UYfbR8Hw1Ck1XFGTxwdSxgoUr6147vFLPRx7c/pnBfy/QHKQR5jE2+5szw9lkGKi/iie9afoDQsNLdI5v0gsUzUCy3EDEGL1nEHmpNlk+tJbI0QsPQ7+GeV9paxi7+1o/eKjiOc1W7DpgrU9YfFSqlK50HdYvI0craFWfKvb0II3hSRxpnZcrXpfDUoiVPwceLWB6nYsN29755wAL4efjcCxXVyeCUtp00tH76sYnjiFoLnZ2q0zvbEtk64MCY2PNSNiqgY1TJ6jlBZzOnKJAyGKs81CKD7hNen6d+xes9bgkMBWyW1iJxtZ7Wpk0igeoWCJUVu11vdStz19BFXGC6A6KqgtfZm6ZQ/5nTqlrHu5BjMJLWyZpAJ1Hi1nfNZxuC7isl6HHbyHL0BX2WHc4jagKfOFNwdWhb0q2ktvCkK8zmIinJjxWSjHxnFLalokgSm+P5NO1EHGVrdnMT/2z6CJmn947606dBiKHPZn3P/LB5yk9eD9/c2W5v+uYBACX0MK5HO23S6SOewXz5hkW7L6CYuUjdEEXU9NmpNqyXz19KbqADwMc/rEYK1gVox18tvtcx3IAlfiKApE6NItuxN+VH+HPkH5ohw4eV6SNTtzDCzYFbv6xHRhzWgqwTJYZGQ8C2ENI/G2X7Tuy52HkMbO8qh4rCoj3WRyYf/KnzhLlYupH84Sn+J47VqSpUo+gedJBF+Oj2UolI0pEGcyRVBkKMAOORAwtIieERM9NzQHGt4tB/9y9xg5MAvhoPSfPEP4v9IZTWi5y/NAhYYmoEvBgLM6bpDIr4QCoeyxActHLjxfGeefoSCT1wdjsDtw/DF535g41d8NtDhLr/TBcxprFEK87jYbEFHc706MYUSl7O6cmKek6k7zjot2/6dK+6ROqqnYyomoKDlU0MLA/AnwtmAF2xvFDmw6Nta6aVWrKHhejz9IborwftabD5qv9+CKzhP5+CaTk1vq70ucLjzt4Y2sCHh+yNHmWK3H7Li1BVupn7LkoAZq3d2H87TZgboC/wKQWpw7yiulBlLPr4VlOsKK0zBQ8N5sYoT/nnPKPUu4IqvU274G6OEbq8SKCKK8o3G4/wbST4juCJEYhipKuuJWrHXFyjaSWaT9wN/s7tMj7uUkbFTYqpJdiml9AUSttQnLS/M/OHo1KdfzO8WGi6EZVMKKvvwWQ0WLOIe3ke4icMrIYhmQ/zYyvQgd0jS8fDrOEijtw97D+8ofhkj0Z4bF45h+RTBATwT8tVV7bRhwfTn3zbP7thBakksAUM5Sn1/gMbhxUUfgGh7I6/EPOgF5pSa60hr5W4w/Q2PwIbptqtyJihc6q6B9iPW3BonTAagn6AgBr0lu9dH5SZ2yj9ZXBxZdWLVwnAiXsKBoF6E+XuJob+dpbg3ZxM0qUCF+k2YxAXEZBewc0Urgk9w9eBv6JfzA==" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="CpEkkDIESjmvmBtDuPta4gyz08E5X35cGJO6K6prmOwlKdEDx1Bc6TfXusM+u9fkFY0FFWCQG9rc5AK1WkGdHtGkOn+SIAiiiQ6FEvx0MB0IlDs3fVDU+6fdco+/TzpRU4hHf9NJWW1PWkq+NkEpc4e6I8ngIpYhHysRW3/gmILQXi+cQJYXW2pOQm/31NXOIt3BphMLCYvNhD/UYAs4RzdKhAuXifULq+RNbqzJLdB0lsJfwGeb8y5lvz0wQGkxvPY6jvy6FnglswkZBRyAq7+tSPa8+y4R28EDPDBSMnjP679ipas5JWSAsZUuohzmNLkJseLmSqh3eHpKtmeKnCW1Lf65JLJiqjMNFrdLZFrpO5/DyOX6Q0bfCBflcqc88GIM0zwQwqXdjM2uhbjbMIlujWRSJ0rEv66NhRGXczLpzez4MMV63nMyqp2iih5ZyC97SiYjFJienHl9o0uF+XVoFu5NEWFDKnfnJkSTG/mMPZkLv4MOTf+0TMXWvr07U0gbilzPKyS5utTvHJTV6hU9YUfBkufcPqljlQW77+J7AGe80tTCqP5eM+10uiZzl/nCkQ9O/QiRKMxGsqFm/qupPvFS8szBn2kHrbnxgOisOlAqp08uknR1KTGJLd2nf1UKUBG0IiXbtpi9RYOu2edynnUCGZMcapaPZCpKxO6BkvCzArBoWK6Y6koB/q2c1dC6wjiLkdLpLmlhE07xFuaymtW+WTIvuPFnoXBVZoIVtpc8EbzPbuvMNX89F9eYCyNMpZqNXeEg2rlsUKA3O8krtdG4SSM12cN1R5Ue1uN3q3+Mh45/gqCOx2Sh81ESmt5p6PlFa9ncJlDUV304ZUZEL2cO4NGu5VqvNF2swUmb1FV04n1icTSrHpCP6RfvguSDv9DI3Fwnpl2rgCC/XrKKWKyqFS1HNqcoX47NRQiZG2GCmWfXkZKaxbG10cTu0SKJzFXT3oZPyuNQeX4XUVaryPq88KRugieRmuaRz4mVCB8pG8tNLTg0To3NVOCVhhMxQIuYCGg7hdJT3TYJYCEWkYDyhZZZna58M81Wzdxl/AB29/qX4Z9Ar2UoLbhWCyvZ0iPgQmPIpRdfjUWntP59fHRsuIsuKizGUXjp+cdmS0o7nKa26nd9+uAl5DZG/3/eEhzRAqSaH4ttwX1OFZ0DDge7DhYrtf0zYGvqWwy+RxSNk6eU46b4g+rQQjwG74NH+Ewsc6eANodIRBkVa9LYkJ0OTO1H+2lrP03p+sS0bSblgvMK5NmbuXSgxN7OzlG5JfHDvlKrBkaB/63LgUtlDKxIm9XElS1/CYoaBSRqCQRRw0t2vayvEfmQ7bZbCvqupqNeZineLnhRF8ylP+1hSmCkq8+e0w42W+c45tEEdwUfzIoSKs8FSVOK4eN3YL2vqVxOmQ3Hmx+NA59wgPZmbotoo/j1rhAPYlX0/27hwSV2ouHOvv9vek9Rvel3W8l2UCdvUHrQIt4PVyDtU+QPg5GEx36TRLo0Tdyjty4Hz5bBOkPSqoo/rnYsVQ1pCoireqGWeRjymuoLF51wIWUb9g6Ft9cSnYcdexv1IAbCCarxmMD3JJA8Hrk89iWa0qD/8gTfs1zu4gKaQd7rsDLyCCRz4lQDTZOwZlahNVDTb8wsXonMbBAARnyYK+v1h4+Hcw==" />
 </div>
 
     <noscript id="NoScriptMessage">
@@ -1031,21 +1031,6 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             </div>
           </li>
         
-          <li><span class="CreatedDate">
-            11月01日
-          </span>
-            <div class="R_Contents">
-              
-              
-              <a id="C15_1023_MenuList_ctl01_TitleLink" href="item/18733.htm#ContentPane">市営墓地使用者を募集します</a>
-              
-              
-              <div class="Summary">
-                
-              </div>
-            </div>
-          </li>
-        
     </ul>
     </div>
     <div class="info_bottom"></div>
@@ -1117,7 +1102,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl00_TitleLink" href="item/44578.htm#Contentpane">Information about the New Coronavirus</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl00_TitleLink" href="item/44927.htm#Contentpane">コロナウイルス感染症の患者の発生状況</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1132,7 +1117,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl01_TitleLink" href="item/48500.htm#Contentpane">オンラインによる認知症サポーター養成講座を開催します</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl01_TitleLink" href="item/44578.htm#Contentpane">Information about the New Coronavirus</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1142,12 +1127,12 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
           </li>
         
           <li><span class="CreatedDate">
-            11月29日
+            11月30日
           </span>
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl02_TitleLink" href="item/44927.htm#Contentpane">コロナウイルス感染症の患者の発生状況</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl02_TitleLink" href="item/48500.htm#Contentpane">オンラインによる認知症サポーター養成講座を開催します</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1674,41 +1659,60 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
 <!--Item end-->
 <!--Item start-->
 
-<a id="moduleid47770"></a>
+<a id="moduleid47945"></a>
 
 
 
 
 
-<a id="itemid48233"></a>
+<a id="itemid48489"></a>
 
-<div class="Item_Banner">
+<div class="Item_Banner2">
 	<div class="ModuleReference">
 		
-		<h3 class="base_img"><a href="https://ai-staff.net/gifu/chat"><img class="browser" src="secure/48233/aichat_s.png" alt="岐阜市AIチャット総合案内サービス" title="岐阜市AIチャット総合案内サービス" /><img class="smartphone" src="secure/48233/aichat_s.png" alt="岐阜市AIチャット総合案内サービス" title="岐阜市AIチャット総合案内サービス" /></a></h3>
+		<h3 class="base_img"><a href="https://www.city.gifu.lg.jp/39142.htm"><img class="browser" src="secure/48489/banner1201.png" /><img class="smartphone" src="secure/48489/banner1201.png" /></a></h3>
 		
 	</div>
 </div>
-<div class="EndClear"></div>
+<div class="EndClear smartoff"></div>
 <!--Item end-->
 <!--Item start-->
 
-<a id="moduleid46871"></a>
+<a id="moduleid47946"></a>
 
 
 
 
 
-<a id="itemid47103"></a>
+<a id="itemid48490"></a>
 
-<div class="Item_Banner">
+<div class="Item_Banner2">
 	<div class="ModuleReference">
 		
-		<h3 class="base_img"><a href="38606.htm"><img class="browser" src="secure/47103/konzatu0803-2_s.png" alt="窓口・施設の混雑状況" title="窓口・施設の混雑状況" /><img class="smartphone" src="secure/47103/konzatu1102-2_s.png" alt="窓口・施設の混雑状況" title="窓口・施設の混雑状況" /></a></h3>
+		<h3 class="base_img"><a href="https://ai-staff.net/gifu/chat"><img class="browser" src="secure/48490/AI_new.png" alt="岐阜市AIチャット総合案内サービス" title="岐阜市AIチャット総合案内サービス" /><img class="smartphone" src="secure/48490/AI_new.png" alt="岐阜市AIチャット総合案内サービス" title="岐阜市AIチャット総合案内サービス" /></a></h3>
 		
 	</div>
 </div>
-<div class="EndClear"></div>
+<div class="EndClear smartoff"></div>
+<!--Item end-->
+<!--Item start-->
+
+<a id="moduleid47948"></a>
+
+
+
+
+
+<a id="itemid48492"></a>
+
+<div class="Item_Banner2">
+	<div class="ModuleReference">
+		
+		<h3 class="base_img"><a href="https://www.city.gifu.lg.jp/38606.htm"><img class="browser" src="secure/48492/crowdlamp4_s.png" alt="窓口・施設の混雑状況" title="窓口・施設の混雑状況" /><img class="smartphone" src="secure/48492/lampphone_s.png" alt="窓口・施設の混雑状況" title="窓口・施設の混雑状況" /></a></h3>
+		
+	</div>
+</div>
+<div class="EndClear smartoff"></div>
 <!--Item end-->
 <!--ItemNon start-->
 
@@ -2421,7 +2425,7 @@ setAdBannersRandom();
 <div class="aspNetHidden">
 
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0E8925E6" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="grxRNPT/Mg0Gy6Is3VIN8CRKIKKPQgzwWUez0GFBfOMvJ+SbVkl4sl7qMVBfMO97agFxQNrACREZguyBR9wz23kqi6X+Ao+SvxNOckG+vdLs/82MoRwMhTDhogG9+bUREih9xfSQbdio6D2+qHTtFNRwWfHMaxdZrqnRDh2TGpkv6Nz3" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="GV7e79RB+oRseXujB9ZDqsP5HLH0ox3qMODvtur7nceC6ZUJe2Jtb2w0KvWd1/ZHf5rKUAUyVYXLQGeH/kX27MfmCZETUBus+riLsslejtYfKjNe2Jyj1DqG2+SSG6W+oLCccYuuRC6jTzMGFw97C5ad6Rb50dezroR7vxiyn0TsaQzb" />
 </div></form>
 </body>
 </html>
