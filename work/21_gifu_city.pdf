@@ -80,7 +80,7 @@ else document.write('<link href="css/portal.css" type="text/css" rel="stylesheet
 <body >
   <form method="post" action="/" id="Form1" enctype="multipart/form-data" onsubmit="while(!i_site.loaded){ if(!confirm(&#39;送信準備が完了していません。再送信しますか？&#39;))return false;}return true;">
 <div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="CpEkkDIESjmvmBtDuPta4gyz08E5X35cGJO6K6prmOwlKdEDx1Bc6TfXusM+u9fkFY0FFWCQG9rc5AK1WkGdHtGkOn+SIAiiiQ6FEvx0MB0IlDs3fVDU+6fdco+/TzpRU4hHf9NJWW1PWkq+NkEpc4e6I8ngIpYhHysRW3/gmILQXi+cQJYXW2pOQm/31NXOIt3BphMLCYvNhD/UYAs4RzdKhAuXifULq+RNbqzJLdB0lsJfwGeb8y5lvz0wQGkxvPY6jvy6FnglswkZBRyAq7+tSPa8+y4R28EDPDBSMnjP679ipas5JWSAsZUuohzmNLkJseLmSqh3eHpKtmeKnCW1Lf65JLJiqjMNFrdLZFrpO5/DyOX6Q0bfCBflcqc88GIM0zwQwqXdjM2uhbjbMIlujWRSJ0rEv66NhRGXczLpzez4MMV63nMyqp2iih5ZyC97SiYjFJienHl9o0uF+XVoFu5NEWFDKnfnJkSTG/mMPZkLv4MOTf+0TMXWvr07U0gbilzPKyS5utTvHJTV6hU9YUfBkufcPqljlQW77+J7AGe80tTCqP5eM+10uiZzl/nCkQ9O/QiRKMxGsqFm/qupPvFS8szBn2kHrbnxgOisOlAqp08uknR1KTGJLd2nf1UKUBG0IiXbtpi9RYOu2edynnUCGZMcapaPZCpKxO6BkvCzArBoWK6Y6koB/q2c1dC6wjiLkdLpLmlhE07xFuaymtW+WTIvuPFnoXBVZoIVtpc8EbzPbuvMNX89F9eYCyNMpZqNXeEg2rlsUKA3O8krtdG4SSM12cN1R5Ue1uN3q3+Mh45/gqCOx2Sh81ESmt5p6PlFa9ncJlDUV304ZUZEL2cO4NGu5VqvNF2swUmb1FV04n1icTSrHpCP6RfvguSDv9DI3Fwnpl2rgCC/XrKKWKyqFS1HNqcoX47NRQiZG2GCmWfXkZKaxbG10cTu0SKJzFXT3oZPyuNQeX4XUVaryPq88KRugieRmuaRz4mVCB8pG8tNLTg0To3NVOCVhhMxQIuYCGg7hdJT3TYJYCEWkYDyhZZZna58M81Wzdxl/AB29/qX4Z9Ar2UoLbhWCyvZ0iPgQmPIpRdfjUWntP59fHRsuIsuKizGUXjp+cdmS0o7nKa26nd9+uAl5DZG/3/eEhzRAqSaH4ttwX1OFZ0DDge7DhYrtf0zYGvqWwy+RxSNk6eU46b4g+rQQjwG74NH+Ewsc6eANodIRBkVa9LYkJ0OTO1H+2lrP03p+sS0bSblgvMK5NmbuXSgxN7OzlG5JfHDvlKrBkaB/63LgUtlDKxIm9XElS1/CYoaBSRqCQRRw0t2vayvEfmQ7bZbCvqupqNeZineLnhRF8ylP+1hSmCkq8+e0w42W+c45tEEdwUfzIoSKs8FSVOK4eN3YL2vqVxOmQ3Hmx+NA59wgPZmbotoo/j1rhAPYlX0/27hwSV2ouHOvv9vek9Rvel3W8l2UCdvUHrQIt4PVyDtU+QPg5GEx36TRLo0Tdyjty4Hz5bBOkPSqoo/rnYsVQ1pCoireqGWeRjymuoLF51wIWUb9g6Ft9cSnYcdexv1IAbCCarxmMD3JJA8Hrk89iWa0qD/8gTfs1zu4gKaQd7rsDLyCCRz4lQDTZOwZlahNVDTb8wsXonMbBAARnyYK+v1h4+Hcw==" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="L0kgcExenloZMPNyABwKulnLwsKyfYBQw3yXOHNUrR0jpqj/bJYrcXIOX+t/qsgw/uc4wl9L6PLLEXNRPnP/EVhGUq0C5nGI0nElnvHRDldIm5RlTGJt21VyReJMzW11tnJg4KSTqmp7zHJrXegmv6Y1nOM7mVosO63Ub1O4kPHDmyECEc9ioBkTRUZUUH4QZG4ILNBQ4cFGL9DOEAg8vO5EE7IgLIWCc1mR5aMhju5fmQzhyLv+gH+Wqs/6a2FGf0LEg4pQjy9hC10lLDjCRJXVBReV7lOy51Gng8bQLGd6UQtlaxFqYwsTnur7SzFqEyC6PEc5uPrZA1sce9dcust+RE2tJhJLTNIf8HMAc/oueTtCBxAZdrLVUN0V6aGD4Ytlst0vxan/iV/ZtjQuz7KT/Q/aCcAk8XBHJlCn8oGQ5GLzvw7AqUNV8T3gyZPPPxQgMmHX1/jLMfuMiU+n3Tp/qEJOgwNFzH3/lyTQKX3XbEel+p0PCRcow63dpRve23qaqHZZt6UjxUBxlIJXTtD4X54p+0KD9glR9PvS/rCf06aRMCpYRc+w9ahYjWrkkzlp9sSAbekauQR1PcSWK7glzVD2tu7ikvZdQvSUXO7Dajfsg14sVnswuYriNCxb5ZcJX0n2XbqNQlYor459cOV0CR3BtCMZaFMg1kiNQKCvLl6zJQBRAQSpd/xIBKnEvVALZ2iAtFhkoVdM7TLW3M5B7LFD1Jo+BCdUKCqZpLMBs21LSK5nWpBGmqHWaF03zyMb9+5JzPtrSL119uMoyQQYydTVWE7ywWLUtTsGXzAKxRgUOQRem6yTeqh6Yp3OzrBeE1Pw9PNb4WoF7+DYeQu6449GswdtkYQL6hU7s+uVuUtF3zS191naWChGd7wTYjV8iFsrp9z4T1Ed2QD4GdEjFRTsDYUbDAVOZdLGbEZKVHLrS2EBXbMIAXJwHwphl2Kwf87ROhe5XMQC78u+UkasTa6zuvPrt3BnuMBVTSWju6QN+DD8sN4dY++aa6PcRZpvFLjUh1ODSAjzXGnKdGokOvpizRgp3jisucxPeEu/2L9SQy3+hTTlsITIJgm76qbg2qQSsR0QAM0AveWboA/ewLmybyoFjnUoEcv4MBr/qIFbMpNcaq5rum57wvYJNHs9CN0yY/C/3DISDppFUsa3wrbVlte3EWUr1AaCtWFPfqAfD45VCEi+sOsukI/T7qR7dcj8NaLTADl3viPLHdfj2NmQkQBRBt7ywNxdS4XZMDY6" />
 </div>
 
     <noscript id="NoScriptMessage">
@@ -1420,29 +1420,13 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
       
             <div class="Item">
               <div class="CDate">
-                11月2日～<br />&nbsp;&nbsp;11月30日
-                <br />18時00分～23時00分
-              </div>
-              <div class="Event_box_content">
-                <h3 class="Title">
-                  
-                  <a id="C23_15352_MenuList_ctl00_TitleLink" href="item/29440.htm#ContentPane">11月は児童虐待防止推進月間です。子ども虐待のない社会の実現をめざしオレンジリボン運動が行われています</a>
-                </h3>
-                <div class="Summary">
-                  
-                </div>
-              </div>
-            </div>
-          
-            <div class="Item">
-              <div class="CDate">
                 11月25日～<br />&nbsp;&nbsp;12月1日
                 <br />
               </div>
               <div class="Event_box_content">
                 <h3 class="Title">
                   
-                  <a id="C23_15352_MenuList_ctl01_TitleLink" href="item/43855.htm#ContentPane">11月25日～12月1日は犯罪被害者週間です。</a>
+                  <a id="C23_15352_MenuList_ctl00_TitleLink" href="item/43855.htm#ContentPane">11月25日～12月1日は犯罪被害者週間です。</a>
                 </h3>
                 <div class="Summary">
                   
@@ -1554,22 +1538,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C25_47519_MenuList_ctl04_TitleLink" href="item/47911.htm#ContentPane">岐阜市立保育所の民営化に伴い移管先法人を募集します</a>
-              
-              
-              <div class="Summary">
-                
-              </div>
-            </div>
-          </li>
-        
-          <li><span class="CreatedDate">
-            11月02日
-          </span>
-            <div class="R_Contents">
-              
-              
-              <a id="C25_47519_MenuList_ctl05_TitleLink" href="item/36066.htm#ContentPane">生活困窮者自立相談支援・家計改善支援及び包括的支援体制構築事業プロポーザル質問書に係る回答について</a>
+              <a id="C25_47519_MenuList_ctl04_TitleLink" href="item/36066.htm#ContentPane">生活困窮者自立相談支援・家計改善支援及び包括的支援体制構築事業プロポーザル質問書に係る回答について</a>
               
               
               <div class="Summary">
@@ -1584,7 +1553,22 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C25_47519_MenuList_ctl06_TitleLink" href="item/48148.htm#ContentPane">岐阜シティ・タワー43「初日の出」観覧　43階展望室特別入場の参加者募集について</a>
+              <a id="C25_47519_MenuList_ctl05_TitleLink" href="item/48148.htm#ContentPane">岐阜シティ・タワー43「初日の出」観覧　43階展望室特別入場の参加者募集について</a>
+              
+              
+              <div class="Summary">
+                
+              </div>
+            </div>
+          </li>
+        
+          <li><span class="CreatedDate">
+            10月28日
+          </span>
+            <div class="R_Contents">
+              
+              
+              <a id="C25_47519_MenuList_ctl06_TitleLink" href="item/48001.htm#ContentPane">草潤中学校応援寄附を募集しています～皆で育てる新たな形～</a>
               
               
               <div class="Summary">
@@ -2425,7 +2409,7 @@ setAdBannersRandom();
 <div class="aspNetHidden">
 
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0E8925E6" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="GV7e79RB+oRseXujB9ZDqsP5HLH0ox3qMODvtur7nceC6ZUJe2Jtb2w0KvWd1/ZHf5rKUAUyVYXLQGeH/kX27MfmCZETUBus+riLsslejtYfKjNe2Jyj1DqG2+SSG6W+oLCccYuuRC6jTzMGFw97C5ad6Rb50dezroR7vxiyn0TsaQzb" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="w4pySD6s9N0F/OVMAcd7fNexeSnzVFWjxVFpo13qw0UWhkvD90pSxfw0S9c7sLikIa2rbaxONy5dYPAfR31a41WFAjwiJmxleNZ78pc0K3aF6YyA3uW/6D9klqVvLZvc+y4oPrUMm9mDkgILxEXdQ+WnzRXYJj4+zCArBuW0KD3MDCBi" />
 </div></form>
 </body>
 </html>
