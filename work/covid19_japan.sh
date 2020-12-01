@@ -500,17 +500,31 @@ curl -s -o 22_shizuoka_city.csv $url
 
 #23 愛知県
 # 前月分までのPDF
+before_hash=`md5 23_aichi1.pdf`
 link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --xpath '//*[contains( ./text(),"10月まで [PDFファイル／")]/@href' - | cut -d\" -f 2`
 url="https://www.pref.aichi.jp/$link"
 curl -s -o 23_aichi1.pdf $url
+after_hash=`md5 23_aichi1.pdf`
+
+if [ "$before_hash" != "$after_hash" ]; then 
+  python 23_aichi.py 23_aichi1.pdf > 23_aichi1.csv
+fi
 
 # 当月分のPDF
+before_hash=`md5 23_aichi2.pdf`
 link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --xpath '//*[contains( ./text(),"11月 [PDFファイル／")]/@href' - | cut -d\" -f 2`
 url="https://www.pref.aichi.jp/$link"
 curl -s -o 23_aichi2.pdf $url
+after_hash=`md5 23_aichi2.pdf`
 
-xlsx2csv -a 23_aichi1.xlsx > 23_aichi1.csv
-xlsx2csv -a 23_aichi2.xlsx > 23_aichi2.csv
+if [ "$before_hash" != "$after_hash" ]; then 
+  python 23_aichi.py 23_aichi2.pdf > 23_aichi2.csv
+fi
+
+#xlsx2csv -a 23_aichi1.xlsx > 23_aichi1.csv
+#xlsx2csv -a 23_aichi2.xlsx > 23_aichi2.csv
+#python 23_aichi.py 23_aichi1.pdf > 23_aichi1.csv
+#python 23_aichi.py 23_aichi2.pdf > 23_aichi2.csv
 
 ( echo "No,発表日,年代・性別,国籍,住居地,接触状況,備考"
   cat 23_aichi1.csv 23_aichi2.csv \
