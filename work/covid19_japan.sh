@@ -729,6 +729,7 @@ url="https://www.pref.nagasaki.jp$link"
 curl -s -o 42_nagasaki.pdf $url
 
 #43 熊本県
+<<skip_kumamon
 link=`curl -s "https://www.pref.kumamoto.jp/kiji_22038.html" \
  | xmllint --html --xpath '//table/tbody/tr[3]/td[4]//ul/li/a/@href' - \
  | cut -d\" -f 2 | sed -e 's/&amp;/\&/g'`
@@ -736,6 +737,7 @@ curl -s $link | iconv -f SJIS > 43_kumamoto.csv
 if [ $? != 0 ] ; then
   curl -s $link > 43_kumamoto.csv
 fi
+skip_kumamon
 
 #44 大分県
 url="https://data.bodik.jp/dataset/f632f467-716c-46aa-8838-0d535f98b291/resource/3714d264-70f3-4518-a57a-8391e0851d7d/download/440001oitacovid19patients.csv"
