@@ -112,8 +112,14 @@ cat 02_aomori.csv | awk -F, -f 02_aomori.awk > 02_aomori2.csv
 #cat 02_aomori.csv | cut -d, -f 1,4 | grep "八戸市保健所管内" | sort -t, -k 1n | nl -s, | awk -F, '{printf "%d,%d\n",$1,$2}' >> 02_hachinohe_case_number.csv
 
 #03 岩手県
-url="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1029635/index.html"
-ruby ccc2.rb $url > 03_iwate.csv
+( echo "区分,年代,性別,居住地,判明した日,接触者等,備考"
+  url="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1029635/index.html"
+  ruby ccc2.rb $url | awk 'NR>1'
+  url="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1034904/index.html"
+  ruby ccc2.rb $url | awk 'NR>1'
+  url="https://www.pref.iwate.jp/kurashikankyou/iryou/covid19/1035205/index.html"
+  ruby ccc2.rb $url | awk 'NR>1'
+) > 03_iwate.csv
 cat 03_iwate.csv| awk -F, -f 03_iwate.awk > 03_iwate2.csv
 
 #04 宮城県
