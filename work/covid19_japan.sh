@@ -541,6 +541,15 @@ fi
   ruby 23_aichi.rb 23_aichi.csv
 ) > 23_aichi3.csv
 
+# 岡崎市
+url="https://www.city.okazaki.lg.jp/1550/1562/1615/p025980_d/fil/kanjajyokyo.pdf"
+curl -s -o 23_okazaki_city.pdf $url
+( 
+  echo "市No,陽性判明日,年代,性別,治療終了日"
+  python 23_aichi.py 23_okazaki_city.pdf | grep '^[1-9]' \
+    | awk -F, -f 23_okazaki_city.awk
+) > 23_okazaki_city_patients.csv
+
 #24 三重県
 url="https://www.pref.mie.lg.jp/common/content/000896797.csv"
 curl -s $url | iconv -f SJIS > 24_mie.csv
@@ -753,6 +762,11 @@ url="https://www.pref.nagasaki.jp$link"
 curl -s -o 42_nagasaki.pdf $url
 
 #43 熊本県
+link=`curl https://www.pref.kumamoto.jp/soshiki/211/50632.html \
+   | xmllint --html --xpath '//*[@id="main_body"]/div/table/tbody/tr[2]/td[3]/a' - | cut -d\" -f 2`
+curl -s -o 43_kumamoto.xlsx "https://www.pref.kumamoto.jp$link"
+xlsx2csv -f '%Y-%m-%d' 43_kumamoto.xlsx > 43_kumamoto.csv
+
 <<skip_kumamon
 link=`curl -s "https://www.pref.kumamoto.jp/kiji_22038.html" \
  | xmllint --html --xpath '//table/tbody/tr[3]/td[4]//ul/li/a/@href' - \
