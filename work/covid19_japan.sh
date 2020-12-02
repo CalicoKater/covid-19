@@ -501,7 +501,8 @@ curl -s -o 22_shizuoka_city.csv $url
 #23 愛知県
 # 前月分までのPDF
 before_hash=`md5 23_aichi1.pdf`
-link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --xpath '//*[contains( ./text(),"10月まで [PDFファイル／")]/@href' - | cut -d\" -f 2`
+#link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --xpath '//*[contains( ./text(),"10月まで [PDFファイル／")]/@href' - | cut -d\" -f 2`
+link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --xpath '//*[@id="main_body"]/div[1]/p[3]/span[2]/a[2]/@href' - | cut -d\" -f 2`
 url="https://www.pref.aichi.jp/$link"
 curl -s -o 23_aichi1.pdf $url
 after_hash=`md5 23_aichi1.pdf`
@@ -512,7 +513,9 @@ fi
 
 # 当月分のPDF
 before_hash=`md5 23_aichi2.pdf`
-link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --xpath '//*[contains( ./text(),"11月 [PDFファイル／")]/@href' - | cut -d\" -f 2`
+#link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --xpath '//*[contains( ./text(),"12月 [PDFファイル／")]/@href' - | cut -d\" -f 2`
+link=`curl -s https://www.pref.aichi.jp/site/covid19-aichi/ | xmllint --html --xpath '//*[@id="main_body"]/div[1]/p[3]/span[2]/a[1]/@href' - | cut -d\" -f 2`
+
 url="https://www.pref.aichi.jp/$link"
 curl -s -o 23_aichi2.pdf $url
 after_hash=`md5 23_aichi2.pdf`
