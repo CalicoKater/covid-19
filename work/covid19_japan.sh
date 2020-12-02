@@ -544,10 +544,11 @@ fi
 # 岡崎市
 url="https://www.city.okazaki.lg.jp/1550/1562/1615/p025980_d/fil/kanjajyokyo.pdf"
 curl -s -o 23_okazaki_city.pdf $url
-( 
-  echo "市No,陽性判明日,年代,性別,治療終了日"
-  python 23_aichi.py 23_okazaki_city.pdf | grep '^[1-9]' \
-    | awk -F, -f 23_okazaki_city.awk
+
+( echo "市No,陽性判明日,年代,性別,治療終了日"
+  ( pdftotext -layout -x 60 -y 50 -W 230 -H 750 23_okazaki_city.pdf - 
+    pdftotext -layout -x 300 -y 50 -W 230 -H 750 23_okazaki_city.pdf - 
+  ) | awk -f 23_okazaki_city.awk | sort -n -k 1 
 ) > 23_okazaki_city_patients.csv
 
 #24 三重県
