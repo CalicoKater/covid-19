@@ -551,6 +551,16 @@ curl -s -o 23_okazaki_city.pdf $url
   ) | awk -f 23_okazaki_city.awk | sort -n -k 1 
 ) > 23_okazaki_city_patients.csv
 
+# 豊田市
+link=`curl -s https://www.city.toyota.aichi.jp/kurashi/kenkou/eisei/1037578.html \
+  | grep "検査陽性者の属性" | xmllint --html --xpath '//*/@href' - | cut -d\" -f 4`
+url="https://www.city.toyota.aichi.jp/kurashi/kenkou/eisei/$link"
+curl -s -o 23_toyota_city.pdf $url
+
+( echo "発生番号,届出日,年代,性別,治療終了"
+  pdftotext -layout 23_toyota_city.pdf - | awk '$1+0>=1{split($2,date,/月|日/); printf "%d,2020-%02d-%02d,%s,%s,%s\n", $1, date[1], date[2], $3, $4, $5;}'
+) > 23_toyota_city_patients.csv
+
 #24 三重県
 url="https://www.pref.mie.lg.jp/common/content/000896797.csv"
 curl -s $url | iconv -f SJIS > 24_mie.csv
