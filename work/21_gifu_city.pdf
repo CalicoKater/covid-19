@@ -80,7 +80,7 @@ else document.write('<link href="css/portal.css" type="text/css" rel="stylesheet
 <body >
   <form method="post" action="/" id="Form1" enctype="multipart/form-data" onsubmit="while(!i_site.loaded){ if(!confirm(&#39;送信準備が完了していません。再送信しますか？&#39;))return false;}return true;">
 <div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="9HC6q9rAewsPaxLVVkBVB9nfKy4+VWBnW3UfnWD9WxmrgbLec0H6peOzI/VpDSaKIx06k5oZaYQ4k+67nujv3SYslfzffpONY85xBRAp7POsR9wyAzYneaonJ13VXr6yJ7XTK21bMqariE1HZxVesbm/mb0iJmmTSMBzZe90P8wCgz9ALJe7z26APbFnlYPNyfL7JGGD7rvtvt1MTeLEOApklmfiVgDvvkS3NRWWez6QJfnRhl060M5FkXBf5pdjkAfOgIKixdt0ZmRcXDsE8/COXNvq/8PKHTLJy9ozjRficVgpiediHdEjKdMq4N+JgXne8JngnOT4nGPHqV63mzvGvSduoH0guzHA3gK8JwoTF7wUG75gHkSyinJbCZVvVOwb6lSNlmOenBDUG5x0MIbUflfckPu8yoFCovJBbuHaKh2mk42sd3yX9BFWUTRMTnDXXYd9U6XNLNzpRgR67z86ZpA1TO0od91oFHcH2OXamFEVcW+mmOHCH/ecoGEDk6YgbXdrRnQsOoibErhs41ufRlFAIql9ariPmH+Iyq8vEeXEfkQgXWfHe7il/1pH0uiWecMi9DGgVj3AGJPObt3QN2V6TQLWUZICNO9McTjtXE0hPnV/hu8L9JPVsymxEaeUNr4WEjjC3GHQ2OuqgQWD7SLO4EY6Si2kvK0FLr7HQXOgUc5F9bJpyD11J/T5hi+r4BAfW5L4rdirpNPPUJyHA5XzvS7BYUkQF+eVyovn3ljAV9H4GvmxjjLb3Qu/ujd6XjWibtsiNiVe0kM33e1n9s3zBqzG4IJbrDVjFT5qHc9MUhUkjjZe5i7qA6RucBtu5fI6fHxn3rFx9wdN69PhUmg0UnU8b1HP7O7/Qbr7tZ6lN1zW6/aeqaO+XXv5ygKUSIDPhCAB34J3npzfdDRFXtFO6jcr4zB4iDF/R+PgU2vWZAz/UeOetOaUuhsCOR/brCnr5bk1/bwDIZ+q4dovj13/khvW5LQDJCFcG++b16cAxqGclhC+ff+3tCNNXeGGMNrufOzd16vwNprU64ylO47VGatVqydsJT8CNgOo8BNH8v2u+ZtIiMw6TL251hXBuScXFwXInVoDrg9IYOCKwFt3hKu+XSw8mo6epZ3CYdli7qRfgz4jkoLhG+9969j7MNBPu1vTcruKGQsAThsBEaq38AM1RF7VdF9NjEYxWGeCECsmvOEdciUHmSe/xwRY8ZrYcf5RJHjK55yKx4o5Y8I0XMchjotSkjKL7NZmdD40BUO13yJnkr++42thFfMNyJMiqSxfvxbD7C9aENPE2SJc/M9JTklAYvNEOZ+ndxBQc/tyPWhuHovIUtY77R55iz/U9ZWzIbFaFv4Vdhx68XtsltwIwcyoKpSY5NBRp1KEy5ST7phfLWADKKJzC8PqhW4VfYhhhiijXcS9AhpTDTK6YGeyBfJgTInhIp1y/EDsCP54iu0kjXppJNuEeA3zdxmpaXxKZmk9P2qSalAIdG1B1DXqg5cF1hqegOSvSHb4TKHpC3INdfXU3zUPCwiojA==" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="RB01coaR78Pnm8O99JlMpxJCw8/P/s6m0lNv/2v9FhfHx67iqLrnhoT4P4YCbGybep/K3Upo63PMZ+WVqZxHE4m0z/t1sCA/2if8djGx0/I17m5dahAX6EL99AKD18lUSpCJuxbmKmLOQ5XZIkvgyljrDsrmUpaAbXC9M2cX/BXweso/JbVfU2QPEPR/BKGtoLM0LNau1HN+I8McxVo94QDyD17e1Vpnkaoxl2cnKLASBJ4V2fQmaIofrKtqOITFOJrk44c2asyHFFygofsWgP91+yPHIeHkRSKmM297ZqfvzqAisALi2T6g6iqdxk64vHzPNrcxoGUcHa0kL2ChncgwoW4dDiRyq1O81+vQBz8IbjomIdDFTAB3uqEIUwDRT/g7VgcC62+0lfuQe5T8pDdwh9VAuKLIUMv30+PN9WHvCBB0Tf2/GNNLPxY7PeE3kPh8K/yyAHxJAyKq9SE+I4/nZymP5RE5m3DWiSfM1U0TxNPENsCdO22zf/NLEEOTzldauefqnCwP/hCK12sGK6eZ2oCKYxs1LEQyZc9YK2t2ya1CP4pgeoeLcF/ijSh9KAjsvj3tn+A+SX5Ze5d5aimBlnROQN3o61XugM86mGJ147r5sJiyepjYNgFACh00bqIeCpfUHwILwzD3INbCxsLpFNzVOc8UDPy0KqISdvLvD7E/kNHuz2xg75gb3jGo8EcScwKfqcllM4/ZHDmHeoL/t7XzeGb7RnKqYXs5ia6CF+U5Rx76wRVjlFNRUU9EVAC+3DLRPqmkkMwtO1M3jIYM6TJaTkFi3en06G+GvQwOPt2/huX6GRgJzF1twB3GpavUEWb0DEtDEn6DU61O8VoKKq8JFxyG/MJTY0xNT6oqhMcduopBCyuJwljA3CTXBp1lT7JYZ3mvdDwsv3zakxF9ifol42zLL3xK1wmd4UYMmruvYLoIgsAuyUY7xBWRgxKmCDi47M9wVyUGCwvwblecKyl+aXVZjPhOF4LH2SmDvbNL90/rMb1mRdFeQH5NwPTdnAh+3t2sFFFvkhBimTPz1NfeQ83KXZj9plGY2piZz0rN0WAgwPA2AdX3VM3lxLsjjUt9RANgYsjHfGnX0Ra9PrWCM/bkkCjLaerEkfUYeWlUOb+ryBHZFcb+a73sc4XevAmCNZRq19nJ5F/fZG1zdfrHPYpcTG7skB/rNZbwHgBg3eK3SIl7Aw8DpVKyuT4/m1VCgwBDPlOu3QSVFz5LayvKzXzgGv49fUQhvf+HaZ3bCAO8lXw4tuBr3HXxewh9nEInOuw9XxipxBrvLtaoFZ+LXREDiJJYwJLAn7bx+CnmGDqh6VaXw1zE0bA+oalD9PodkiymH97/3whArucFJ0QVCK70joXQpqaSRxwc9YmkFIct3gNKntzX2pC6R/k0zUA5n3Uzc8vL5l0LoqrNSizlJyCn7MUmASjFFXIlgqFG4VnsTQ4ScFk2SM/lhQuFztIx8rO4YkggAXw16moRs596n6cQOhPwpDawzhiQ3FQQkglVyng1+dB1Uv5awKoHHGzMBSj9W5ogi/saopqJbjjgcbtfuS8de+Gk6N6myJXqBKGiu8HjofZtqT01NfNob95e0v9BwiyRra7bsvd8OJYvv1RVYCLWrLs/yfBl1O11EjfGm/GmZintvxV0DP7nmBY3lsa2qpaFMu+/nsGh6oW5iei2TO2OAPDfckNU7AoBGEJE7zuQW0u6veYBXluxM8L7VJ8rOdgfzfzlU2bRd95Oh/dj1C2Eo9TJwNDTyDvbOUGeE7/Lg3uy/6mXmr1wKREoeMl1A6BgblTvUe4ubZur4ZOd3GaIaPNXFuJQHx9v7bPzZwR7xPJr+1QOi3vddjOT7jZSINjfMcc4Wd211gGfb8/ym80zgXXjT4+PlEBNbhw+/5nMy0c6ksBRyv9grWBZvl0fZjM2CPvDrJmzMYfLTUv28ViGy4WuaMxnD7saSFS4RVcyFndJ+0fKSdgP3Q==" />
 </div>
 
     <noscript id="NoScriptMessage">
@@ -1143,7 +1143,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
     <ul>
       
           <li><span class="CreatedDate">
-            12月05日
+            12月06日
           </span>
             <div class="R_Contents">
               
@@ -1448,13 +1448,13 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
 <a class="Fix_eventlistlink" href="10353.htm">一覧へ</a>
 <!--
         <div class="Prev">
-          <a id="C23_15352_PrevWeekLink" href="dd.aspx?moduleid=15352&amp;pfromdate=763707#moduleid15352"><img src="../../../Images/b_lt.gif"  alt="前週へ" />前週へ</a>
+          <a id="C23_15352_PrevWeekLink" href="dd.aspx?moduleid=15352&amp;pfromdate=763807#moduleid15352"><img src="../../../Images/b_lt.gif"  alt="前週へ" />前週へ</a>
         </div>
         <h2 class="Term">
-          2020年12月5日～2020年12月11日
+          2020年12月6日～2020年12月12日
         </h2>
         <div class="Next">
-          <a id="C23_15352_NextWeekLink" href="dd.aspx?moduleid=15352&amp;pfromdate=765107#moduleid15352">翌週へ<img src="../../../Images/b_rt.gif"   alt="翌週へ" /></a>
+          <a id="C23_15352_NextWeekLink" href="dd.aspx?moduleid=15352&amp;pfromdate=765207#moduleid15352">翌週へ<img src="../../../Images/b_rt.gif"   alt="翌週へ" /></a>
         </div>
 -->
       </div>
@@ -1489,6 +1489,38 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
                 <h3 class="Title">
                   
                   <a id="C23_15352_MenuList_ctl01_TitleLink" href="item/20446.htm#ContentPane">第27回岐阜市「オンリーワンわたしたちの芸術祭」の開催について</a>
+                </h3>
+                <div class="Summary">
+                  
+                </div>
+              </div>
+            </div>
+          
+            <div class="Item">
+              <div class="CDate">
+                12月12日
+                <br />11時00分～15時00分
+              </div>
+              <div class="Event_box_content">
+                <h3 class="Title">
+                  
+                  <a id="C23_15352_MenuList_ctl02_TitleLink" href="item/48548.htm#ContentPane">12月12日(土曜日)にサポカー体験会を行います！</a>
+                </h3>
+                <div class="Summary">
+                  
+                </div>
+              </div>
+            </div>
+          
+            <div class="Item">
+              <div class="CDate">
+                12月12日
+                <br />18時00分～19時00分
+              </div>
+              <div class="Event_box_content">
+                <h3 class="Title">
+                  
+                  <a id="C23_15352_MenuList_ctl03_TitleLink" href="item/14561.htm#ContentPane">★星を見る会</a>
                 </h3>
                 <div class="Summary">
                   
@@ -2471,7 +2503,7 @@ setAdBannersRandom();
 <div class="aspNetHidden">
 
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0E8925E6" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="DeOc2vsFd02JkEjhvVJF1269kgmaCpx5FYIjSYMfFqJjCbcJhcmBem7VcFmf2lNkLbPc+S0TQhmpAPAqExhiL/xkidCsrKhepYwcDPwK2KSgvcxI/6SDTgiyJ/8mDcufYCen8hT+hePs0qzQNOjHiAvHfQ7tUNsw56Ki8jVn6JovMu1p" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="rg3Vrsmg6w+8CLvrZvcDt/PMJWM4ox2rwU2Bawz26xeU/l02WBup7pMvvUS9wiiQmwDPSx+vE/axq2PXtBsvOjRY6JkT+VLAnRFmkdZa/9XdbTefoayOzVbugzvlrDuCWQ0Pe01NcbffZYn8l9h/ZdZVqlw/vHXJ3nK/Ls0gRBhXc7sI" />
 </div></form>
 </body>
 </html>
