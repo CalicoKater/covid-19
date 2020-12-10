@@ -732,7 +732,9 @@ url="https://www.pref.tokushima.lg.jp/ippannokata/kenko/kansensho/5034012"
 
 #37 香川県
 url="https://www.pref.kagawa.lg.jp/content/etc/subsite/kansenshoujouhou/kansen/se9si9200517102553.shtml"
-ruby ccc2.rb $url 3 | awk -F, -f 37_kagawa.awk > 37_kagawa.csv
+#ruby ccc2.rb $url 3 | awk -F, -f 37_kagawa.awk > 37_kagawa.csv
+ruby ccc2.rb $url | awk -F, -f 37_kagawa.awk > 37_kagawa.csv
+
 url="https://opendata.pref.kagawa.lg.jp/dataset/359/resource/4390/%E6%A4%9C%E6%9F%BB%E4%BB%B6%E6%95%B0.csv"
 curl -s $url | iconv -f SJIS > 37_kagawa2.csv
 # 高松市
@@ -773,10 +775,15 @@ url="https://www.pref.nagasaki.jp$link"
 curl -s -o 42_nagasaki.pdf $url
 
 #43 熊本県
-link=`curl https://www.pref.kumamoto.jp/soshiki/211/50632.html \
-   | xmllint --html --xpath '//*[@id="main_body"]/div/table/tbody/tr[2]/td[3]/a' - | cut -d\" -f 2`
-curl -s -o 43_kumamoto.xlsx "https://www.pref.kumamoto.jp$link"
-xlsx2csv -f '%Y-%m-%d' 43_kumamoto.xlsx > 43_kumamoto.csv
+#link=`curl https://www.pref.kumamoto.jp/soshiki/211/50632.html | xmllint --html --xpath '//*[@id="main_body"]/div/table/tbody/tr[2]/td[4]/a' - | cut -d\" -f 2`
+#   | xmllint --html --xpath '//*[@id="main_body"]/div/table/tbody/tr[2]/td[3]/a' - | cut -d\" -f 2`
+#curl https://www.pref.kumamoto.jp/soshiki/211/50632.html | xmllint --html --xpath '//*[@id="main_body"]/div[2]/div[1]/div/div/table/tbody/tr[2]/td[4]/p/a' -
+url="https://www.pref.kumamoto.jp/soshiki/211/50632.html"
+link=`curl $url | xmllint --html --xpath '//*[@id="main_body"]//div/table/tbody/tr[2]/td[4]/p/a/@href' - | cut -d\" -f 2`
+curl -s "https://www.pref.kumamoto.jp$link" -o 43_kumamoto.csv
+
+#curl -s -o 43_kumamoto.xlsx "https://www.pref.kumamoto.jp$link"
+#xlsx2csv -f '%Y-%m-%d' 43_kumamoto.xlsx > 43_kumamoto.csv
 
 <<skip_kumamon
 link=`curl -s "https://www.pref.kumamoto.jp/kiji_22038.html" \
