@@ -480,7 +480,8 @@ pdftotext -layout 21_gifu.pdf - | awk -f 21_gifu.awk > 21_gifu2.csv
 
 link=`curl -s "https://www.city.gifu.lg.jp/item/44927.htm" \
   -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36' \
-  | grep "市内の感染者発生状況一覧" | xmllint --html --xpath '//*/@href' - | cut -d\" -f 2`
+  | grep "市内の発生状況一覧" | xmllint --html --xpath '//*/@href' - | cut -d\" -f 2`
+#  | grep "市内の感染者発生状況一覧" | xmllint --html --xpath '//*/@href' - | cut -d\" -f 2`
 curl -s -o 21_gifu_city.pdf https://www.city.gifu.lg.jp/$link \
   -H 'User-Agent: Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Mobile Safari/537.36'
 
