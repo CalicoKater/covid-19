@@ -203,7 +203,8 @@ ruby ccc2.rb $url 0 | awk -F, '$2+0>0' >> 07_iwaki_city.csv
 
 #08 茨城県
 url="https://www.pref.ibaraki.jp/1saigai/2019-ncov/ichiran.html"
-ruby ccc2.rb $url > 08_ibaraki.csv
+ruby ccc2.rb $url \
+  | awk -F, '$0=="12/4,（坂東市）社会福祉法人施設発生資料　58名分（PDF：392KB）"{for (i=1; i<= 58; i++) print "12/4";}$0!="12/4,（坂東市）社会福祉法人施設発生資料　58名分（PDF：392KB）"{print $0}' > 08_ibaraki.csv
 
 #cat 08_ibaraki.csv | awk -F, -f 08_ibaraki.awk > 08_ibaraki2.csv
 (
@@ -450,7 +451,8 @@ ruby 19_yamanashi.rb 19_yamanashi.csv > 19_yamanashi2.csv
 #20 長野県
 url="https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/documents/200000_nagano_covid19_patients.csv"
 #url="https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/documents/200000_nagano_covid19_patients_2.csv"
-curl -s $url | iconv -f SJIS  > 20_nagano.csv
+#curl -s $url | iconv -f SJIS  > 20_nagano.csv
+curl -s $url | iconv -f CP932  > 20_nagano.csv
 awk -F, -f 20_nagano.awk 20_nagano.csv > 20_nagano3.csv
 
 url="https://www.pref.nagano.lg.jp/kansensho-taisaku/happyou/allpressrelease.html"
