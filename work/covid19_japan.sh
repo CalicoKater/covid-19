@@ -174,8 +174,20 @@ ruby ccc2.rb $url 4 > 06_yamagata3.csv
 #cat 06_yamagata3.csv | grep -e '山形市.*公表' | cut -d, -f 2,6 | sed -e 's/公表.*//g' | sed y/０１２３４５６７８９/0123456789/ | sed -e 's/[^0-9|,]//g' >> $output
 
 #07 福島県
-url="https://www.pref.fukushima.lg.jp/sec/21045c/fukushima-hasseijyoukyou.html"
-ruby ccc2.rb $url > 07_fukushima.csv
+csv="07_fukushima_patients_03_11.csv"
+seq -w 3 11 | while read month
+do
+  url="https://www.pref.fukushima.lg.jp/sec/21045c/fukushima-hasseijyoukyou02$month.html"
+  ruby ccc2.rb $url | awk 'NR>1'
+done > $csv
+( 
+  url="https://www.pref.fukushima.lg.jp/sec/21045c/fukushima-hasseijyoukyou.html"
+  ruby ccc2.rb $url 
+  cat $csv
+) > 07_fukushima.csv
+
+#url="https://www.pref.fukushima.lg.jp/sec/21045c/fukushima-hasseijyoukyou.html"
+#ruby ccc2.rb $url > 07_fukushima.csv
 #cat 07_fukushima.csv | awk -F, -f 07_fukushima.awk  > 07_fukushima3.csv
 cat 07_fukushima.csv | gawk -v FPAT='([^,]+)|(\"[^\"]+\")' -f 07_fukushima.awk  > 07_fukushima3.csv
 
