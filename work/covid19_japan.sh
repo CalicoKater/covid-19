@@ -735,6 +735,7 @@ pdftotext -layout 35_yamaguchi.pdf - \
 
 #36 徳島県
 # ※確認日に年が入っていない
+<<skip_tokushima
 url="https://www.pref.tokushima.lg.jp/ippannokata/kenko/kansensho/5034012"
 ( #ruby ccc2.rb $url 2
   #ruby ccc2.rb $url 3
@@ -744,6 +745,11 @@ url="https://www.pref.tokushima.lg.jp/ippannokata/kenko/kansensho/5034012"
 ( echo "症例番号,確認日,年代,性別"
   grep -e '^[0-9]' 36_tokushima.csv | awk -F, -f 36_tokushima.awk
 ) > 36_tokushima2.csv
+skip_tokushima
+url="https://www.pref.tokushima.lg.jp/ippannokata/kenko/kansensho/5034012"
+( cat 36_tokushima3.csv
+  ruby ccc2.rb $url 5
+) | sort | uniq > 36_tokushima3.csv
 
 #37 香川県
 url="https://www.pref.kagawa.lg.jp/content/etc/subsite/kansenshoujouhou/kansen/se9si9200517102553.shtml"
