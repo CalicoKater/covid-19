@@ -153,7 +153,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <p align="center"><a href="/a0301/covid19_sougousite.html"><img alt="総合サイトトップ小バナー" width="350" height="170" src="/images/top_sogosite_2.png" /></a></p>
             </div>
             <div class="col2R">
-            <p align="center"><a href="/a0801/kyoryokukin.html"><img alt="協力金第2期小バナー" width="350" height="170" src="/images/top_kyouryokukin_2.jpg" /></a></p>
+            <p align="center"><a href="/a0710/hpsearch.html"><img alt="埼玉県指定 診療・検査医療機関検索システム小バナー" width="350" height="170" src="/images/top_kensakikan2yamazaki.png" /></a></p>
             </div>
 </div>
 <p>&nbsp;</p>
@@ -164,7 +164,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 <li><a href="/a0710/hpsearch.html">発熱等の症状があり、医療機関をお探しの方</a>（11月27日掲載） </li>
                 <li><a href="/a0401/covid19/saitamaken_kyouyokuyousei1124.html">営業時間の短縮要請等について(特措法に基づく協力要請)</a>(12月15日掲載) </li>
                 <li><a href="/a0801/kyoryokukin.html">特措法要請に基づく営業時間短縮に対する協力金について</a>（12月15日掲載） </li>
-                <li><a href="/a0701/covid19/governors_message.html">新型コロナウイルス対策本部会議後の知事発言</a>（12月15日掲載） </li>
+                <li><a href="/a0701/covid19/governors_message.html">年末年始の新型コロナの外来診療・検査体制に関する知事発言内容</a>（12月18日掲載） </li>
                 <li><a href="/a0401/covid19/newyearsholidays.html">知事からのお願い（職場内、年末年始の行事等の感染防止）</a>（12月1日掲載） </li>
                 <li><a href="/a0603/cluster-taisaku.html">福祉施設におけるクラスター発生防止の緊急対策について</a>（11月26日掲載）&nbsp;&nbsp; </li>
                 <li><a href="/a0701/kansen/fluvc-josei.html">65歳以上の皆さん、早期のインフルエンザ予防接種を！</a>(9月30日掲載) </li>
@@ -184,9 +184,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="shinchaku_list">
 <ul>
 <li><a href="/a0710/top-news/nw20201201-01.html">発熱等の症状があり、医療機関をお探しの方</a>12月2日<span>感染症対策課</span></li>
+<li><a href="/a0301/top-news/nw2020121801.html">運転免許証の有効期間の延長について</a>12月18日<span>広聴広報課</span></li>
 <li><a href="/a0701/top-news/nw2020121702.html">新型コロナウイルスに関連した患者等の発生について（県内10839例目～10863例目、10924例目～11024例目 県発表7336例目～7461例目）</a>12月17日<span>感染症対策課</span></li>
 <li><a href="/a0701/top-news/nw2020121701.html">新型コロナウイルスに関連した患者の死亡について</a>12月17日<span>感染症対策課</span></li>
-<li><a href="/a0301/top-news/nw2020121601.html">【ゴルゴ松本さん出演！ぶら街深谷市】12月19日（土曜日）テレ玉放送</a>12月17日<span>広聴広報課</span></li>
 <li><a href="/a0701/top-news/nw2020121601.html">新型コロナウイルスに関連した患者等の発生について（県内10670例目～10686例目、10745例目～10838例目 県発表7225例目～7335例目）</a>12月16日<span>感染症対策課</span></li>
 </ul>
 </div>
@@ -203,6 +203,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
    
         <li>
+<a href="/a0001/news/page/2020/1219-01.html">新型コロナウイルスに関連した患者等の発生について（県内11230例目～11243例目、11321例目～11468例目 県発表7590例目～7751例目）</a>
+12月19日18時45分<span>感染症対策課</span>
+        </li>
+   
+        <li>
+<a href="/a0001/news/page/2020/1218-14.html">新型コロナウイルスに関連した患者等の発生について（県内11025例目～11042例目、11120例目～11229例目 県発表7462例目～7589例目）</a>
+12月18日18時30分<span>感染症対策課</span>
+        </li>
+   
+        <li>
+<a href="/a0001/news/page/2020/1218-11.html">地方独立行政法人埼玉県立病院機構理事長の内定について</a>
+12月18日16時30分<span>経営管理課</span>
+        </li>
+   
+        <li>
 <a href="/a0001/news/page/2020/1218-13.html">令和2年12月定例会議案等に対する議決結果</a>
 12月18日15時30分<span>議事課</span>
         </li>
@@ -210,21 +225,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <li>
 <a href="/a0001/news/page/2020/1218-01.html">県債の格付において、地方公共団体で最上位である「ＡＡ(ダブルエー)＋(プラス)」を維持</a>
 12月18日15時00分<span>企画財政部</span>
-        </li>
-   
-        <li>
-<a href="/a0001/news/page/2020/1218-12.html">令和3年度埼玉県公立高等学校入学者選抜におけるさいたま市立高等学校及び川越市立高等学校の出願手続等の変更について</a>
-12月18日13時00分<span>高校教育指導課</span>
-        </li>
-   
-        <li>
-<a href="/a0001/news/page/2020/1218-10.html">令和3年度埼玉県公立学校教員採用選考試験民間企業経験者特別選考試験を実施します</a>
-12月18日11時30分<span>教職員採用課</span>
-        </li>
-   
-        <li>
-<a href="/a0001/news/page/2020/1218-02.html">令和2年度埼玉県政世論調査結果（最終報告）について～「生活意識」などに加え、「県民の環境への関心と行動」「川の再生」について調査を行いました～</a>
-12月18日11時00分<span>広聴広報課</span>
         </li>
    
 </ul>
