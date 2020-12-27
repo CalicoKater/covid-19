@@ -29,13 +29,12 @@
 <script type="text/javascript" src="/share/scripts/jqueryrwdimagemapsmin.js"></script>
 <script type="text/javascript" src="/share/scripts/general.js"></script>
 <script type="text/javascript" src="/share/scripts/kanabovoice.js"></script>
-<script type="text/javascript" src="/share/scripts/kanaboweb20.js"></script>
+<script type="text/javascript" src="/share/scripts/kanaboweb_s.1.1.0.js"></script>
 <script language="JavaScript">
 KanaboVoice.host_url = "//voice.kanabo.com/s/cloud/city/saitama/default.ashx?";
 KanaboVoice.host_id = "city.saitama";
 </script>
 <script language="JavaScript">
-	KanaboWeb.host_url = "http://furigana.city.saitama.jp/saas/default.ashx?";
 	KanaboWeb.host_id = "city.saitama";
 </script>
 
@@ -392,4 +391,4 @@ $("#pickupevent3").load("/pickupevent3.html");
 <p id="btn_pagetop_end" class="contents_skip"><a href="#page_top">ページの先頭に戻る</a></p>
 <img src="/cgi-bin/view/pageview.cgi?PAGE_KIND_CD=3&amp;PAGE_NO=32776&amp;OUTPUT_FG=1" style="display:none;" alt="" width="1" height="1" />
 </div></body>
-</html><!--iSign_HMAC_AES_SHA1-BEGIN:EB85D045AAB28680897818560F1EFF3D1D11103D9E76716925112FF5AC36CBD1:iSign_HMAC_AES_SHA1-END-->
+</html><!--iSign_HMAC_AES_SHA1-BEGIN:7CE91B9857B9EBE072256698E6CFB47F168066BE7055935B0CEA365B45033256:iSign_HMAC_AES_SHA1-END-->
