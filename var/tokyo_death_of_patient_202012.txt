@@ -20,3 +20,4 @@
 /tosei/hodohappyo/press/2020/12/25/23.html, 新型コロナウイルスに関連した患者の死亡（1259報）
 /tosei/hodohappyo/press/2020/12/26/05.html, 新型コロナウイルスに関連した患者の死亡（1274報）
 /tosei/hodohappyo/press/2020/12/27/03.html, 新型コロナウイルスに関連した患者の死亡（1277報）
+/tosei/hodohappyo/press/2020/12/28/34.html, 新型コロナウイルスに関連した患者の死亡（1292報）
