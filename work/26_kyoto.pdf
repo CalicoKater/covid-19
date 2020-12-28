@@ -101,7 +101,7 @@
             <p><font size="6"><span style="COLOR: red"><a id="tyumokujoho">&nbsp;</a>【注目情報】</span></font></p>
             <p><strong><font size="4">1.<a href="/koho/corona/message_ishikai.html">京都府と医師会等との緊急メッセージ</a></font></strong></p>
             <ul>
-                <li><a href="/documents/1225en.pdf">英語（English）</a>／<a href="/documents/1225jp.pdf">やさしい日本語（にほんご）</a>（PDFファイル） </li>
+                <li><a href="/documents/1225en.pdf">英語（English）</a>／<a href="/documents/1225ch.pdf">中国語（中文）</a>／<a href="/documents/1225vi.pdf">ベトナム語（Tiếng việt）</a>／<a href="/documents/1225jp_1.pdf">やさしい日本語（にほんご）</a>（PDFファイル） </li>
             </ul>
             <p><strong><font size="4">2.営業時間短縮の要請・協力店舗への協力金について（令和2年12月17日）</font></strong></p>
             <ul>
@@ -145,13 +145,13 @@
             <p><font size="6"><span style="COLOR: red">【コールセンター】</span></font> <strong><a href="/koho/corona/index.html">その他の相談窓口へ</a></strong></p>
             <p><strong><font size="4"><span style="COLOR: red">▶ 年末年始の相談窓口</span></font></strong> </p>
             <ul>
+                <li><a href="/kentai/corona/soudan.html"><strong>発熱症状などのある方の相談</strong></a>（夜間や医療機関が休みのとき、かかりつけ医のいない方）<br />
+                きょうと新型コロナ医療相談センター（365日24時間、京都府・京都市共通） TEL：<span class="tel_link">075-414-5487</span> </li>
                 <li><a href="/iryo/kyukyuiryonenmatsu.html"><strong>救急医療体制について</strong></a>（12月29日から1月3日） </li>
                 <li><a href="/kosodate/news/2020rinjimadoguchi.html"><strong>出産等に不安を抱える妊産婦の方々への臨時相談窓口の開設について</strong></a>（12月28日から1月4日） </li>
                 <li><strong>生活・雇用・ひとり親家庭の相談について</strong>（12月29日から1月3日）<br />
                 【<a href="/kateishien/news/2020centerencho.html">生活・ひとり親</a>】TEL：<span class="tel_link">075-662-3773</span>（9時から22時）<br />
                 【雇用】TEL：<span class="tel_link">075-661-3319</span>（9時から21時） </li>
-                <li><a href="/kentai/corona/soudan.html"><strong>発熱症状などのある方の相談</strong></a>（夜間や医療機関が休みのとき、かかりつけ医のいない方）<br />
-                きょうと新型コロナ医療相談センター（365日24時間、京都府・京都市共通） TEL：<span class="tel_link">075-414-5487</span> </li>
             </ul>
             <hr />
             <ul>
@@ -174,9 +174,8 @@
         <tr>
             <td>
             <p><font size="6"><span style="COLOR: red">【府内の発生状況等】</span></font></p>
-            <p><font size="3">京都府・京都市では、当日の17時までの検査結果をその日に発表しています。</font></p>
-            <p><font size="5">本日の感染者数 94名（京都府域 21名、京都市 73名）</font><font size="5">【累計 4455名】</font>（令和2年12月27日）<br />
-            <font size="5">これまでの退院等 3282名</font>（令和2年12月24日）<font size="5">、死亡 47名</font>（令和2年12月27日）</p>
+            <p><font size="5">本日の感染者数 59名（京都府域 13名、京都市 46名）</font><font size="5">【累計 4514名】</font>（令和2年12月28日）<br />
+            <font size="5">これまでの退院等 3431名</font>（令和2年12月27日）<font size="5">、死亡 47名</font>（令和2年12月28日）</p>
             <div class="col2">
                         <div class="col2L">
                         <ul>

@@ -153,7 +153,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <p align="center"><a href="/a0301/covid19_sougousite.html"><img alt="総合サイトトップ小バナー" width="350" height="170" src="/images/top_sogosite_2.png" /></a></p>
             </div>
             <div class="col2R">
-            <p align="center"><a href="/a0710/hpsearch.html"><img alt="埼玉県指定 診療・検査医療機関検索システム小バナー" width="350" height="170" src="/images/top_kensakikan2yamazaki.png" /></a></p>
+            <p align="center"><a href="/a0710/hpsearch.html"><img alt="【年末年始】埼玉県指定 診療・検査医療機関検索システム小バナー" width="350" height="170" src="/images/top_soudanmadoguchi.png" /></a></p>
             </div>
 </div>
 <p>&nbsp;</p>
@@ -161,12 +161,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <h2><span class="txt_small">重要なお知らせ</span></h2>
             <ul>
                 <li><a href="/a0701/shingatacoronavirus.html">新型コロナウイルス感染症の発生動向（最新）</a> </li>
-                <li><a href="/a0710/hpsearch.html">発熱等の症状があり、医療機関をお探しの方</a>(11月27日掲載） </li>
+                <li><a href="/a0710/hpsearch.html">年末年始、発熱等の症状があり医療機関をお探しの方</a>(12月28日掲載） </li>
                 <li><a href="/a0301/nenmatsunenshi_soudanr2.html">年末年始の電話相談窓口について</a>(12月23日掲載） </li>
-                <li><a href="/a0301/nenmatsunenshi_onegai.html">年末年始における感染防止対策のお願い</a>(12月23日掲載） </li>
+                <li><a href="/a0301/nenmatsunenshi_onegai.html">年末年始における感染防止対策のお願い</a>(12月28日掲載） </li>
                 <li><a href="/a0401/covid19/saitamaken_kyouyokuyousei1124.html">営業時間の短縮要請等について(特措法に基づく協力要請)</a>(12月23日掲載) </li>
                 <li><a href="/a0801/kyoryokukin.html">特措法要請に基づく営業時間短縮に対する協力金について</a>(12月23日掲載） </li>
-                <li><a href="/a0701/covid19/governors_message.html">新型コロナウイルス対策本部会議後の知事発言内容</a>(12月23日掲載） </li>
+                <li><a href="/a0701/covid19/governors_message.html">新型コロナウイルス対策本部会議後の知事発言内容</a>(12月28日掲載） </li>
                 <li><a href="/a0401/covid19/eventtaio1119.html">12月1日以降のイベントの取扱いについて</a>(12月25日掲載) </li>
             </ul>
             </div>
@@ -183,11 +183,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="list_top_topics">
 <div class="shinchaku_list">
 <ul>
-<li><a href="/a0710/top-news/nw20201201-01.html">発熱等の症状があり、医療機関をお探しの方</a>12月2日<span>感染症対策課</span></li>
-<li><a href="/a0311/top-news/nw2020122501.html">吉川市を交通事故防止特別対策地域に指定しました</a>12月25日<span>防犯・交通安全課</span></li>
-<li><a href="/a0701/top-news/nw2020122501.html">「おうちでマスク」を実践しましょう</a>12月25日<span>保健医療政策課</span></li>
-<li><a href="/a0701/top-news/nw2020122402.html">新型コロナウイルスに関連した患者等の発生について（県内11934例目～11958例目、12021例目～12151例目 県発表8105例目～8260例目）</a>12月24日<span>感染症対策課</span></li>
-<li><a href="/a0701/top-news/nw2020122401.html">新型コロナウイルスに関連した患者の死亡について</a>12月24日<span>感染症対策課</span></li>
+<li><a href="/a0710/top-news/nw20201228-01.html">【年末年始 : 12月29日～1月3日】発熱等でお困りの方へ</a>12月28日<span>感染症対策課</span></li>
+<li><a href="/a0701/top-news/nw2020122702.html">新型コロナウイルスに関連した患者等の発生について（県内12941例目～12960例目、13065例目～13189例目 県発表8966例目～9110例目）</a>12月27日<span>感染症対策課</span></li>
+<li><a href="/a0701/top-news/nw2020122701.html">新型コロナウイルスに関連した患者の死亡について</a>12月27日<span>感染症対策課</span></li>
+<li><a href="/a0701/top-news/nw20201226.html">新型コロナウイルスに関連した患者等の発生について（県内12666例目～12693例目、12800例目～12940例目、県発表8797例目～8965例目）</a>12月26日<span>感染症対策課</span></li>
+<li><a href="/a0701/top-news/nw20201225.html">新型コロナウイルスに関連した患者等の発生について（県内12397例目～12423例目、12502例目～12665例目 県発表8606例目～8796例目）</a>12月25日<span>感染症対策課</span></li>
 </ul>
 </div>
 </div>
@@ -203,28 +203,28 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul>
    
         <li>
-<a href="/a0001/news/page/2020/1227-01.html">新型コロナウイルスに関連した患者等の発生について（県内12941例目～12960例目、13065例目～13189例目 県発表8966例目～9110例目）</a>
-12月27日18時30分<span>感染症対策課</span>
+<a href="/a0001/news/page/2020/1228-09.html">新型コロナウイルスに関連した患者等の発生について（県内13190例目～13216例目、13276例目～13389例目 県発表9111例目～9251例目）</a>
+12月28日18時30分<span>感染症対策課</span>
         </li>
    
         <li>
-<a href="/a0001/news/page/2020/1227-02.html">新型コロナウイルスに関連した患者の死亡について</a>
-12月27日18時30分<span>感染症対策課</span>
+<a href="/a0001/news/page/2020/1228-08.html">第37回新型コロナウイルス対策本部会議の開催結果について</a>
+12月28日16時30分<span>危機管理課</span>
         </li>
    
         <li>
-<a href="/a0001/news/page/2020/1226-01.html">新型コロナウイルスに関連した患者等の発生について（県内12666例目～12693例目、12800例目～12940例目、県発表8797例目～8965例目）</a>
-12月26日19時00分<span>感染症対策課</span>
+<a href="/a0001/news/page/2020/1228-01.html">第4回公共交通の利便性向上検討会議の開催</a>
+12月28日11時00分<span>交通政策課</span>
         </li>
    
         <li>
-<a href="/a0001/news/page/2020/1225-21.html">新型コロナウイルスに関連した患者等の発生について（県内12397例目～12423例目、12502例目～12665例目 県発表8606例目～8796例目）</a>
-12月25日19時00分<span>感染症対策課</span>
+<a href="/a0001/news/page/2020/1228-02.html">「Made in SAITAMA優良加工食品大賞2021」の募集を開始しました。～優良加工食品を製造する食品加工事業者等の取組を表彰します～</a>
+12月28日11時00分<span>農業ビジネス支援課</span>
         </li>
    
         <li>
-<a href="/a0001/news/page/2020/1225-19.html">第36回新型コロナウイルス対策本部会議の開催結果について</a>
-12月25日17時15分<span>危機管理課</span>
+<a href="/a0001/news/page/2020/1228-03.html">埼玉県建築物耐震改修促進計画（改定素案）に対する県民コメント（意見募集）を実施します</a>
+12月28日11時00分<span>建築安全課</span>
         </li>
    
 </ul>
@@ -513,11 +513,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <ul class="banner">
     <li><a rel="nofollow" href="http://www.saio.co.jp/"><img alt="広告:株式会社サイオー" width="156" height="40" src="/library_images/290401.gif" /></a> </li>
     <li><a rel="nofollow" href="http://www.clover-navi.com/"><img alt="広告:株式会社ジェイ・ブロード" width="156" height="40" src="/library_images/300910.gif" /></a> </li>
-    <li><a rel="nofollow" href="https://carisapo.mhlw.go.jp/"><img alt="広告:株式会社パソナ" width="156" height="40" src="/library_images/021203.jpg" /></a> </li>
+    <li><a rel="nofollow" href="http://www.pt-saitama.com/"><img alt="広告：株式会社プロ家庭教師さいたま" width="156" height="40" src="/library_images/290403.gif" /></a> </li>
     <li><a rel="nofollow" href="http://www.cgc-saitama.or.jp/"><img alt="広告:埼玉県信用保証協会" width="156" height="40" src="/library_images/290405.gif" /></a> </li>
     <li><a rel="nofollow" href="https://www.kurosawakoumuten.co.jp/"><img alt="広告:株式会社 黒澤工務店" width="156" height="40" src="/library_images/190507.png" /></a> </li>
-    <li><a rel="nofollow" href="http://www.pohaus.com/"><img alt="広告:ポラテック株式会社 ポウハウス" width="156" height="40" src="/library_images/020706.jpg" /></a> </li>
-    <li><a rel="nofollow" href="https://www.mok-house.com/stayhome_lp"><img alt="広告:ポラテック株式会社 モクハウス" width="156" height="40" src="/library_images/020707.jpg" /></a> </li>
+    <li><a rel="nofollow" href="http://www.pohaus.com/"><img alt="広告:ポラテック株式会社 ポウハウス" width="156" height="40" src="/library_images/030106.jpg" /></a> </li>
+    <li><a rel="nofollow" href="https://www.mok-house.com/lowcost_lp"><img alt="広告:ポラテック株式会社 モクハウス" width="156" height="40" src="/library_images/020707.jpg" /></a> </li>
     <li><a rel="nofollow" href="http://www.saitamacci.or.jp/management/handing.asp"><img alt="広告:さいたま商工会議所" width="156" height="40" src="/library_images/020708.jpg" /></a> </li>
     <li><a rel="nofollow" href="http://aobaen.or.jp/"><img alt="広告:公益財団法人青葉園" width="156" height="40" src="/library_images/020710.jpg" /></a> </li>
     <li><a rel="nofollow" href="https://www.sc.ouj.ac.jp/center/saitama/news/2020/11/25153532.html"><img alt="広告:放送大学 埼玉学習センター" width="156" height="40" src="/library_images/021210.gif" /></a> </li>
