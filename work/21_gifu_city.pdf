@@ -80,7 +80,7 @@ else document.write('<link href="css/portal.css" type="text/css" rel="stylesheet
 <body >
   <form method="post" action="/" id="Form1" enctype="multipart/form-data" onsubmit="while(!i_site.loaded){ if(!confirm(&#39;送信準備が完了していません。再送信しますか？&#39;))return false;}return true;">
 <div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="qxiDiAIO3VNGDoGNVlJYBnTCoOLYc1E379nF21Ad+kBCntKS3HnhnUbqgOD8R9u9RGF0LTFnrO6R7Z/o6GyzpXOPYuuJ5EEbyVQShIFZ2WnMpbdrhEtho/0ZKX+H835GzDtI9SVatG4tWhX827K8QsgynMEDUkPJBCoGZ7De9Jd47mmGlfNiJgjI4sdH0rQ5MkpqFUItZW+UqDv5vBE0U1CILFPCULv4JwWQ8hQun1zCiY0JgWe3iOy7BhUGuAmY5AH2HSOR9ymqUhVqpuIgj+xElL12hBlmIM6/U4LxSsYJsYc9vu0dTVZV/BQ/sVlCakYjAcReNuLs7qbkSQMiPYHj0Aicbx8wpQ5jYynVKr1vkleEpCwLTdcaVCmKPB899cmNfcwIvWGsDrgBLgyufiA7ApV9ViixLTPwIAwPrmFq5wKhzlk7fZVKS08rJMT4Ie6H/NEIA8Wxdr4cbj05191tmzfuhMmJBUicJv//j803bLeLKdMa/c20pZWNEoej6iwMwNK5byB8ticgikz6lVbykwzTsTenRcw2QOOQhl3JC/gcV5u27vUQRh1I44gcKjEl2btOWXAFTaT7KRra+pX+7Siqgs1EqV/yO/4ZClmJqkmUCZ+fRsgPhx0RZTI1ZMhEY/iwty95m8yifiXgc5vyzkkEFlI6QkrXa5g1ZWK6zXRrA7o3vUBbnrQLHOqfryvd30sLp2s8nvIf4L9Tt4NoZhqn3EQwkoT3pXO2EvDdoLvUZCWlokCAaA05A2uCrJlfuMCD8rUqtn62IeRG866d6xnXw3y/d6xKlAXJ+ynXpwTi4Pv9oFJKjjAS7maXb6KkXAjGMUiXgpQTLttiBOmZxO1E1kIhk6R5PtpFsxcEvlGLIpWvpjp1xhFdAeuZ8/JTL1Ouh2yPJ1LviHLPX9oZhoc5Usdc5VdJntZzfmL/6BXVbaviVEMkhQhti+ru5cZ8vcyDvsTy2z+R7yJXq7PZ8pJAnU1WTvKvt/gbcMQK/i6fJi/qTDyRazRZu8dc85E6QXs5+jPq+rhq64oN9a6FlD3SFiSRMRQfD3t3zANY3yVbeLFgr2QaHeEsgBTuX+bFHQ1PWTN8Tih7j1OdBIIM5QiLzLhd2k8pZCgMMftpVfvZDwzScc08iGxuvmHIfkxqT4HR09KDcQE/R51Mf5K38f6T34JD04djoMD6v6KQ/YiLkqA99gLZijM5030s78UaO5l4RFkAQ8CGdGJ0o6se1bhjJ9XqbHvWAo7JRn6MBcFJZreiJ+rhK5RTsbnm/rldl7iVvCsxoA4ddtLX+dWdKX1hkb9q3IoxTxGftgQDJbV8zpPWey//qNipbV1rJNZnHLBhLUsxpxVNfnBtTZQJBMauyM/W9gVzwQhHyHvSUkEcIialvKUEtZWIZSpnEwRfCA==" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="61jrwvFV4H5/5ad9E8jSj3zT4o3FyVDwicid/BGgw/5HMf68yZSyRZo2o1+RlovnK08RZrPl3e4xT8Kylz/46UA0nT1Qbw5NXs2/rF6VyA0tCy9REBPrGUy7wu/6Y0vpmDQLlYwrd4AqKnZyHNE9qRKr93v8FCOzVkzEiB6PJpwRAcGyQP/WFkWJh1Jt/Qj8vuVrKoynE68hDv0VkXrH+aRsTINSKPB/JeyFP4eOu1otgmtM7Eee2M6ShDxOLKhZ/Bn4IxZRMVyFZGilbZOOqyS3AZSR8IUiD0ydbxwK/T93HnaRXexZ5VV7ON+kC8ItO7w2T9XJqIOHWlurhe2rBcbD0UlfKKGhAEpiqjCTcKh2XNlALAYEPQzkh73EaQDq3Aq/WcfsV0OVFvpQfuYPcBY/hCzWILrMUxgTOG2xo6mqWw42yq8qJ2yZN0D0gfCIencd+b5AboNMW3OGtBRm3yzxptS8H1344ptJRkyYVCtOKAT4tlqOPtgGQl5t+lwAw6jNhi2cfEa/44U2Y4TR206cDMQTK9wM2q1mzqlrT3GuwUJY94bgEHNo0+lQ8mk8jX8Fz78gacaatlbUZmWHnGSur9nfEx3gSi0ulBd7NzIbg+O7TmyKCWkJIj0NUQiCpSrb1qtQL2gJ6sGU+vkWiZUo9Q6SwfX6Q5lX/7Uf1QawmzEIgD+8pxKLyqTjipa/DfkBkCWnYV9XKfD6ZFuWN/Xql/ErLZMFGS3Y2J25JwDh1zFHhtslu4rANWtAd8RRaYG0iulzPLfzGqOF+HvNcCiIynOb9DiSWIl7Z41vEsSbVzL5kuBGD+rs/VF2XZd1wJoVEzhNESVj3+4N7m1sJk7GZ7oiCgsSaPBwFXS2kiqs6RNeWoCyvln045GPbCQu7S4wLU7pAlDmkwqVedZqm1+7vmcB/CzFO8L0CKkP6JcM4+Z9BWOLj49yyCN4OIHt9fFC14XZ89D9CZmY7nn5ZMXBYih2Gaq8t/ZTp4TsukBnl2ebp/wU7Uxnx8S7MhauQc9Pm6lbChzutB8k98kq6VSPy2t9jsXnPlNLhpKyyqdFH8vwFOVaQ1a717E3o2ZG0Up/1H3ZqdFierfc2l0OJVAadrBXTvt1JQZj7k18xvJC1EyVGe/3t3jGG4J9+DF77+A26lwEn3/Mzb9ix4qWepCUWwoBfnBGkZV3X/QjzgEaHQygiHAVNTrt3KoJMIBYwd4/sP2G4bjgfaXrRjTA4kjFSWEbTzOVHasHHCvn7yz7dhVwypQL8QhymSQT9Sm7iSvX2ZZoov3xMMqdqsLRGiwc9uJOjG1Ay74QIIPJ3g4DzfZMqKnozHdcctB8otUVYCHvDbECSA5k0saCyPql2z8C+0s7lz6L/CquypZvu6aQ93sjjK8UaZSKaezDV4gbQR0zGw==" />
 </div>
 
     <noscript id="NoScriptMessage">
@@ -974,6 +974,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <td style="text-align: center;">
             <p><a href="38570.htm"><img style="width: 100%;" alt="コロナウイルス特設ページ" src="secure/46630/top07_3_s_s.png" /></a></p>
             <p style="text-align: left;"><span style="font-size: small;"><a href="4954.htm"><img style="width: 100%;" alt="新型コロナウイルス感染症外国人市民向けバナー" src="secure/46630/infoforforeigner_banner4_s.png" /></a></span></p>
+            <p style="text-align: left;"><span style="font-size: small;">12月31日　　<strong><a href="37495.htm">12月30日発表分の患者にかかる皆様へのお知らせ</a></strong></span></p>
             <p style="text-align: left;"><span style="font-size: small;">12月17日　　<span style="font-size: small;"><strong><a href="37037.htm#jigyousya" id="37037.htm#jigyousya">事業者の皆様へ「静かなマスク会食を！」啓発ポスター掲示のお願い</a></strong></span></span></p>
             <p style="text-align: left;"><span style="font-size: small;">12月16日　　<strong><span style="font-size: small;"><a href="37750.htm">【岐阜県】営業時間短縮の協力要請・協力金について<span style="color: #ff0000;">(12/17要請期間修正)</span></a></span></strong></span></p>
             <p style="text-align: left;"><span style="font-size: small;"><span style="font-size: small;">10月14日</span>　&nbsp; &nbsp;<strong><span style="font-size: small;"><a href="37037.htm#a4">発熱等の症状がある方の相談・受診について（年末年始の受診・相談センターの問い合わせ先）<span style="color: #ff0000;">(12/29修正)</span></a></span></strong></span></p>
@@ -1465,13 +1466,13 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
 <a class="Fix_eventlistlink" href="10353.htm">一覧へ</a>
 <!--
         <div class="Prev">
-          <a id="C23_15352_PrevWeekLink" href="dd.aspx?moduleid=15352&amp;pfromdate=766207#moduleid15352"><img src="../../../Images/b_lt.gif"  alt="前週へ" />前週へ</a>
+          <a id="C23_15352_PrevWeekLink" href="dd.aspx?moduleid=15352&amp;pfromdate=766307#moduleid15352"><img src="../../../Images/b_lt.gif"  alt="前週へ" />前週へ</a>
         </div>
         <h2 class="Term">
-          2020年12月30日～2021年1月5日
+          2020年12月31日～2021年1月6日
         </h2>
         <div class="Next">
-          <a id="C23_15352_NextWeekLink" href="dd.aspx?moduleid=15352&amp;pfromdate=767607#moduleid15352">翌週へ<img src="../../../Images/b_rt.gif"   alt="翌週へ" /></a>
+          <a id="C23_15352_NextWeekLink" href="dd.aspx?moduleid=15352&amp;pfromdate=767707#moduleid15352">翌週へ<img src="../../../Images/b_rt.gif"   alt="翌週へ" /></a>
         </div>
 -->
       </div>
@@ -2476,7 +2477,7 @@ setAdBannersRandom();
 <div class="aspNetHidden">
 
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0E8925E6" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="paX8RZHrx7s+BKg5lq6vT8oIWkMO5Hxcs479WAsfAGCOy+b63zwBDTNG6nRxs3POJO+PayEv9pWYV966CvNHFcqJ2vQVjs7eoaYqNtSDCjARlaZd6ppMJZiz1HA1P8Za3ZWpNUWjvL+goWI3zbsto75Uiuz0DlqOZAXp/rkzLJEoZr4T" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="OwqzCJ+lBCRfOQigpY7EBtNwiRp7NSk0EfBsLi4jrgM70PwXxb2lFDYc95F1swx6V5OHd6r/DNyAdq2l/MrhGboZ5xOvy63efox0Tz29SsjwI1ZXASbHkJLqisXnvMzeVGfmo5auapNuaX7net+beJQCBKxJoDlOaxk/UUeE0qAZE1PY" />
 </div></form>
 </body>
 </html>
