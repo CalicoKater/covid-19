@@ -80,7 +80,7 @@ else document.write('<link href="css/portal.css" type="text/css" rel="stylesheet
 <body >
   <form method="post" action="/" id="Form1" enctype="multipart/form-data" onsubmit="while(!i_site.loaded){ if(!confirm(&#39;送信準備が完了していません。再送信しますか？&#39;))return false;}return true;">
 <div class="aspNetHidden">
-<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="61jrwvFV4H5/5ad9E8jSj3zT4o3FyVDwicid/BGgw/5HMf68yZSyRZo2o1+RlovnK08RZrPl3e4xT8Kylz/46UA0nT1Qbw5NXs2/rF6VyA0tCy9REBPrGUy7wu/6Y0vpmDQLlYwrd4AqKnZyHNE9qRKr93v8FCOzVkzEiB6PJpwRAcGyQP/WFkWJh1Jt/Qj8vuVrKoynE68hDv0VkXrH+aRsTINSKPB/JeyFP4eOu1otgmtM7Eee2M6ShDxOLKhZ/Bn4IxZRMVyFZGilbZOOqyS3AZSR8IUiD0ydbxwK/T93HnaRXexZ5VV7ON+kC8ItO7w2T9XJqIOHWlurhe2rBcbD0UlfKKGhAEpiqjCTcKh2XNlALAYEPQzkh73EaQDq3Aq/WcfsV0OVFvpQfuYPcBY/hCzWILrMUxgTOG2xo6mqWw42yq8qJ2yZN0D0gfCIencd+b5AboNMW3OGtBRm3yzxptS8H1344ptJRkyYVCtOKAT4tlqOPtgGQl5t+lwAw6jNhi2cfEa/44U2Y4TR206cDMQTK9wM2q1mzqlrT3GuwUJY94bgEHNo0+lQ8mk8jX8Fz78gacaatlbUZmWHnGSur9nfEx3gSi0ulBd7NzIbg+O7TmyKCWkJIj0NUQiCpSrb1qtQL2gJ6sGU+vkWiZUo9Q6SwfX6Q5lX/7Uf1QawmzEIgD+8pxKLyqTjipa/DfkBkCWnYV9XKfD6ZFuWN/Xql/ErLZMFGS3Y2J25JwDh1zFHhtslu4rANWtAd8RRaYG0iulzPLfzGqOF+HvNcCiIynOb9DiSWIl7Z41vEsSbVzL5kuBGD+rs/VF2XZd1wJoVEzhNESVj3+4N7m1sJk7GZ7oiCgsSaPBwFXS2kiqs6RNeWoCyvln045GPbCQu7S4wLU7pAlDmkwqVedZqm1+7vmcB/CzFO8L0CKkP6JcM4+Z9BWOLj49yyCN4OIHt9fFC14XZ89D9CZmY7nn5ZMXBYih2Gaq8t/ZTp4TsukBnl2ebp/wU7Uxnx8S7MhauQc9Pm6lbChzutB8k98kq6VSPy2t9jsXnPlNLhpKyyqdFH8vwFOVaQ1a717E3o2ZG0Up/1H3ZqdFierfc2l0OJVAadrBXTvt1JQZj7k18xvJC1EyVGe/3t3jGG4J9+DF77+A26lwEn3/Mzb9ix4qWepCUWwoBfnBGkZV3X/QjzgEaHQygiHAVNTrt3KoJMIBYwd4/sP2G4bjgfaXrRjTA4kjFSWEbTzOVHasHHCvn7yz7dhVwypQL8QhymSQT9Sm7iSvX2ZZoov3xMMqdqsLRGiwc9uJOjG1Ay74QIIPJ3g4DzfZMqKnozHdcctB8otUVYCHvDbECSA5k0saCyPql2z8C+0s7lz6L/CquypZvu6aQ93sjjK8UaZSKaezDV4gbQR0zGw==" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="h/T13ghGmnG3qwJ3rIOgZkBGliqzeVOXc+2W2vXHyEj/6ePSaEGFOufAVRGGWB1XpAOZogtPVbhXJiTriF1O3WFtlAoF1Qi5Fk9PVdmVLidsHSo71x1baxgnM8247hH8fk3qHfTCa19axjIBqQ3j9PXy3XC9tHpOxv8pzdFxDyhJQgv1Xfr6An41rhADA8B7p4hbYw+hjgvQdn85iTTO32E9XJx7HJGEqQWV1OK7fMEsfF8CFCbu1A39AgJpb357LrAo4OMOE+J4dHDwGxXTRwq5Uv3HqxhdahrflyEIV5nQ/zabqHC90/P7EUJEAuYXyo0nRG93fcuEPQf2NtlT+zfehG1Xob9OwZRR3SvaiQ+aA/Vdeaksc/3ZaYGhDHeFhHY9i/6Ls6eyEjejw3POfBboXlLEtGHrF3wNHAikTaJHO570vVJI4YLAjCHaE9N107Cj/pagPcI8fPN4EmePv39QkANHlT2vGCLKg7xUlMuoKmjU1Ki69zC4LIumS83AFljIRojqYVpSN3XCeMR8WAj/C1HN+tHbFjqJFGR5j9MyHtv8oR5gvVEGU0XL839P40M3834krvvf26pAl8FM1UGnWddshZRuQ8Anhyfo7ZuzhkgnInCUOwrFP6GtHBn8gZMDXUKCmFYAQA9b2B0599WNJlfjuIqS8JR7jkxb0VZyKQu2ihNr0aDounu4P/bvcmzHbUSYjxlOwlRWLuTPiz/s5embqIcPfsYelTDSTzOpTcze5NBVaUcNRLv6sOAM+DM+GJODozwM1WhIB+Q3B+cQJoRlxjdbakfPe7QxPwsiTor4UT4jqPjWrMqSJQvOU90tIiCpYE4f1ywRmJA8ufVCbgaYFRFqJpLFKw/vPdKNR2ZajwuU2shr56l0C/SOsSHJGgylvJS0RwWiuUOgg8RsxjcOemzub0KMd9bHdRqmzJpkP57iHXPpSjfwYCq0HUMQ20i1VwqVyrDG9QA49NpmTuGrknoXUcqlSjs/6ZRz/kjKcEVtn5PqWYDoA+lg8+SgWG85G1sWDtyow0OVvue55uXGHBIFPUmbnSR34BdeOkaGkM5TRPf5cb5+FgLeTZJptGHZnch6BKPyAtmQjoZqI3hXsubt+fzJopJgOM8xg68kXS4nzJKt7bXONWzlBKPVL8eETTMI7ZKytSxEuiKZ6ryIxbbfUCZfhyvblpAWgG0+M6iNSlBxcxzFDbrNt2ffLtPHs5BPlqfitZzHjN/lUkceLxC3QT+sxoZScyu8eQ2yvkFBxvvWziRavu6AytQOih/cdoBlHtgE3WJV2kF4hFq6CC+Jv48un4mNxa7XryYzM1vxa3WjqfyYfgwSV2Ks6sGsQTuG7RPboAGXH5AkX+DuZNZzIuH0SqjC4+KQ8camlW4/9NMUmJPRX2TWTOqrFQ==" />
 </div>
 
     <noscript id="NoScriptMessage">
@@ -975,7 +975,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <p><a href="38570.htm"><img style="width: 100%;" alt="コロナウイルス特設ページ" src="secure/46630/top07_3_s_s.png" /></a></p>
             <p style="text-align: left;"><span style="font-size: small;"><a href="4954.htm"><img style="width: 100%;" alt="新型コロナウイルス感染症外国人市民向けバナー" src="secure/46630/infoforforeigner_banner4_s.png" /></a></span></p>
             <p style="text-align: left;"><span style="font-size: small;">12月31日　　<strong><a href="37495.htm">12月30日発表分の患者にかかる皆様へのお知らせ</a></strong></span></p>
-            <p style="text-align: left;"><span style="font-size: small;">12月17日　　<span style="font-size: small;"><strong><a href="37037.htm#jigyousya" id="37037.htm#jigyousya">事業者の皆様へ「静かなマスク会食を！」啓発ポスター掲示のお願い</a></strong></span></span></p>
+            <p style="text-align: left;"><span style="font-size: small;">12月31日　　<span style="font-size: small;"><strong><a href="39860.htm">「在宅年末年始」で感染拡大の徹底阻止にご協力ください</a></strong></span></span></p>
             <p style="text-align: left;"><span style="font-size: small;">12月16日　　<strong><span style="font-size: small;"><a href="37750.htm">【岐阜県】営業時間短縮の協力要請・協力金について<span style="color: #ff0000;">(12/17要請期間修正)</span></a></span></strong></span></p>
             <p style="text-align: left;"><span style="font-size: small;"><span style="font-size: small;">10月14日</span>　&nbsp; &nbsp;<strong><span style="font-size: small;"><a href="37037.htm#a4">発熱等の症状がある方の相談・受診について（年末年始の受診・相談センターの問い合わせ先）<span style="color: #ff0000;">(12/29修正)</span></a></span></strong></span></p>
             </td>
@@ -1161,7 +1161,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
     <ul>
       
           <li><span class="CreatedDate">
-            12月30日
+            01月02日
           </span>
             <div class="R_Contents">
               
@@ -1176,12 +1176,42 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
           </li>
         
           <li><span class="CreatedDate">
+            01月01日
+          </span>
+            <div class="R_Contents">
+              
+              
+              <a id="C19_10347_R1_10349_C_MenuList_ctl01_TitleLink" href="item/36899.htm#Contentpane">岐阜市文化芸術推進指導会計年度任用職員を募集します！</a>
+              <img src='../../../images/new.gif' alt='新着' />
+              
+              <div class="Summary">
+                
+              </div>
+            </div>
+          </li>
+        
+          <li><span class="CreatedDate">
+            12月31日
+          </span>
+            <div class="R_Contents">
+              
+              
+              <a id="C19_10347_R1_10349_C_MenuList_ctl02_TitleLink" href="item/49064.htm#Contentpane">「在宅年末年始」で感染拡大の徹底阻止にご協力ください。</a>
+              <img src='../../../images/new.gif' alt='新着' />
+              
+              <div class="Summary">
+                
+              </div>
+            </div>
+          </li>
+        
+          <li><span class="CreatedDate">
             12月30日
           </span>
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl01_TitleLink" title="外部サイトへのリンク" href="https://g-mediacosmos.jp/center/act_01/0107/gifucity-gcf-r2.html#Contentpane">ふるさと納税の対象となるクラウドファンディングを実施しています！（あとわずかで終了です。）</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl03_TitleLink" title="外部サイトへのリンク" href="https://g-mediacosmos.jp/center/act_01/0107/gifucity-gcf-r2.html#Contentpane">ふるさと納税の対象となるクラウドファンディングを実施しています！（あとわずかで終了です。）</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1196,7 +1226,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl02_TitleLink" href="item/31967.htm#Contentpane">「令和2年度　新成人を祝い励ます会」式典の延期開催について</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl04_TitleLink" href="item/31967.htm#Contentpane">「令和2年度　新成人を祝い励ます会」式典の延期開催について</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1211,7 +1241,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl03_TitleLink" href="item/48496.htm#Contentpane">東京2020オリンピック聖火が岐阜に来ます！</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl05_TitleLink" href="item/48496.htm#Contentpane">東京2020オリンピック聖火が岐阜に来ます！</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1226,7 +1256,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl04_TitleLink" title="外部サイトへのリンク" href="https://g-mediacosmos.jp/information/2020/12/youtube-5.html#Contentpane">「絵本でつながるものがたり」動画を配信中！（みんなの森　ぎふメディアコスモスYouTube公式チャンネル）</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl06_TitleLink" href="item/49036.htm#Contentpane">「岐阜市消費者教育推進計画(第2次)（素案）」についてのパブリックコメントを募集しています</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1241,7 +1271,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl05_TitleLink" href="item/49024.htm#Contentpane">第九期ぎふ長良川メイツを募集しています。</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl07_TitleLink" title="外部サイトへのリンク" href="https://g-mediacosmos.jp/information/2020/12/youtube-5.html#Contentpane">「絵本でつながるものがたり」動画を配信中！（みんなの森　ぎふメディアコスモスYouTube公式チャンネル）</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1256,7 +1286,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl06_TitleLink" href="26137.htm#Contentpane">コンビニ交付サービス休止のお知らせ</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl08_TitleLink" href="item/49024.htm#Contentpane">第九期ぎふ長良川メイツを募集しています。</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1271,7 +1301,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl07_TitleLink" href="item/44216.htm#Contentpane">リフレ芥見歩行浴プール臨時休業について</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl09_TitleLink" href="26137.htm#Contentpane">コンビニ交付サービス休止のお知らせ</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1286,7 +1316,37 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl08_TitleLink" href="item/45132.htm#Contentpane">後付けの急発進等抑制装置設置補助金の申請期限が迫っています！</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl10_TitleLink" href="item/44216.htm#Contentpane">リフレ芥見歩行浴プール臨時休業について</a>
+              <img src='../../../images/new.gif' alt='新着' />
+              
+              <div class="Summary">
+                
+              </div>
+            </div>
+          </li>
+        
+          <li><span class="CreatedDate">
+            12月28日
+          </span>
+            <div class="R_Contents">
+              
+              
+              <a id="C19_10347_R1_10349_C_MenuList_ctl11_TitleLink" href="item/21091.htm#Contentpane"> パートタイム会計年度任用職員（学校栄養）の採用試験を実施します</a>
+              <img src='../../../images/new.gif' alt='新着' />
+              
+              <div class="Summary">
+                
+              </div>
+            </div>
+          </li>
+        
+          <li><span class="CreatedDate">
+            12月28日
+          </span>
+            <div class="R_Contents">
+              
+              
+              <a id="C19_10347_R1_10349_C_MenuList_ctl12_TitleLink" href="item/45132.htm#Contentpane">後付けの急発進等抑制装置設置補助金の申請期限が迫っています！</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1301,7 +1361,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl09_TitleLink" href="item/20937.htm#Contentpane">令和3年度岐阜市消費生活モニター募集のお知らせ</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl13_TitleLink" href="item/20937.htm#Contentpane">令和3年度岐阜市消費生活モニター募集のお知らせ</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1316,7 +1376,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl10_TitleLink" href="item/48712.htm#Contentpane">岐阜市職員（現業職）　最終合格者発表（12月13日第2次試験実施）</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl14_TitleLink" href="item/48712.htm#Contentpane">岐阜市職員（現業職）　最終合格者発表（12月13日第2次試験実施）</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1331,7 +1391,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl11_TitleLink" href="item/48194.htm#Contentpane">Ｎｅｔ119のご案内（1月1日から運用開始・聴覚等障がい者の方のスマホ等による緊急通報手段）</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl15_TitleLink" href="item/48194.htm#Contentpane">Ｎｅｔ119のご案内（1月1日から運用開始・聴覚等障がい者の方のスマホ等による緊急通報手段）</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1346,7 +1406,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl12_TitleLink" href="item/49025.htm#Contentpane">岐阜市観光ポスター（鵜飼）企画デザイン業務委託事業者選定公募型プロポーザル結果について</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl16_TitleLink" href="item/49025.htm#Contentpane">岐阜市観光ポスター（鵜飼）企画デザイン業務委託事業者選定公募型プロポーザル結果について</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1361,67 +1421,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C19_10347_R1_10349_C_MenuList_ctl13_TitleLink" href="item/34987.htm#Contentpane">岐阜市鵜飼観覧船事業応援寄付金について</a>
-              <img src='../../../images/new.gif' alt='新着' />
-              
-              <div class="Summary">
-                
-              </div>
-            </div>
-          </li>
-        
-          <li><span class="CreatedDate">
-            12月24日
-          </span>
-            <div class="R_Contents">
-              
-              
-              <a id="C19_10347_R1_10349_C_MenuList_ctl14_TitleLink" href="item/48807.htm#Contentpane">大学卒程度　事務職採用試験　第1次試験合格者を発表します。（令和2年12月13日実施分）</a>
-              <img src='../../../images/new.gif' alt='新着' />
-              
-              <div class="Summary">
-                
-              </div>
-            </div>
-          </li>
-        
-          <li><span class="CreatedDate">
-            12月24日
-          </span>
-            <div class="R_Contents">
-              
-              
-              <a id="C19_10347_R1_10349_C_MenuList_ctl15_TitleLink" href="39823.htm#Contentpane">岐阜市生活困窮者自立相談・家計改善支援及び包括的支援体制構築事業に係る事業者審査委員会の審査結果について</a>
-              <img src='../../../images/new.gif' alt='新着' />
-              
-              <div class="Summary">
-                
-              </div>
-            </div>
-          </li>
-        
-          <li><span class="CreatedDate">
-            12月24日
-          </span>
-            <div class="R_Contents">
-              
-              
-              <a id="C19_10347_R1_10349_C_MenuList_ctl16_TitleLink" href="item/44687.htm#Contentpane">風評による偏見や差別について考えてみましょう</a>
-              <img src='../../../images/new.gif' alt='新着' />
-              
-              <div class="Summary">
-                
-              </div>
-            </div>
-          </li>
-        
-          <li><span class="CreatedDate">
-            12月23日
-          </span>
-            <div class="R_Contents">
-              
-              
-              <a id="C19_10347_R1_10349_C_MenuList_ctl17_TitleLink" href="item/8213.htm#Contentpane">こよみのよぶね</a>
+              <a id="C19_10347_R1_10349_C_MenuList_ctl17_TitleLink" href="item/34987.htm#Contentpane">岐阜市鵜飼観覧船事業応援寄付金について</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1466,13 +1466,13 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
 <a class="Fix_eventlistlink" href="10353.htm">一覧へ</a>
 <!--
         <div class="Prev">
-          <a id="C23_15352_PrevWeekLink" href="dd.aspx?moduleid=15352&amp;pfromdate=766307#moduleid15352"><img src="../../../Images/b_lt.gif"  alt="前週へ" />前週へ</a>
+          <a id="C23_15352_PrevWeekLink" href="dd.aspx?moduleid=15352&amp;pfromdate=766507#moduleid15352"><img src="../../../Images/b_lt.gif"  alt="前週へ" />前週へ</a>
         </div>
         <h2 class="Term">
-          2020年12月31日～2021年1月6日
+          2021年1月2日～2021年1月8日
         </h2>
         <div class="Next">
-          <a id="C23_15352_NextWeekLink" href="dd.aspx?moduleid=15352&amp;pfromdate=767707#moduleid15352">翌週へ<img src="../../../Images/b_rt.gif"   alt="翌週へ" /></a>
+          <a id="C23_15352_NextWeekLink" href="dd.aspx?moduleid=15352&amp;pfromdate=767907#moduleid15352">翌週へ<img src="../../../Images/b_rt.gif"   alt="翌週へ" /></a>
         </div>
 -->
       </div>
@@ -1572,7 +1572,37 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C25_47519_MenuList_ctl02_TitleLink" href="item/49024.htm#ContentPane">第九期ぎふ長良川メイツを募集しています。</a>
+              <a id="C25_47519_MenuList_ctl02_TitleLink" href="item/48670.htm#ContentPane">フルタイム会計年度任用職員(保健師)を募集します</a>
+              <img src='../../../images/new.gif' alt='新着' />
+              
+              <div class="Summary">
+                
+              </div>
+            </div>
+          </li>
+        
+          <li><span class="CreatedDate">
+            12月28日
+          </span>
+            <div class="R_Contents">
+              
+              
+              <a id="C25_47519_MenuList_ctl03_TitleLink" href="item/49036.htm#ContentPane">「岐阜市消費者教育推進計画(第2次)（素案）」についてのパブリックコメントを募集しています</a>
+              <img src='../../../images/new.gif' alt='新着' />
+              
+              <div class="Summary">
+                
+              </div>
+            </div>
+          </li>
+        
+          <li><span class="CreatedDate">
+            12月28日
+          </span>
+            <div class="R_Contents">
+              
+              
+              <a id="C25_47519_MenuList_ctl04_TitleLink" href="item/49024.htm#ContentPane">第九期ぎふ長良川メイツを募集しています。</a>
               <img src='../../../images/new.gif' alt='新着' />
               
               <div class="Summary">
@@ -1587,8 +1617,8 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C25_47519_MenuList_ctl03_TitleLink" href="item/20937.htm#ContentPane">令和3年度岐阜市消費生活モニター募集のお知らせ</a>
-              <img src='../../../images/new.gif' alt='新着' />
+              <a id="C25_47519_MenuList_ctl05_TitleLink" href="item/20937.htm#ContentPane">令和3年度岐阜市消費生活モニター募集のお知らせ</a>
+              
               
               <div class="Summary">
                 
@@ -1602,37 +1632,7 @@ new media_line_me.LineButton({"pc":false,"lang":"ja","type":"a"});
             <div class="R_Contents">
               
               
-              <a id="C25_47519_MenuList_ctl04_TitleLink" href="item/27053.htm#ContentPane">令和3年2月1日採用　パートタイム会計年度任用職員（家庭児童相談）を募集します。</a>
-              
-              
-              <div class="Summary">
-                
-              </div>
-            </div>
-          </li>
-        
-          <li><span class="CreatedDate">
-            12月22日
-          </span>
-            <div class="R_Contents">
-              
-              
-              <a id="C25_47519_MenuList_ctl05_TitleLink" title="外部サイトへのリンク" href="https://g-mediacosmos.jp/information/2020/12/----f.html#ContentPane">「シビックプライド講座」（第4回）の参加者を募集しています！（みんなの森　ぎふメディアコスモス）</a>
-              
-              
-              <div class="Summary">
-                
-              </div>
-            </div>
-          </li>
-        
-          <li><span class="CreatedDate">
-            12月15日
-          </span>
-            <div class="R_Contents">
-              
-              
-              <a id="C25_47519_MenuList_ctl06_TitleLink" href="item/36778.htm#ContentPane">岐阜競輪場内食堂貸付事業者の募集について</a>
+              <a id="C25_47519_MenuList_ctl06_TitleLink" href="item/27053.htm#ContentPane">令和3年2月1日採用　パートタイム会計年度任用職員（家庭児童相談）を募集します。</a>
               
               
               <div class="Summary">
@@ -2477,7 +2477,7 @@ setAdBannersRandom();
 <div class="aspNetHidden">
 
 	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="0E8925E6" />
-	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="OwqzCJ+lBCRfOQigpY7EBtNwiRp7NSk0EfBsLi4jrgM70PwXxb2lFDYc95F1swx6V5OHd6r/DNyAdq2l/MrhGboZ5xOvy63efox0Tz29SsjwI1ZXASbHkJLqisXnvMzeVGfmo5auapNuaX7net+beJQCBKxJoDlOaxk/UUeE0qAZE1PY" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="UifkrDOtt/bP+9jje35ZV4df1XJDAhmRXHK6hiTcj6FznojarcEJbSL2pVAyTly8lm7QTKnTqwPoUnvMUsMpzTK57USWAyLpto+dAen2XXDiaonJ32hT0GBQeJfjxAispOaW3R3hKikKT0PeJbd4FZc+t8eYL3MAm7KDYLDrurOHSSzX" />
 </div></form>
 </body>
 </html>
