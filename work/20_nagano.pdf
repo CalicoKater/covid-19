@@ -157,7 +157,7 @@
 
 
 <div id="tmp_top_banner">
-<p> <a href="https://tabi-susume.com/family/" target="_blank"><img src="/shared/templates/top_rn/images/img_tour_1.jpg" alt="長野県民限定「県民支えあい家族宿泊割」始めました。対象宿泊期間12月28日から1月11日、事業者募集中12月29日まで" width="410" height="214" /></a></p>
+<p> <a href="https://www.go-nagano.net/" target="_blank"><img src="/shared/templates/top_rn/images/img_tour_1.jpg" alt="あなたらしい旅に、トリップアイデアを、GONAGANO長野県公式観光サイト" width="410" height="214" /></a></p>
 <p> <a href="https://blog.nagano-ken.jp/" target="_blank"><img src="/shared/templates/top_rn/images/img_tour_2.jpg" alt="しあわせ信州" width="410" height="214" /></a></p>
 </div>
 </div>
@@ -169,7 +169,7 @@
 </div>
 <div id="tmp_emergency_s_cnt">
 <h2><a href="https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/corona.html">新型コロナウイルス感染症対策　総合サイト</a></h2>
-<h3><a href="https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/corona-onegai.html#zenkenlv3">感染対策強化期間中（12月28日～１月11日）</a></h3>
+<h3><a href="https://www.pref.nagano.lg.jp/hoken-shippei/kenko/kenko/kansensho/joho/corona-onegai.html#iryokeiho">「医療警報」の発出及び緊急事態宣言を踏まえてのお願い（1月8日～2月7日）</a></h3>
 <h2><a href="http://www.naganoken-tabunka-center.jp/en/">COVID-19 Information (Foreign Language)</a><br />
 <a href="/bosai/kurashi/shobo/bosai/bosai/r1typhoon19/top.html">令和元年東日本台風（台風第19号）への対応</a><br />
 <a href="/bosai/kurashi/setugai.html">雪害にご注意ください</a></h2>
@@ -257,7 +257,7 @@
 <table border="0" cellspacing="0" cellpadding="0" class="list_table">
 <tbody>
 <tr>
-<td class="date"><p>12月25日</p></td>
+<td class="date"><p>1月8日</p></td>
 <td><p><a href="/enchiku/swinefever.html">野生イノシシでのCSF(豚熱)の発生と対応状況について</a> </p></td>
 </tr>
 <tr>
@@ -291,20 +291,20 @@
 <table border="0" cellspacing="0" cellpadding="0" class="list_table">
 <tbody>
 <tr>
+<td class="date"><p>1月9日</p></td>
+<td><p><a href="/kansensho-taisaku/happyou/20210109.html">新型コロナウイルス感染症陽性者の発生について（1501～1541例）</a> </p></td>
+</tr>
+<tr>
 <td class="date"><p>1月8日</p></td>
-<td><p><a href="/rodokoyo/happyou/030108.html">【シューカツNAGANO】若手人事担当者の座談会を開催します！（産業労働部労働雇用課）</a> </p></td>
+<td><p><a href="/bosai/happyou/210108houmonpress.html">緊急事態宣言の対象区域への訪問は、基本的に行わないようお願いします（危機管理部新型コロナウイルス感染症対策室）</a> </p></td>
 </tr>
 <tr>
-<td class="date"><p>1月7日</p></td>
-<td><p><a href="/kansensho-taisaku/happyou/20210107.html">新型コロナウイルス感染症陽性者の発生について（1362～1433例）</a> </p></td>
+<td class="date"><p>1月8日</p></td>
+<td><p><a href="/kansensho-taisaku/happyou/210108press.html">新型コロナウイルス感染症陽性者の発生について（1437～1500例）</a> </p></td>
 </tr>
 <tr>
-<td class="date"><p>1月7日</p></td>
-<td><p><a href="/hoken-shippei/happyou/kansen2020-53w.html">感染症情報（53週）（健康福祉部感染症対策課）</a> </p></td>
-</tr>
-<tr>
-<td class="date"><p>1月7日</p></td>
-<td><p><a href="/kyoiku/kyogaku/210107press.html">経済産業省「未来の教室」実証事業の一環として取り組んでいる軽井沢高等学校1学年の授業を公開します（教育委員会事務局学びの改革支援課）</a> </p></td>
+<td class="date"><p>1月8日</p></td>
+<td><p><a href="/bosai/happyou/20210108press.html">陽性者が多数発生している地域への訪問に当たってはご注意ください（危機管理部新型コロナウイルス感染症対策室）</a> </p></td>
 </tr>
 </tbody>
 </table>
