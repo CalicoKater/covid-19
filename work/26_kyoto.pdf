@@ -43,20 +43,20 @@
     <tbody>
         <tr>
             <td>
+            <p><a href="/kentai/corona/chijimessage.html"><img alt="京都府知事から府民の皆さまへ" width="690" height="410" src="/images/20210114chiji_message.png" /></a></p>
+            <p><a href="/kentai/corona/chijimessage.html">京都府知事から府民の皆さまへ</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <p><a href="/kikikanri/news/corona_210112sochi.html"><img alt="新型コロナウイルス感染拡大防止のための京都府における緊急事態措置" width="690" height="410" src="/images/sochi.jpg" /></a></p>
+            <p><a href="/kikikanri/news/corona_210112sochi.html">新型コロナウイルス感染拡大防止のための京都府における緊急事態措置</a></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
             <p><a href="/kentai/corona/tassei_jyokyo.html"><img alt="京都府の状況：特別警戒基準" width="690" height="410" src="/images/tokubetsukeikai_1.png" /></a></p>
             <p><a href="/kentai/corona/tassei_jyokyo.html">京都府のモニタリング指標の状況</a></p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <p><a href="/kikikanri/news/corona_201217yousei.html"><img alt="飲食店に対する営業時間短縮の要請について（府市協調）" width="690" height="410" src="/images/jitan2.jpg" /></a></p>
-            <p><a href="/kikikanri/news/corona_201217yousei.html">飲食店に対する営業時間短縮の要請について（府市協調）</a></p>
-            </td>
-        </tr>
-        <tr>
-            <td>
-            <p><a href="/kentai/corona/chijimessage.html"><img alt="京都府知事から府民の皆さまへ" width="690" height="410" src="/images/20210108chiji_message.png" /></a></p>
-            <p><a href="/kentai/corona/chijimessage.html">京都府知事から府民の皆さまへ</a></p>
             </td>
         </tr>
         <tr>
@@ -81,40 +81,81 @@
 </table>
 <div class="col2">
 <div class="col2L"><!--◆ここから左動画◆--><span class="frame_youtube">
-<iframe title="201217臨時知事会見" width="400" height="237" src="//www.youtube.com/embed/o0in7UB65qM?feature=youtu.be&amp;rel=0&amp;autoplay=0&amp;loop=0" frameborder="0" allowfullscreen></iframe>
+<iframe title="210114京都府民の皆様へ" width="400" height="237" src="//www.youtube.com/embed/T4MBdALI-4k?rel=0&amp;autoplay=0&amp;loop=0" frameborder="0" allowfullscreen></iframe>
 </span>
 <br />
-1月8日（金曜）13時30分から臨時知事会見を行いました <br />
+1月14日「京都府民の皆様へ」<br />
 <br />
-<!--◆ここまで左動画◆--><a href="/kikikanri/news/corona_201217yousei.html"><img alt="飲食店に対する営業時間短縮の要請について（府市協調）" width="400" height="237" src="/images/yousei400-237px.png" /></a></div>
-<div class="col2R"><!--◆ここから右動画--><a href="/documents/01081130.pdf"><img alt="最近の感染状況を踏まえた今後の対応について" width="400" height="237" src="/images/210108yousei400-237.png" /><br />
-臨時知事会見資料（1月8日）（PDF：485KB）</a><br />
+<a href="/kikikanri/news/corona_210112sochi.html"><img alt="新型コロナウイルス感染拡大防止のための京都府における緊急事態措置" width="400" height="237" src="/images/kinkyu.png" /></a> <!--◆ここまで左動画◆--></div>
+<div class="col2R"><!--◆ここから右動画--><span class="frame_youtube">
+<iframe title="210112臨時知事会見" width="400" height="237" src="//www.youtube.com/embed/MNLl_iSo6Eo?feature=youtu.be&amp;rel=0&amp;autoplay=0&amp;loop=0" frameborder="0" allowfullscreen></iframe>
+</span>
 <br />
-<a href="https://kyoto.stopcovid19.jp/"><img alt="新型コロナウイルス感染症対策サイト" width="400" height="237" src="/images/banner_5.jpg" /></a></div>
+1月12日16時30分から臨時知事会見を行いました<br />
+<br />
+<a href="/documents/030112.pdf"><img alt="新型コロナウイルス感染拡大防止のための京都府における緊急事態措置" width="400" height="237" src="/images/210112kaiken.png" /> <br />
+臨時知事会見資料（1月12日）（PDF：448KB）</a> </div>
 </div>
 <p><script type="text/javascript" src="/shared/site_emergency/js/gallery.js"></script></p>
 <p align="center"><strong><font size="6">【 <a href="/index2.html">通常版トップページへ</a> 】</font></strong></p>
 <table cellspacing="1" cellpadding="3" width="100%" border="1">
     <tbody>
         <tr>
-            <td>
+            <td colspan="4">
             <p><font size="6"><span style="COLOR: red"><a id="tyumokujoho">&nbsp;</a>【注目情報】</span></font></p>
-            <p><strong><font size="4">1.<a href="/kikikanri/news/corona_210108taiou.html">感染拡大を踏まえた今後の対応について（令和3年1月8日）</a></font></strong></p>
+            <p><strong><font size="4">1.営業時間短縮要請協力店舗への協力金について</font></strong></p>
+            </td>
+        </tr>
+        <tr>
+            <th bgcolor="#ff99cc" width="10%" scope="col"><font size="4">協力金</font></th>
+            <th bgcolor="#ff99cc" width="25%" scope="col"><font size="4">時短要請対象期間</font></th>
+            <th bgcolor="#ff99cc" width="20%" scope="col"><font size="4">申請受付</font></th>
+            <th bgcolor="#ff99cc" scope="col"><font size="4">要請内容</font></th>
+        </tr>
+        <tr>
+            <th scope="row">
+            <p align="center"><a href="/sanroso/news/coronavirus-kyoryokukin.html"><font size="4">第1期</font></a></p>
+            </th>
+            <td><font size="4">令和2年12月21日から<br />
+            令和3年1月11日まで</font></td>
+            <td><font size="4">令和3年2月1日まで</font></td>
+            <td rowspan="2"><a href="/kikikanri/news/corona_201217yousei.html"><font size="4">飲食店に対する営業時間短縮の要請（府市協調）</font></a><br />
+            <font size="4">区域：<span style="COLOR: red">京都市全域</span></font></td>
+        </tr>
+        <tr>
+            <th scope="row">
+            <p align="center"><a href="/sanroso/news/coronavirus-kyoryokukin2.html"><font size="4">第2期</font></a></p>
+            </th>
+            <td><font size="4">令和3年1月12日、<br />
+            令和3年1月13日</font></td>
+            <td><font size="4">令和3年2月8日以降<br />
+            開始予定</font></td>
+        </tr>
+        <tr>
+            <th scope="row">
+            <p align="center"><a href="/sanroso/news/coronavirus-kyoryokukin3.html"><font size="4">緊急事態措置</font></a></p>
+            </th>
+            <td><font size="4">令和3年1月14日から<br />
+            令和3年2月7日まで</font></td>
+            <td><font size="4">令和3年2月8日以降<br />
+            開始予定</font></td>
+            <td valign="middle"><a href="/kikikanri/news/corona_210112sochi.html#jitan"><font size="4">京都府緊急事態措置【3（1）特措法に基づく要請を行う施設】</font></a><br />
+            <font size="4">区域：<span style="COLOR: red">京都府全域</span></font></td>
+        </tr>
+        <tr>
+            <td colspan="4">
             <ul>
-                <li><a href="/documents/0108en.pdf">英語（English）（PDF：174KB）</a> </li>
-            </ul>
-            <p><strong><font size="4">2.営業時間短縮の要請・協力店舗への協力金について（令和3年1月8日）</font></strong></p>
-            <ul>
-                <li><a href="/kikikanri/news/corona_201217yousei.html"><strong>飲食店に対する営業時間短縮の要請について（府市協調）</strong></a><br />
-                <strong>【営業時間短縮要請の期間を延長します】</strong><br />
-                京都府新型コロナウイルスガイドライン等コールセンター（平日9時から17時）<br />
-                TEL：<span class="tel_link">075-414-5907</span> </li>
-                <li><strong>新型コロナウイルス感染症拡大防止協力金</strong><br />
-                <a href="/sanroso/news/coronavirus-kyoryokukin.html"><strong>（第1期）新型コロナウイルス感染症拡大防止協力金</strong></a><strong>【受付：1月12日から2月1日迄】</strong><br />
-                <a href="/sanroso/news/coronavirus-kyoryokukin2.html"><strong>（第2期）新型コロナウイルス感染症拡大防止協力金</strong></a><strong>【受付：2月8日以降に開始予定】</strong><br />
+                <li><strong>協力金に関するお問い合わせ</strong><br />
                 協力金コールセンター（9時30分から17時30分（日曜日・祝日除く））<br />
-                ただし、1月10日（日曜日）、1月11日（月曜日・祝日）は開設<br />
                 TEL：<span class="tel_link">075-365-7780</span> </li>
+                <li><strong>要請内容に関するお問い合わせ</strong><br />
+                京都府新型コロナウイルスガイドライン等コールセンター（平日9時から17時）<br />
+                ただし、1月16日（土曜日）、17日（日曜日）は開設します。<br />
+                TEL：<span class="tel_link">075-414-5907</span> </li>
+            </ul>
+            <p><strong><font size="4">2.<a href="/kikikanri/news/corona_210112sochi.html">新型コロナウイルス感染拡大防止のための京都府における緊急事態措置</a>（令和3年1月15日更新）</font></strong></p>
+            <ul>
+                <li><a href="http://www.pref.kyoto.jp/kokusai/documents/0112eng.pdf">英語（English）</a>／<a href="http://www.pref.kyoto.jp/kokusai/documents/0112ch.pdf">中国語（中文）</a>／<a href="http://www.pref.kyoto.jp/kokusai/documents/0112vi.pdf">ベトナム語（Tiếng việt）</a>／<a href="http://www.pref.kyoto.jp/kokusai/documents/0112jp.pdf">やさしい日本語（にほんご）</a>（PDFファイル）&nbsp; </li>
             </ul>
             <p><strong>3.<a href="/kentai/corona/qa.html">新型コロナウイルス感染に不安のある皆さまへ（濃厚接触者Q&amp;A）</a></strong></p>
             <p><strong>4.<a href="/sanroso/news/kansentaiou.html">事業者の皆さまへ（社員や職員が新型コロナウイルス感染症に感染した場合の対応）</a></strong></p>
@@ -122,10 +163,10 @@
             <ul>
                 <li><a href="https://www.kyotokaigi.com/">「ガイドライン推進宣言事業所ステッカー」について（新型コロナウイルス感染拡大予防ガイドライン推進京都会議HP）</a>
                 <ul>
-                    <li><a href="/documents/guideline_rei_2.pdf">京都府「感染拡大防止ガイドライン（例）（標準的対策）」（令和2年9月7日改訂）（PDF：511KB）</a> </li>
+                    <li><a href="/documents/guideline_rei.pdf">京都府「感染拡大防止ガイドライン（例）（標準的対策）」（令和2年9月7日改訂）（PDF：511KB）</a> </li>
                 </ul>
                 </li>
-                <li><a href="/documents/20200805guideline_daigaku_2.pdf">大学等における感染症拡大予防のためのガイドライン（令和2年8月5日改定）（PDF：1,440KB）</a>
+                <li><a href="/documents/20200805guideline_daigaku.pdf">大学等における感染症拡大予防のためのガイドライン（令和2年8月5日改定）（PDF：1,440KB）</a>
                 <ul>
                     <li>【関連リンク】<a href="https://youtu.be/8_OkDM3zMyI">山中伸弥 京都大学iPS細胞研究所 所長から学生の皆さんへのメッセージ（外部リンク）</a> </li>
                     <li>【関連リンク】<a href="/fu-daigaku/news/2020animation.html">新しい生活様式の実践に向けた学生向けアニメーション</a> </li>
@@ -146,8 +187,7 @@
             <ul>
                 <li><a href="/kentai/corona/soudan.html"><strong>発熱症状などのある方の相談</strong></a>（夜間や医療機関が休みのとき、かかりつけ医のいない方）<br />
                 きょうと新型コロナ医療相談センター（365日24時間、京都府・京都市共通） TEL：<span class="tel_link">075-414-5487</span> </li>
-                <li><a href="/kateishien/news/2020centerencho.html"><strong>ひとり親家庭自立支援センターの開設時間延長等について</strong></a>【1月11日迄】 </li>
-                <li><a href="/sanroso/news/shienseido.html"><strong>新型コロナウイルスに関する事業者向け支援制度</strong></a>（令和2年12月22日更新）<br />
+                <li><a href="/sanroso/news/shienseido.html"><strong>新型コロナウイルスに関する事業者向け支援制度</strong></a>（令和2年1月13日更新）<br />
                 中小企業緊急経営支援コールセンター（平日9時から17時）　TEL：<span class="tel_link">0120-555-182</span> </li>
                 <li><a href="/hofukuki/news/corona-irokin-shienkin.html"><strong>新型コロナウイルス緊急包括支援事業（慰労金・支援金）について</strong></a><strong>【受付：令和3年2月28日迄】</strong><br />
                 京都府慰労金・支援金事務センターコールセンター（平日9時から17時）　TEL：<span class="tel_link">075-366-4900</span> </li>
@@ -166,8 +206,8 @@
         <tr>
             <td>
             <p><font size="6"><span style="COLOR: red">【府内の発生状況等】</span></font></p>
-            <p><font size="5">本日の感染者数 146名（京都府域 54名、京都市 92名）</font><font size="5">【累計 5937名】</font>（令和3年1月10日）<br />
-            <font size="5">これまでの退院等 4458名</font>（令和3年1月10日）<font size="5">、死亡 74名</font>（令和3年1月10日）</p>
+            <p><font size="5">本日の感染者数 140名（京都府域 51名、京都市 89名）</font><font size="5">【累計 6723名】</font>（令和3年1月16日）<br />
+            <font size="5">これまでの退院等 5013</font>（令和3年1月14日）<font size="5">、死亡 82名</font>（令和3年1月16日）</p>
             <div class="col2">
                         <div class="col2L">
                         <ul>
@@ -195,11 +235,11 @@
             <td>
             <p><font size="6"><span style="COLOR: red">【知事からのメッセージ】</span></font></p>
             <ul>
-                <li><a href="/kentai/corona/chijimessage.html">京都府知事から府民の皆さまへ</a>&nbsp;&nbsp; </li>
+                <li><a href="/kentai/corona/chijimessage.html">京都府知事から府民の皆さまへ</a>&nbsp; </li>
                 <li><a href="/koho/kaiken/index.html">知事記者会見（一部手話動画あり）</a> </li>
                 <li><a href="/koho/corona/taidan.html">西脇隆俊&times;山中伸弥　対談企画　～コロナ後の京都の進む道～</a> </li>
                 <li><a href="/koho/corona/teidan.html">西脇隆俊&times;松井道宣&times;磯田道史　鼎談企画「新型コロナ～歴史に学び未来へ～」</a> </li>
-                <li><a href="/koho/corona/message_ishikai.html">京都府と医師会等との緊急メッセージ</a>&nbsp; </li>
+                <li><a href="/koho/corona/message_ishikai.html">京都府と医師会等との緊急メッセージ</a> </li>
             </ul>
             </td>
         </tr>
