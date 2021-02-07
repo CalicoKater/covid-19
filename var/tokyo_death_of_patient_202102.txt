@@ -1,0 +1,6 @@
+/tosei/hodohappyo/press/2021/02/01/26.html, 新型コロナウイルスに関連した患者の死亡（1549報）
+/tosei/hodohappyo/press/2021/02/02/23.html, 新型コロナウイルスに関連した患者の死亡（1560報）
+/tosei/hodohappyo/press/2021/02/03/26.html, 新型コロナウイルスに関連した患者の死亡（1565報）
+/tosei/hodohappyo/press/2021/02/04/27.html, 新型コロナウイルスに関連した患者の死亡（1576報）
+/tosei/hodohappyo/press/2021/02/05/21.html, 新型コロナウイルスに関連した患者の死亡（1588報）
+/tosei/hodohappyo/press/2021/02/06/02.html, 新型コロナウイルスに関連した患者の死亡（1599報）
