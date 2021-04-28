@@ -14,3 +14,10 @@
 /tosei/hodohappyo/press/2021/04/17/02.html, 新型コロナウイルスに関連した患者の死亡（1941報）
 /tosei/hodohappyo/press/2021/04/18/02.html, 新型コロナウイルスに関連した患者の死亡（1944報）
 /tosei/hodohappyo/press/2021/04/19/21.html, 新型コロナウイルスに関連した患者の死亡（1946報）
+/tosei/hodohappyo/press/2021/04/21/21.html, 新型コロナウイルス関連 患者の死亡（1951報）
+/tosei/hodohappyo/press/2021/04/22/21.html, 新型コロナウイルス関連 患者の死亡（1954報）
+/tosei/hodohappyo/press/2021/04/23/31.html, 新型コロナウイルス関連 患者の死亡（1958報）
+/tosei/hodohappyo/press/2021/04/23/35.html, 新型コロナウイルス関連 患者の死亡（1962報）
+/tosei/hodohappyo/press/2021/04/25/02.html, 新型コロナウイルス関連 患者の死亡（1968報）
+/tosei/hodohappyo/press/2021/04/26/21.html, 新型コロナウイルス関連 患者の死亡（1970報）
+/tosei/hodohappyo/press/2021/04/28/43.html, 新型コロナウイルス関連 患者の死亡（1977報）

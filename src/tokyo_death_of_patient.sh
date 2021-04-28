@@ -35,9 +35,9 @@
 #url="https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2021/02/index.html"
 #url="https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2021/03/index.html"
 url="https://www.metro.tokyo.lg.jp/tosei/hodohappyo/press/2021/04/index.html"
-  curl -s $url | xmllint --html --xpath '//a' - | tr ' ' '\n' \
-  | grep "新型コロナウイルスに関連した患者の死亡" \
-  | sed -e 's/<\/a><a//g' -e 's/href=//g' -e 's/\"//g' -e 's/>/, /g' | tail -r \
+  curl -s $url | xmllint --html --xpath '//a' - | tr '<' '\n' \
+  | grep -e "新型コロナウイルスに関連した患者の死亡" -e "新型コロナウイルス関連 患者の死亡" \
+  | sed -e 's/<\/a><a//g' -e 's/a href=//g' -e 's/\"//g' -e 's/>/, /g' | tail -r \
   > ./var/tokyo_death_of_patient_202104.txt
 #  > ./var/tokyo_death_of_patient_202103.txt
 #  > ./var/tokyo_death_of_patient_202102.txt
