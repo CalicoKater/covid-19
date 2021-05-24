@@ -18,3 +18,4 @@
 /tosei/hodohappyo/press/2021/05/21/21.html, 新型コロナウイルス関連 患者の死亡（2051報）
 /tosei/hodohappyo/press/2021/05/22/02.html, 新型コロナウイルス関連 患者の死亡（2056報）
 /tosei/hodohappyo/press/2021/05/23/02.html, 新型コロナウイルス関連 患者の死亡（2059報）
+/tosei/hodohappyo/press/2021/05/24/21.html, 新型コロナウイルス関連 患者の死亡（2061報）
